@@ -51,12 +51,7 @@ INSTALLED_APPS = [
     'core_play',
     'poem'
 ]
-# TINYMCE_DEFAULT_CONFIG = {
-#     'plugins': 'link image preview codesample contextmenu table code lists fullscreen insertdatetime media nonbreaking save table directionality',
-#     'toolbar1': 'fullscreen preview bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | fontselect fontsizeselect',
-#     'menubar': True,
-#     'statusbar': True,
-# }
+
 
 BANK_URL=env("BANK_URL")
 BANK_USERNAME=env("BANK_USERNAME")
@@ -170,11 +165,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 BLOG_MEDIA_HOST = ""
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-# EMAIL_BACKEND ="django.core.mail.backends.smtp.EmailBackend"
-# EMAIL_HOST = "smtp.gmail.com"
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = env("EMAIL_HOST_USER")
-# EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-# EMAIL_FROM = env("EMAIL_FROM")
