@@ -1,0 +1,67 @@
+{% load i18n %}
+<div class="w-100">
+  {% if not hide_filters %}
+<div class="radio-tile-group">
+  <div class="input-container">
+      <input id="list" class="radio-button" type="radio" {% if selected_category == "" %}checked{% endif %}
+        hx-get="{% url 'store' %}"
+        hx-target="#product-list"
+        hx-swap="innerHTML"
+        hx-push-url="true"
+        value=""
+      />
+      <div class="radio-tile">
+        <div class="icon walk-icon">
+          <i class="fa fa-list"></i>
+        </div>
+        <label for="list" class="radio-tile-label">{% translate "All" %}</label>
+      </div>
+  </div>
+  {% for category in categories %}
+    <div class="input-container">
+      <input id="category.icon_name" class="radio-button" type="radio"
+        {% if selected_category == category.slug_en %}checked{% endif %}
+        hx-get="{% url 'store_category' category=category.slug_en %}"
+        hx-target="#product-list"
+        hx-swap="innerHTML"
+        hx-push-url="true"
+        value="{{category.slug_en}}"
+      />
+      <div class="radio-tile">
+        <div class="icon">
+          <i class="fa fa-{{category.icon_name}}"></i>
+        </div>
+        <label for="category.icon_name" class="radio-tile-label">{{category.title}}</label>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+</div>
+{% for product in  products  %}
+<div class="product-card">
+  <div class="outer">
+    <div class="inner light-card">
+      <div class="innerinner">
+        <a  href="{% url 'product_detail' slug=product.slug_en %}">
+          <div class="d-flex justify-content-center">
+            <img  loading="lazy" src="https://cms.yatuk.am/{{product.main_image.middle_optimized.url}}" alt="{{product.title}}"/>
+          </div>
+          {% if product.is_finished %}<div class="finished-label">{% translate "Sold out" %}</div>{% endif %}
+          <div class="product-card-icon-top"><i class="fa fa-{{product.category.icon_name}}"></i></div>
+          <h5 class="text-center m-0">{{product.category}}</h5>
+        <div class="product-card-title">{{product.title}}</div>
+        <div class="level">
+          <span>{% translate "Price" %}</span>
+          <span>{{product.price}}֏</span>
+        </div>
+      </a>
+      {% if not product.is_finished %}
+        <button hx-get="{% url 'add_in_cart' id=product.id %}" hx-target=".icon-in-button{{product.id}}"
+          hx-trigger="click" hx-swap="innerHTML">{% translate "Add to cart" %}
+          <span class="icon-in-button icon-in-button{{product.id}}"></span></button>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

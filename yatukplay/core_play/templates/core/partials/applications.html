@@ -1,0 +1,110 @@
+<style>
+  
+    #applications {
+      position: fixed;
+      bottom: 0;
+      z-index: 11;
+      left: 50%;
+    }
+  .application_dropdown {
+    position: relative;
+    filter: url(#goo);
+  }
+  .application_dropdown__face, .application_dropdown__items {
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .application_dropdown__face {
+    display: block;
+    position: relative;
+    border-radius: 10px 10px 0px 0;
+    display: flex;
+    width: 40px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .application_dropdown__items {
+    margin: 0;
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    width: fit-content;
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.93, 0.88, 0.1, 0.8);
+  }
+  .application_dropdown__items li{
+    padding: 10px;
+    background: linear-gradient(rgba(34,193,195,1), rgba(253,187,45,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+  }
+  .application_dropdown__text {
+    background: linear-gradient(rgba(34,193,195,1), rgba(253,187,45,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 22px;
+  }
+  .application_dropdown__items::before {
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    height: 20px;
+    width: 15px;
+    right: 47%;
+  }
+  .application_dropdown__arrow {
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) translateY(-50%);
+    transform-origin: right;
+  }
+  .application_dropdown input {
+    display: none;
+  }
+  .application_dropdown input:checked ~ .application_dropdown__items {
+    visibility: visible;
+    opacity: 1;
+    top: calc(100% - 90px);
+  }
+  
+  svg {
+    display: none;
+  }
+  </style>
+  <div id="applications">    
+    <div class="application_dropdown">
+      <input type="checkbox" id="application_dropdown">
+    
+      <label class="application_dropdown__face" for="application_dropdown">
+        <div class="application_dropdown__text"><i class="fa fa-angle-double-up"></i></div>
+      </label>
+    
+      <ul class="application_dropdown__items">
+        <li><a target="blank" href="https://game.yatuk.am"><i class="fa fa-puzzle-piece"></i></a></li>
+        <li><a target="blank" href="https://yatuk.am"><i class="fa fa-shopping-cart"></i></a></li>
+      </ul>
+    </div>
+    
+    <svg>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+        <feBlend in="SourceGraphic" in2="goo" />
+      </filter>
+    </svg>
+  </div>

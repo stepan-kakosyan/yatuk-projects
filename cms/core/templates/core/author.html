@@ -1,0 +1,88 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+<meta name="description" content="{{author.bio_hy|truncatechars:150}}">
+<title>{% translate "Yatuk" %} - {{author.name_hy}}</title>
+<meta name="keywords" content="Ապրանք, արվեստ, գլուխկոտրուկ, թանգարան, նկարիչ, հայ նկարիչ, product, art product, museum, painter, artowkr, armenian painter, drawing, {{author.name_hy}}, {{author.name_ru}}, {{author.name_en}}">
+<meta property="og:title" content="Յատուկ | {{author.name_hy}}" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{author.bio_hy|truncatechars:150}}" />
+<meta property="og:image" content="https://cms.yatuk.am{{author.middle_optimized.url}}" />
+{% get_available_languages as LANGUAGES %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info_list for LANGUAGES as languages %}
+{% get_language_info for LANGUAGE_CODE as CURR_LANG %}
+{% if CURR_LANG.code == "hy" %}
+<style>
+  .bio-text-btn::before {
+    content: "Տեսնել ամբողջ";
+  }
+  .bio-text-btn:checked::before {
+    content: "Ծածկել տեքստը";
+  }
+</style>
+{% elif CURR_LANG.code == "ru" %}
+<style>
+  .bio-text-btn::before {
+    content: "Показать больше";
+  }
+  .bio-text-btn:checked::before {
+    content: "Показать меньше";
+  }
+</style>
+{% else %}
+<style>
+  .bio-text-btn::before {
+    content: "See More";
+  }
+  .bio-text-btn:checked::before {
+    content: "See Less";
+  }
+</style>
+{% endif %}
+
+
+{% endblock og_properties %}
+{% block content %}
+<div>
+  <nav>
+    <ol class="breadcrumb breadcrumb-yatuk">
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'authors' %}">{% translate "Authors" %}</a></li>
+      <li class="breadcrumb-item active">{{author.name}}</li>
+    </ol>
+  </nav>
+<div class="author-page-content">
+
+    <div class="author-page-card">
+      <div class="firstinfo">
+        <div class="img-content"><img  loading="lazy" src="https://cms.yatuk.am{{author.middle_optimized.url}}" alt="{{author.name}}"/></div>
+        <div class="profileinfo">
+          <h1>{{author.name}}</h1>
+          <h3>{{author.dates}}</h3>          
+        </div>
+      </div>
+      {% if author.bio %}
+        <p class="bio-text">{{author.bio}}</p>
+        <input type="checkbox" class="bio-text-btn" />               
+      {% endif %}
+
+    </div>
+</div>
+<div class="main-text text-center  mt-3 w-100">
+    <h3>{% translate "Products based on this author" %}</h3>
+  </div>
+  <div class="product-homepage product-list" id="product-list">
+    {% include 'core/partials/product-list.html' with hide_filters=True %}
+  </div>
+<div class="main-text text-center  mt-3 w-100">
+  <h3>{% translate "Yatuk Canvas" %}</h3>
+  <span>{% translate "We have puzzle games with this author paintings in Yatuk Canvas website" %}</span>
+</div>
+<div class="product-homepage product-list" id="product-list">
+  {% include 'core/partials/game-list.html' %}
+</div>
+</div>
+
+{% endblock content %}

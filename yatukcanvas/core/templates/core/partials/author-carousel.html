@@ -1,0 +1,15 @@
+  
+<div class="author-carousel authors-slider">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for author in authors %}
+        <a class="author-slide-card light-card swiper-slide" href="{% url 'author' slug=author.slug  %}">
+                <img class="authors-slide-image" loading="lazy" 
+                src="https://cms.yatuk.am{{author.image_.url}}" alt="{{author.name}}" />
+                <h3>{{author.name}}</h3>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>

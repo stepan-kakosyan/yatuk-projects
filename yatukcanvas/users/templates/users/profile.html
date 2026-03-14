@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{%block extra_meta %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="z-10">
+    <nav>
+        <ol class="breadcrumb breadcrumb-yatuk light-card">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+          <li class="breadcrumb-item">{{request.user.display_name}}</li>
+          <li class="breadcrumb-item active">{% translate "Personal details" %}</li>
+        </ol>
+      </nav>
+<div class="main-text text-center  mt-3">
+    <h3>{% translate "Personal Details" %}</h3>
+</div>
+</div>
+<div class="min-height-half">
+<div class="author-page-card user-profile light-card">
+{% include 'users/partials/profile-card.html' %}
+</div>
+</div>
+{% endblock content %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/profile.js' %}"></script>
+{% endblock extra_scripts %}

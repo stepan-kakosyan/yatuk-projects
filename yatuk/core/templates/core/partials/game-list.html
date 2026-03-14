@@ -1,0 +1,22 @@
+{% load i18n %}
+
+{% for game in  games  %}
+<div class="product-card game-card">
+  <div class="outer">
+    <div class="inner">
+      <div class="innerinner">
+        <img style="object-position: {{game.background_position}}" 
+         loading="lazy" src="https://cms.yatuk.am/{{game.middle_optimized.url}}" alt="{{game.name}}"/>
+      </div>
+      <div class="game-card-content">
+        <div class="product-card-title game-card-title">{{game.name}}</div>
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_language_info for LANGUAGE_CODE as CURR_LANG %}
+        <a href="https://canvas.yatuk.am/hy/game/{{game.author.slug}}/{{game.slug}}-{{game.id}}/" target="_blank">
+          <button>{% translate "Play Online" %}<i class="fa fa-puzzle-piece p-2"></i></button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

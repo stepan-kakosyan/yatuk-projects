@@ -1,0 +1,8 @@
+User-Agent: *
+
+Disallow: /admin
+Allow: *
+
+Sitemap: https://canvas.yatuk.am/hy/sitemap.xml
+Sitemap: https://canvas.yatuk.am/en/sitemap.xml
+Sitemap: https://canvas.yatuk.am/ru/sitemap.xml

@@ -1,0 +1,93 @@
+
+.login-form form{
+    width: 500px;
+    padding: 50px 35px;
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    z-index: 10;
+    position: relative;
+    background-color: rgba(255,255,255,0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+.login-form form,
+.yatuk-form{
+    margin: auto;
+}
+.error-message{
+    color: #ff5252;
+    font-size: 14px;
+}
+.login-form form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.login-form label,
+.yatuk-form label{
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+.yatuk-form select option{
+    color: gray !important;
+}
+.contact-us-form input,
+.contact-us-form input:focus,
+.contact-us-form textarea,
+.contact-us-form textarea:focus,
+.login-form input,
+.yatuk-form select,
+.yatuk-form select:focus,
+.login-form input:focus,
+.yatuk-form input{
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    color: whitesmoke;
+}
+.cart-items.yatuk-form button{
+    min-width: unset;
+    padding: 5px 12px;
+    width: auto;
+    z-index: 10;
+}
+.icon-button.delete-icon{
+    background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);
+}
+
+.plus-minus-inputs {
+    display: flex;
+    width: 120px;
+    position: relative;
+}
+.contact-us-form textarea,
+.contact-us-form textarea:focus{
+    height: 100px;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+.contact-us-form button,
+.login-form button,
+.yatuk-form button{
+  width: 100%;
+  padding: 10px;
+  min-width: 110px;
+}
+.pre-text {
+    font-size: 18px;
+}
+button.cancel-button {
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+}

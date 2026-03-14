@@ -1,0 +1,58 @@
+
+BBBBBBB BBBBBBBBBBBBBBBB
+BBBB BBBB
+BBBB BBBBBB
+BBBB BBBBBBBBBB
+BBBBB BBBBB gettext(u'Products') BBBBBBBB
+
+BBBBB BBBBBBBBBBBBBBBBBBBBBBBB
+BBBBB BBBBBBB
+
+  XXXX XXXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXXX
+    XXXX XXXXXXXXXXXXX
+      XXXX XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX
+        XXX XXXXXXXXXXXXXXXXXXX gettext(u'Products') XXXXX
+        XXXX XXXXXXXXXXXXXXXXXXXXXXXXX
+          XXXXXX XXXXXXXXXXXX XXXXXXXXXXXXXXX
+            XXXXXXX
+              XXXX
+                XXXX gettext(u'Image') XXXXX
+                XXXX gettext(u'Name') XXXXX
+                XXXX gettext(u'Progress') XXXXX
+                XXXX gettext(u'Price') XXXXX
+                XXXX gettext(u'Added At') XXXXX
+                XXXXXXXXX
+              XXXXX
+            XXXXXXXX
+            XXXXXXX
+              BBB BBBBBBB BB BBBBBBBB
+              XXXX
+                XXX XXXXXXXXXXXXX
+                  
+                XXXXX
+                XXX XXXXXXXXXXXXX
+                  
+                XXXXX
+                XXXX
+                  XXXX XXXXXXXXXXXXXXXXX
+                    XXXX XXXXXXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXXXXXXX 
+                    XXXXXXXXXXXXX XX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXX 
+                    XXXXXXXXXXXXXXXXXXXXXXX
+                  XXXXXX
+                XXXXX
+                XXXXXXXXX
+                XXXXFFFFFFFFFFFXXXXX
+                XXXXXX XXXXXXBBB BBBBBBBBB BBBBBBBBBBBBBXX
+                  XXXXXXX XXXXXXXXXXXXX XXXXXXXXXX XXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXX
+                    XX XXXXXXXXXX XXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX
+                  XXXXXXXXX
+                XXXXXXXXX
+              XXXXX
+              BBBBBB
+            XXXXXXXX
+          XXXXXXXX
+        XXXXXX
+      XXXXXX
+    XXXXXX
+  XXXXXX
+BBBBBBBB

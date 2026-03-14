@@ -1,0 +1,43 @@
+{% load static %}
+
+<div class="card-header">
+  <div class="card-cover" 
+  style="background-image: url('https://cms.yatuk.am{{author.middle_optimized.url}}')"></div>
+  <img class="card-avatar" src="https://cms.yatuk.am{{author.middle_optimized.url}}" alt="avatar" />
+  <h1 class="card-fullname">{{author.name}}</h1>
+  {% if author %}
+  <div class="list-song-icon" 
+    hx-post="{% url 'get_author_info' id=author.id %}"
+    hx-target="#author_part"
+    hx-trigger="click"
+    hx-swap="innerHTML"
+    ><i class="fa fa-close"></i></div>
+    {% endif %}
+</div>
+<div class="card-main">
+
+  <div class="card-section is-active">
+    <div class="play_album">
+      <i class="fa fa-play play_album_icon" data-id="{{author.id}}"></i>
+    </div>
+    <main class="leaderboard__profiles">
+        {% for song in songs %}
+            <article class="leaderboard__profile {% if current_song == song.id  %} active{%endif%}" data-id="{{song.id}}">
+                <img src="https://cms.yatuk.am{{song.thumbnail.url}}" alt="{{song.title}}" class="leaderboard__picture">
+                <span class="leaderboard__name">{{song.title}}</span>
+                <div class="song-buttons">
+
+                <span class="leaderboard__value {% if current_song == song.id  %} disabled{%else%}enabled{%endif%}"
+                data-id="{{song.id}}"><i class="fa fa-play"></i></span>
+                <div>
+            </article>
+        {% endfor %}
+    </main>
+  </div>
+</div>
+<script>
+  var current_album = localStorage.getItem("current_album")
+  if (current_album != null && current_album != "undefined"){
+    $('.play_album').addClass('checked');
+  }
+</script>

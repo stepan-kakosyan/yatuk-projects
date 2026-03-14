@@ -1,0 +1,100 @@
+{% extends 'base/base.html' %}
+{% load i18n static %}
+
+{% block extra_meta %}
+<link rel="stylesheet" href="https://cms.yatuk.am/static/blog/css/blog.css">
+<style>
+  figure.image {
+      display: table;
+      margin: 1.25rem 0;
+  }
+
+  figure.image img {
+      display: block;
+      margin: 0 auto;
+  }
+
+  figure.image figcaption {
+      margin-top: 0.4rem;
+      text-align: center;
+      font-size: 0.82em;
+      line-height: 1.3;
+      color: #6b7280;
+  }
+  .blog-body a{
+    text-decoration: underline; 
+  }
+</style>
+{% endblock extra_meta %}
+
+{% block og_properties %}
+<title>{{ post.title }}</title>
+<meta name="description" content="{{ post.excerpt|default:post.title }}">
+<meta property="og:title" content="{{ post.title }}" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{ post.excerpt|default:post.title }}" />
+{% if post.share_image %}
+<meta property="og:image" content="{{ blog_media_host }}{{ post.share_image.url }}" />
+{% elif post.cover %}
+<meta property="og:image" content="{{ blog_media_host }}{{ post.cover.url }}" />
+{% endif %}
+{% endblock og_properties %}
+
+{% block content %}
+<div class="container py-4">
+        <nav>
+        <ol class="breadcrumb breadcrumb-yatuk light-card">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">{% translate "Home" %}</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{% url 'blog:list' %}">{% translate "Blog" %}</a>
+          </li>
+          {% if post.category %}
+            <li class="breadcrumb-item">
+              <a href="{% url 'blog:list' %}?category={{post.category.slug}}">{{post.category.title}}</a>
+            </li>
+          {% endif %}
+           <li class="breadcrumb-item active">{{post.title}}</a>
+          </li>
+        </ol>
+    </nav>
+    <div class="row">
+      <div class="blog-post-detail col-lg-9 col-md-8 col-sm-12">
+          <article>
+            {% if post.cover %}
+            <div class="blog-cover-container">
+              <img src="{{ blog_media_host }}{{ post.cover.url }}" alt="{{ post.title }}" class="blog-cover">
+              <span class="eye-icon"><i class="fa fa-eye mr-2"></i>{{ post.view_count_total }}</span>
+            </div>
+            {% endif %}
+            <h1 class="mb-3">{{ post.title }}</h1>
+            <hr>
+            <div class="blog-body ">{{ post.body|safe }}</div>
+            {% if post.tags.exists %}
+              <div class="blog-tags">
+                {% for tag in post.tags.all %}
+                  <span class="blog-tag"><a href="{% url "blog:list" %}?tags={{tag.slug}}">{{ tag.title }}</a></span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </article>
+        </div>
+        <div class="featured-posts col-lg-3 col-md-4 col-sm-12 mt-2">
+          <h5 class="mb-3">{% translate "Related articles" %}</h5>
+          <hr>
+            {% for featured_blog in featured_posts %}
+              <a href="{% url 'blog:detail' featured_blog.slug %}" class="d-flex mb-3" style="text-decoration: none; align-items: flex-start; gap: 10px;">
+                {% if featured_blog.cover %}
+                  <img src="{{ blog_media_host }}{{ featured_blog.cover.url }}" alt="{{ featured_blog.title }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                {% endif %}
+                <span class="small" style="line-height: 1.3; color: inherit;">{{ featured_blog.title|truncatewords:8 }}</span>
+              </a>
+            {% endfor %}
+        </div>
+    </div>
+  {% include "blog/partials/product_carousel.html" %}
+</div>
+{% endblock content %}
+
+{% block extra_scripts %}{% endblock extra_scripts %}

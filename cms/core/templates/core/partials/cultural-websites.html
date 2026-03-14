@@ -1,0 +1,33 @@
+{% load static %}
+{% load i18n %}
+<div class="shiiping-cards">
+<div class="container-glass">
+    <img class="img" loading="lazy" src="{% static 'images/minas-avetisyan.png' %}" alt="minas-avetisyan">
+    <div class="shiiping-card-title">{% translate "Yatuk Canvas" %}</div>
+    <p class="text">
+        {% blocktranslate %}The best paintings of the most popular Armenian classic and modern artists made online puzzles.
+        {% endblocktranslate %}
+    </p>
+    <span class="see-more-button"><a  class="colored" target="_blank" href="https://canvas.yatuk.am/hy/">{% translate "Visit Website" %}</a></span>
+</div>
+<div class="container-glass">
+    <img class="img" loading="lazy" src="{% static 'images/paruyr-sevak.png' %}" alt="paruyr-sevak">
+    <div class="shiiping-card-title">{% translate "Yatuk Poem" %}</div>
+    <p class="text">
+        {% blocktranslate %}Huge amount of writings by popular Armenian classic and modern writers.
+        {% endblocktranslate %}
+    </p>
+    <span class="see-more-button"><a  class="colored" target="_blank" href="https://poem.yatuk.am/hy/">{% translate "Visit Website" %}</a></span>
+    
+</div>
+<div class="container-glass">
+    <img class="img" loading="lazy" src="{% static 'images/aram-khachatryan.png' %}" alt="aram-khachatryan">
+    <div class="shiiping-card-title">{% translate "Yatuk Music" %}</div>
+    <p class="text">
+        {% blocktranslate %}The best of the most popular Armenian classic and modern composers playlist with instrumental performances.
+        {% endblocktranslate %}
+    </p>
+    <span class="see-more-button"><a  class="colored" target="_blank" href="https://play.yatuk.am/hy/">{% translate "Visit Website" %}</a></span>
+    
+</div>
+</div>

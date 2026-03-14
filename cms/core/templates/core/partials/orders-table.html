@@ -1,0 +1,50 @@
+{% load customtags %}
+{% load i18n %}
+{% load static %}
+{% if orders %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>{% translate "User" %}</th>
+      <th>{% translate "Products" %}</th>
+      <th>{% translate "Shipping Method" %}</th>
+      <th>{% translate "Comment" %}</th>
+      <th>{% translate "Amount" %}</th>
+      <th>{% translate "Status" %}</th>
+      <th>{% translate "Date" %}</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}
+      {% include "core/partials/order-raw.html" %}
+    {% endfor %}
+  </tbody>
+</table>
+<div class="text-center m-4">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    {% if orders.has_previous %}
+    <a type="button" class="btn btn-outline-info"
+      hx-get="{% url "orders" %}?page={{ orders.previous_page_number }}&status={{status}}"
+      hx-trigger="click" hx-indicator="#spinner" hx-target="#order-table" hx-swap="innerHTML show:.nav-pills:top"
+      hx-push-url="true">
+      < </a> {% endif %} {% for num in orders.paginator.page_range %} <a type="button"
+        class="btn  {% if page == num %} btn-info active {% else %}btn-outline-info{% endif %}"
+        hx-get="{% url "orders" %}?page={{ num }}&status={{status}}" hx-trigger="click"
+        hx-indicator="#spinner" hx-target="#order-table" hx-swap="innerHTML show:.nav-pills:top" hx-push-url="true">
+        {{ num }}
+    </a>
+    {% endfor %}
+
+    {% if orders.has_next %}
+    <a type="button" class="btn btn-outline-info"
+      hx-get="{% url "orders" %}?page={{ orders.next_page_number }}&status={{status}}"
+      hx-trigger="click" hx-indicator="#spinner" hx-target="#order-table" hx-swap="innerHTML show:.nav-pills:top"
+      hx-push-url="true">></a>
+    {% endif %}
+  </div>
+</div>
+{% else %}
+{% translate "No Orders yet" %}
+{% endif %}

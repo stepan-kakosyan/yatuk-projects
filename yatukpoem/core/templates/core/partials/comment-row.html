@@ -1,0 +1,13 @@
+{% load static %}
+{% load custom_tags %}
+<div class='comment-list-item position-relative'>
+    <div class="user-image-comment">
+        <img 
+        src="{% if comment.user.profile_image%}https://{{comment.user.domain}}{{ comment.user.profile_image.url }}{% else %}{%static 'images/user.png' %}{%endif%}" alt="avatar" />
+    </div>
+    <div class='comment-text-content'>
+        <div class="comment-name">{{comment.user.display_name}}</div>
+        <p class="comment-text">{{comment.text}}</p>
+    </div>
+    <div class="comment-date">{{comment.created_at|beauty_date}}</div>
+</div>

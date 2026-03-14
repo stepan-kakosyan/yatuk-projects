@@ -1,0 +1,34 @@
+{% load static %}
+{% load i18n %}
+<div class="yatuk-carousel">
+<div class="yatuk-container">
+	{% for poem in carousel_items %}
+	<div class="yatuk-slider">
+	  <div class="yatuk-slide light-card {% if forloop.counter == 1 %}yatuk-slide--current{% endif %}">
+		<div class="yatuk-slide--img yatuk-fadeimg">
+		  <img src="https://cms.yatuk.am{{poem.game.image.url}}" alt="{{poem.name}}"
+		  style="object-position: {{poem.game.background_position}}">
+		</div>
+		<div class="yatuk-slide--desc">
+			<a href="{% url 'author' slug=poem.author.slug genre='all' %}" class="d-flex flex-column align-items-center mt-3">
+				<div class="yatuk-slide--author-img yatuk-fade">
+					<img  loading="lazy" src="https://cms.yatuk.am{{poem.author.middle_optimized.url}}" alt="{{author.name}}">
+				</div>
+				<h3 class="yatuk-fade">{{poem.author.name}}</h3>
+			</a>
+		  <h2 class="yatuk-fade"><a href="{{poem.main_url}}">{{poem.name}}</a></h2>
+		  
+		  <div class="yatuk-fade poem-desc-carousel">{{poem.content|safe}}</div>
+		  <div class="yatuk-slide--desc-link">
+			<a href="{{poem.main_url}}" class="yatuk-fade">{% translate "Read" %}</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	  {% endfor %}
+	
+  </div>  <div class="yatuk-control">
+		<span class="yatuk-control--prev"><i class="fa fa-angle-left"></i></span>
+		<span class="yatuk-control--next"><i class="fa fa-angle-right"></i></span>
+	  </div>
+</div>

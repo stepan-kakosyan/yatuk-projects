@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% block og_properties %}
+<meta name="description" content="Յատուկ ապրանքանիշի բոլոր ապրանքները մի վայրում՝ հարմար և հեշտ վճարային համակարգով">
+<title>{% translate "Yatuk" %} - {% translate "Store" %}</title>
+<meta property="og:title" content="Յատուկ Խանութ" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Յատուկ ապրանքանիշի բոլոր ապրանքները մի վայրում՝ հարմար և հեշտ վճարային համակարգով" />
+<meta property="og:image" content="https://yatuk.am/static/images/yatuk-share.jpg" />
+
+{% endblock %}
+{% block content %}
+
+{% include 'core/partials/product-cards.html' %}
+{% endblock content %}

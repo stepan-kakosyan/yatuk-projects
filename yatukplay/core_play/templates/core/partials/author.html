@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="card-header">
+  <div class="card-cover" 
+  style="background-image: url('https://cms.yatuk.am{{author.middle_optimized.url}}')"></div>
+  <img class="card-avatar" src="https://cms.yatuk.am{{author.middle_optimized.url}}" alt="avatar" />
+  <h1 class="card-fullname">{{author.name}}</h1>
+  {% if author %}
+  <div class="list-song-icon" 
+    hx-get="{% url 'get_author_songs' id=author.id %}"
+    hx-target="#author_part"
+    hx-trigger="click"
+    hx-swap="innerHTML"
+    hx-vals="js:{current_song: document.getElementById('bg-artwork').getAttribute('data-id')}"
+    ><i class="fa fa-bars"></i></div>
+    {% endif %}
+</div>
+<div class="card-main">
+  <div class="card-section is-active">
+    <div class="card-content">
+      <p class="card-desc">
+        <cite>{{author.quote}}</cite>
+      </p>
+    </div>
+  </div>
+</div>

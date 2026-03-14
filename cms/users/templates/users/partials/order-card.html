@@ -1,0 +1,80 @@
+{% load static %}
+{% load i18n %}
+<div class="product-card w-100" id="order_{{order.id}}">
+    <div class="outer w-100">
+      <div class="inner w-100">
+        <div class="innerinner">
+          <div class="order-details">
+            <div class="order-details-header">
+              <span>{% translate "Order #" %}{{order.id}}</span>
+              <span class="status {{order.status}}">{{order.status_display}}</span>
+            </div>
+            <div class="order-products pt-4">
+              {% for item in order.items.all %}
+                <div class="product-details d-flex">
+                  <div class="order-product-image p-2">
+                    <img  loading="lazy" src="https://cms.yatuk.am/{{item.product.main_image.thumbnail.url}}"
+                    alt="{{item.product.title}}">
+                  </div>
+                  <div class="order-product-details p-2">
+                    <div>{{item.product.title}}</div>
+                    <div>{{item.quantity}} X {{item.price}}֏</div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="order-details-footer">
+              <div class="d-flex align-items-center"><label class="col-4">{% translate "Address:" %}</label><span class="col-8">{{order.address}}</span></div>
+              <div class="d-flex align-items-center"><label class="col-4">{% translate "Date:" %}</label><span class="col-8">{{order.created_at}}</span></div>
+              <div class="d-flex align-items-center"><label class="col-4">{% translate "Shipping:" %}
+              </label><span class="col-8">{{order.shipping_method.title}} - {{order.shipping_price}}֏</span></div>
+              <div class="d-flex align-items-center"><label class="col-4">{% translate "Total amount:" %}</label><span class="col-8">{{order.amount}}֏</span></div>
+            </div>
+            {% if status %}
+                {% if  status == "succeed" %}
+                <div class="succeed-refund refund-message">
+                    <div class="shiiping-card-title">{% translate "Cancellation Succeed" %}</div>
+                    <p class="text">
+                        {% blocktranslate %}
+                        Cancellation is succeed. Your payment will be refunded during 2-3 working days.
+                        {% endblocktranslate %}
+                    </p>
+                </div>
+            {% else %}
+                <div class="failed-refund refund-message">
+                    <div class="shiiping-card-title">{% translate "Cancellation Failed" %}</div>
+                    <p class="text">
+                        {% blocktranslate %}
+                        Seems there is a problem. If you dont know exact reason please contact with 
+                        Yatuk administrators as soon as possible, otherwise try again
+                        {% endblocktranslate %}
+                    </p>
+                </div>
+            {% endif %}
+        {% endif %}
+            {% if order.status == "in_process" or order.status == "accepted" %}
+            <p>
+                <button type="button" data-toggle="collapse" class="cancel-button"
+                data-target="#collapseExample{{order.id}}">
+                  Cancel Order
+                </button>
+              </p>
+              <div class="collapse" id="collapseExample{{order.id}}">
+                <p>{% translate "Are you sure you want to cancel your order? Order payment will be fully refunded." %}</p>
+                <div class="buttons-section d-flex">
+                    <button class="w-50" hx-get="{% url 'cancel_order' %}?order_id={{order.id}}"
+                        hx-target="#order_{{order.id}}"
+                        hx-swap="outerHTML"
+                        hx-trigger="click"
+                    >{% translate "Yes" %}</button>
+                    <button class="cancel-button w-50"
+                    type="button" data-toggle="collapse" data-target="#collapseExample{{order.id}}">{% translate "No" %}</button>
+                </div>
+              </div>
+                
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

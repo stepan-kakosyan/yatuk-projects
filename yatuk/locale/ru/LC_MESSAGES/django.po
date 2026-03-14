@@ -1,0 +1,4810 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-11 17:12+0400\n"
+"PO-Revision-Date: 2023-06-09 18:34+0258\n"
+"Last-Translator: Ստեփան Կակոսյան <stepankakosyan22@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\core\forms.py:16 .\core\templates\core\partials\checkout-form.html:8
+#: .\users\models.py:102
+msgid "Address"
+msgstr "Адрес"
+
+#: .\core\forms.py:42 .\users\forms.py:90 .\users\models.py:105
+msgid "State"
+msgstr "Штат"
+
+#: .\core\models.py:7
+msgid "Not Paid"
+msgstr "Не оплачен"
+
+#: .\core\models.py:8
+msgid "Accepted"
+msgstr "Принято"
+
+#: .\core\models.py:9
+msgid "In Process"
+msgstr "В процессе"
+
+#: .\core\models.py:10 .\core\templates\core\shipping.html:6
+#: .\templates\partials\header.html:59
+msgid "Shipping"
+msgstr "Доставка"
+
+#: .\core\models.py:11
+msgid "Done"
+msgstr "Выполнено"
+
+#: .\core\models.py:12
+msgid "Cancelled"
+msgstr "Отменено"
+
+#: .\core\models.py:16 .\core\models.py:64 .\core\models.py:135
+#: .\core\models.py:169
+msgid "Title English"
+msgstr "Название английский"
+
+#: .\core\models.py:17 .\core\models.py:65 .\core\models.py:136
+#: .\core\models.py:170
+msgid "Title Russian"
+msgstr "Название Русский"
+
+#: .\core\models.py:18 .\core\models.py:66 .\core\models.py:137
+#: .\core\models.py:171
+msgid "Title Armenian"
+msgstr "Название Армянский"
+
+#: .\core\models.py:22 .\core\models.py:70 .\core\models.py:138
+#: .\core\models.py:172
+msgid "Description English"
+msgstr "Описание Английский"
+
+#: .\core\models.py:23 .\core\models.py:71 .\core\models.py:139
+#: .\core\models.py:173
+msgid "Description Russian"
+msgstr "Описание Русский"
+
+#: .\core\models.py:24 .\core\models.py:72 .\core\models.py:140
+#: .\core\models.py:174
+msgid "Description Armenian"
+msgstr "Описание Армянский"
+
+#: .\core\models.py:25
+msgid "Icon"
+msgstr "Иконка"
+
+#: .\core\models.py:67
+msgid "Slug English"
+msgstr "Слизняк английский"
+
+#: .\core\models.py:68
+msgid "Slug Russian"
+msgstr "Слизняк русский"
+
+#: .\core\models.py:69
+msgid "Slug Armenian"
+msgstr "Слизень Армянский"
+
+#: .\core\models.py:73 .\core\models.py:176 .\core\models.py:225
+#: .\core\templates\core\partials\product-list.html:55
+msgid "Price"
+msgstr "Цена"
+
+#: .\core\models.py:75
+msgid "Category"
+msgstr "Категория"
+
+#: .\core\models.py:76
+msgid "Total Count"
+msgstr "Всего"
+
+#: .\core\models.py:79
+msgid "Created At"
+msgstr "Создан в"
+
+#: .\core\models.py:112 .\core\models.py:113 .\core\models.py:114
+#: .\core\models.py:260 .\core\models.py:261 .\core\models.py:288
+#: .\core\models.py:289
+#: .\env\Lib\site-packages\django\db\models\fields\files.py:392
+msgid "Image"
+msgstr "Изображение"
+
+#: .\core\models.py:115 .\core\models.py:262 .\core\models.py:290
+msgid "Thumbnail"
+msgstr "Уменьшенное изображение"
+
+#: .\core\models.py:116
+msgid "Is Main"
+msgstr "Является основным"
+
+#: .\core\models.py:117
+msgid "For Share"
+msgstr "Для публикации"
+
+#: .\core\models.py:119 .\core\models.py:238
+msgid "Product"
+msgstr "Продукт"
+
+#: .\core\models.py:126
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:13
+msgid "Name"
+msgstr "Имя"
+
+#: .\core\models.py:127
+msgid "Email or Phone Number"
+msgstr "Эл․ почта или номер телефона"
+
+#: .\core\models.py:128
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2334
+msgid "Text"
+msgstr "Текст"
+
+#: .\core\models.py:142 .\core\models.py:175
+msgid "Main Image"
+msgstr "Основное изображение"
+
+#: .\core\models.py:143
+msgid "Blur Image"
+msgstr "Размытие изображения"
+
+#: .\core\models.py:197
+msgid "Shipping Method"
+msgstr "Метод доставки"
+
+#: .\core\models.py:198
+msgid "Shipping Price"
+msgstr "Цена доставки"
+
+#: .\core\models.py:205 .\core\models.py:239
+msgid "Amount"
+msgstr "Количество"
+
+#: .\core\models.py:207
+#, fuzzy
+#| msgid "status"
+msgid "Status"
+msgstr "статус"
+
+#: .\core\models.py:208
+#: .\env\Lib\site-packages\suit\templates\reversion\object_history.html:17
+msgid "Comment"
+msgstr "Комментарий"
+
+#: .\core\models.py:209
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: .\core\models.py:236
+msgid "Count"
+msgstr "Количество"
+
+#: .\core\models.py:240
+msgid "Type"
+msgstr "Тип"
+
+#: .\core\models.py:241
+msgid "Date"
+msgstr "Дата"
+
+#: .\core\models.py:243
+msgid "Crated At"
+msgstr "Создан в"
+
+#: .\core\templates\core\author.html:6 .\core\templates\core\authors.html:6
+#: .\core\templates\core\contact-us.html:5 .\core\templates\core\reviews.html:6
+#: .\core\templates\core\shipping.html:6 .\core\templates\core\store.html:5
+msgid "Yatuk"
+msgstr "Ятук"
+
+#: .\core\templates\core\author.html:51 .\core\templates\core\authors.html:16
+#: .\core\templates\core\partials\product-cards.html:5
+#: .\core\templates\core\product-detail.html:16
+#: .\core\templates\core\reviews.html:16
+#: .\env\Lib\site-packages\suit\templates\admin\app_index.html:8
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\change_password.html:19
+#: .\env\Lib\site-packages\suit\templates\admin\base.html:98
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:61
+#: .\env\Lib\site-packages\suit\templates\admin\change_list.html:42
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:46
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:8
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\plugin_change_form.html:82
+#: .\env\Lib\site-packages\suit\templates\admin\delete_confirmation.html:7
+#: .\env\Lib\site-packages\suit\templates\admin\delete_selected_confirmation.html:7
+#: .\env\Lib\site-packages\suit\templates\admin\filer\breadcrumbs.html:5
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:8
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\base.html:10
+#: .\env\Lib\site-packages\suit\templates\admin\object_history.html:7
+#: .\env\Lib\site-packages\suit\templates\registration\logged_out.html:6
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:26
+#: .\env\Lib\site-packages\suit\templates\reversion\recover_form.html:8
+#: .\env\Lib\site-packages\suit\templates\reversion\recover_list.html:8
+#: .\env\Lib\site-packages\suit\templates\reversion\revision_form.html:8
+#: .\env\Lib\site-packages\suit\templates\suit\menu.html:10
+#: .\templates\partials\header.html:51
+msgid "Home"
+msgstr "Главная"
+
+#: .\core\templates\core\author.html:52 .\core\templates\core\authors.html:6
+#: .\core\templates\core\authors.html:17
+#: .\core\templates\core\product-detail.html:46
+#: .\templates\partials\header.html:57
+msgid "Authors"
+msgstr "Авторы"
+
+#: .\core\templates\core\author.html:70
+msgid "Products based on this author"
+msgstr "Продукты на основе этого автора"
+
+#: .\core\templates\core\author.html:76
+#: .\core\templates\core\partials\cultural-websites.html:6
+#: .\templates\partials\header.html:23
+msgid "Yatuk Canvas"
+msgstr "Ятук Холст"
+
+#: .\core\templates\core\author.html:77
+msgid "We have puzzle games with this author paintings in Yatuk Canvas website"
+msgstr "У нас есть пазлы с картинами этого автора на сайте Ятук Холст"
+
+#: .\core\templates\core\authors.html:21 .\core\templates\core\index.html:14
+msgid "Great Authors"
+msgstr "Великие авторы"
+
+#: .\core\templates\core\authors.html:22 .\core\templates\core\index.html:15
+msgid "We have products based on this great authors artworks."
+msgstr ""
+"У нас есть продукты, основанные на произведениях этого великого автора."
+
+#: .\core\templates\core\cart.html:7
+msgid "Shopping Cart"
+msgstr "Корзина"
+
+#: .\core\templates\core\cart.html:8
+msgid ""
+"You have made a wonderful choice. Please make sure the quantity of products "
+"is exactly what you need."
+msgstr ""
+"Вы сделали прекрасный выбор. Пожалуйста, убедитесь, что количество продуктов "
+"именно то, что вам нужно."
+
+#: .\core\templates\core\checkout.html:7
+#: .\core\templates\core\partials\shopping-cart-page.html:42
+#: .\templates\partials\cart-content.html:27
+msgid "Checkout"
+msgstr "Оформить заказ"
+
+#: .\core\templates\core\checkout.html:8
+msgid "Please fill all the fields in correct way."
+msgstr "Пожалуйста, заполните все поля правильно."
+
+#: .\core\templates\core\contact-us.html:5
+#: .\core\templates\core\partials\contact-us.html:9
+#: .\core\templates\core\privacy-policy.html:327
+msgid "Contact Us"
+msgstr "Связаться с нами"
+
+#: .\core\templates\core\index.html:9
+msgid "Art websites from Yatuk"
+msgstr "Арт-сайты от Ятука"
+
+#: .\core\templates\core\index.html:10
+msgid "We have designed a few art websites where you can enjoy Armenian art"
+msgstr ""
+"Мы разработали несколько арт-сайтов, где вы можете насладиться армянским "
+"искусством."
+
+#: .\core\templates\core\index.html:22
+msgid "See all Authors"
+msgstr "Посмотреть всех авторов"
+
+#: .\core\templates\core\index.html:27
+msgid "Most beloved products"
+msgstr "Самые любимые продукты"
+
+#: .\core\templates\core\index.html:28
+msgid "We do our best to have as much new and amazing products as possible."
+msgstr ""
+"Мы делаем все возможное, чтобы у нас было как можно больше новых и "
+"удивительных продуктов."
+
+#: .\core\templates\core\index.html:35
+msgid "See all Products"
+msgstr "Посмотреть все продукты"
+
+#: .\core\templates\core\order-result.html:10
+msgid "Payment Succeed"
+msgstr "Оплата прошла успешно"
+
+#: .\core\templates\core\order-result.html:12
+msgid ""
+"\n"
+"                    The payment was made successfully. If you think there is "
+"a need \n"
+"                    for any changes to the order, please contact the Yatuk "
+"administrators before shipping the order.\n"
+"                    "
+msgstr ""
+"\n"
+"Платеж прошел успешно. Если вы считаете, что есть необходимость внести какие-"
+"либо изменения в заказ, пожалуйста, свяжитесь с администраторами Yatuk перед "
+"отправкой заказа."
+
+#: .\core\templates\core\order-result.html:18
+msgid "See orders"
+msgstr "Посмотреть заказы"
+
+#: .\core\templates\core\order-result.html:21
+msgid "Payment Failed"
+msgstr "Платеж не прошел"
+
+#: .\core\templates\core\order-result.html:23
+msgid ""
+"Something went wrong. If you dont know exact case please contact with Yatuk "
+"administrators or with your bank."
+msgstr ""
+"Что-то пошло не так. Если вы не знаете точного случая, обратитесь к "
+"администраторам Yatuk или в свой банк."
+
+#: .\core\templates\core\partials\carousel.html:22
+msgid "See more"
+msgstr "Узнать больше"
+
+#: .\core\templates\core\partials\checkout-form.html:11
+msgid "Choose from your addresses"
+msgstr "Выбирайте из своих адресов"
+
+#: .\core\templates\core\partials\checkout-form.html:27
+msgid "Shipping method"
+msgstr "Способ доставки"
+
+#: .\core\templates\core\partials\checkout-form.html:58
+msgid "I have read and agree to the website"
+msgstr "Я прочитал и согласен с сайтом"
+
+#: .\core\templates\core\partials\checkout-form.html:59
+msgid "terms and conditions"
+msgstr "Условия"
+
+#: .\core\templates\core\partials\checkout-form.html:72
+msgid "Make Payment"
+msgstr "Совершать платеж"
+
+#: .\core\templates\core\partials\contact-form.html:27
+msgid "Send"
+msgstr "Отправить"
+
+#: .\core\templates\core\partials\contact-us.html:10
+msgid ""
+"Feel Free to contact us any time. We will get back to you as soon as we can!."
+msgstr ""
+"Не стесняйтесь связываться с нами в любое время. Мы свяжемся с вами, как "
+"только сможем!."
+
+#: .\core\templates\core\partials\contact-us.html:19
+msgid "Contact Info"
+msgstr "Контактные данные"
+
+#: .\core\templates\core\partials\contact-us.html:30
+msgid "Armenia, Shirak, Akhuryan, Petros Mkhoyan 1 line 7 bld, 2206"
+msgstr "Армения, Ширак, Ахурян, Петрос Мхоян 1 линия 7 корп, 2206"
+
+#: .\core\templates\core\partials\cultural-websites.html:8
+msgid ""
+"The best paintings of the most popular Armenian classic and modern artists "
+"made online puzzles.\n"
+"        "
+msgstr ""
+"Лучшие картины самых известных армянских классических и современных "
+"художников в виде онлайн-пазлов.\n"
+"        "
+
+#: .\core\templates\core\partials\cultural-websites.html:11
+#: .\core\templates\core\partials\cultural-websites.html:20
+#: .\core\templates\core\partials\cultural-websites.html:30
+msgid "Visit Website"
+msgstr "Посетите сайт"
+
+#: .\core\templates\core\partials\cultural-websites.html:15
+#: .\templates\partials\header.html:18
+msgid "Yatuk Poem"
+msgstr "Ятук Стихи"
+
+#: .\core\templates\core\partials\cultural-websites.html:17
+msgid ""
+"Huge amount of writings by popular Armenian classic and modern writers.\n"
+"        "
+msgstr ""
+"Большое количество произведений известных армянских классических и "
+"современных писателей.\n"
+"        "
+
+#: .\core\templates\core\partials\cultural-websites.html:25
+#: .\templates\partials\header.html:29
+msgid "Yatuk Music"
+msgstr "Ятук Музыка"
+
+#: .\core\templates\core\partials\cultural-websites.html:27
+msgid ""
+"The best of the most popular Armenian classic and modern composers playlist "
+"with instrumental performances.\n"
+"        "
+msgstr ""
+"Лучший плейлист самых известных армянских классических и современных "
+"композиторов с инструментальными исполнениями.\n"
+"        "
+
+#: .\core\templates\core\partials\game-list.html:16
+msgid "Play Online"
+msgstr "Играть онлайн"
+
+#: .\core\templates\core\partials\product-cards.html:6
+#: .\core\templates\core\product-detail.html:17
+#: .\core\templates\core\store.html:5 .\templates\partials\header.html:52
+msgid "Store"
+msgstr "Магазин"
+
+#: .\core\templates\core\partials\product-list.html:17
+msgid "All"
+msgstr "Все"
+
+#: .\core\templates\core\partials\product-list.html:50
+#: .\core\templates\core\product-detail.html:39
+msgid "Sold out"
+msgstr "Распродано"
+
+#: .\core\templates\core\partials\product-list.html:61
+#: .\core\templates\core\product-detail.html:59
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: .\core\templates\core\partials\shopping-cart-page.html:39
+#: .\templates\partials\cart-content.html:4
+msgid "Total"
+msgstr "Всего"
+
+#: .\core\templates\core\partials\shopping-cart-page.html:39
+#: .\core\templates\core\partials\total-sum.html:4
+#: .\core\templates\core\partials\total-sum.html:5
+#: .\core\templates\core\partials\total-sum.html:7
+#: .\core\templates\core\partials\total-sum.html:9
+msgid "֏"
+msgstr "֏"
+
+#: .\core\templates\core\partials\shopping-cart-page.html:48
+msgid "Don't say you didn't like anything. Go back and choose something."
+msgstr ""
+"Не говорите, что вам ничего не понравилось. Вернитесь и выберите что-нибудь."
+
+#: .\core\templates\core\partials\total-sum.html:4
+msgid "Products - "
+msgstr "Продукты -"
+
+#: .\core\templates\core\partials\total-sum.html:5
+msgid "Shipping - "
+msgstr "Доставка -"
+
+#: .\core\templates\core\partials\total-sum.html:7
+#: .\core\templates\core\partials\total-sum.html:9
+msgid "Total - "
+msgstr "Всего -"
+
+#: .\core\templates\core\privacy-policy.html:8
+#: .\templates\partials\links.html:5
+msgid "Privacy Policy"
+msgstr "Политика конфиденциальности"
+
+#: .\core\templates\core\privacy-policy.html:9
+#: .\core\templates\core\terms-and-conditions.html:9
+msgid "Updated at 2023-05-30"
+msgstr "Обновлено 30 мая 2023 г."
+
+#: .\core\templates\core\privacy-policy.html:12
+msgid ""
+"\n"
+"            Yatuk (“we,” “our,” or “us”) is committed to protecting your "
+"privacy.\n"
+"            This Privacy Policy explains how your personal information is "
+"collected, used, and disclosed by Yatuk.\n"
+"            This Privacy Policy applies to our website, and its associated "
+"subdomains (collectively, our “Service”) alongside our \n"
+"            application, Yatuk. By accessing or using our Service, you "
+"signify that you have read, understood,\n"
+"            and agree to our collection, storage, use, and disclosure of "
+"your personal information as described\n"
+"             in this Privacy Policy and our Terms of Service. This Privacy "
+"Policy was created with Termify.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:22
+#: .\core\templates\core\terms-and-conditions.html:33
+msgid "Definitions and key terms"
+msgstr "Определения и ключевые термины"
+
+#: .\core\templates\core\privacy-policy.html:26
+msgid ""
+"Cookie:&nbsp;small amount of data generated by a website and saved by your "
+"web browser. It is used to identify your browser, provide analytics, "
+"remember information about you such as your language preference or login "
+"information."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:27
+msgid ""
+"Company: when this policy mentions “Company,” “we,” “us,” or “our,” it "
+"refers to Yatuk, Armenia, Shirak, Akhuryan, Petros Mkhoyan 1 line 7 building "
+"that is responsible for your information under this Privacy Policy."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:28
+msgid ""
+"Country: where Yatuk or the owners/founders of Yatuk are based, in this case "
+"is Armenia"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:29
+msgid ""
+"Customer:&nbsp;refers to the company, organization or person that signs up "
+"to use the Yatuk Service to manage the relationships with your consumers or "
+"service users."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:30
+msgid ""
+"Device:&nbsp;any internet connected device such as a phone, tablet, computer "
+"or any other device that can be used to visit Yatuk and use the services."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:31
+msgid ""
+"IP address: Every device connected to the Internet is assigned a number "
+"known as an Internet protocol (IP) address. These numbers are usually "
+"assigned in geographic blocks. An IP address can often be used to identify "
+"the location from which a device is connecting to the Internet."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:32
+msgid ""
+"Personnel:&nbsp;refers to those individuals who are employed by Yatuk or are "
+"under contract to perform a service on behalf of one of the parties."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:33
+msgid ""
+"Personal Data: any information that directly, indirectly, or in connection "
+"with other information — including a personal identification number — allows "
+"for the identification or identifiability of a natural person."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:34
+msgid ""
+"Service: refers to the service provided by Yatuk as described in the "
+"relative terms (if available) and on this platform."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:35
+msgid ""
+"Third-party service:&nbsp;refers to advertisers, contest sponsors, "
+"promotional and marketing partners, and others who provide our content or "
+"whose products or services we think may interest you."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:36
+msgid ""
+"Website: Yatuk’s site, which can be accessed via this URL: https://yatuk.am/"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:37
+msgid ""
+"You: a person or entity that is registered with Yatuk to use the Services."
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:42
+msgid "What Information Do We Collect?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:45
+msgid ""
+"\n"
+"            We collect information from you when you visit our website, \n"
+"            register on our site, place an order, subscribe to our \n"
+"            newsletter, respond to a survey or fill out a form.\n"
+"            <ul>\n"
+"                <li>Name / Username</li>\n"
+"                <li>Phone Numbers</li>\n"
+"                <li>Email Addresses</li>\n"
+"                <li>Password</li>\n"
+"            </ul>\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:58
+msgid "How Do We Use The Information We Collect?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:61
+msgid ""
+"\n"
+"            <ul>\n"
+"                <li>To personalize your experience (your information helps "
+"us to better respond to your individual needs)</li>\n"
+"                <li>To improve our website (we continually strive to improve "
+"our website offerings based on the information and feedback we receive from "
+"you)</li>\n"
+"                <li>To improve customer service (your information helps us "
+"to more effectively respond to your customer service requests and support "
+"needs)</li>\n"
+"                <li>To process transactions</li>\n"
+"                <li>To administer a contest, promotion, survey or other site "
+"feature</li>\n"
+"                <li>To send periodic emails</li>\n"
+"            </ul>\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:73
+msgid "When does Yatuk use end user information from third parties?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:76
+msgid ""
+"\n"
+"            Yatuk will collect End User Data necessary to provide the Yatuk "
+"services to our customers.\n"
+"            End users may voluntarily provide us with information they have "
+"made available on social\n"
+"             media websites. If you provide us with any such information, we "
+"may collect publicly available \n"
+"             information from the social media websites you have indicated. "
+"You can control how much of your \n"
+"             information social media websites make public by visiting these "
+"websites and changing your privacy settings.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:85
+msgid "When does Yatuk use customer information from third parties?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:88
+msgid ""
+"\n"
+"            We receive some information from the third parties when you "
+"contact us. For example, when you \n"
+"            submit your email address to us to show interest in becoming a "
+"Yatuk customer, we receive \n"
+"            information from a third party that provides automated fraud "
+"detection services to Yatuk. \n"
+"            We also occasionally collect information that is made publicly "
+"available on social media \n"
+"            websites. You can control how much of your information social "
+"media websites make public \n"
+"            by visiting these websites and changing your privacy settings.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:98
+msgid "Do we share the information we collect with third parties?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:101
+msgid ""
+"\n"
+"            We may share the information that we collect, both personal and "
+"non-personal, with third \n"
+"            parties such as advertisers, contest sponsors, promotional and "
+"marketing partners, \n"
+"            and others who provide our content or whose products or services "
+"we think may interest you. \n"
+"            We may also share it with our current and future affiliated "
+"companies and business partners, \n"
+"            and if we are involved in a merger, asset sale or other business "
+"reorganization, we may also \n"
+"            share or transfer your personal and non-personal information to "
+"our successors-in-interest.\n"
+"\n"
+"            We may engage trusted third party service providers to perform "
+"functions and provide services \n"
+"            to us, such as hosting and maintaining our servers and the "
+"website, database storage and management, \n"
+"            e-mail management, storage marketing, credit card processing, "
+"customer service and fulfilling orders \n"
+"            for products and services you may purchase through the website. "
+"We will likely share your personal \n"
+"            information, and possibly some non-personal information, with "
+"these third parties to enable them to \n"
+"            perform these services for us and for you.\n"
+"            \n"
+"            We may share portions of our log file data, including IP "
+"addresses, for analytics purposes with \n"
+"            third parties such as web analytics partners, application "
+"developers, and ad networks. If your \n"
+"            IP address is shared, it may be used to estimate general "
+"location and other technographics such \n"
+"            as connection speed, whether you have visited the website in a "
+"shared location, and type of the \n"
+"            device used to visit the website. They may aggregate information "
+"about our advertising and what \n"
+"            you see on the website and then provide auditing, research and "
+"reporting for us and our advertisers. \n"
+"            We may also disclose personal and non-personal information about "
+"you to government or law enforcement \n"
+"            officials or private parties as we, in our sole discretion, "
+"believe necessary or appropriate in order \n"
+"            to respond to claims, legal process (including subpoenas), to "
+"protect our rights and interests or those \n"
+"            of a third party, the safety of the public or any person, to "
+"prevent or stop any illegal, unethical, or \n"
+"            legally actionable activity, or to otherwise comply with "
+"applicable court orders, laws, rules and regulations.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:130
+msgid "Where and when is information collected from customers and end users?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:133
+msgid ""
+"\n"
+"            Yatuk will collect personal information that you submit to us. "
+"We may also receive personal \n"
+"            information about you from third parties as described above.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:139
+msgid "How Do We Use Your Email Address?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:142
+msgid ""
+"\n"
+"            By submitting your email address on this website, you agree to "
+"receive emails from us. \n"
+"            You can cancel your participation in any of these email lists at "
+"any time by clicking on the \n"
+"            opt-out link or other unsubscribe option that is included in the "
+"respective email. \n"
+"            We only send emails to people who have authorized us to contact "
+"them, either directly, \n"
+"            or through a third party. We do not send unsolicited commercial "
+"emails, because we hate \n"
+"            spam as much as you do. By submitting your email address, you "
+"also agree to allow us to \n"
+"            use your email address for customer audience targeting on sites "
+"like Facebook, where we \n"
+"            display custom advertising to specific people who have opted-in "
+"to receive communications \n"
+"            from us. Email addresses submitted only through the order "
+"processing page will be used for \n"
+"            the sole purpose of sending you information and updates "
+"pertaining to your order. If, however, \n"
+"            you have provided the same email to us through another method, "
+"we may use it for any of the purposes \n"
+"            stated in this Policy. Note: If at any time you would like to "
+"unsubscribe from receiving future emails, \n"
+"            we include detailed unsubscribe instructions at the bottom of "
+"each email.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:159
+msgid "How Long Do We Keep Your Information?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:162
+msgid ""
+"\n"
+"            We keep your information only so long as we need it to provide "
+"Yatuk to you and fulfill the purposes described in this policy. This is also "
+"the case for anyone that we share your information with and who carries out "
+"services on our behalf. When we no longer need to use your information and "
+"there is no need for us to keep it to comply with our legal or regulatory "
+"obligations, we’ll either remove it from our systems or depersonalize it so "
+"that we can’t identify you.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:167
+msgid "How Do We Protect Your Information?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:170
+msgid ""
+"\n"
+"            We implement a variety of security measures to maintain the "
+"safety of your personal information when you place an order or enter, "
+"submit, or access your personal information. We offer the use of a secure "
+"server. All supplied sensitive/credit information is transmitted via Secure "
+"Socket Layer (SSL) technology and then encrypted into our Payment gateway "
+"providers database only to be accessible by those authorized with special "
+"access rights to such systems, and are required to keep the information "
+"confidential. After a transaction, your private information (credit cards, "
+"social security numbers, financials, etc.) is never kept on file. We cannot, "
+"however, ensure or warrant the absolute security of any information you "
+"transmit to Yatuk or guarantee that your information on the Service may not "
+"be accessed, disclosed, altered, or destroyed by a breach of any of our "
+"physical, technical, or managerial safeguards.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:175
+msgid "Could my information be transferred to other countries?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:178
+msgid ""
+"\n"
+"            Yatuk is incorporated in Armenia. Information collected via our "
+"website, through direct interactions with you, or from use of our help "
+"services may be transferred from time to time to our offices or personnel, "
+"or to third parties, located throughout the world, and may be viewed and "
+"hosted anywhere in the world, including countries that may not have laws of "
+"general applicability regulating the use and transfer of such data. To the "
+"fullest extent allowed by applicable law, by using any of the above, you "
+"voluntarily consent to the trans-border transfer and hosting of such "
+"information.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:183
+msgid "Is the information collected through the Yatuk Service secure?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:186
+msgid ""
+"\n"
+"            We take precautions to protect the security of your information. "
+"We have physical, electronic, and managerial procedures to help safeguard, "
+"prevent unauthorized access, maintain data security, and correctly use your "
+"information. However, neither people nor security systems are foolproof, "
+"including encryption systems. In addition, people can commit intentional "
+"crimes, make mistakes or fail to follow policies. Therefore, while we use "
+"reasonable efforts to protect your personal information, we cannot guarantee "
+"its absolute security. If applicable law imposes any non-disclaimable duty "
+"to protect your personal information, you agree that intentional misconduct "
+"will be the standards used to measure our compliance with that duty.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:191
+msgid "Can I update or correct my information?"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:194
+msgid ""
+"\n"
+"            The rights you have to request updates or corrections to the "
+"information Yatuk collects depend on your relationship with Yatuk. Personnel "
+"may update or correct their information as detailed in our internal company "
+"employment policies.\n"
+"\n"
+"            Customers have the right to request the restriction of certain "
+"uses and disclosures of personally identifiable information as follows. You "
+"can contact us in order to (1) update or correct your personally "
+"identifiable information, (2) change your preferences with respect to "
+"communications and other information you receive from us, or (3) delete the "
+"personally identifiable information maintained about you on our systems "
+"(subject to the following paragraph), by cancelling your account. Such "
+"updates, corrections, changes and deletions will have no effect on other "
+"information that we maintain, or information that we have provided to third "
+"parties in accordance with this Privacy Policy prior to such update, "
+"correction, change or deletion. To protect your privacy and security, we may "
+"take reasonable steps (such as requesting a unique password) to verify your "
+"identity before granting you profile access or making corrections. You are "
+"responsible for maintaining the secrecy of your unique password and account "
+"information at all times.\n"
+"            \n"
+"            You should be aware that it is not technologically possible to "
+"remove each and every record of the information you have provided to us from "
+"our system. The need to back up our systems to protect information from "
+"inadvertent loss means that a copy of your information may exist in a non-"
+"erasable form that will be difficult or impossible for us to locate. "
+"Promptly after receiving your request, all personal information stored in "
+"databases we actively use, and other readily searchable media will be "
+"updated, corrected, changed or deleted, as appropriate, as soon as and to "
+"the extent reasonably and technically practicable.\n"
+"            \n"
+"            If you are an end user and wish to update, delete, or receive "
+"any information we have about you, you may do so by contacting the "
+"organization of which you are a customer.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:205
+msgid "Personnel"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:208
+msgid ""
+"\n"
+"            If you are a Yatuk worker or applicant, we collect information "
+"you voluntarily provide to us. We use the information collected for Human "
+"Resources purposes in order to administer benefits to workers and screen "
+"applicants.\n"
+"\n"
+"            You may contact us in order to (1) update or correct your "
+"information, (2) change your preferences with respect to communications and "
+"other information you receive from us, or (3) receive a record of the "
+"information we have relating to you. Such updates, corrections, changes and "
+"deletions will have no effect on other information that we maintain, or "
+"information that we have provided to third parties in accordance with this "
+"Privacy Policy prior to such update, correction, change or deletion.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:215
+msgid "Sale of Business"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:218
+msgid ""
+"\n"
+"            We reserve the right to transfer information to a third party in "
+"the event of a sale, merger or other transfer of all or substantially all of "
+"the assets of Yatuk or any of its Corporate Affiliates (as defined herein), "
+"or that portion of Yatuk or any of its Corporate Affiliates to which the "
+"Service relates, or in the event that we discontinue our business or file a "
+"petition or have filed against us a petition in bankruptcy, reorganization "
+"or similar proceeding, provided that the third party agrees to adhere to the "
+"terms of this Privacy Policy.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:223
+msgid "Affiliates"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:226
+msgid ""
+"\n"
+"            We may disclose information (including personal information) "
+"about you to our Corporate Affiliates. For purposes of this Privacy Policy, "
+"“Corporate Affiliate” means any person or entity which directly or "
+"indirectly controls, is controlled by or is under common control with Yatuk, "
+"whether by ownership or otherwise. Any information relating to you that we "
+"provide to our Corporate Affiliates will be treated by those Corporate "
+"Affiliates in accordance with the terms of this Privacy Policy.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:231
+msgid "Governing Law"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:234
+msgid ""
+"\n"
+"            This Privacy Policy is governed by the laws of Armenia without "
+"regard to its conflict of laws provision. You consent to the exclusive "
+"jurisdiction of the courts in connection with any action or dispute arising "
+"between the parties under or in connection with this Privacy Policy except "
+"for those individuals who may have rights to make claims under Privacy "
+"Shield, or the Swiss-US framework.\n"
+"\n"
+"            The laws of Armenia, excluding its conflicts of law rules, shall "
+"govern this Agreement and your use of the website. Your use of the website "
+"may also be subject to other local, state, national, or international laws.\n"
+"            \n"
+"            By using Yatuk or contacting us directly, you signify your "
+"acceptance of this Privacy Policy. If you do not agree to this Privacy "
+"Policy, you should not engage with our website, or use our services. "
+"Continued use of the website, direct engagement with us, or following the "
+"posting of changes to this Privacy Policy that do not significantly affect "
+"the use or disclosure of your personal information will mean that you accept "
+"those changes.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:243
+#: .\core\templates\core\terms-and-conditions.html:84
+msgid "Your Consent"
+msgstr "Ваше согласие"
+
+#: .\core\templates\core\privacy-policy.html:246
+msgid ""
+"\n"
+"            We’ve updated our Privacy Policy to provide you with complete "
+"transparency into what is being set when you visit our site and how it’s "
+"being used. By using our website, registering an account, or making a "
+"purchase, you hereby consent to our Privacy Policy and agree to its terms.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:251
+#: .\core\templates\core\terms-and-conditions.html:92
+msgid "Links to Other Websites"
+msgstr "Ссылки на другие веб-сайты"
+
+#: .\core\templates\core\privacy-policy.html:254
+msgid ""
+"\n"
+"            This Privacy Policy applies only to the Services. The Services "
+"may contain links to other websites not operated or controlled by Yatuk. We "
+"are not responsible for the content, accuracy or opinions expressed in such "
+"websites, and such websites are not investigated, monitored or checked for "
+"accuracy or completeness by us. Please remember that when you use a link to "
+"go from the Services to another website, our Privacy Policy is no longer in "
+"effect. Your browsing and interaction on any other website, including those "
+"that have a link on our platform, is subject to that website’s own rules and "
+"policies. Such third parties may use their own cookies or other methods to "
+"collect information about you.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:259
+#: .\core\templates\core\terms-and-conditions.html:100
+msgid "Cookies"
+msgstr "Куки-файлы"
+
+#: .\core\templates\core\privacy-policy.html:262
+msgid ""
+"\n"
+"            Yatuk uses “Cookies” to identify the areas of our website that "
+"you have visited. A Cookie is a small piece of data stored on your computer "
+"or mobile device by your web browser. We use Cookies to enhance the "
+"performance and functionality of our website but are non-essential to their "
+"use. However, without these cookies, certain functionality like videos may "
+"become unavailable or you would be required to enter your login details "
+"every time you visit the website as we would not be able to remember that "
+"you had logged in previously. Most web browsers can be set to disable the "
+"use of Cookies. However, if you disable Cookies, you may not be able to "
+"access functionality on our website correctly or at all. We never place "
+"Personally Identifiable Information in Cookies.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:267
+msgid "Blocking and disabling cookies and similar technologies"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:270
+msgid ""
+"\n"
+"            Wherever you’re located you may also set your browser to block "
+"cookies and similar technologies, but this action may block our essential "
+"cookies and prevent our website from functioning properly, and you may not "
+"be able to fully utilize all of its features and services. You should also "
+"be aware that you may also lose some saved information (e.g. saved login "
+"details, site preferences) if you block cookies on your browser. Different "
+"browsers make different controls available to you. Disabling a cookie or "
+"category of cookie does not delete the cookie from your browser, you will "
+"need to do this yourself from within your browser, you should visit your "
+"browser’s help menu for more information.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:275
+msgid "Payment Details"
+msgstr "Детали оплаты"
+
+#: .\core\templates\core\privacy-policy.html:278
+msgid ""
+"\n"
+"            In respect to any credit card or other payment processing "
+"details you have provided us, we commit that this confidential information "
+"will be stored in the most secure manner possible.\n"
+"            "
+msgstr ""
+"\n"
+"Что касается любой кредитной карты или других сведений об обработке "
+"платежей, которые вы нам предоставили, мы обязуемся хранить эту "
+"конфиденциальную информацию максимально безопасным способом."
+
+#: .\core\templates\core\privacy-policy.html:283
+msgid "Kids’ Privacy"
+msgstr "Конфиденциальность детей"
+
+#: .\core\templates\core\privacy-policy.html:286
+msgid ""
+"\n"
+"            We collect information from kids under the age of 13 just to "
+"better our services. If You are a parent or guardian and You are aware that "
+"Your child has provided Us with Personal Data without your permission, "
+"please contact Us. If We become aware that We have collected Personal Data "
+"from anyone under the age of 13 without verification of parental consent, We "
+"take steps to remove that information from Our servers.\n"
+"\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:292
+msgid "Changes To Our Privacy Policy"
+msgstr "Изменения в нашей политике конфиденциальности"
+
+#: .\core\templates\core\privacy-policy.html:295
+msgid ""
+"\n"
+"            We may change our Service and policies, and we may need to make "
+"changes to this Privacy Policy so that they accurately reflect our Service "
+"and policies. Unless otherwise required by law, we will notify you (for "
+"example, through our Service) before we make changes to this Privacy Policy "
+"and give you an opportunity to review them before they go into effect. Then, "
+"if you continue to use the Service, you will be bound by the updated Privacy "
+"Policy. If you do not want to agree to this or any updated Privacy Policy, "
+"you can delete your account.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:300
+#: .\core\templates\core\terms-and-conditions.html:138
+msgid "Third-Party Services"
+msgstr "Сторонние услуги"
+
+#: .\core\templates\core\privacy-policy.html:303
+msgid ""
+"\n"
+"            We may display, include or make available third-party content "
+"(including data, information, applications and other products services) or "
+"provide links to third-party websites or services (“Third- Party "
+"Services”).\n"
+"\n"
+"            You acknowledge and agree that Yatuk shall not be responsible "
+"for any Third-Party Services, including their accuracy, completeness, "
+"timeliness, validity, copyright compliance, legality, decency, quality or "
+"any other aspect thereof. Yatuk does not assume and shall not have any "
+"liability or responsibility to you or any other person or entity for any "
+"Third-Party Services.\n"
+"            \n"
+"            Third-Party Services and links thereto are provided solely as a "
+"convenience to you and you access and use them entirely at your own risk and "
+"subject to such third parties’ terms and conditions.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:312
+msgid "Tracking Technologies"
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:315
+msgid ""
+"\n"
+"            Cookies\n"
+"            We use Cookies to enhance the performance and functionality of "
+"our $platform but are non-essential to their use. However, without these "
+"cookies, certain functionality like videos may become unavailable or you "
+"would be required to enter your login details every time you visit the "
+"$platform as we would not be able to remember that you had logged in "
+"previously.\n"
+"            \n"
+"            Local Storage\n"
+"            Local Storage sometimes known as DOM storage, provides web apps "
+"with methods and protocols for storing client-side data. Web storage "
+"supports persistent data storage, similar to cookies but with a greatly "
+"enhanced capacity and no information stored in the HTTP request header.\n"
+"            \n"
+"            Sessions\n"
+"            $elnombre uses “Sessions” to identify the areas of our website "
+"that you have visited. A Session is a small piece of data stored on your "
+"computer or mobile device by your web browser.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\privacy-policy.html:330
+msgid ""
+"\n"
+"            Don’t hesitate to contact us if you have any questions.\n"
+"\n"
+"            Via Email: stepankakosyan22@gmail.com\n"
+"            Via Phone Number: +37495011553\n"
+"            "
+msgstr ""
+"\n"
+"Не стесняйтесь обращаться к нам, если у вас есть какие-либо вопросы.\n"
+"\n"
+"По электронной почте: stepankakosyan22@gmail.com\n"
+"По номеру телефона: +37495011553"
+
+#: .\core\templates\core\product-detail.html:46
+msgid "Author"
+msgstr "Автор"
+
+#: .\core\templates\core\product-detail.html:73
+msgid "Similar Products"
+msgstr "Похожие продукты"
+
+#: .\core\templates\core\product-detail.html:74
+msgid "We have similar products that you may also like."
+msgstr "У нас есть похожие товары, которые могут вам понравиться."
+
+#: .\core\templates\core\reviews.html:5 .\core\templates\core\reviews.html:9
+#: .\core\templates\core\reviews.html:22
+msgid "All reviews were written on our Facebook page․"
+msgstr ""
+
+#: .\core\templates\core\reviews.html:6 .\core\templates\core\reviews.html:17
+#: .\core\templates\core\reviews.html:21 .\templates\partials\header.html:56
+msgid "Reviews"
+msgstr ""
+
+#: .\core\templates\core\reviews.html:34
+msgid "recommends"
+msgstr ""
+
+#: .\core\templates\core\reviews.html:41
+#, fuzzy
+#| msgid "Show All"
+msgid "Show the"
+msgstr "Показать все"
+
+#: .\core\templates\core\reviews.html:41
+msgid "review on Facebook"
+msgstr "отзыв на facebook"
+
+#: .\core\templates\core\shipping.html:11 .\templates\partials\links.html:7
+msgid "Shipping Methods"
+msgstr "Методы доставки"
+
+#: .\core\templates\core\shipping.html:12
+msgid ""
+"Whichever option you will choose product will be delivered without any "
+"problem"
+msgstr "Какой бы вариант вы ни выбрали, товар будет доставлен без проблем."
+
+#: .\core\templates\core\terms-and-conditions.html:8
+#: .\templates\partials\links.html:6
+msgid "Terms & Conditions"
+msgstr "Условия"
+
+#: .\core\templates\core\terms-and-conditions.html:12
+msgid ""
+"\n"
+"            By accessing and placing an order with Yatuk, you confirm that "
+"you are in agreement with and bound by the terms of service contained in the "
+"Terms & Conditions outlined below. These terms apply to the entire website "
+"and any email or other type of communication between you and Yatuk.\n"
+"\n"
+"            Under no circumstances shall Yatuk team be liable for any "
+"direct, indirect, special, incidental or consequential damages, including, "
+"but not limited to, loss of data or profit, arising out of the use, or the "
+"inability to use, the materials on this site, even if Yatuk team or an "
+"authorized representative has been advised of the possibility of such "
+"damages. If your use of materials from this site results in the need for "
+"servicing, repair or correction of equipment or data, you assume any costs "
+"thereof.\n"
+"            \n"
+"            Yatuk will not be responsible for any outcome that may occur "
+"during the course of usage of our resources. We reserve the rights to change "
+"prices and revise the resources usage policy in any moment. This Terms & "
+"Conditions was created with Termify.\n"
+"            "
+msgstr ""
+"\n"
+"Получая доступ и размещая заказ на Yatuk, вы подтверждаете, что согласны с "
+"условиями обслуживания, содержащимися в Условиях, изложенных ниже. Эти "
+"условия применяются ко всему веб-сайту и любому электронному письму или "
+"другому типу связи между вами и Yatuk.\n"
+"\n"
+"Ни при каких обстоятельствах команда Yatuk не несет ответственности за любые "
+"прямые, непрямые, специальные, случайные или косвенные убытки, включая, "
+"помимо прочего, потерю данных или прибыли, возникшие в результате "
+"использования или невозможности использования материалов настоящего сайта, "
+"даже если команда Yatuk или уполномоченный представитель были уведомлены о "
+"возможности такого ущерба. Если использование вами материалов с этого сайта "
+"приводит к необходимости обслуживания, ремонта или исправления оборудования "
+"или данных, вы берете на себя любые связанные с этим расходы.\n"
+"\n"
+"Yatuk не несет ответственности за любые результаты, которые могут возникнуть "
+"в ходе использования наших ресурсов. Мы оставляем за собой право изменять "
+"цены и пересматривать политику использования ресурсов в любой момент. "
+"Настоящие Условия и положения были созданы с помощью Termify."
+
+#: .\core\templates\core\terms-and-conditions.html:21
+msgid "License"
+msgstr "Лицензия"
+
+#: .\core\templates\core\terms-and-conditions.html:24
+msgid ""
+"\n"
+"            Yatuk grants you a revocable, non-exclusive, non-transferable, "
+"limited license to download, install and use the website strictly in "
+"accordance with the terms of this Agreement.\n"
+"\n"
+"            These Terms & Conditions are a contract between you and Yatuk "
+"(referred to in these Terms & Conditions as \"Yatuk\", \"us\", \"we\" or "
+"\"our\"), the provider of the Yatuk website and the services accessible from "
+"the Yatuk website (which are collectively referred to in these Terms & "
+"Conditions as the \"Yatuk Service\").\n"
+"            \n"
+"            You are agreeing to be bound by these Terms & Conditions. If you "
+"do not agree to these Terms & Conditions, please do not use the Yatuk "
+"Service. In these Terms & Conditions, \"you\" refers both to you as an "
+"individual and to the entity you represent. If you violate any of these "
+"Terms & Conditions, we reserve the right to cancel your account or block "
+"access to your account without notice.\n"
+"            "
+msgstr ""
+"\n"
+"Yatuk предоставляет вам отзывную, неисключительную, непередаваемую, "
+"ограниченную лицензию на загрузку, установку и использование веб-сайта "
+"строго в соответствии с условиями настоящего Соглашения.\n"
+"\n"
+"Настоящие Положения и условия представляют собой договор между вами и Yatuk "
+"(именуемый в настоящих Условиях и положениях как «Yatuk», «нас», «мы» или "
+"«наш»), поставщиком веб-сайта Yatuk и услуг, доступных на Yatuk. веб-сайте "
+"(которые в настоящих Условиях и положениях совместно именуются «Сервис "
+"Yatuk»).\n"
+"\n"
+"Вы соглашаетесь соблюдать настоящие Условия. Если вы не согласны с "
+"настоящими Условиями и положениями, пожалуйста, не используйте сервис Yatuk. "
+"В настоящих Условиях и положениях «вы» относится как к вам как к физическому "
+"лицу, так и к юридическому лицу, которое вы представляете. Если вы нарушите "
+"какое-либо из этих Условий и положений, мы оставляем за собой право "
+"аннулировать вашу учетную запись или заблокировать доступ к вашей учетной "
+"записи без предварительного уведомления."
+
+#: .\core\templates\core\terms-and-conditions.html:36
+msgid ""
+"\n"
+"            To help explain things as clearly as possible in this Terms & "
+"Conditions, every time any of these terms are referenced, are strictly "
+"defined as:\n"
+"\n"
+"Cookie: small amount of data generated by a website and saved by your web "
+"browser. It is used to identify your browser, provide analytics, remember "
+"information about you such as your language preference or login "
+"information.\n"
+"Company: when this policy mentions “Company,” “we,” “us,” or “our,” it "
+"refers to Yatuk, Armenia, Shirak, Akhuryan, Petros Mkhoyan 1 line 7 building "
+"that is responsible for your information under this Terms & Conditions.\n"
+"Country: where Yatuk or the owners/founders of Yatuk are based, in this case "
+"is AM\n"
+"Device: any internet connected device such as a phone, tablet, computer or "
+"any other device that can be used to visit Yatuk and use the services.\n"
+"Service: refers to the service provided by Yatuk as described in the "
+"relative terms (if available) and on this platform.\n"
+"Third-party service: refers to advertisers, contest sponsors, promotional "
+"and marketing partners, and others who provide our content or whose products "
+"or services we think may interest you.\n"
+"Website: Yatuk's site, which can be accessed via this URL: https://yatuk."
+"am/\n"
+"You: a person or entity that is registered with Yatuk to use the Services.\n"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:50
+msgid "Restrictions"
+msgstr "Ограничения"
+
+#: .\core\templates\core\terms-and-conditions.html:53
+msgid ""
+"\n"
+"            You agree not to, and you will not permit others to:\n"
+"\n"
+"            License, sell, rent, lease, assign, distribute, transmit, host, "
+"outsource, disclose or otherwise commercially exploit the website or make "
+"the platform available to any third party.\n"
+"            Modify, make derivative works of, disassemble, decrypt, reverse "
+"compile or reverse engineer any part of the website.\n"
+"            Remove, alter or obscure any proprietary notice (including any "
+"notice of copyright or trademark) of Yatuk or its affiliates, partners, "
+"suppliers or the licensors of the website.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:62
+msgid "Return and Refund Policy"
+msgstr "Политика возврата и возмещения"
+
+#: .\core\templates\core\terms-and-conditions.html:65
+msgid ""
+"\n"
+"            Thanks for shopping at Yatuk. We appreciate the fact that you "
+"like to buy the stuff we build. We also want to make sure you have a "
+"rewarding experience while you’re exploring, evaluating, and purchasing our "
+"products.\n"
+"\n"
+"            As with any shopping experience, there are terms and conditions "
+"that apply to transactions at Yatuk. We’ll be as brief as our attorneys will "
+"allow. The main thing to remember is that by placing an order or making a "
+"purchase at Yatuk, you agree to the terms along with Yatuk's Privacy "
+"Policy.\n"
+"            \n"
+"            If, for any reason, You are not completely satisfied with any "
+"good or service that we provide, don't hesitate to contact us and we will "
+"discuss any of the issues you are going through with our product.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:74
+msgid "Your Suggestions"
+msgstr "Ваши предложения"
+
+#: .\core\templates\core\terms-and-conditions.html:77
+msgid ""
+"\n"
+"            Any feedback, comments, ideas, improvements or suggestions "
+"(collectively, \"Suggestions\") provided by you to Yatuk with respect to the "
+"website shall remain the sole and exclusive property of Yatuk.\n"
+"\n"
+"            Yatuk shall be free to use, copy, modify, publish, or "
+"redistribute the Suggestions for any purpose and in any way without any "
+"credit or any compensation to you.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:87
+msgid ""
+"\n"
+"            We've updated our Terms & Conditions to provide you with "
+"complete transparency into what is being set when you visit our site and how "
+"it's being used. By using our website, registering an account, or making a "
+"purchase, you hereby consent to our Terms & Conditions.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:95
+msgid ""
+"\n"
+"            This Terms & Conditions applies only to the Services. The "
+"Services may contain links to other websites not operated or controlled by "
+"Yatuk. We are not responsible for the content, accuracy or opinions "
+"expressed in such websites, and such websites are not investigated, "
+"monitored or checked for accuracy or completeness by us. Please remember "
+"that when you use a link to go from the Services to another website, our "
+"Terms & Conditions are no longer in effect. Your browsing and interaction on "
+"any other website, including those that have a link on our platform, is "
+"subject to that website’s own rules and policies. Such third parties may use "
+"their own cookies or other methods to collect information about you.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:103
+msgid ""
+"\n"
+"            Yatuk uses \"Cookies\" to identify the areas of our website that "
+"you have visited. A Cookie is a small piece of data stored on your computer "
+"or mobile device by your web browser. We use Cookies to enhance the "
+"performance and functionality of our website but are non-essential to their "
+"use. However, without these cookies, certain functionality like videos may "
+"become unavailable or you would be required to enter your login details "
+"every time you visit the website as we would not be able to remember that "
+"you had logged in previously. Most web browsers can be set to disable the "
+"use of Cookies. However, if you disable Cookies, you may not be able to "
+"access functionality on our website correctly or at all. We never place "
+"Personally Identifiable Information in Cookies.\n"
+"            "
+msgstr ""
+"\n"
+"Yatuk использует «Cookies» для определения разделов нашего веб-сайта, "
+"которые вы посетили. Файл cookie — это небольшой фрагмент данных, "
+"сохраняемый на вашем компьютере или мобильном устройстве вашим веб-"
+"браузером. Мы используем файлы cookie для повышения производительности и "
+"функциональности нашего веб-сайта, но они не являются обязательными для их "
+"использования. Однако без этих файлов cookie некоторые функции, такие как "
+"видео, могут стать недоступными, или вам потребуется вводить свои данные для "
+"входа каждый раз, когда вы посещаете веб-сайт, поскольку мы не сможем "
+"вспомнить, что вы входили в систему ранее. В большинстве веб-браузеров можно "
+"отключить использование файлов cookie. Однако, если вы отключите файлы "
+"cookie, вы не сможете правильно или вообще не получить доступ к функциям "
+"нашего веб-сайта. Мы никогда не размещаем личную информацию в файлах cookie."
+
+#: .\core\templates\core\terms-and-conditions.html:108
+msgid "Changes To Our Terms & Conditions"
+msgstr "Изменения наших условий и положений"
+
+#: .\core\templates\core\terms-and-conditions.html:111
+msgid ""
+"\n"
+"            You acknowledge and agree that may stop (permanently or "
+"temporarily) providing the Service (or any features within the Service) to "
+"you or to users generally at ’s sole discretion, without prior notice to "
+"you. You may stop using the Service at any time. You do not need to "
+"specifically inform when you stop using the Service. You acknowledge and "
+"agree that if disables access to your account, you may be prevented from "
+"accessing the Service, your account details or any files or other materials "
+"which is contained in your account.\n"
+"\n"
+"            If we decide to change our Terms & Conditions, we will post "
+"those changes on this page, and/or update the Terms & Conditions "
+"modification date below.\n"
+"            "
+msgstr ""
+"\n"
+"Вы признаете и соглашаетесь с тем, что можете прекратить (постоянно или "
+"временно) предоставление Сервиса (или любых функций в рамках Сервиса) вам "
+"или пользователям в целом по собственному усмотрению без предварительного "
+"уведомления вас. Вы можете прекратить использование Сервиса в любое время. "
+"Вам не нужно специально сообщать о прекращении использования Сервиса. Вы "
+"признаете и соглашаетесь с тем, что в случае отключения доступа к вашей "
+"учетной записи вам может быть отказано в доступе к Сервису, данным вашей "
+"учетной записи или любым файлам или другим материалам, содержащимся в вашей "
+"учетной записи.\n"
+"\n"
+"Если мы решим изменить наши Положения и условия, мы опубликуем эти изменения "
+"на этой странице и/или обновим дату изменения Положений и условий ниже."
+
+#: .\core\templates\core\terms-and-conditions.html:118
+msgid "Modifications to Our website"
+msgstr "Изменения на нашем веб-сайте"
+
+#: .\core\templates\core\terms-and-conditions.html:121
+msgid ""
+"\n"
+"            Yatuk reserves the right to modify, suspend or discontinue, "
+"temporarily or permanently, the website or any service to which it connects, "
+"with or without notice and without liability to you.\n"
+"            "
+msgstr ""
+"\n"
+"Yatuk оставляет за собой право изменять, приостанавливать или прекращать, "
+"временно или постоянно, веб-сайт или любую услугу, к которой он "
+"подключается, с уведомлением или без него и без какой-либо ответственности "
+"перед вами."
+
+#: .\core\templates\core\terms-and-conditions.html:126
+msgid "Updates to Our website"
+msgstr "Обновления на нашем веб-сайте"
+
+#: .\core\templates\core\terms-and-conditions.html:129
+msgid ""
+"\n"
+"            Yatuk may from time to time provide enhancements or improvements "
+"to the features/ functionality of the website, which may include patches, "
+"bug fixes, updates, upgrades and other modifications (\"Updates\").\n"
+"\n"
+"            Updates may modify or delete certain features and/or "
+"functionalities of the website. You agree that Yatuk has no obligation to "
+"(i) provide any Updates, or (ii) continue to provide or enable any "
+"particular features and/or functionalities of the website to you.\n"
+"            \n"
+"            You further agree that all Updates will be (i) deemed to "
+"constitute an integral part of the website, and (ii) subject to the terms "
+"and conditions of this Agreement.\n"
+"            "
+msgstr ""
+"\n"
+"Yatuk может время от времени предоставлять усовершенствования или улучшения "
+"функций/функций веб-сайта, которые могут включать в себя исправления, "
+"исправления ошибок, обновления, обновления и другие модификации "
+"(«Обновления»).\n"
+"\n"
+"Обновления могут изменять или удалять определенные функции и/или функции веб-"
+"сайта. Вы соглашаетесь с тем, что Yatuk не обязан (i) предоставлять какие-"
+"либо Обновления или (ii) продолжать предоставлять или включать какие-либо "
+"определенные функции и/или функции веб-сайта для вас."
+
+#: .\core\templates\core\terms-and-conditions.html:141
+msgid ""
+"\n"
+"            We may display, include or make available third-party content "
+"(including data, information, applications and other products services) or "
+"provide links to third-party websites or services (\"Third- Party Services"
+"\").\n"
+"\n"
+"            You acknowledge and agree that Yatuk shall not be responsible "
+"for any Third-Party Services, including their accuracy, completeness, "
+"timeliness, validity, copyright compliance, legality, decency, quality or "
+"any other aspect thereof. Yatuk does not assume and shall not have any "
+"liability or responsibility to you or any other person or entity for any "
+"Third-Party Services.\n"
+"            \n"
+"            Third-Party Services and links thereto are provided solely as a "
+"convenience to you and you access and use them entirely at your own risk and "
+"subject to such third parties' terms and conditions.\n"
+"            "
+msgstr ""
+"\n"
+"781 / 5 000\n"
+"Результаты перевода\n"
+"Перевод\n"
+"Мы можем отображать, включать или предоставлять сторонний контент (включая "
+"данные, информацию, приложения и другие услуги продуктов) или предоставлять "
+"ссылки на сторонние веб-сайты или службы («Сторонние службы»).\n"
+"\n"
+"Вы признаете и соглашаетесь с тем, что Yatuk не несет ответственности за "
+"какие-либо Услуги третьих лиц, включая их точность, полноту, "
+"своевременность, действительность, соблюдение авторских прав, законность, "
+"порядочность, качество или любой другой их аспект. Yatuk не берет на себя и "
+"не будет нести никакой ответственности перед вами или любым другим "
+"физическим или юридическим лицом за какие-либо Сторонние услуги.\n"
+"\n"
+"Сторонние услуги и ссылки на них предоставляются исключительно для вашего "
+"удобства, и вы получаете доступ к ним и используете их исключительно на свой "
+"страх и риск и в соответствии с положениями и условиями таких третьих сторон."
+
+#: .\core\templates\core\terms-and-conditions.html:150
+msgid "Term and Termination"
+msgstr "Условия"
+
+#: .\core\templates\core\terms-and-conditions.html:153
+msgid ""
+"\n"
+"            This Agreement shall remain in effect until terminated by you or "
+"Yatuk.\n"
+"\n"
+"            Yatuk may, in its sole discretion, at any time and for any or no "
+"reason, suspend or terminate this Agreement with or without prior notice.\n"
+"            \n"
+"            This Agreement will terminate immediately, without prior notice "
+"from Yatuk, in the event that you fail to comply with any provision of this "
+"Agreement. You may also terminate this Agreement by deleting the website and "
+"all copies thereof from your computer.\n"
+"            \n"
+"            Upon termination of this Agreement, you shall cease all use of "
+"the website and delete all copies of the website from your computer.\n"
+"            \n"
+"            Termination of this Agreement will not limit any of Yatuk's "
+"rights or remedies at law or in equity in case of breach by you (during the "
+"term of this Agreement) of any of your obligations under the present "
+"Agreement.\n"
+"            "
+msgstr ""
+"\n"
+"Настоящее Соглашение остается в силе до тех пор, пока оно не будет "
+"расторгнуто вами или Yatuk.\n"
+"\n"
+"Yatuk может по своему усмотрению, в любое время и по любой причине или без "
+"таковой приостановить или прекратить действие настоящего Соглашения с "
+"предварительным уведомлением или без него.\n"
+"\n"
+"Действие настоящего Соглашения прекращается немедленно, без предварительного "
+"уведомления со стороны Yatuk, в случае несоблюдения вами какого-либо "
+"положения настоящего Соглашения. Вы также можете расторгнуть настоящее "
+"Соглашение, удалив веб-сайт и все его копии со своего компьютера.\n"
+"\n"
+"После прекращения действия настоящего Соглашения вы должны прекратить любое "
+"использование веб-сайта и удалить все копии веб-сайта со своего компьютера.\n"
+"\n"
+"Прекращение действия настоящего Соглашения не ограничивает какие-либо права "
+"или средства правовой защиты Yatuk по закону или по праву справедливости в "
+"случае нарушения вами (в течение срока действия настоящего Соглашения) любых "
+"ваших обязательств по настоящему Соглашению."
+
+#: .\core\templates\core\terms-and-conditions.html:166
+msgid "Copyright Infringement Notice"
+msgstr "Уведомление о нарушении авторских прав"
+
+#: .\core\templates\core\terms-and-conditions.html:169
+msgid ""
+"\n"
+"            If you are a copyright owner or such owner’s agent and believe "
+"any material on our website constitutes an infringement on your copyright, "
+"please contact us setting forth the following information: (a) a physical or "
+"electronic signature of the copyright owner or a person authorized to act on "
+"his behalf; (b) identification of the material that is claimed to be "
+"infringing; (c) your contact information, including your address, telephone "
+"number, and an email; (d) a statement by you that you have a good faith "
+"belief that use of the material is not authorized by the copyright owners; "
+"and (e) the a statement that the information in the notification is "
+"accurate, and, under penalty of perjury you are authorized to act on behalf "
+"of the owner.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:174
+msgid "Indemnification"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:177
+msgid ""
+"\n"
+"            You agree to indemnify and hold Yatuk and its parents, "
+"subsidiaries, affiliates, officers, employees, agents, partners and "
+"licensors (if any) harmless from any claim or demand, including reasonable "
+"attorneys' fees, due to or arising out of your: (a) use of the website; (b) "
+"violation of this Agreement or any law or regulation; or (c) violation of "
+"any right of a third party.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:182
+msgid "No Warranties"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:185
+msgid ""
+"\n"
+"            The website is provided to you \"AS IS\" and \"AS AVAILABLE\" "
+"and with all faults and defects without warranty of any kind. To the maximum "
+"extent permitted under applicable law, Yatuk, on its own behalf and on "
+"behalf of its affiliates and its and their respective licensors and service "
+"providers, expressly disclaims all warranties, whether express, implied, "
+"statutory or otherwise, with respect to the website, including all implied "
+"warranties of merchantability, fitness for a particular purpose, title and "
+"non-infringement, and warranties that may arise out of course of dealing, "
+"course of performance, usage or trade practice. Without limitation to the "
+"foregoing, Yatuk provides no warranty or undertaking, and makes no "
+"representation of any kind that the website will meet your requirements, "
+"achieve any intended results, be compatible or work with any other "
+"software, , systems or services, operate without interruption, meet any "
+"performance or reliability standards or be error free or that any errors or "
+"defects can or will be corrected.\n"
+"\n"
+"            Without limiting the foregoing, neither Yatuk nor any Yatuk's "
+"provider makes any representation or warranty of any kind, express or "
+"implied: (i) as to the operation or availability of the website, or the "
+"information, content, and materials or products included thereon; (ii) that "
+"the website will be uninterrupted or error-free; (iii) as to the accuracy, "
+"reliability, or currency of any information or content provided through the "
+"website; or (iv) that the website, its servers, the content, or e-mails sent "
+"from or on behalf of Yatuk are free of viruses, scripts, trojan horses, "
+"worms, malware, timebombs or other harmful components.\n"
+"            \n"
+"            Some jurisdictions do not allow the exclusion of or limitations "
+"on implied warranties or the limitations on the applicable statutory rights "
+"of a consumer, so some or all of the above exclusions and limitations may "
+"not apply to you.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:194
+msgid "Limitation of Liability"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:197
+msgid ""
+"\n"
+"            Notwithstanding any damages that you might incur, the entire "
+"liability of Yatuk and any of its suppliers under any provision of this "
+"Agreement and your exclusive remedy for all of the foregoing shall be "
+"limited to the amount actually paid by you for the website.\n"
+"\n"
+"            To the maximum extent permitted by applicable law, in no event "
+"shall Yatuk or its suppliers be liable for any special, incidental, "
+"indirect, or consequential damages whatsoever (including, but not limited "
+"to, damages for loss of profits, for loss of data or other information, for "
+"business interruption, for personal injury, for loss of privacy arising out "
+"of or in any way related to the use of or inability to use the website, "
+"third-party software and/or third-party hardware used with the website, or "
+"otherwise in connection with any provision of this Agreement), even if Yatuk "
+"or any supplier has been advised of the possibility of such damages and even "
+"if the remedy fails of its essential purpose.\n"
+"            \n"
+"            Some states/jurisdictions do not allow the exclusion or "
+"limitation of incidental or consequential damages, so the above limitation "
+"or exclusion may not apply to you.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:206
+msgid "Severability"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:209
+msgid ""
+"\n"
+"            If any provision of this Agreement is held to be unenforceable "
+"or invalid, such provision will be changed and interpreted to accomplish the "
+"objectives of such provision to the greatest extent possible under "
+"applicable law and the remaining provisions will continue in full force and "
+"effect.\n"
+"\n"
+"            This Agreement, together with the Privacy Policy and any other "
+"legal notices published by Yatuk on the Services, shall constitute the "
+"entire agreement between you and Yatuk concerning the Services. If any "
+"provision of this Agreement is deemed invalid by a court of competent "
+"jurisdiction, the invalidity of such provision shall not affect the validity "
+"of the remaining provisions of this Agreement, which shall remain in full "
+"force and effect. No waiver of any term of this Agreement shall be deemed a "
+"further or continuing waiver of such term or any other term, and Yatuk's "
+"failure to assert any right or provision under this Agreement shall not "
+"constitute a waiver of such right or provision. YOU AND Yatuk AGREE THAT ANY "
+"CAUSE OF ACTION ARISING OUT OF OR RELATED TO THE SERVICES MUST COMMENCE "
+"WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES. OTHERWISE, SUCH CAUSE "
+"OF ACTION IS PERMANENTLY BARRED.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:216
+msgid "Waiver"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:219
+msgid ""
+"\n"
+"            Except as provided herein, the failure to exercise a right or to "
+"require performance of an obligation under this Agreement shall not effect a "
+"party's ability to exercise such right or require such performance at any "
+"time thereafter nor shall be the waiver of a breach constitute waiver of any "
+"subsequent breach.\n"
+"\n"
+"            o failure to exercise, and no delay in exercising, on the part "
+"of either party, any right or any power under this Agreement shall operate "
+"as a waiver of that right or power. Nor shall any single or partial exercise "
+"of any right or power under this Agreement preclude further exercise of that "
+"or any other right granted herein. In the event of a conflict between this "
+"Agreement and any applicable purchase or other terms, the terms of this "
+"Agreement shall govern.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:226
+msgid "Amendments to this Agreement"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:229
+msgid ""
+"\n"
+"            Yatuk reserves the right, at its sole discretion, to modify or "
+"replace this Agreement at any time. If a revision is material we will "
+"provide at least 30 days' notice prior to any new terms taking effect. What "
+"constitutes a material change will be determined at our sole discretion.\n"
+"\n"
+"            By continuing to access or use our website after any revisions "
+"become effective, you agree to be bound by the revised terms. If you do not "
+"agree to the new terms, you are no longer authorized to use Yatuk.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:236
+msgid "Entire Agreement"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:239
+msgid ""
+"\n"
+"            The Agreement constitutes the entire agreement between you and "
+"Yatuk regarding your use of the website and supersedes all prior and "
+"contemporaneous written or oral agreements between you and Yatuk.\n"
+"\n"
+"            You may be subject to additional terms and conditions that apply "
+"when you use or purchase other Yatuk's services, which Yatuk will provide to "
+"you at the time of such use or purchase.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:246
+msgid "Updates to Our Terms"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:249
+msgid ""
+"\n"
+"            We may change our Service and policies, and we may need to make "
+"changes to these Terms so that they accurately reflect our Service and "
+"policies. Unless otherwise required by law, we will notify you (for example, "
+"through our Service) before we make changes to these Terms and give you an "
+"opportunity to review them before they go into effect. Then, if you continue "
+"to use the Service, you will be bound by the updated Terms. If you do not "
+"want to agree to these or any updated Terms, you can delete your account.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:254
+msgid "Intellectual Property"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:257
+msgid ""
+"\n"
+"            The website and its entire contents, features and functionality "
+"(including but not limited to all information, software, text, displays, "
+"images, video and audio, and the design, selection and arrangement thereof), "
+"are owned by Yatuk, its licensors or other providers of such material and "
+"are protected by AM and international copyright, trademark, patent, trade "
+"secret and other intellectual property or proprietary rights laws. The "
+"material may not be copied, modified, reproduced, downloaded or distributed "
+"in any way, in whole or in part, without the express prior written "
+"permission of Yatuk, unless and except as is expressly provided in these "
+"Terms & Conditions. Any unauthorized use of the material is prohibited.\n"
+"\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:263
+msgid "Agreement to Arbitrate"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:266
+msgid ""
+"\n"
+"            This section applies to any dispute EXCEPT IT DOESN’T INCLUDE A "
+"DISPUTE RELATING TO CLAIMS FOR INJUNCTIVE OR EQUITABLE RELIEF REGARDING THE "
+"ENFORCEMENT OR VALIDITY OF YOUR OR Yatuk's INTELLECTUAL PROPERTY RIGHTS. The "
+"term “dispute” means any dispute, action, or other controversy between you "
+"and Yatuk concerning the Services or this agreement, whether in contract, "
+"warranty, tort, statute, regulation, ordinance, or any other legal or "
+"equitable basis. “Dispute” will be given the broadest possible meaning "
+"allowable under law.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:271
+msgid "Notice of Dispute"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:274
+msgid ""
+"\n"
+"            In the event of a dispute, you or Yatuk must give the other a "
+"Notice of Dispute, which is a written statement that sets forth the name, "
+"address, and contact information of the party giving it, the facts giving "
+"rise to the dispute, and the relief requested. You must send any Notice of "
+"Dispute via email to: stepankakosyan22@gmail.com. Yatuk will send any Notice "
+"of Dispute to you by mail to your address if we have it, or otherwise to "
+"your email address. You and Yatuk will attempt to resolve any dispute "
+"through informal negotiation within sixty (60) days from the date the Notice "
+"of Dispute is sent. After sixty (60) days, you or Yatuk may commence "
+"arbitration.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:279
+msgid "Binding Arbitration"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:282
+msgid ""
+"\n"
+"            If you and Yatuk don’t resolve any dispute by informal "
+"negotiation, any other effort to resolve the dispute will be conducted "
+"exclusively by binding arbitration as described in this section. You are "
+"giving up the right to litigate (or participate in as a party or class "
+"member) all disputes in court before a judge or jury. The dispute shall be "
+"settled by binding arbitration in accordance with the commercial arbitration "
+"rules of the American Arbitration Association. Either party may seek any "
+"interim or preliminary injunctive relief from any court of competent "
+"jurisdiction, as necessary to protect the party’s rights or property pending "
+"the completion of arbitration. Any and all legal, accounting, and other "
+"costs, fees, and expenses incurred by the prevailing party shall be borne by "
+"the non-prevailing party.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:287
+msgid "Submissions and Privacy"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:290
+msgid ""
+"\n"
+"            In the event that you submit or post any ideas, creative "
+"suggestions, designs, photographs, information, advertisements, data or "
+"proposals, including ideas for new or improved products, services, features, "
+"technologies or promotions, you expressly agree that such submissions will "
+"automatically be treated as non-confidential and non-proprietary and will "
+"become the sole property of Yatuk without any compensation or credit to you "
+"whatsoever. Yatuk and its affiliates shall have no obligations with respect "
+"to such submissions or posts and may use the ideas contained in such "
+"submissions or posts for any purposes in any medium in perpetuity, "
+"including, but not limited to, developing, manufacturing, and marketing "
+"products and services using such ideas.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:295
+msgid "Promotions"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:298
+msgid ""
+"\n"
+"            Yatuk may, from time to time, include contests, promotions, "
+"sweepstakes, or other activities (“Promotions”) that require you to submit "
+"material or information concerning yourself. Please note that all Promotions "
+"may be governed by separate rules that may contain certain eligibility "
+"requirements, such as restrictions as to age and geographic location. You "
+"are responsible to read all Promotions rules to determine whether or not you "
+"are eligible to participate. If you enter any Promotion, you agree to abide "
+"by and to comply with all Promotions Rules.\n"
+"\n"
+"            Additional terms and conditions may apply to purchases of goods "
+"or services on or through the Services, which terms and conditions are made "
+"a part of this Agreement by this reference.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:305
+msgid "Typographical Errors"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:308
+msgid ""
+"\n"
+"            In the event a product and/or service is listed at an incorrect "
+"price or with incorrect information due to typographical error, we shall "
+"have the right to refuse or cancel any orders placed for the product and/or "
+"service listed at the incorrect price. We shall have the right to refuse or "
+"cancel any such order whether or not the order has been confirmed and your "
+"credit card charged. If your credit card has already been charged for the "
+"purchase and your order is canceled, we shall immediately issue a credit to "
+"your credit card account or other payment account in the amount of the "
+"charge.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:313
+msgid "Miscellaneous"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:316
+msgid ""
+"\n"
+"            If for any reason a court of competent jurisdiction finds any "
+"provision or portion of these Terms & Conditions to be unenforceable, the "
+"remainder of these Terms & Conditions will continue in full force and "
+"effect. Any waiver of any provision of these Terms & Conditions will be "
+"effective only if in writing and signed by an authorized representative of "
+"Yatuk. Yatuk will be entitled to injunctive or other equitable relief "
+"(without the obligations of posting any bond or surety) in the event of any "
+"breach or anticipatory breach by you. Yatuk operates and controls the Yatuk "
+"Service from its offices in AM. The Service is not intended for distribution "
+"to or use by any person or entity in any jurisdiction or country where such "
+"distribution or use would be contrary to law or regulation. Accordingly, "
+"those persons who choose to access the Yatuk Service from other locations do "
+"so on their own initiative and are solely responsible for compliance with "
+"local laws, if and to the extent local laws are applicable. These Terms & "
+"Conditions (which include and incorporate the Yatuk Privacy Policy) contains "
+"the entire understanding, and supersedes all prior understandings, between "
+"you and Yatuk concerning its subject matter, and cannot be changed or "
+"modified by you. The section headings used in this Agreement are for "
+"convenience only and will not be given any legal import.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:321
+msgid "Disclaimer"
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:324
+msgid ""
+"\n"
+"            Yatuk is not responsible for any content, code or any other "
+"imprecision.\n"
+"\n"
+"            Yatuk does not provide warranties or guarantees.\n"
+"            \n"
+"            In no event shall Yatuk be liable for any special, direct, "
+"indirect, consequential, or incidental damages or any damages whatsoever, "
+"whether in an action of contract, negligence or other tort, arising out of "
+"or in connection with the use of the Service or the contents of the Service. "
+"The Company reserves the right to make additions, deletions, or "
+"modifications to the contents on the Service at any time without prior "
+"notice.\n"
+"            \n"
+"            The Yatuk Service and its contents are provided \"as is\" and "
+"\"as available\" without any warranty or representations of any kind, "
+"whether express or implied. Yatuk is a distributor and not a publisher of "
+"the content supplied by third parties; as such, Yatuk exercises no editorial "
+"control over such content and makes no warranty or representation as to the "
+"accuracy, reliability or currency of any information, content, service or "
+"merchandise provided through or accessible via the Yatuk Service. Without "
+"limiting the foregoing, Yatuk specifically disclaims all warranties and "
+"representations in any content transmitted on or in connection with the "
+"Yatuk Service or on sites that may appear as links on the Yatuk Service, or "
+"in the products provided as a part of, or otherwise in connection with, the "
+"Yatuk Service, including without limitation any warranties of "
+"merchantability, fitness for a particular purpose or non-infringement of "
+"third party rights. No oral advice or written information given by Yatuk or "
+"any of its affiliates, employees, officers, directors, agents, or the like "
+"will create a warranty. Price and availability information is subject to "
+"change without notice. Without limiting the foregoing, Yatuk does not "
+"warrant that the Yatuk Service will be uninterrupted, uncorrupted, timely, "
+"or error-free.\n"
+"            "
+msgstr ""
+
+#: .\core\templates\core\terms-and-conditions.html:335
+msgid "Contact Us "
+msgstr "Связаться с нами"
+
+#: .\core\templates\core\terms-and-conditions.html:338
+msgid ""
+"\n"
+"            Don't hesitate to contact us if you have any questions.\n"
+"\n"
+"Via Email: info@yatuk.am\n"
+"Via Phone Number: +37495011553\n"
+"            "
+msgstr ""
+"\n"
+"Не стесняйтесь обращаться к нам, если у вас есть какие-либо вопросы.\n"
+"\n"
+"По электронной почте: info@yatuk.am\n"
+"По номеру телефона: +37495011553"
+
+#: .\core\views.py:93
+msgid "Your message was successfully sent."
+msgstr "Ваше сообщение было успешно отправлено."
+
+#: .\env\Lib\site-packages\django\contrib\messages\apps.py:15
+msgid "Messages"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\contrib\syndication\apps.py:7
+#, fuzzy
+#| msgid "Circulation"
+msgid "Syndication"
+msgstr "Тираж"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\env\Lib\site-packages\django\core\paginator.py:30
+msgid "…"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\paginator.py:50
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\paginator.py:52
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\paginator.py:57
+msgid "That page contains no results"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:22
+#, fuzzy
+#| msgid "Please enter a valid username."
+msgid "Enter a valid value."
+msgstr "Пожалуйста введите действительное имя пользователя."
+
+#: .\env\Lib\site-packages\django\core\validators.py:104
+#: .\env\Lib\site-packages\django\forms\fields.py:751
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:164
+#, fuzzy
+#| msgid "Please enter a valid username."
+msgid "Enter a valid integer."
+msgstr "Пожалуйста введите действительное имя пользователя."
+
+#: .\env\Lib\site-packages\django\core\validators.py:175
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\env\Lib\site-packages\django\core\validators.py:256
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:264
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:276
+#: .\env\Lib\site-packages\django\core\validators.py:284
+#: .\env\Lib\site-packages\django\core\validators.py:313
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:293
+#: .\env\Lib\site-packages\django\core\validators.py:314
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:305
+#: .\env\Lib\site-packages\django\core\validators.py:312
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:348
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:354
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:389
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:398
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:407
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:417
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:435
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:458
+#: .\env\Lib\site-packages\django\forms\fields.py:347
+#: .\env\Lib\site-packages\django\forms\fields.py:386
+#, fuzzy
+#| msgid "Phone number"
+msgid "Enter a number."
+msgstr "Номер телефона"
+
+#: .\env\Lib\site-packages\django\core\validators.py:460
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:465
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:470
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:539
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:600
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\base.py:1401
+#: .\env\Lib\site-packages\django\forms\models.py:899
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:19
+msgid "and"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\base.py:1403
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\constraints.py:17
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:129
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:130
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:131
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:132
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:136
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:174
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1065
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1066
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1068
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1118
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1222
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1323
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1327
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1462
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1331
+msgid "Date (without time)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1458
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1466
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1471
+msgid "Date (with time)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1595
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1597
+#, fuzzy
+#| msgid "Phone number"
+msgid "Decimal number"
+msgstr "Номер телефона"
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1754
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1758
+#, fuzzy
+#| msgid "Circulation"
+msgid "Duration"
+msgstr "Тираж"
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1810
+#, fuzzy
+#| msgid "Address"
+msgid "Email address"
+msgstr "Адрес"
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1835
+msgid "File path"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1913
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1915
+msgid "Floating point number"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1955
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1957
+msgid "Integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2049
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2066
+msgid "Small integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2074
+#, fuzzy
+#| msgid "Address"
+msgid "IPv4 address"
+msgstr "Адрес"
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2105
+#, fuzzy
+#| msgid "Address"
+msgid "IP address"
+msgstr "Адрес"
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2198
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2199
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2201
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2252
+msgid "Positive big integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2267
+msgid "Positive integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2282
+msgid "Positive small integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2298
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2409
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2413
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2417
+msgid "Time"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2525
+msgid "URL"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2549
+msgid "Raw binary data"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2614
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2616
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\files.py:232
+msgid "File"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\json.py:18
+msgid "A JSON object"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\json.py:20
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:920
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:922
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:1229
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:1286
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:1288
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:1336
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\env\Lib\site-packages\django\forms\boundfield.py:176
+msgid ":?.!"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:298
+#, fuzzy
+#| msgid "Phone number"
+msgid "Enter a whole number."
+msgstr "Номер телефона"
+
+#: .\env\Lib\site-packages\django\forms\fields.py:467
+#: .\env\Lib\site-packages\django\forms\fields.py:1240
+#, fuzzy
+#| msgid "Please enter a valid username."
+msgid "Enter a valid date."
+msgstr "Пожалуйста введите действительное имя пользователя."
+
+#: .\env\Lib\site-packages\django\forms\fields.py:490
+#: .\env\Lib\site-packages\django\forms\fields.py:1241
+#, fuzzy
+#| msgid "Please enter a valid username."
+msgid "Enter a valid time."
+msgstr "Пожалуйста введите действительное имя пользователя."
+
+#: .\env\Lib\site-packages\django\forms\fields.py:517
+#, fuzzy
+#| msgid "Please enter a valid username."
+msgid "Enter a valid date/time."
+msgstr "Пожалуйста введите действительное имя пользователя."
+
+#: .\env\Lib\site-packages\django\forms\fields.py:551
+#, fuzzy
+#| msgid "Please enter a valid username."
+msgid "Enter a valid duration."
+msgstr "Пожалуйста введите действительное имя пользователя."
+
+#: .\env\Lib\site-packages\django\forms\fields.py:552
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:618
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:619
+msgid "No file was submitted."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:620
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:622
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:627
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:693
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:856
+#: .\env\Lib\site-packages\django\forms\fields.py:948
+#: .\env\Lib\site-packages\django\forms\models.py:1572
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:950
+#: .\env\Lib\site-packages\django\forms\fields.py:1069
+#: .\env\Lib\site-packages\django\forms\models.py:1570
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:1070
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:1309
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:1339
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\env\Lib\site-packages\django\forms\forms.py:98
+msgid ":"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\forms.py:248
+#: .\env\Lib\site-packages\django\forms\forms.py:332
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:63
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:67
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:72
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:483
+#: .\env\Lib\site-packages\django\forms\formsets.py:490
+#, fuzzy
+#| msgid "Orders"
+msgid "Order"
+msgstr "Заказы"
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:496
+#: .\env\Lib\site-packages\suit\templates\admin\delete_confirmation.html:18
+#: .\env\Lib\site-packages\suit\templates\admin\delete_confirmation.html:49
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:42
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:69
+#: .\env\Lib\site-packages\suit\templates\admin\page_submit_line.html:8
+#: .\env\Lib\site-packages\suit\templates\admin\submit_line.html:8
+msgid "Delete"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:892
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:897
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:904
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:913
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:1344
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:1435
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:1574
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\utils.py:226
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:439
+msgid "Clear"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:440
+msgid "Currently"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:441
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:24
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:86
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:27
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:43
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:26
+msgid "Change"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:770
+msgid "Unknown"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:771
+#: .\users\templates\users\partials\order-card.html:73
+msgid "Yes"
+msgstr "Да"
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:772
+#: .\users\templates\users\partials\order-card.html:75
+msgid "No"
+msgstr "Нет"
+
+#. Translators: Please do not add spaces around commas.
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:853
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:883
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:900
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:902
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:904
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:906
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:908
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:910
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:77
+msgid "p.m."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:78
+msgid "a.m."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:83
+msgid "PM"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:84
+msgid "AM"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:155
+msgid "midnight"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:157
+msgid "noon"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:21
+#, fuzzy
+#| msgid "State"
+msgid "Sat"
+msgstr "Штат"
+
+#: .\env\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:27
+#, fuzzy
+#| msgid "Search"
+msgid "March"
+msgstr "Поиск"
+
+#: .\env\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:35
+#, fuzzy
+#| msgid "Phone number"
+msgid "November"
+msgstr "Номер телефона"
+
+#: .\env\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:48
+#, fuzzy
+#| msgid "Product"
+msgid "oct"
+msgstr "Продукт"
+
+#: .\env\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:55
+#, fuzzy
+#| msgid "Search"
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Поиск"
+
+#: .\env\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:69
+#, fuzzy
+#| msgid "Search"
+msgctxt "alt. month"
+msgid "March"
+msgstr "Поиск"
+
+#: .\env\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:77
+#, fuzzy
+#| msgid "Phone number"
+msgctxt "alt. month"
+msgid "November"
+msgstr "Номер телефона"
+
+#: .\env\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\text.py:252
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\env\Lib\site-packages\django\utils\text.py:271
+#: .\env\Lib\site-packages\django\utils\timesince.py:94
+msgid ", "
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:14
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:111
+msgid "Forbidden"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:112
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:116
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:122
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:127
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:136
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:142
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:148
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:64
+#: .\env\Lib\site-packages\django\views\generic\dates.py:115
+#: .\env\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:349
+#: .\env\Lib\site-packages\django\views\generic\dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\static.py:38
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\static.py:40
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\static.py:79
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\403.html:4
+msgid "forbidden"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\403.html:6
+#: .\env\Lib\site-packages\suit\templates\404.html:6
+#: .\env\Lib\site-packages\suit\templates\500.html:6
+#: .\env\Lib\site-packages\suit\templates\suit\error_base.html:76
+msgid "error"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\403.html:9
+msgid "We're sorry, but the requested action is forbidden"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\404.html:4
+#, fuzzy
+#| msgid "No posts found."
+msgid "Page not found"
+msgstr "Посты не найдены."
+
+#: .\env\Lib\site-packages\suit\templates\404.html:9
+msgid "We're sorry, but the requested page could not be found."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\500.html:4
+msgid "Server Error"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\500.html:9
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\actions.html:14
+#: .\env\Lib\site-packages\suit\templates\admin\filer\actions.html:5
+msgid "Run the selected action"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\actions.html:14
+#: .\env\Lib\site-packages\suit\templates\admin\filer\actions.html:5
+msgid "Go"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\actions.html:22
+#: .\env\Lib\site-packages\suit\templates\admin\filer\actions.html:14
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\actions.html:23
+#, python-format
+msgid ""
+"Select all %(total_count)s\n"
+"                    %(module_name)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\actions.html:26
+#: .\env\Lib\site-packages\suit\templates\admin\filer\actions.html:16
+msgid "Clear selection"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\app_index.html:11
+#, python-format
+msgid "%(name)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\add_form.html:6
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\add_form.html:8
+#, fuzzy
+#| msgid "Invalid username or password!"
+msgid "Enter a username and password."
+msgstr "Неправильное имя пользователя или пароль!"
+
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\change_password.html:32
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\change_password.html:75
+#: .\env\Lib\site-packages\suit\templates\admin\base.html:76
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:19
+#, fuzzy
+#| msgid "Password"
+msgid "Change password"
+msgstr "Пароль"
+
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\change_password.html:45
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:141
+#: .\env\Lib\site-packages\suit\templates\admin\change_list.html:86
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:137
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\plugin_change_form.html:99
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\new_folder_form.html:10
+#: .\env\Lib\site-packages\suit\templates\admin\login.html:27
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:44
+msgid "Please correct the error below."
+msgid_plural " Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\change_password.html:48
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\change_password.html:54
+#: .\env\Lib\site-packages\suit\templates\admin\login.html:48
+#: .\users\forms.py:11 .\users\forms.py:17
+msgid "Password"
+msgstr "Пароль"
+
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\change_password.html:64
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:77
+#, fuzzy
+#| msgid "Password"
+msgid "Password (again)"
+msgstr "Пароль"
+
+#: .\env\Lib\site-packages\suit\templates\admin\auth\user\change_password.html:68
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\base.html:65
+msgid "Welcome,"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\base.html:73
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:15
+msgid "Documentation"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\base.html:78
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:21
+#, fuzzy
+#| msgid "Sold out"
+msgid "Log out"
+msgstr "Распродано"
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:21
+msgid "You have unsaved changes"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:50
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:76
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:53
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\plugin_change_form.html:85
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:34
+#, fuzzy
+#| msgid "Address"
+msgid "Add"
+msgstr "Адрес"
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:98
+#: .\env\Lib\site-packages\suit\templates\admin\filer\image\change_form.html:7
+msgid "tools"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:102
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:105
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:33
+#: .\env\Lib\site-packages\suit\templates\admin\filer\image\change_form.html:10
+#: .\env\Lib\site-packages\suit\templates\admin\object_history.html:15
+#: .\env\Lib\site-packages\suit\templates\reversion\revision_form.html:16
+msgid "History"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:107
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:104
+#: .\env\Lib\site-packages\suit\templates\admin\edit_inline\stacked.html:9
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:37
+#: .\env\Lib\site-packages\suit\templates\admin\filer\image\change_form.html:15
+msgid "View on site"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_form.html:113
+#: .\env\Lib\site-packages\suit\templates\admin\change_list.html:68
+#: .\env\Lib\site-packages\suit\templates\admin\change_list.html:116
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:108
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:113
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:141
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_list.html:110
+#, fuzzy
+msgid "Nothing found"
+msgstr "Извините, ничего не найдено"
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_list.html:112
+msgid "Reset search and filters"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_list.html:114
+#, python-format
+msgid "%(name_plural)s are not created yet"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_list_results.html:19
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_list_results.html:20
+msgid "Toggle sorting"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\change_list_results.html:22
+msgid "Remove from sorting"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:4
+msgid "Change a page"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:64
+msgid "Confirm delete"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:65
+msgid "Remove delete request"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:68
+msgid "Confirm page deletion"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:93
+#, fuzzy
+#| msgid "Restrictions"
+msgid "actions"
+msgstr "Ограничения"
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:97
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:78
+msgid "Publish"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:97
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:98
+msgid "draft"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:98
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:51
+msgid "Preview"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:100
+msgid "Revert to public"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:157
+msgid "All permissions"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:158
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:169
+msgid "Loading..."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_form.html:168
+msgid "Page states"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:3
+msgid "List of pages"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:69
+msgid "Successfully moved"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:87
+msgid "An error occured. Please reload the page"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:110
+#: .\env\Lib\site-packages\suit\templates\reversion\change_list.html:8
+#: .\env\Lib\site-packages\suit\templates\reversion\recover_form.html:14
+#: .\env\Lib\site-packages\suit\templates\reversion\recover_list.html:14
+#, python-format
+msgid "Recover deleted %(name)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\change_list.html:125
+msgid "Pages on:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\plugin_change_form.html:128
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\new_folder_form.html:43
+#: .\env\Lib\site-packages\suit\templates\admin\page_submit_line.html:3
+#: .\env\Lib\site-packages\suit\templates\admin\pagination.html:4
+#: .\env\Lib\site-packages\suit\templates\admin\submit_line.html:3
+#: .\users\templates\users\partials\address-form.html:20
+#: .\users\templates\users\partials\profile-form.html:20
+#: .\users\templates\users\partials\registration-card.html:15
+msgid "Save"
+msgstr "Сохранять"
+
+#: .\env\Lib\site-packages\suit\templates\admin\cms\page\plugin_change_form.html:129
+#: .\users\templates\users\partials\address-form.html:26
+#: .\users\templates\users\partials\profile-form.html:26
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_confirmation.html:26
+#: .\env\Lib\site-packages\suit\templates\admin\filer\delete_confirmation.html:12
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_confirmation.html:36
+#: .\env\Lib\site-packages\suit\templates\admin\filer\delete_confirmation.html:21
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_confirmation.html:51
+#: .\env\Lib\site-packages\suit\templates\admin\filer\delete_confirmation.html:31
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_confirmation.html:57
+#: .\env\Lib\site-packages\suit\templates\admin\delete_selected_confirmation.html:61
+#: .\env\Lib\site-packages\suit\templates\admin\filer\delete_confirmation.html:36
+#: .\env\Lib\site-packages\suit\templates\admin\filer\delete_selected_files_confirmation.html:47
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_selected_confirmation.html:15
+msgid "Delete multiple objects"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_selected_confirmation.html:23
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_selected_confirmation.html:33
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_selected_confirmation.html:51
+msgid "Confirm deletion"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\delete_selected_confirmation.html:54
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\edit_inline\stacked.html:67
+#: .\env\Lib\site-packages\suit\templates\admin\edit_inline\tabular.html:120
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\edit_inline\stacked.html:70
+#: .\env\Lib\site-packages\suit\templates\admin\edit_inline\tabular.html:123
+msgid "Remove"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\edit_inline\tabular.html:17
+msgid "Delete?"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\actions.html:14
+#, python-format
+msgid "Select all %(total_count)s files and/or folders"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\breadcrumbs.html:5
+msgid "Go back to admin homepage"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\breadcrumbs.html:8
+msgid "Go back to Filer app"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\breadcrumbs.html:8
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:12
+msgid "Filer"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\breadcrumbs.html:12
+msgid "Go back to root folder"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\breadcrumbs.html:12
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:15
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:80
+msgid "root"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\breadcrumbs.html:17
+#: .\env\Lib\site-packages\suit\templates\admin\filer\breadcrumbs.html:23
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:19
+#, python-format
+msgid "Go back to '%(folder_name)s' folder"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\change_form.html:30
+msgid "duplicates"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\delete_selected_files_confirmation.html:11
+msgid ""
+"Deleting the selected files and/or folders would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\delete_selected_files_confirmation.html:20
+msgid ""
+"Deleting the selected files and/or folders would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\delete_selected_files_confirmation.html:30
+msgid ""
+"<p>Are you sure you want to delete the selected files and/or folders? All of "
+"the following objects and their related items will be deleted:</p>"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:8
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:12
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:15
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:80
+msgid "Go back to"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:8
+msgid "admin homepage"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:15
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:80
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\new_folder_form.html:4
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\clipboard\clipboard.html:15
+msgid "folder"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\change_form.html:50
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:81
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:91
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:23
+msgid "Folder Icon"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_copy_destination.html:12
+msgid ""
+"Your account doesn't have permissions to copy all of the selected files and/"
+"or folders."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_copy_destination.html:15
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_move_destination.html:15
+msgid "There are no destination folders available."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_copy_destination.html:18
+msgid "There are no files and/or folders available to copy."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_copy_destination.html:21
+msgid ""
+"The following files and/or folders will be copied to a destination folder "
+"(retaining their tree structure):"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_copy_destination.html:31
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_move_destination.html:32
+msgid "Destination folder:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_copy_destination.html:38
+msgid "Copy"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_images_resize_options.html:12
+msgid ""
+"Your account doesn't have permissions to resize all of the selected images."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_images_resize_options.html:15
+msgid "There are no images available to resize."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_images_resize_options.html:18
+msgid "The following images will be resized:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_images_resize_options.html:29
+msgid "Choose an existing thumbnail option or enter resize parameters:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_images_resize_options.html:32
+msgid "Choose resize parameters:"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_images_resize_options.html:35
+msgid ""
+"Warning: Images will be resized in-place and originals will be lost. Maybe "
+"first make a copy of them to retain the originals."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_images_resize_options.html:36
+msgid "Resize"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_move_destination.html:12
+msgid ""
+"Your account doesn't have permissions to move all of the selected files and/"
+"or folders."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_move_destination.html:18
+msgid "There are no files and/or folders available to move."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_move_destination.html:21
+msgid ""
+"The following files and/or folders will be moved to a destination folder "
+"(retaining their tree structure):"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_move_destination.html:38
+msgid "Move"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_rename_format.html:12
+msgid ""
+"Your account doesn't have permissions to rename all of the selected files."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_rename_format.html:15
+msgid "There are no files available to rename."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_rename_format.html:18
+msgid ""
+"The following files will be renamed (they will stay in their folders and "
+"keep original filename, only displayed filename will be changed):"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\choose_rename_format.html:31
+#, fuzzy
+#| msgid "Username"
+msgid "Rename"
+msgstr "Имя пользователя"
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:71
+#, fuzzy
+#| msgid "Add new address"
+msgid "Adds a new Folder"
+msgstr "Добавить новый адрес"
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:71
+msgid "New Folder"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:72
+msgid "upload files"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:72
+msgid "Upload"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:80
+msgid "Go back to the parent folder"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:82
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:30
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:19
+#, python-format
+msgid "1 folder"
+msgid_plural "%(counter)s folders"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:82
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:30
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:20
+#, fuzzy, python-format
+#| msgid "My Profile"
+msgid "1 file"
+msgid_plural "%(counter)s files"
+msgstr[0] "Мой профиль"
+msgstr[1] "Мой профиль"
+msgstr[2] "Мой профиль"
+msgstr[3] "Мой профиль"
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_listing.html:86
+msgid "Change current folder details"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:23
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:27
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:29
+#, python-format
+msgid "Change '%(item_label)s' folder details"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:30
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:45
+msgid "Owner"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:37
+msgid "Select this file"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:39
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:43
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:44
+#, python-format
+msgid "Change '%(item_label)s' details"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:42
+#, python-format
+msgid "Delete '%(item_label)s'"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:45
+#, fuzzy
+#| msgid "Restrictions"
+msgid "Permissions"
+msgstr "Ограничения"
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:45
+msgid "disabled"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:45
+msgid "enabled"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:49
+msgid "Move to clipboard"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:57
+msgid "there are no files or subfolders"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:64
+msgid "previous"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:68
+#, python-format
+msgid ""
+"\n"
+"            Page %(number)s of %(num_pages)s\n"
+"            "
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\directory_table.html:74
+msgid "next"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\folder\new_folder_form.html:4
+#, fuzzy
+#| msgid "Add New"
+msgid "Add new"
+msgstr "Добавить новое"
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\image\change_form.html:31
+msgid "Full size preview"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\clipboard\clipboard.html:4
+msgid "Clipboard"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\clipboard\clipboard.html:15
+msgid "discard"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\clipboard\clipboard.html:15
+msgid "Move all clipboard files to"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\clipboard\clipboard.html:15
+msgid "unfiled files"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\clipboard\clipboard.html:24
+msgid "Paste all items here"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\clipboard\clipboard.html:63
+msgid "the clipboard is empty"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\clipboard\clipboard_item_rows.html:10
+msgid "upload failed"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:11
+msgid "Enter your search phrase here"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:12
+#: .\env\Lib\site-packages\suit\templates\admin\search_form.html:26
+msgid "Search"
+msgstr "Поиск"
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:12
+msgid "Click here to"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:12
+msgid "run search for entered phrase"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:15
+#, fuzzy
+#| msgid "Checkout"
+msgid "Check it to"
+msgstr "Оформить заказ"
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:15
+msgid "limit the search to current folder"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:19
+msgid "found"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\filer\tools\search_form.html:20
+#, fuzzy
+#| msgid "Cancel Order"
+msgid "cancel search"
+msgstr "Отменить заказ"
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\change_list_export.html:5
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\change_list_import_export.html:6
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\export.html:5
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\export.html:12
+msgid "Export"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\change_list_import.html:5
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\change_list_import_export.html:5
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:6
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:25
+msgid "Import"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:17
+msgid "This importer will import the following fields: "
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:34
+msgid "Errors"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:42
+#, fuzzy
+#| msgid "Phone number"
+msgid "Line number"
+msgstr "Номер телефона"
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:65
+#, fuzzy
+#| msgid "Add New"
+msgid "New"
+msgstr "Добавить новое"
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:67
+msgid "Skipped"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:71
+msgid "Update"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\import_export\import.html:90
+msgid "Confirm import"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:19
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:45
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:54
+msgid "My Actions"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:59
+msgid "None available"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:68
+#, fuzzy
+#| msgid "Added At"
+msgid "added"
+msgstr "Добавлено в"
+
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:69
+msgid "changed"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:70
+msgid "deleted"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\index.html:76
+msgid "Unknown content"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\login.html:56
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\login.html:60
+#, fuzzy
+#| msgid "Log In"
+msgid "Log in"
+msgstr "Войти"
+
+#: .\env\Lib\site-packages\suit\templates\admin\object_history.html:27
+#: .\env\Lib\site-packages\suit\templates\reversion\object_history.html:15
+#: .\env\Lib\site-packages\suit\templates\reversion\recover_list.html:27
+#, fuzzy
+#| msgid "Date"
+msgid "Date/time"
+msgstr "Дата"
+
+#: .\env\Lib\site-packages\suit\templates\admin\object_history.html:28
+#: .\env\Lib\site-packages\suit\templates\reversion\object_history.html:16
+#: .\users\models.py:101
+msgid "User"
+msgstr "Пользователь"
+
+#: .\env\Lib\site-packages\suit\templates\admin\object_history.html:29
+msgid "Action"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\object_history.html:43
+#: .\env\Lib\site-packages\suit\templates\reversion\object_history.html:36
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\page_submit_line.html:4
+#: .\env\Lib\site-packages\suit\templates\admin\submit_line.html:4
+#, fuzzy
+#| msgid "terms and conditions"
+msgid "Save and continue editing"
+msgstr "Условия"
+
+#: .\env\Lib\site-packages\suit\templates\admin\page_submit_line.html:5
+#: .\env\Lib\site-packages\suit\templates\admin\submit_line.html:5
+msgid "Save as new"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\page_submit_line.html:6
+#: .\env\Lib\site-packages\suit\templates\admin\submit_line.html:6
+msgid "Save and add another"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\page_submit_line.html:14
+#, python-format
+msgid "Delete %(language)s translation"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\pagination.html:26
+#, fuzzy
+#| msgid "Show All"
+msgid "Show all"
+msgstr "Показать все"
+
+#: .\env\Lib\site-packages\suit\templates\admin\search_form.html:8
+msgid "keyword"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\search_form.html:29
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\env\Lib\site-packages\suit\templates\admin\search_form.html:31
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\registration\logged_out.html:9
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\registration\logged_out.html:12
+msgid "Log in again"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:28
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:32
+#, fuzzy
+#| msgid "Password"
+msgid "Password change"
+msgstr "Пароль"
+
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:40
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:55
+#, fuzzy
+#| msgid "Password"
+msgid "Old password"
+msgstr "Пароль"
+
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:66
+#, fuzzy
+#| msgid "Password"
+msgid "New password"
+msgstr "Пароль"
+
+#: .\env\Lib\site-packages\suit\templates\registration\password_change_form.html:88
+msgid "Change my password"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\reversion\object_history.html:8
+msgid ""
+"Choose a date from the list below to revert to a previous version of this "
+"object."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\reversion\recover_form.html:22
+msgid "Press the save button below to recover this version of the object."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\reversion\recover_list.html:21
+msgid ""
+"Choose a date from the list below to recover a deleted version of an object."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\reversion\recover_list.html:41
+msgid "There are no deleted objects to recover."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\reversion\revision_form.html:18
+#, python-format
+msgid "Revert %(verbose_name)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\templates\reversion\revision_form.html:31
+msgid "Press the save button below to revert to this version of the object."
+msgstr ""
+
+#: .\env\Lib\site-packages\suit\widgets.py:104
+#: .\users\templates\users\partials\order-card.html:28
+msgid "Date:"
+msgstr "Дата:"
+
+#: .\env\Lib\site-packages\suit\widgets.py:118
+msgid "Time:"
+msgstr ""
+
+#: .\templates\base\base.html:19
+msgid "Yatuk - Armenian jigsaw puzzles, postcards, bookmarks"
+msgstr "Ятук - армянские пазлы, открытки, закладки"
+
+#: .\templates\partials\cart-content.html:24
+#, python-format
+msgid "And %(count)s other products "
+msgstr "И %(count)s другие продукты"
+
+#: .\templates\partials\cart-content.html:26
+msgid "View Cart"
+msgstr "Посмотреть корзину"
+
+#: .\templates\partials\cart-content.html:30
+msgid ""
+"Choose your favorite product and add it to the cart. I don't like to be empty"
+msgstr ""
+"Выберите понравившийся товар и добавьте его в корзину. я не люблю быть пустым"
+
+#: .\templates\partials\header.html:54
+msgid "Blog"
+msgstr "Блог"
+
+#: .\templates\partials\header.html:69
+msgid "My Profile"
+msgstr "Мой профиль"
+
+#: .\templates\partials\header.html:74
+#: .\users\templates\users\partials\profile-card.html:13
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\partials\header.html:80
+msgid "Login"
+msgstr "Войти"
+
+#: .\users\forms.py:10 .\users\forms.py:16 .\users\forms.py:58
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: .\users\forms.py:14 .\users\forms.py:48
+msgid "First Name"
+msgstr "Имя"
+
+#: .\users\forms.py:15 .\users\forms.py:53
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: .\users\forms.py:18
+msgid "Repeat Password"
+msgstr "Повторите пароль"
+
+#: .\users\forms.py:23
+msgid "Username must be at least 6 characters long."
+msgstr "Имя пользователя должно содержать не менее 6 символов."
+
+#: .\users\forms.py:25
+msgid "Username already in use."
+msgstr "Имя пользователя уже используется."
+
+#: .\users\forms.py:33
+msgid "Passwords do not match."
+msgstr "Пароли не совпадают."
+
+#: .\users\forms.py:62
+msgid "Please enter a valid username."
+msgstr "Пожалуйста введите действительное имя пользователя."
+
+#: .\users\forms.py:69
+msgid "Phone Number"
+msgstr "Номер телефона"
+
+#: .\users\forms.py:74
+msgid "Email"
+msgstr "Эл. почта"
+
+#: .\users\forms.py:85
+msgid "This username is already taken."
+msgstr "Это имя пользователя уже занято."
+
+#: .\users\models.py:103
+msgid "City or Village"
+msgstr "Город или деревня"
+
+#: .\users\models.py:106
+msgid "Postal Code"
+msgstr "Почтовый индекс"
+
+#: .\users\models.py:107
+msgid "Is Default"
+msgstr "По умолчанию"
+
+#: .\users\templates\users\partials\address-list.html:29
+msgid "Add new address"
+msgstr "Добавить новый адрес"
+
+#: .\users\templates\users\partials\login-card.html:4
+#: .\users\templates\users\partials\registration-card.html:22
+msgid "Sign in"
+msgstr "Войти"
+
+#: .\users\templates\users\partials\login-card.html:16
+msgid "Log In"
+msgstr "Войти"
+
+#: .\users\templates\users\partials\login-card.html:18
+msgid "Dont have an account?"
+msgstr "У вас нет аккаунта?"
+
+#: .\users\templates\users\partials\login-card.html:23
+#: .\users\templates\users\partials\registration-card.html:4
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: .\users\templates\users\partials\login-card.html:23
+msgid "now!"
+msgstr "сейчас!"
+
+#: .\users\templates\users\partials\order-card.html:9
+msgid "Order #"
+msgstr "Заказ #"
+
+#: .\users\templates\users\partials\order-card.html:27
+msgid "Address:"
+msgstr "Адрес:"
+
+#: .\users\templates\users\partials\order-card.html:29
+msgid "Shipping:"
+msgstr "Доставка:"
+
+#: .\users\templates\users\partials\order-card.html:31
+msgid "Total amount:"
+msgstr "Общая сумма:"
+
+#: .\users\templates\users\partials\order-card.html:33
+msgid "Check HayPost status:"
+msgstr ""
+
+#: .\users\templates\users\partials\order-card.html:40
+msgid "Cancellation Succeed"
+msgstr "Отмена успешно"
+
+#: .\users\templates\users\partials\order-card.html:42
+msgid ""
+"\n"
+"                        Cancellation is succeed. Your payment will be "
+"refunded during 2-3 working days.\n"
+"                        "
+msgstr ""
+"\n"
+"Отмена прошла успешно. Ваш платеж будет возвращен в течение 2-3 рабочих дней."
+
+#: .\users\templates\users\partials\order-card.html:49
+msgid "Cancellation Failed"
+msgstr "Отмена не удалась"
+
+#: .\users\templates\users\partials\order-card.html:51
+msgid ""
+"\n"
+"                        Seems there is a problem. If you dont know exact "
+"reason please contact with \n"
+"                        Yatuk administrators as soon as possible, otherwise "
+"try again\n"
+"                        "
+msgstr ""
+"\n"
+"Кажется, есть проблема. Если вы не знаете точную причину, пожалуйста, "
+"свяжитесь с\n"
+"Админы Yatuk как можно скорее, в противном случае попробуйте еще раз."
+
+#: .\users\templates\users\partials\order-card.html:63
+msgid "Cancel Order"
+msgstr "Отменить заказ"
+
+#: .\users\templates\users\partials\order-card.html:67
+msgid ""
+"Are you sure you want to cancel your order? Order payment will be fully "
+"refunded."
+msgstr ""
+"Вы уверены, что хотите отменить заказ? Оплата заказа будет полностью "
+"возвращена."
+
+#: .\users\templates\users\partials\profile-card.html:8
+#: .\users\templates\users\partials\profile-card.html:18
+msgid "Personal details"
+msgstr "Личные данные"
+
+#: .\users\templates\users\partials\profile-card.html:9
+#: .\users\templates\users\partials\profile-card.html:24
+msgid "Addresses"
+msgstr "Адреса"
+
+#: .\users\templates\users\partials\profile-card.html:11
+#: .\users\templates\users\partials\profile-card.html:31
+msgid "Orders"
+msgstr "Заказы"
+
+#: .\users\templates\users\partials\profile-info.html:7
+msgid "First Name:"
+msgstr "Имя:"
+
+#: .\users\templates\users\partials\profile-info.html:12
+msgid "Last Name:"
+msgstr "Фамилия:"
+
+#: .\users\templates\users\partials\profile-info.html:17
+msgid "Email:"
+msgstr "Электронная почта:"
+
+#: .\users\templates\users\partials\profile-info.html:22
+msgid "Phone Number:"
+msgstr "Номер телефона:"
+
+#: .\users\templates\users\partials\profile-info.html:26
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#: .\users\templates\users\partials\profile-info.html:34
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\users\templates\users\partials\registration-card.html:17
+msgid "Already have an account?"
+msgstr "У вас уже есть аккаунт?"
+
+#: .\users\views.py:41 .\users\views.py:43
+msgid "Invalid username or password!"
+msgstr "Неправильное имя пользователя или пароль!"
+
+#: .\users\views.py:68
+msgid "User information updated successfully."
+msgstr "Информация о пользователе успешно обновлена."
+
+#: .\users\views.py:71
+msgid "Form submission failed. Please check your inputs and try again."
+msgstr ""
+"Не удалось отправить форму. Проверьте введенные данные и повторите попытку."
+
+#~ msgid "Support us! Buy our art based products from online shop"
+#~ msgstr ""
+#~ "Поддержите нас! Покупайте наши товары, созданные на основе произведений "
+#~ "искусства, в интернет-магазине."
+
+#~ msgid "BUY NOW"
+#~ msgstr "КУПИТЕ СЕЙЧАС"
+
+msgid "Related articles"
+msgstr "Похожие статьи"
+
+#~ msgid "New Selling"
+#~ msgstr "Новые продажи"
+
+#~ msgid "New Transfer"
+#~ msgstr "Новый перевод"
+
+#~ msgid "Yatuk Game"
+#~ msgstr "Ятук Игры"
+
+#~ msgid "Collaborators"
+#~ msgstr "Сотрудники"
+
+#~ msgid "Costs"
+#~ msgstr "Расходы"
+
+#~ msgid "New Cost"
+#~ msgstr "Новая Расход"
+
+#~ msgid "Filters"
+#~ msgstr "Фильтры"
+
+#~ msgid "Product Type"
+#~ msgstr "Тип продукта"
+
+#~ msgid "Transfers"
+#~ msgstr "Трансферы"
+
+#~ msgid "Generate"
+#~ msgstr "Генерировать"
+
+#~ msgid "No Collaborators yet"
+#~ msgstr "Соавторов пока нет"
+
+#~ msgid "Note"
+#~ msgstr "Заметка"
+
+#~ msgid "No Costs yet"
+#~ msgstr "Еще нет затрат"
+
+#~ msgid "Yatuk jigsaw puzzle"
+#~ msgstr "Пазл Ятук"
+
+#~ msgid "To Do List"
+#~ msgstr "Список дел"
+
+#~ msgid "To Do List is empty"
+#~ msgstr "Список дел пуст"
+
+#~ msgid "No Sellings yet"
+#~ msgstr "Продаж пока нет"
+
+#~ msgid "Collaborator"
+#~ msgstr "Сотрудник"
+
+#~ msgid "No ransfers yet"
+#~ msgstr "Трансферов пока нет"
+
+#~ msgid "Related Games"
+#~ msgstr "Связанные игры"
+
+#, fuzzy
+#~| msgid "We have puzzle games with this paintings in Yatuk Game website"
+#~ msgid "We have puzzle games with this paintings in Yatuk Camvas website"
+#~ msgstr "У нас есть головоломки с этой картиной на сайте Yatuk Game."
+
+#~ msgid "Sellings"
+#~ msgstr "Продажи"
+
+#~ msgid "Images"
+#~ msgstr "Изображений"
+
+#~ msgid "Sent"
+#~ msgstr "Отправлено"
+
+#~ msgid "Sell Count"
+#~ msgstr "Продать количество"
+
+#~ msgid "On me"
+#~ msgstr "На меня"
+
+#~ msgid "Sent At"
+#~ msgstr "Отправлено"
+
+#~ msgid "Sell At"
+#~ msgstr "Продать по"
+
+#~ msgid "Products"
+#~ msgstr "Продукты"
+
+#~ msgid "Description"
+#~ msgstr "Описание"
+
+#~ msgid "Progress"
+#~ msgstr "Прогресс"
+
+#~ msgid "New Sell"
+#~ msgstr "Новая продажа"
+
+#~ msgid "Refunded"
+#~ msgstr "Возмещено"
+
+#~ msgid "status"
+#~ msgstr "статус"
+
+#~ msgid ""
+#~ "Here you will find the best paintings of the most popular Armenian "
+#~ "classical and contemporary artists\n"
+#~ "        made online puzzles. You can choose the number and shape of the "
+#~ "pieces yourself.\n"
+#~ "        If you didn't find your favorite picture, just contact us, send a "
+#~ "quality picture and we will post it on the website.\n"
+#~ "        "
+#~ msgstr ""
+#~ "Здесь вы найдете лучшие картины самых популярных армянских классических и "
+#~ "современных художников.\n"
+#~ "сделал онлайн головоломки. Вы сами можете выбрать количество и форму "
+#~ "кусочков.\n"
+#~ "Если вы не нашли понравившуюся картинку, просто свяжитесь с нами, "
+#~ "пришлите качественную картинку и мы разместим ее на сайте."
+
+#~ msgid ""
+#~ "Here you will find the best of the most popular Armenian classical and "
+#~ "modern composers\n"
+#~ "        playlist with instrumental performances.\n"
+#~ "        If you didn't find your favorite composer or music, just contact "
+#~ "us, send the audio file and we will post it on the website.\n"
+#~ "        "
+#~ msgstr ""
+#~ "Здесь вы найдете лучшее из самых популярных армянских классических и "
+#~ "современных композиторов.\n"
+#~ "плейлист с инструментальными исполнениями.\n"
+#~ "Если вы не нашли любимого композитора или музыку, просто свяжитесь с "
+#~ "нами, пришлите аудиофайл, и мы разместим его на сайте."
+
+#~ msgid "Յատուկ Խաղեր"
+#~ msgstr "Ятук Игры"
+
+#~ msgid "Յատուկ Երաժշտություն"
+#~ msgstr "Ятук Музыка"
+
+#~ msgid "Go to shop website to see more info"
+#~ msgstr "Перейти на сайт магазина, чтобы увидеть больше информации"
+
+#~ msgid "Find us"
+#~ msgstr "Найди нас"
+
+#~ msgid "Copy link to send friends"
+#~ msgstr "Скопируйте ссылку, чтобы отправить друзьям"
+
+#~ msgid "Copied"
+#~ msgstr "Скопировано"
+
+#~ msgid "Play"
+#~ msgstr "Играть"
+
+#~ msgid "Games"
+#~ msgstr "Игры"
+
+#~ msgid "Search in all languages"
+#~ msgstr "Поиск на всех языках"
+
+#~ msgid "All Categories"
+#~ msgstr "Все категории"
+
+#~ msgid "Tags"
+#~ msgstr "Теги"

@@ -1,0 +1,11 @@
+{% load i18n %}
+<div class="product-card yatuk-form">
+    <div class="d-flex flex-column">
+
+      <div class="orders-list">
+            {% for order in orders %}
+              {% include 'users/partials/order-card.html' %}
+            {% endfor %}
+      </div>
+    </div>
+</div>

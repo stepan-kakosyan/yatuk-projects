@@ -1,0 +1,29 @@
+{% load i18n %}
+<div class='yatuk-form product-card'>
+    <form id="user-edit-form" class="yatuk-form d-flex flex-wrap" method="post">
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="form-group col-lg-6 col-sm-12">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+          <div class="error-message">{{ field.errors }}</div>
+        {% endif %}
+      </div>
+    {% endfor %}
+    <div class="col-12 f-flex">
+        <button type="submit" class="col-6"
+          hx-post="{% if address_id %}{% url 'edit_address' id=address_id %}{% else %}{% url 'add_address' %}{% endif %}"
+          hx-swap="innerHTML"
+          hx-target="#address-info"
+          hx-trigger="click"
+        >{% translate "Save" %}</button>
+        <button class="col-5 cancel-button"
+          hx-post="{% url 'address_list' %}"
+          hx-swap="innerHTML"
+          hx-target="#address-info"
+          hx-trigger="click"
+        >{% translate "Cancel" %}</button>
+    </div>
+    </form>
+  </div>

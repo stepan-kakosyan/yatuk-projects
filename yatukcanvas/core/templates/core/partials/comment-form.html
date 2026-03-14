@@ -1,0 +1,50 @@
+{% load i18n %}
+{% load static %}
+<div class="comment-form">
+
+{% if form %}
+    {% if request.user.is_authenticated %}
+        <form method="post">
+            <div class='comment-form-content d-flex align-items-center '>
+            <div class="user-image-comment">
+                <img 
+                src="{% if request.user.profile_image%}https://{{request.user.domain}}{{ request.user.profile_image.url }}{% else %}{%static 'images/user.png' %}{%endif%}" alt="avatar" />
+            </div>
+            {% csrf_token %}
+            <div class="w-100 position-relative textarea-section">
+                {{ form.text }}
+                <button type="submit" class='comment-form-button'
+                hx-post="{% url 'comment' id=game.id %}"
+                hx-target=".comment-form"
+                hx-swap="innerHTML"><i class="fa fa-send"></i></button>
+            </div>
+
+        </div>
+        {% if form.text.errors %}<div class="error-message">{% translate "Comment is required" %}</div>{% endif %}
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}?next={{request.path}}" class='login-text-message'>{% trans "Please login for beeing able to write a comment" %}</a>
+    {% endif %}
+{% endif %}
+</div>
+
+<div class="comment-list">
+{% if comments %}
+    {% for comment in comments|slice:5 %}
+    {% include 'core/partials/comment-row.html' %}
+    {% endfor %}
+    {% if comments|length > 5  %}
+    <div type="button" data-toggle="collapse" data-target="#collapseExample"
+        aria-expanded="false" aria-controls="collapseExample" class="show-all-button">
+        {% translate "See all" %}
+    </div>
+      <div class="collapse " id="collapseExample">
+        {% for comment in comments|slice:"5:" %}
+            {% include 'core/partials/comment-row.html' %}
+        {% endfor %}
+      </div>
+      {% endif %}
+{% else %}
+{% translate "Be the first who will comment on this" %}
+{% endif %}
+</div>

@@ -1,0 +1,25 @@
+{% load i18n %}
+<div class="login-form product-card">
+  <form method="post">
+    <h3>{% translate "Sign up" %}</h3>
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-group">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+          <div class="error-message">{{ field.errors }}</div>
+        {% endif %}
+      </div>
+    {% endfor %}
+    <button type="submit">{% translate "Save" %}</button>
+    <div class="under-button">
+      <span>{% translate "Already have an account?" %} </span><a  class="colored" href="#login" hx-get="{% url 'login' %}"
+        hx-trigger="click"
+        hx-target=".product-card"
+        hx-swap="outerHTML"
+        hx-push-url="true"
+      >{% translate "Sign in" %}</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% translate "Generate Sketch" %} {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <form action="{% url 'make_sketch' %}" method="post" enctype="multipart/form-data"
+              class="form-horizontal">
+            {% csrf_token %}
+            <input type="file" name="image" class="form-control" required>
+            <input type="submit" value="Upload" class="btn btn-primary btn-sm">
+        </form>
+    </div>
+    {% if filename %}
+        <div  class="col-12">
+            <img src="/{{filename}}" height="500px">
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

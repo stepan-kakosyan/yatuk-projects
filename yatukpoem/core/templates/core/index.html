@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div class="homepage">
+{% include 'core/partials/carousel.html' %}
+<div class="main-text text-center  mt-3">
+    <h3>{% translate "Great Authors" %}</h3>
+</div>
+<div class="product-homepage product-list" id="product-list">
+    {% include 'core/partials/author-carousel.html' %}
+</div>
+<div class="d-flex justify-content-center mt-2">
+    <a  href="{% url 'authors' %}"><div class="see-all-bottom" >
+        {% translate "See all Authors" %}
+    </div>
+</a>
+</div>
+<div class="main-text text-center  mt-3">
+    <h3>{% translate "15 most read works" %}</h3>
+</div>
+<div class="poem-card">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            {% for poem in most_populars %}
+            {% include 'core/partials/poem-card.html' with is_slider=True show_author=True %}
+            {% endfor %}
+        </div>
+    <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+    <div class="main-text text-center  mt-3">
+        <h3>{% translate "Art websites from Yatuk" %}</h3>
+        <span>{% translate "We have designed a few art websites where you can enjoy Armenian art" %}</span>
+    </div>
+    {% include 'core/partials/cultural-websites.html' %}
+
+    {% comment %} <div class="homepage-contact mt-3">
+    {% include 'core/partials/contact-us.html' %}
+    </div> {% endcomment %}
+</div>
+{% endblock content %}
+{% block extra_scripts %}
+<script src="{% static 'js/slider.js' %}"></script>
+{% endblock extra_scripts %}

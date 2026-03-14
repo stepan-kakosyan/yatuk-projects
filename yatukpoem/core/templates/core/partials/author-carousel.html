@@ -1,0 +1,43 @@
+{% comment %} <div class="author-carousel authors-slider">
+    <div class="author-container authors-slide-track" tabindex="0">
+      <ul class="author-slides">
+        {% for author in authors %}
+            <li class="slide">
+                <a class="authors-slide" href="{% url 'author' slug=author.slug  genre='all' %}">
+                    <div class="author-slide-card light-card">
+                        <img class="authors-slide-image" loading="lazy" 
+                        src="https://cms.yatuk.am{{author.middle_optimized.url}}" alt="{{author.name}}" />
+                        <h3>{{author.name}}</h3>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+      </ul>
+  
+    </div>
+    <div class="actions">
+      <div  class="previous" aria-label="Previous slide">
+        <i class="fa fa-angle-double-left"></i>
+      </div>
+      <div  class="forwards" aria-label="Next slide">
+        <i class="fa fa-angle-double-right"></i>
+      </div>
+    </div>
+  </div>
+   {% endcomment %}
+  
+  <div class="author-carousel authors-slider">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% for author in authors %}
+          <a class="author-slide-card light-card swiper-slide" href="{% url 'author' slug=author.slug  genre='all' %}">
+                  <img class="authors-slide-image" loading="lazy" 
+                  src="https://cms.yatuk.am{{author.middle_optimized.url}}" alt="{{author.name}}" />
+                  <h3>{{author.name}}</h3>
+          </a>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  

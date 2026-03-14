@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>{{poem.name_hy}}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="canonical" href="{% url "poem" author=poem.author.slug slug=poem.slug id=poem.id %}" />
+        <style type="text/css">
+            @font-face {
+                font-family: poqrik;
+                src: url("FreeSerif.ttf");
+                }
+            @font-face {
+                font-family: FMBF_Wien;
+                src: url("ARM HMK'S SCRIPT.TTF");
+                }
+             @page {
+                background-image: url('https://poem.yatuk.am/static/images/pdf-bg.png');
+                background-page-step: 1;
+                background-opacity: 0.9;
+                @frame content_frame {
+                    left: 50pt;
+                    width: 512pt;
+                    top: 50pt;
+                    height: 750pt;
+                    }
+             }
+            body {
+                font-weight: 400;
+                font-size: 20px;
+                font-family: "poqrik";
+            }
+            .title {
+                font-size: 30px;
+                font-weight: 300;
+                text-align: center;
+            }
+            .author-name{
+                margin: 10px;
+                font-size: 40px;
+                font-weight: 500;
+                font-family: "FMBF_Wien";
+            }
+        </style>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div style="text-align:center">
+                <img style="height:150px" src="https://cms.yatuk.am{{poem.author.middle_optimized.url}}"/>
+                <div class="author-name">{{poem.author.name_hy}}</div>
+                <div class="title">{{poem.name_hy}}</div>
+                {% if section %}<h5>{{section.name}}</h5>{% endif %}
+                <div style="text-align:left">{% if section %}{{section.content|safe}}{% else %}{{poem.content|safe}}{% endif %}</div>
+            </div>
+        </div>
+    </body>
+</html>

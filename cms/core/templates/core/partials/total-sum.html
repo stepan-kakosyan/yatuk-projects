@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<div class="total-text d-flex flex-column align-items-end">
+    <div><span>{% translate "Products - " %}</span> <span>{{ request.user.shopping_cart.total }} {% translate "֏" %}</span></div>
+    <div><span>{% translate "Shipping - " %}</span> <span>{{ shipping_price }} {% translate "֏" %}</span></div>
+    {% if shipping_price %}
+    <div><span>{% translate "Total - " %}</span> <span>{{ request.user.shopping_cart.total|add:shipping_price }} {% translate "֏" %}</span></div>
+    {% else %}
+    <div><span>{% translate "Total - " %}</span> <span>{{ request.user.shopping_cart.total }} {% translate "֏" %}</span></div>
+
+    {% endif %}
+</div>

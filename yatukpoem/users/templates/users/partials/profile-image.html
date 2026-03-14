@@ -1,0 +1,17 @@
+{% load static %}
+<div class="card-header" id="profileHeader">
+    <div class="avatar-upload">
+        <img class="card-avatar" src="{% if request.user.profile_image%}https://{{request.user.domain}}{{ request.user.profile_image.url }}{% else %}{%static 'images/user.png' %}{%endif%}" alt="avatar" />
+        <div class="avatar-edit">
+            <form action="{% url 'upload_profile_image' %}" enctype="multipart/form-data" hx-encoding="multipart/form-data"
+                method="POST"
+                hx-post="{% url 'upload_profile_image' %}"
+                hx-target="#profileHeader"
+                hx-swap="outerHTML" 
+                hx-trigger="change">
+                <input type='file' name='prof-img' id="imageUpload" accept=".png, .jpg, .jpeg, .heic, .heif"/>
+            <label for="imageUpload"><i class="fa fa-instagram"></i></label>
+            </form>
+        </div>
+    </div>
+</div>

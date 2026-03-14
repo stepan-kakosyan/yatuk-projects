@@ -1,0 +1,11 @@
+<div class="row">
+  {% for image in images %}
+  <div class="col-xl-3 col-sm-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <img src="{{image}}" width="256px" height="256px"/>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

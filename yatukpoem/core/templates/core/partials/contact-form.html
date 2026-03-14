@@ -1,0 +1,31 @@
+{% load i18n %}
+<div class="contact_form_inner">
+    <div class="contact_field contact-us-form product-card">
+        
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% if form %}
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="error-message">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit"
+            hx-post="{% url 'contact_us' %}"
+            hx-target=".contact-form"
+            hx-swap="innerHTML">{% translate "Send" %}</button>
+        </form>
+        {% endif %}
+    </div>
+</div>

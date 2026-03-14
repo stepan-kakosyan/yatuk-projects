@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+<link rel="canonical" href="{% url "game" author=game.author.slug slug=game.slug id=game.id %}" />
+<meta name="description" content="{{game.author.name}}">
+<title>{{game.name_hy}} | {{game.author.name}} | {% translate "Yatuk Canvas" %}</title>
+<meta name="keywords" content="հայկական նկար, հայ նկարիչ, կտավ, նկար, armenian painting, paintings, canvas, armenian, {{author.name_hy}}, {{author.name_ru}}, {{author.name_en}},  {{game.name_hy}}, {{game.name_ru}}, {{game.name_en}}">
+<meta property="og:title" content="{{game.author.name}} | {{game.name_hy}} | Յատուկ Կտավ " />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{game.author.name}}ի {{game.name_hy}} նկարով փազլը խաղացեք Յատուկ Կտավ կայքում" />
+<meta property="og:image" content="https://cms.yatuk.am{{game.image.url}}" />
+{% endblock og_properties %}
+{% block content %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as CURR_LANG %}
+<div class="w-100">
+  <nav>
+    <ol class="breadcrumb breadcrumb-yatuk light-card">
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'authors' %}">{% translate "Authors" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'author' slug=game.author.slug  %}">{{game.author.name}}</a></li>
+      <li class="breadcrumb-item active">{{game.name}}</li>
+    </ol>
+  </nav>
+
+  <div class="d-flex justify-content-between mobile-flex-column">
+
+    <div class="w-100 poem-card card-full col-lg-9 col-sm-12" id="menu2d">
+
+        <div class="card light-card p-3">
+          <div class="d-flex m-2 justify-content-center">
+            <a href="{% url "author" slug=game.author.slug %}" class="m-1 game-card-author-image">
+              <img src="https://cms.yatuk.am{{game.author.image_.url}}"></a>
+            <div>
+              <h5><a href="{% url "author" slug=game.author.slug %}" >{{game.author.name}}</a></h5>
+              <h3>{{game.name}}</h3>
+            </div>
+          </div>
+          <div class="game-card-main-image" id="artCard"> 
+            <img src="https://cms.yatuk.am{{game.image.url}}">
+            <a class="play-game-button light-card" href="#game-number-href">
+              <i class="fa fa-puzzle-piece"></i>{% translate "Play game" %}</a>
+          </div>
+          <span id="game-number-href" class="pb-3"></span>
+        </div>
+        <div class="w-100 card light-card p-3" id="game-numbers">
+          <h4 class="text-center">{% translate "Choose numbers of puzzle pieces" %}<h4>
+          <div class="radio-tile-group flex-wrap">
+            {% for number in numbers %}
+              <div class="input-container">
+                  <input name="size" id="list_{{number}}" class="radio-button" type="radio" value="{{number}}"
+                    hx-get="{% url 'get_game' id=game.id %}"
+                    hx-target="#artCard"
+                    hx-trigger="click"
+                    hx-swap="innerHTML show:#menu2d:top"          
+                  />
+                  <div class="radio-tile">
+                    <label for="list_{{number}}" class="radio-tile-label"><i class="fa fa-puzzle-piece"></i>{{number}}</label>
+                  </div>
+              </div>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="w-100">
+          {% include 'core/partials/like.html' %}
+        </div>
+        <div class="w-100">
+          {% include 'core/partials/comment.html' %}
+        </div>
+        {% include "core/partials/game-carousel.html" %}
+
+  </div>
+<div class="col-lg-3 col-sm-12">
+    {% include 'core/partials/music-card.html' %}
+    {% include 'core/partials/poem-author-card.html' %}
+  </div>
+</div>
+
+{% endblock content %}

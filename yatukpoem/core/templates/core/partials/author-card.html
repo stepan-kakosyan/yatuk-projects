@@ -1,0 +1,6 @@
+<a class="authors-slide" href="{% url 'author' slug=author.slug genre='all' %}">
+    <div class="author-slide-card light-card">
+        <img class="authors-slide-image" loading="lazy" src="https://cms.yatuk.am{{author.middle_optimized.url}}" alt="{{author.name}}" />
+        <h3>{{author.name}}</h3>
+    </div>
+</a>

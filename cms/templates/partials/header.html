@@ -1,0 +1,79 @@
+{% load i18n %}
+{% load static %}
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <label for="headcheck" style="display:none;"></label>
+        <input type="checkbox" name="headcheck" id="headcheck">
+        <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+        <div class="header-cart-mobile header-cart">
+        {% include 'partials/cart.html' with myid="cart1" %}
+        </div>
+        <a class="brand" href="{% url 'index' %}">
+          <img src="{% static '/images/yatuk.png' %}"  width="100%" height="100%" alt="{% translate "Yatuk jigsaw puzzle" %}">
+            <div class="title">{% translate "Yatuk" %}</div>
+        </a>
+        <ul class="menu-items">
+            <li><a class="{% if active == "index" %}active{% endif %}" href="{% url 'index' %}">{% translate "Home" %}</a></li>
+            <li><a class="{% if active == "store" %}active{% endif %}" href="{% url 'store' %}">{% translate "Store" %}</a></li>
+            <li class="position-relative submenu-header">
+              <div class="submenu-title {% if active == "shipping" or active == "contact_us" or active == "authors" %}active{% endif %}" >
+                <i class="fa fa-angle-double-down"></i>
+              </div>
+                <ul class="submenu-ul">
+                  <li class="width-max-content"><a class="{% if active == "authors" %}active{% endif %}" href="{% url 'authors' %}">{% translate "Authors" %}</a></li>
+                  <li class="width-max-content"><a class="{% if active == "shipping" %}active{% endif %}" href="{% url 'shipping' %}">{% translate "Shipping" %}</a></li>
+                  <li class="width-max-content"><a class="{% if active == "contact_us" %}active{% endif %}" href="{% url 'contact_us' %}">
+                    {% translate "Contact Us" %}</a></li>
+                </ul>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li><a class="profile-info-nav" href="{% url 'profile' %}">{% translate "My Profile" %}</a></li>
+            {% else %}
+            <li><a class="{% if active == "login" %}active{% endif %}" href="{% url 'login' %}">{% translate "Login" %}</a></li>
+            {% endif %}
+            <li class="languages d-flex justify-center align-items-center">
+              <div class="header-cart">{% include 'partials/cart.html'  with myid="cart2" %}</div>
+                {% get_available_languages as LANGUAGES %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% get_language_info for LANGUAGE_CODE as CURR_LANG %}
+                <div class="language-dropdown dropdown">
+                  <div class="dropdown-toggle" type="button" id="languagedropdownMenuButton" 
+                  data-toggle="dropdown">
+                    <img src="/static/images/{{ CURR_LANG.code }}.svg"  width="100%" height="100%" alt="{{CURR_LANG.code}}"/>
+                </div> 
+                  <div class="dropdown-menu language-dropdown-menu">
+                    {% for lang in languages %}
+                    {% if lang.code != CURR_LANG.code %}
+                      <a class="dropdown-item" href="{% url 'set_language' %}?language={{lang.code}}&next_url={{request.path}}">
+                      <img src="/static/images/{{ lang.code }}.svg"  width="100%" height="100%"/>  </a>
+                    {% endif %}
+                  {% endfor %}
+                  </div>
+              </div>
+              <div class="theme-dropdown dropdown">
+                <a class="dropdown-toggle" href="#-" type="button" id="themedropdownMenuButton" 
+                data-toggle="dropdown">
+                <div class="theme-icon" style="background-image: {{ request.session.background }};"></div>
+                </a> 
+                <div class="dropdown-menu theme-dropdown-menu">
+                  {% for key, value in request.session.backgrounds.items %}
+                      <a class="dropdown-item {% if request.session.background == value %}active{% endif %}" href="#{{key}}" hx-get="{% url 'set_theme' %}?theme={{key}}"
+                        hx-trigger="click"
+                        hx-target="#bg-artwork"
+                        hx-swap="outerHTML">
+                        <div class="theme-icon" style="background-image: {{ value }};"></div>
+                      </a>
+                {% endfor %}
+                </div>
+            </li>
+          </li>
+        </ul>
+    </div>
+  </nav>
+</header>

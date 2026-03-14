@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+<meta name="description" content="Արագ և անվճար առաքման տարբերակներ, որոնցից ցանկացաշ մեկի ընտրության դեպքում ապրանքը ստանալուե եք իդեալական վիճակում">
+<title>{% translate "Yatuk" %}  - {% translate "Shipping" %}</title>
+{% endblock %}
+{% block content %}
+<div class="homepage">
+    <div class="main-text text-center">
+        <h1>{% translate "Shipping Methods" %}</h1>
+        <span>{% translate "Whichever option you will choose product will be delivered without any problem" %}</span>
+    </div>
+<div class="shiiping-cards">
+    {% for method in methods %}
+        <div class="container-glass light-card">
+            <img class="img" loading="lazy" src="https://cms.yatuk.am/media/{{method.image}}" alt="{{method.name}}">
+            <div class="shiiping-card-title">{{method.title}}</div>
+            <p class="text">
+                {{method.description}}
+            </p>
+        </div>
+    {% endfor %}
+
+</div>
+</div>
+{% endblock content %}

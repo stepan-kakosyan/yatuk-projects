@@ -1,0 +1,112 @@
+{% load i18n %}
+{% load static %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info_list for LANGUAGES as languages %}
+{% get_language_info for LANGUAGE_CODE as CURR_LANG %}
+<header class="header">
+  <nav class="navbar light-card">
+    <div id="all-applications-nav">
+      <div class="dropdown profile-header-dropdown ">
+        <a class="dropdown-toggle" href="#" role="button" id="AllApplications" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-th" aria-hidden="true"></i></a>
+        <div class="dropdown-menu light-card" aria-labelledby="AllApplications">
+          <div class=" dropdown-item">
+            <a target="_blank" href="https://poem.yatuk.am/hy/">
+              <span class="image-container"><img src="{% static '/images/paruyr-sevak.png' %}"width="100%" height="100%" alt="Yatuk Poem Յատուկ Պոէմ"></span>
+            {% translate "Yatuk Poem" %}</a>
+          </div>
+          <div class=" dropdown-item">
+            <a target="_blank" href="https://canvas.yatuk.am/hy/">
+              <span class="image-container"><img src="{% static '/images/minas-avetisyan.png' %}" width="100%" height="100%" alt="Yatuk Canvas Յատուկ Կտավ"></span>
+            {% translate "Yatuk Canvas" %}</a>
+          </div>
+          <div class=" dropdown-item">
+            <a target="_blank" href="https://play.yatuk.am/hy/">
+              <span class="image-container">
+                <img src="{% static '/images/aram-khachatryan.png' %}"width="100%" height="100%" alt="Yatuk Music Յատուկ Երաժշտություն"></span>
+            {% translate "Yatuk Music" %}</a>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div class="navbar-container container">
+      <label for="headcheck" style="display:none;"></label>
+        <input type="checkbox" name="headcheck" id="headcheck">
+        <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+        <div class="header-cart-mobile header-cart">
+          {% include 'partials/cart.html' with myid="cart1" %}
+          </div>
+        <a class="brand" href="{% url 'index' %}">
+          <img src="{% static '/images/yatuk.png' %}" width="100%" height="100%" alt="Yatuk Յատուկ">
+          <img src="/static/images/logo-{{ request.session.theme }}-{{ CURR_LANG.code }}.png"  
+          width="100%" height="100%" class="text-image text-image-img" alt="Yatuk Յատուկ">
+        </a>
+        <ul class="menu-items">
+            <li><a class="{% if active == "index" %}active{% endif %}" href="{% url 'index' %}">{% translate "Home" %}</a></li>
+            <li><a class="{% if active == "store" %}active{% endif %}" href="{% url 'store' %}">{% translate "Store" %}</a></li>
+            <li class="width-max-content"><a class="{% if active == "blog" %}active{% endif %}" href="{% url 'blog:list' %}">
+              {% translate "Blog" %}</a></li>
+            <li class="width-max-content"><a class="{% if active == "reviews" %}active{% endif %}" href="{% url 'reviews' %}">
+              {% translate "Reviews" %}</a></li>
+            <li><a class="{% if active == "authors" %}active{% endif %}" href="{% url 'authors' %}">{% translate "Authors" %}</a></li>
+            <li class="width-max-content"><a class="{% if active == "shipping" %}active{% endif %}" href="{% url 'shipping' %}">
+              {% translate "Shipping" %}</a></li>  
+            {% if request.user.is_authenticated %}
+            <li>
+              <div class="dropdown profile-header-dropdown">
+                <a class="profile-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img class="header-card-avatar" src="{% if request.user.profile_image%}https://{{request.user.domain}}{{ request.user.profile_image.url }}{% else %}{%static 'images/user.png' %}{%endif%}" alt="avatar" />
+                </a>
+                <div class="dropdown-menu light-card" aria-labelledby="dropdownMenuLink">
+                  <div class=" dropdown-item">
+                    <i class="fa fa-user"></i>
+                    <a class="profile-info-nav" href="{% url 'profile' %}">{% translate "My Profile" %}</a>
+                  </div>
+
+                  <div class=" dropdown-item">
+                    <i class="fa fa-sign-out"></i>
+                    <a class="profile-info-nav" href="{% url 'logout' %}">{% translate "Logout" %}</a>
+                  </div>
+                </div>
+              </div> 
+            </li>
+            {% else %}
+            <li><a class="{% if active == "login" %}active{% endif %}" href="{% url 'login' %}">{% translate "Login" %}</a></li>
+            {% endif %}
+            <li class="languages d-flex justify-center align-items-center">
+              <div class="header-cart">{% include 'partials/cart.html'  with myid="cart2" %}</div>
+                <div class="language-dropdown dropdown">
+                  <div class="dropdown-toggle" type="button" id="languagedropdownMenuButton" 
+                  data-toggle="dropdown">
+                    <img src="/static/images/{{ CURR_LANG.code }}.svg"  width="100%" height="100%" alt="{{CURR_LANG.code}}"/>
+                </div> 
+                  <div class="dropdown-menu language-dropdown-menu light-card">
+                    {% for lang in languages %}
+                    {% if lang.code != CURR_LANG.code %}
+                      <a class="dropdown-item" href="{% url 'set_language' %}?language={{lang.code}}&next_url={{request.path}}">
+                      <img src="/static/images/{{ lang.code }}.svg"  width="100%" height="100%"/>  </a>
+                    {% endif %}
+                  {% endfor %}
+                  </div>
+              </div>
+              {% if request.session.theme == "dark" %}
+              <div class="mode-button" data-mode="light" hx-get="{% url "set_theme" %}?theme=light"
+              hx-swap="innerHTML" hx-target="#me" hx-trigger="click"
+              ><i class="fa fa-sun-o icon-mode" aria-hidden="true"></i></div>
+              {% else %}
+              <div class="mode-button" data-mode="dark" hx-get="{% url "set_theme" %}?theme=dark"
+              hx-swap="innerHTML" hx-target="#me" hx-trigger="click"><i class="fa fa-moon-o icon-mode" aria-hidden="true"></i></div>
+              {% endif %}
+              <div id="me"></div>
+            </li>
+          </li>
+        </ul>
+    </div>
+  </nav>
+</header>

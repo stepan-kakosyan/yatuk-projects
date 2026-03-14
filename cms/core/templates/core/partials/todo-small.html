@@ -1,0 +1,56 @@
+{% load static %}
+{% load i18n %}
+{% load customtags %}
+<div class="card" id="todo_list_card">
+    <div class="card-body">
+      <h4 class="card-title">{% translate "To Do List" %}</h4>
+      <form method="post">
+      <div class="add-items d-flex">
+        {% csrf_token %}
+        {{ todo_form.text|addclass:"form-control todo-list-input" }}
+        <button class="add btn btn-primary todo-list-add-btn"
+          hx-post="{% url 'add_todo' %}?in_dashboard=true"
+          hx-swap="outerHTML"
+          hx-target="#todo_list_card"
+          hx-trigger="click"
+          hx-indicator="#spinner"
+        >{% translate "Add New" %}</button>
+      </div>
+    </form>
+      <div class="list-wrapper">
+
+        <ul class="d-flex flex-column text-white todo-list todo-list-custom">
+          {% for td in todos%}
+          <li>
+            <div class='form-check form-check-success'>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="checkbox" type="checkbox" {% if td.done %}checked{% endif%}
+                  hx-get="{% url 'done_undone_todo' pk=td.id %}?in_dashboard=true"
+                  hx-swap="outerHTML"
+                  hx-target="#todo_list_card"
+                  hx-indicator="#spinner"
+                  hx-trigger="click">
+                  {{td.text}}
+                <i class="input-helper"></i>
+              </label>
+              <div>{{ td.created_at|date:'Y-m-d H:i' }}</div>
+            </div>
+            </div>
+            <i class="remove mdi mdi-close-circle-outline"
+                hx-get="{% url 'remove_todo' pk=td.id %}"
+                hx-swap="outerHTML"
+                hx-indicator="#spinner"
+                hx-target="#todo_list_card"
+                hx-trigger="click"></i>
+          </li>
+          {% empty %}
+          {% translate "To Do List is empty" %}
+            {% endfor%}
+      </ul>
+      </div>
+    </div>
+    <a type="button" class="btn btn-info btn-lg btn-block"
+      href="{% url 'todos'%}"
+    >{% translate "Show All" %}</a>
+  </div>

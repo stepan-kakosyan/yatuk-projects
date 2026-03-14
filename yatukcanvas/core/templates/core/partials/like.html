@@ -1,0 +1,17 @@
+{% load i18n %}
+<div class="like-section light-card">
+        <div class="like-item" 
+            hx-get="{% url 'like' id=game.id %}"
+            hx-swap="outerHTML"
+            hx-trigger="click"
+            hx-target=".like-section"
+            >{% if game.liked %}<i class="fa fa-thumbs-up icon-colored"></i>{% else %}<i class="fa fa-thumbs-o-up"></i>{% endif %} <span>
+                {% if game.like_count > 0 %}{{game.like_count}}{% endif %}
+                {% if game.like_count > 1 %} {% translate "Likes" %}{% else %}{% translate "Like" %}{% endif %}</span></div>
+        <div class="like-item"
+        hx-get="{% url 'favorite' id=game.id %}"
+        hx-swap="outerHTML"
+        hx-trigger="click"
+        hx-target=".like-section"
+        >{% if game.favorite %}<i class="fa fa-bookmark icon-colored"></i>{% else %}<i class="fa fa-bookmark-o"></i>{% endif %} <span>{% translate "Save" %}</span></div>
+    </div>

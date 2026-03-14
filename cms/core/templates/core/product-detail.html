@@ -1,0 +1,95 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% block og_properties %}
+<meta name="description" content="{{product.description|striptags|truncatechars:150}}">
+<title>Yatuk - {{product.category}}, {{product.title}}</title>
+<meta property="og:title" content="Յատուկ | {{product.category.title_hy}} | {{product.title_hy}}" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{product.description|striptags|truncatechars:150}}" />
+<meta property="og:image" content="https://cms.yatuk.am{{product.for_share_image.optimized.url}}" />
+<meta name="keywords" content="Ապրանք, արվեստ, գլուխկոտրուկ, թանգարան, նկարիչ, հայ նկարիչ, product, art product, museum, painter, artowkr, armenian painter, drawing, {{product.category.title_hy}}, {{product.category.title_en}}, {{product.category.title_ru}}, {{product.title_hy}}, {{product.title_ru}}, {{product.title_en}}, ">
+{% endblock og_properties %}
+{% block content %}
+<div>
+<nav>
+    <ol class="breadcrumb breadcrumb-yatuk">
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'store' %}">{% translate "Store" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'store_category' category=product.category.slug_en %}">{{product.category}}</a></li>
+      <li class="breadcrumb-item active">{{product.title}}</li>
+    </ol>
+  </nav>
+
+<div id="content-wrapper">
+    <div class="column product-pictures">
+        <div class="featured_image">
+            {% for image in product.product_images%}
+            {% if forloop.counter == 1 %}
+                <img id="featured"  loading="lazy" src="https://cms.yatuk.am/{{image.optimized.url}}" alt="{{product.title}}">
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div id="slide-wrapper">
+            <div id="slider">
+                {% for image in product.product_images%}
+                    <img class="thumbnail {% if forloop.counter == 1 %}active{% endif %}" 
+                    loading="lazy" src="https://cms.yatuk.am/{{image.optimized.url}}"  alt="{{product.title}}">
+                {% endfor %}
+            </div>
+            {% if product.is_finished %}<div class="finished-label">{% translate "Sold out" %}</div>{% endif %}
+        </div>
+    </div>
+
+    <div class="column product-card">
+        
+        <h1>{{product}}</h1>
+        <div class="authors-title">{% if product.product_authors.all|length > 1 %}{% translate "Authors" %}{% else %}{% translate "Author" %}{% endif %}</div>
+        <div class="product-aothors flex-wrap d-flex">
+            {% for author in product.product_authors.all %}
+                <a class="author-name d-flex align-items-center m-1" href="{% url 'author' slug=author.author.slug %}">
+                    <img class="author-image" loading="lazy" src="https://cms.yatuk.am{{author.author.thumbnail.url}}" alt="{{product.title}}">
+                    <span class="pl-1">{{author.author.name}}</span>
+                </a>
+            {% endfor %}
+        </div>
+        <hr>
+        <h3>{{product.price}}֏</h3>
+        <p>{{product.description|safe}}</p>
+        {% if not product.is_finished %}<button hx-get="{% url 'add_in_cart' id=product.id %}" class="p-2" hx-target=".icon-in-button{{product.id}}"
+          hx-trigger="click" hx-swap="innerHTML">{% translate "Add to card" %}<span class="icon-in-button icon-in-button{{product.id}}"></span></button>{% endif %}
+    </div>
+    <div class="main-text text-center  mt-3 w-100">
+        <h3>{% translate "Related Games" %}</h3>
+        <span>{% translate "We have puzzle games with this paintings in Yatuk Camvas website" %}</span>
+    </div>
+    <div class="product-homepage product-list" id="product-list">
+        {% include 'core/partials/game-list.html' %}
+    </div>
+    <div class="main-text text-center  mt-3 w-100">
+        <h3>{% translate "Similar Products" %}</h3>
+        <span>{% translate "We have similar products that you may also like." %}</span>
+    </div>
+    <div class="product-homepage product-list" id="product-list">
+        {% include 'core/partials/product-list.html' with hide_filters=True %}
+    </div>
+
+</div>
+
+<script type="text/javascript">
+        let thumbnails = document.getElementsByClassName('thumbnail')
+        let activeImages = document.getElementsByClassName('active')
+        for (var i=0; i < thumbnails.length; i++){
+            thumbnails[i].addEventListener('click', function(){
+
+                if (activeImages.length > 0){
+                    activeImages[0].classList.remove('active')
+                }
+            
+                this.classList.add('active')
+                document.getElementById('featured').src = this.src
+            })
+        }
+
+</script>
+</div>
+{% endblock content %}

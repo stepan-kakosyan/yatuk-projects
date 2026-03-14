@@ -1,0 +1,153 @@
+{% load i18n %}
+{% load static %}
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+    <a class="sidebar-brand brand-logo" href="{% url 'index' %}">
+      <img src="{% static '/images/logo.png' %}" alt="logo"></a>
+    <a class="sidebar-brand brand-logo-mini" href="{% url 'index' %}">
+      <img src="{% static 'images/logo.png' %}" alt="logo"></a>
+  </div>
+  <ul class="nav">
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'index' %}" name="index">
+        <span class="menu-icon">
+          <i class="mdi mdi-speedometer"></i>
+        </span>
+        <span class="menu-title">{% translate "Main" %}</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'todos' %}">
+        <span class="menu-icon">
+          <i class="mdi mdi-reproduction"></i>
+        </span>
+        <span class="menu-title">{% translate "To Do List" %}</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'orders' %}">
+        <span class="menu-icon">
+          <i class="mdi mdi-arrow-right"></i>
+        </span>
+        <span class="menu-title">{% translate "Orders" %}</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'products' %}">
+        <span class="menu-icon">
+          <i class="mdi mdi-reproduction"></i>
+        </span>
+        <span class="menu-title">{% translate "Products" %}</span>
+      </a>
+    </li>
+
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'transactions' %}">
+        <span class="menu-icon">
+          <i class="mdi mdi-cash-usd"></i>
+        </span>
+        <span class="menu-title">{% translate "Sales" %}</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'costs' %}">
+        <span class="menu-icon">
+          <i class="mdi mdi-cash-multiple"></i>
+        </span>
+        <span class="menu-title">{% translate "Costs" %}</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'transfers' %}">
+        <span class="menu-icon">
+          <i class="mdi mdi mdi-pin"></i>
+        </span>
+        <span class="menu-title">{% translate "Transfers" %}</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'collabarators' %}">
+        <span class="menu-icon">
+          <i class="mdi mdi-account-check"></i>
+        </span>
+        <span class="menu-title">{% translate "Collaaborators" %}</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{% url 'contact_us_list' %}">
+        <span class="menu-icon">
+          <i class="mdi mdi-message"></i>
+        </span>
+        <span class="menu-title">{% translate "Contact Form List" %}</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+<nav class="navbar p-0 fixed-top d-flex flex-row">
+  <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+    <a class="navbar-brand brand-logo-mini" href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo" /></a>
+  </div>
+  <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+      <span class="mdi mdi-menu"></span>
+    </button>
+    <ul class="navbar-nav w-100">
+
+    </ul>
+    <ul class="navbar-nav navbar-nav-right">
+      {% get_available_languages as LANGUAGES %}
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_language_info_list for LANGUAGES as languages %}
+      {% get_language_info for LANGUAGE_CODE as CURR_LANG %}
+
+      <li class="nav-item dropdown border-left">
+        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+          {{CURR_LANG.name_local|title}}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+          {% for lang in languages %}
+          {% if lang.code != CURR_LANG.code %}
+          <a class="dropdown-item" 
+          href="{% url 'set_language' %}?language={{lang.code}}">
+          {{ lang.name_local|title }}</a>{% endif %}
+          {% endfor %}
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+          <div class="navbar-profile">
+            <img class="img-xs rounded-circle" 
+            src="{% if request.user.profile_image%}https://yatuk.am{{ request.user.profile_image.url }}{% else %}{%static 'images/user.png' %}{%endif%}" alt="">
+            <p class="mb-0 d-none d-sm-block navbar-profile-name">
+              {% if request.user.first_name and request.user.last_name %}
+                {{request.user.first_name}} {{request.user.last_name}}
+              {% else %}
+                {{request.user.username}}
+              {% endif %}
+            </p>
+            <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+          </div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item preview-item" href="{% url 'logout' %}">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-dark rounded-circle">
+                <i class="mdi mdi-logout text-danger"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <p class="preview-subject mb-1">{% translate "Logout" %}</p>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+    </ul>
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+      <span class="mdi mdi-format-line-spacing"></span>
+    </button>
+  </div>
+</nav>

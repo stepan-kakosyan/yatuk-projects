@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+<meta name="description" content="{{photo.name}}">
+<title>{% translate "Photoarchive" %} | {% translate "Yatuk Poem" %}</title>
+<meta name="keywords" content="բանաստեղծ, բանաստեղծություն, պոեմ, պատմվածք, վեպ, վիպակ, հեղինակ, հայ գրող, հայ բանաստեղծ, հայ վիպասան, {{photo.name}}, {% for i in writers %}{{writer.name}},{% endfor %} {% for i in composers %}{{composer.name}},{% endfor %} {% for i in painters %}{{painter.name}},{% endfor %}">
+<meta property="og:title" content="Ֆոտոարխիվ | Յատուկ Պոէմ" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Հարյուրավոր լուսանկերների արխիվ հայ գրողներից" />
+<meta property="og:image" content="https://cms.yatuk.am{{photo.image.url}}" />
+
+{% endblock og_properties %}
+{% block content %}
+<div class="search-content">
+  <nav>
+    <ol class="breadcrumb breadcrumb-yatuk light-card">
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+      <li class="breadcrumb-item active">{% translate "Photos" %}</li>
+    </ol>
+  </nav>
+<div  id="photo-list">
+  {% include 'core/partials/photo-list.html' %}
+</div>
+</div>
+{% endblock content %}

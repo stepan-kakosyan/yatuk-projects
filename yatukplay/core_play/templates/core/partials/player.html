@@ -1,0 +1,62 @@
+{% load i18n %}
+
+<div id="app-cover">
+    
+    <div id="bg-artwork"></div>
+    <div id="player">
+      <div id="player-track" class="active">
+        <h1 id="album-name"></h1>
+        <div id="track-name"></div>
+        <div id="track-time">
+          <div id="current-time"></div>
+          <div id="track-length"></div>
+        </div>
+        <div id="s-area">
+          <div id="ins-time"></div>
+          <div id="s-hover"></div>
+          <div id="seek-bar"></div>
+        </div>
+        <span class="download_button">
+          <a onclick="copy()" href="#" class="copy-icon"
+          data-url=""><i class="fa fa-copy"></i></a>
+        </span>
+        <span class="info-text">{% translate "Copied" %}</span>
+
+      </div>
+      <div id="player-content">
+        <div id="album-art">
+          {% for audio in audios %}
+          <img src="https://cms.yatuk.am{{ audio.thumbnail.url }}" 
+          class="{% if forloop.counter1 == 1 %}active{% endif %}" id="{{audio.id}}">
+          {% endfor %}
+          <div class="repeat_icon">
+            <i class="fa fa-repeat" aria-hidden="true"></i>
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </div>
+          <div id="buffer-box">{% translate "Buffering" %}...</div>
+        </div>
+        <div id="player-controls">
+          <div class="control">
+            <div class="button_player" id="play-previous">
+              <i class="fa fa-backward"></i>
+            </div>
+          </div>
+          <div class="control">
+            <div class="button_player" id="play-pause-button">
+              <i class="fa fa-play"></i>
+            </div>
+          </div>
+          <div class="control">
+            <div class="button_player" id="play-next">
+              <i class="fa fa-forward"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var audios_json  = JSON.parse("{{audios_json|escapejs}}");
+  </script>

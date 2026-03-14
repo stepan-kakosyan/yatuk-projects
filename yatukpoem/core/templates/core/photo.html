@@ -1,0 +1,93 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+<link rel="canonical" href="{% url "photo" slug=photo.slug id=photo.id %}" />
+<meta name="description" content="{{photo.name}}">
+<title>{{photo.name}} | {% translate "Yatuk Poem" %}</title>
+<meta name="keywords" content="բանաստեղծ, բանաստեղծություն, պոեմ, պատմվածք, վեպ, վիպակ, հեղինակ, հայ գրող, հայ բանաստեղծ, հայ վիպասան, {{photo.name}}, {% for i in writers %}{{writer.name}},{% endfor %} {% for i in composers %}{{composer.name}},{% endfor %} {% for i in painters %}{{painter.name}},{% endfor %}">
+<meta property="og:title" content="{{photo.name}} | Յատուկ Պոէմ | Ֆոտոարխիվ" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{photo.name}}" />
+<meta property="og:image" content="https://cms.yatuk.am{{photo.image.url}}" />
+
+{% endblock og_properties %}
+{% block content %}
+<div class="search-content">
+  <nav>
+    <ol class="breadcrumb breadcrumb-yatuk light-card">
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'photos' %}">{% translate "Photos" %}</a></li>
+      <li class="breadcrumb-item active">{{photo.name|truncatechars:50}}</li>
+    </ol>
+  </nav>
+<div id="photo-content" class="d-flex justify-content-between mobile-flex-column">
+  <div class="poem-card card-full">
+    <figure class="main-photo photo-card-full light-card">
+      <img title="{{photo.name}}" src="https://cms.yatuk.am{{photo.optimized.url}}" alt="{{photo.name}}">
+        <figcaption class="figure-caption text-center">{{photo.name}}</figcaption>
+          <div class="photo-buttons">
+            <span onclick="copy({{photo.id}})" class="copy-icon-{{photo.id}} button-photo light-card"
+              data-url="https://poem.yatuk.am/hy/photo/{{photo.slug}}-{{photo.id}}/">
+            <i class="fa fa-copy"></i></span>
+            <span class="button-photo light-card"><a href="https://cms.yatuk.am{{photo.image.url}}"><i class="fa fa-arrows-alt"></i></a></span>
+          </div>
+    </figure>
+
+  </div>
+  <div class="left-authors">
+    {% for writer in writers %}
+      <a class="authors-slide author-small" href="{% url 'author' slug=writer.slug genre='all' %}">
+        <div class="author-slide-card light-card d-flex flex-row">
+            <img class="authors-slide-image" loading="lazy" 
+              src="https://cms.yatuk.am{{writer.middle_optimized.url}}" alt="{{writer.name}}" />
+            <h5>{{writer.name}}</h5>
+        </div>
+      </a>
+    {% endfor %}
+    {% for painter in painters %}
+      <a class="authors-slide author-small" target="_blank" href="{{painter.url}}">
+        <div class="author-slide-card light-card d-flex flex-row">
+            <img class="authors-slide-image" loading="lazy" 
+              src="https://cms.yatuk.am{{painter.image_.url}}" alt="{{painter.name}}" />
+            <h5>{{painter.name}}</h5>
+            <span class="website-icon"><i class="fa fa-paint-brush"></i></span>
+        </div>
+      </a>
+    {% endfor %}
+    {% for composer in composers %}
+      <a class="authors-slide author-small" target="_blank" href="{{composer.url}}">
+        <div class="author-slide-card light-card d-flex flex-row">
+            <img class="authors-slide-image image-rounded" loading="lazy" 
+              src="https://cms.yatuk.am{{composer.middle_optimized.url}}" alt="{{composer.name}}" />
+            <h5>{{composer.name}}</h5>
+            <span class="website-icon"><i class="fa fa-music"></i></span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+{% if poems %}
+  <div class="main-text text-center  mt-3">
+    <h3>{% translate "Related works" %}</h3>
+  </div>
+  <div class="poem-card">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+    {% for poem in poems %}
+      {% include 'core/partials/poem-card.html' with is_slider=True show_author=True %}
+    {% endfor %}
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+  </div>
+{% endif %}
+{% if games %}
+  <div class="main-text text-center  mt-3">
+    <h3>{% translate "Related paintings" %}</h3>
+  </div>
+  {% include "core/partials/game-carousel.html" %}
+{% endif %}
+{% endblock content %}

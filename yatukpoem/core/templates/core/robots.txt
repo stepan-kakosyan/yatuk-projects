@@ -1,0 +1,8 @@
+User-Agent: *
+
+Disallow: /admin
+Allow: *
+
+Sitemap: https://poem.yatuk.am/hy/sitemap.xml
+Sitemap: https://poem.yatuk.am/en/sitemap.xml
+Sitemap: https://poem.yatuk.am/ru/sitemap.xml

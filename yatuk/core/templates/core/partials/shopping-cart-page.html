@@ -1,0 +1,51 @@
+{% load i18n %}
+<div  hx-get="{% url "get_cart_big" %}"
+    hx-trigger="cart-changed from:body" 
+    hx-swap="outerHTML">
+    {% if request.user.cart_items %}
+    <div class="cart-items cart-items-big yatuk-form product-card">
+        {% for cart_item in request.user.cart_items %}
+            <div class="cart-item-big">
+                <span class="cart-image-big">
+                    <img  loading="lazy" src="https://cms.yatuk.am/{{cart_item.product.main_image.thumbnail.url}}"  alt="{{cart_item.product.title}}"></span>
+                <div class="d-flex flex-column w-100 p-2 position-relative">
+                    <a class="itemtitle-big" href="{% url 'product_detail' slug=cart_item.product.slug_en %}">{{cart_item.product.title}}</a>
+                    <div class="d-flex align-center justify-content-between align-items-center">
+                        <span>{{cart_item.count}} * {{ cart_item.product.price }}֏</span>
+                        <div class="plus-minus-inputs">
+                            <button class="icon-button m-0 mr-3"
+                                hx-get="{% url 'change_item_count' id=cart_item.id %}?count=-1"
+                                hx-trigger="click"
+                                hx-swap="afterend"
+                                hx-target="this"
+                            ><i class="fa fa-minus"></i></button>
+                            <span class="item-cart-count">{{cart_item.count}}</span>
+                            <button class="icon-button m-0 ml-3"
+                                hx-get="{% url 'change_item_count' id=cart_item.id %}?count=1"
+                                hx-trigger="click"
+                                hx-swap="afterend"
+                                hx-target="this"
+                            ><i class="fa fa-plus"></i></button>
+                        </div>
+                        <span class="itemcount yatuk-form m-0">
+                            <button class="icon-button m-0 delete-icon"
+                            hx-get="{% url 'remove_from_cart' id=cart_item.id %}">
+                            <i class="fa fa-close"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="total-text"><span>{% translate "Total" %}</span> <span>{{ request.user.shopping_cart.total }} {% translate "֏" %}</span></div>
+    </div>
+    <div class="product-card d-flex flex-column w-100 align-items-end pr-3">
+    <a class="w-50" href="{% url 'checkout' %}"><button class="w-100">{% translate "Checkout" %}</button></a>
+</div>
+{% else %}
+    <div class="d-flex flex-column justify-center align-items-center">
+        <img class="img" src="/static/images/cart-4.svg" 
+        style="width: 150px"  width="100%" height="100%" alt="yatuk-shopping-cart">
+        <div>{% translate "Don't say you didn't like anything. Go back and choose something." %}</div>
+    <div>
+{% endif %}
+</div>

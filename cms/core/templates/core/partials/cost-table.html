@@ -1,0 +1,58 @@
+{% load customtags %}
+{% load i18n %}
+{% if costs %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>{% translate "Product" %}</th>
+      <th>{% translate "Price" %}</th>
+      <th>{% translate "Type" %}</th>
+      <th>{% translate "Note" %}</th>
+      <th>{% translate "Date" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for cost in costs %}
+    <tr>
+      <td class="py-1">
+        {{ cost.product_category.image_tag}}
+      </td>
+      <td class="py-1">
+        {{ cost.product_category.title}}
+      </td>
+      <td>{{ cost.amount}}</td>
+      <td>{{ cost.cost_type_name}}</td>
+      <td>{{ cost.note}}</td>
+      <td>{{ cost.date|beauty_date }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div class="text-center m-4">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    {% if costs.has_previous %}
+    <a type="button" class="btn btn-outline-info"
+      hx-get="{% url "costs" %}?page={{ costs.previous_page_number }}&cost_type={{cost_type}}&category={{category}}&search={{search}}"
+      hx-trigger="click" hx-indicator="#spinner" hx-target="#cost-table" hx-swap="innerHTML show:.nav-pills:top"
+      hx-push-url="true">
+      < </a> {% endif %} {% for num in costs.paginator.page_range %} <a type="button"
+        class="btn  {% if page == num %} btn-info active {% else %}btn-outline-info{% endif %}"
+        hx-get="{% url "costs" %}?page={{ num }}&cost_type={{cost_type}}&category={{category}}&search={{search}}" hx-trigger="click"
+        hx-indicator="#spinner" hx-target="#cost-table" hx-swap="innerHTML show:.nav-pills:top" hx-push-url="true">
+        {{ num }}
+    </a>
+    {% endfor %}
+
+    {% if costs.has_next %}
+    <a type="button" class="btn btn-outline-info"
+      hx-get="{% url "costs" %}?page={{ costs.next_page_number }}&cost_type={{cost_type}}&category={{category}}&search={{search}}"
+      hx-trigger="click" hx-indicator="#spinner" hx-target="#cost-table" hx-swap="innerHTML show:.nav-pills:top"
+      hx-push-url="true">></a>
+    {% endif %}
+
+  </div>
+</div>
+{% else %}
+{% translate "No Costs yet" %}
+{% endif %}

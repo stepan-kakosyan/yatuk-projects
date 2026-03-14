@@ -1,0 +1,39 @@
+{% load static %}
+{% load i18n %}
+<div class="card is-active light-card">
+    <div class="profile-content">
+    <div class="card-buttons">
+{% include 'users/partials/profile-image.html' %}
+      <div class="buttons">
+      <button data-section="#personal_info" class="{% if active == "personal_info" %}is-active{% endif %}">{% translate "Personal details" %}</button>
+      <button data-section="#addresses" class="{% if active == "addresses" %}is-active{% endif %}">{% translate "Addresses" %}</button>
+      {% if orders %}
+      <button data-section="#orders" class="{% if active == "orders" %}is-active{% endif %}">{% translate "Orders" %}</button>
+      {% endif %}
+      <button hx-get="{% url 'logout' %}" hx-swap="innerHTML" hx-target="body">{% translate "Logout" %}</button>
+      </div>
+    </div>
+    <div class="card-main">
+      <div class="card-section {% if active == "personal_info" %}is-active{% endif %}" id="personal_info">
+        <div class="cart-title-underlined">{% translate "Personal details" %}</div>
+        <div class="card-content" id="profile-info">
+          {% include 'users/partials/profile-info.html' %}
+        </div>
+      </div>
+      <div class="card-section {% if active == "addresses" %}is-active{% endif %}" id="addresses">
+        <div class="cart-title-underlined">{% translate "Addresses" %}</div>
+        <div class="card-content" id="address-info">
+          {% include 'users/partials/address-list.html' %}
+        </div>
+
+      </div>
+      <div class="card-section {% if active == "orders" %}is-active{% endif %}" id="orders">
+        <div class="cart-title-underlined">{% translate "Orders" %}</div>
+          <div class="card-content" id="profile-info">
+            {% include 'users/partials/order-list.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+  </div>  </div>

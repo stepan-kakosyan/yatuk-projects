@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div class="homepage">
+    {% include 'core/partials/carousel.html' %}
+    <div class="main-text text-center  mt-3">
+        <h3>{% translate "Art websites from Yatuk" %}</h3>
+        <span>{% translate "We have designed a few art websites where you can enjoy Armenian art" %}</span>
+    </div>
+    {% include 'core/partials/cultural-websites.html' %}
+    <div class="main-text text-center  mt-3">
+        <h3>{% translate "Great Authors" %}</h3>
+        <span>{% translate "We have products based on this great authors artworks." %}</span>
+    </div>
+    <div class="product-homepage product-list" id="product-list">
+        {% include 'core/partials/author-carousel.html' %}
+    </div>
+    <div class="d-flex justify-content-center mt-2">
+        <a  href="{% url 'authors' %}"><div class="see-all-bottom" >
+            {% translate "See all Authors" %}
+        </div>
+    </a>
+    </div>
+    <div class="main-text text-center  mt-3">
+        <h3>{% translate "Most beloved products" %}</h3>
+        <span>{% translate "We do our best to have as much new and amazing products as possible." %}</span>
+    </div>
+    <div class="product-homepage product-list" id="product-list">
+        {% include 'core/partials/product-list.html' %}
+    </div>
+    <div class="d-flex justify-content-center mt-2">
+        <a  href="{% url 'store' %}"><div class="see-all-bottom" >
+            {% translate "See all Products" %}
+        </div></a>
+    </div>
+    <div class="homepage-contact mt-3">
+    {% include 'core/partials/contact-us.html' %}
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+    <meta name="description" content="{% translate "All reviews were written on our Facebook page․" %}">
+    <title>{% translate "Yatuk" %} - {% translate "Reviews" %}</title>
+    <meta property="og:title" content="Յատուկ | Կարծիքներ" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="{% translate "All reviews were written on our Facebook page․" %}" />
+    <meta property="og:image" content="https://yatuk.am/static/images/yatuk-share.jpg" />
+{% endblock %}
+{% block content %}
+<div>
+    <nav>
+        <ol class="breadcrumb breadcrumb-yatuk light-card">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+          <li class="breadcrumb-item active">{% translate "Reviews" %}</li>
+        </ol>
+      </nav>
+  <div class="main-text text-center  mt-3">
+    <h3>{% translate "Reviews" %}</h3>
+    <h5>{% translate "All reviews were written on our Facebook page․" %}</h5>
+</div>
+<div class="d-flex mt-4 flex-wrap review-list">
+
+{% for review in reviews %}
+
+<div class="reviewcard light-card container-glass">
+    <div class="review-ticket-header">
+        <div class="propicbox"><img src="https://cms.yatuk.am/media/{{review.image}}" alt="{{review.name}}" class="propic"></div>
+        
+        <div class="reviewerbox">
+            <h1><a href="{{review.facebook_link}}" class="reviewername" target="_blank">{{review.name}}</a> 
+                <img src="https://preview.checchiadesign.com/code/reviewcard/img/review-icon.png" width="20px"> {% translate "recommends" %}  
+                <a href="https://www.facebook.com/yatukpuzzle/" target="_blank">Յատուկ - Yatuk</a></h1>
+            <p class="reviewdate">{{review.date}}</p>
+        </div>
+    </div>
+  <p class="review">{{review.review}}</p>
+  
+  <p class="bottomText">{% translate "Show the" %} <a href="{{review.facebook_link}}" target="_blank">{% translate "review on Facebook" %}</a></p>
+    </div>
+{% endfor %}
+
+</div>
+</div>
+
+
+</div>
+</div>
+{% endblock content %}

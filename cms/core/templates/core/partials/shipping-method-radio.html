@@ -1,0 +1,23 @@
+<div class="radio-tile-group m-0">
+    {% for method in shipping_methods %}
+      <div class="input-container">
+        <input id="id_shipping_method" class="radio-button" value="{{method.id}}"
+        type="radio" name="shipping_method" 
+        hx-trigger="change"
+        hx-get="{% url 'get_total_sum' %}"
+        hx-target="#total_sum"
+        hx-swap="innerHTML"
+          {% if selected_method == method.id %}checked{% endif %}/>
+        <div class="radio-tile flex-column">
+          <div class="radio-image" style="background-image:url(https://cms.yatuk.am/media/{{method.image}})">
+          </div>
+          <label for="id_shipping_method" class="radio-tile-label">{{method.title}}</label>
+          <span class="radio-price">{{method.price}}֏</span>
+        </div>
+      </div>
+    {% endfor %}
+    {% if form.shipping_method.errors %}
+      <div class="error-message">{{ form.shipping_method.errors }}</div>
+  {% endif %}
+  </div>
+  

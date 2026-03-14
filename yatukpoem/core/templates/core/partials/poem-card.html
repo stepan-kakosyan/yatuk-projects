@@ -1,0 +1,29 @@
+{% load i18n %}
+{% load custom_tags %}
+<div class="card light-card {% if is_slider %}swiper-slide{% endif %}">
+  <a href="{{poem.main_url}}">
+    <div class="img-avatar">
+        <img loading="lazy" src="https://cms.yatuk.am{{poem.author.middle_optimized.url}}" alt="{{poem.author.name}}"/>
+    </div>
+    <div class="card-text">
+      <div class="portada" 
+      style="background-image: url('https://cms.yatuk.am{{poem.game.optimized.url}}'); background-position: {{poem.game.background_position}};"
+      >
+      </div>
+      <div class="title-total">   
+        <div class="title">{{poem.genre.name}}</div>
+        {% if show_author %}<h6>{{poem.author.name}}</h6>{% endif %}
+        <h3>{{poem.name}}</h3>
+    
+    <div class="desc">{{poem.content|striptags|truncatechars:100}}</div>
+  </div>
+   <div class="small-bookmark-icon">
+    {% if poem.favorite %}<i class="fa fa-bookmark"></i>{% endif %} 
+   </div>
+   <div class="small-want-to-read-icon">
+    {% if poem.want_to_read %}<i class="fa fa-book"></i>{% endif %} 
+   </div>
+    </div>
+  </a>
+  </div>
+  

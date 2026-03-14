@@ -1,0 +1,62 @@
+{% load customtags %}
+{% load i18n %}
+{% if transactions %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{% translate "Image" %}</th>
+      <th>{% translate "Product" %}</th>
+      <th>{% translate "Count" %}</th>
+      <th>{% translate "Price" %}</th>
+      <th>{% translate "Type" %}</th>
+      <th>{% translate "Date" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for transaction in transactions %}
+    <tr>
+      <td class="py-1">
+        {{ transaction.product.image_tag}}
+      </td>
+      <td class="py-1">
+        {{ transaction.product.title}}
+      </td>
+      <td>{{ transaction.count}}</td>
+      <td>{{ transaction.amount}}</td>
+      <td>{{ transaction.type_name}}
+        {% if transaction.collaborator %}
+        ({{ transaction.collaborator.title}})
+        {% endif %}
+      </td>
+      <td>{{ transaction.date|beauty_date}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div class="text-center m-4">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    {% if transactions.has_previous %}
+    <a type="button" class="btn btn-outline-info"
+      hx-get="{% url "transactions" %}?page={{ transactions.previous_page_number }}&coll={{coll}}&prod={{prod}}&type={{type}}"
+      hx-trigger="click" hx-indicator="#spinner" hx-target="#transaction-table" hx-swap="innerHTML show:.nav-pills:top"
+      hx-push-url="true">
+      < </a> {% endif %} {% for num in transactions.paginator.page_range %} <a type="button"
+        class="btn  {% if page == num %} btn-info active {% else %}btn-outline-info{% endif %}"
+        hx-get="{% url "transactions" %}?page={{ num }}&coll={{coll}}&prod={{prod}}&type={{type}}" hx-trigger="click"
+        hx-indicator="#spinner" hx-target="#transaction-table" hx-swap="innerHTML show:.nav-pills:top" hx-push-url="true">
+        {{ num }}
+    </a>
+    {% endfor %}
+
+    {% if transactions.has_next %}
+    <a type="button" class="btn btn-outline-info"
+      hx-get="{% url "transactions" %}?page={{ transactions.next_page_number }}&coll={{coll}}&prod={{prod}}&type={{type}}"
+      hx-trigger="click" hx-indicator="#spinner" hx-target="#transaction-table" hx-swap="innerHTML show:.nav-pills:top"
+      hx-push-url="true">></a>
+    {% endif %}
+
+  </div>
+</div>
+{% else %}
+{% translate "No Sellings yet" %}
+{% endif %}

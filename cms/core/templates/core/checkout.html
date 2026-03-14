@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <div class="homepage">
+        <div class="main-text text-center">
+            <h1>{% translate "Checkout" %}</h1>
+            <span>{% translate "Please fill all the fields in correct way." %}</span>
+        </div>
+        <div class="shiiping-cards">
+            <div class="container-glass no-max-width">
+                    {% include 'core/partials/checkout-form.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

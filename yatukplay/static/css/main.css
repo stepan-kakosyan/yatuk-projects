@@ -1,0 +1,759 @@
+*:focus {
+  outline: none;
+}
+@font-face {
+  font-family: 'Aramian Normal';
+  src: url('Aramian-NormalItalic.eot');
+  src: url('/static/fonts/Aramian-NormalItalic.eot?#iefix') format('embedded-opentype'),
+      url('/static/fonts/Aramian-NormalItalic.woff2') format('woff2'),
+      url('/static/fonts/Aramian-NormalItalic.woff') format('woff'),
+      url('/static/fonts/Aramian-NormalItalic.ttf') format('truetype'),
+      url('/static/fonts/Aramian-NormalItalic.svg#Aramian-NormalItalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+body {
+  font-family: 'Aramian Normal', monospace, Helvetica, Arial;
+  margin: 0;
+  background-color: #ffeff5;
+  overflow-y: overlay;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.hover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 75px;
+
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    border-radius: 99px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  margin: 30px auto;
+}
+.hover:before, .hover:after {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  transition: 0.25s linear;
+  z-index: 1;
+}
+.hover:before {
+  content: "";
+  left: 0;
+  justify-content: flex-end;
+
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg,#008793 0%,#00bf72 100%);
+}
+.hover:after {
+  content: "";
+  right: 0;
+  justify-content: flex-start;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg,#008793 0%,#00bf72 100%);
+}
+.hover:hover {
+  background: rgb(34,193,195);
+  background: linear-gradient(to right top,#051937,#004d7a,#008793,#00bf72,#a8eb12);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.hover:hover span {
+  opacity: 0;
+  z-index: -3;
+}
+.hover:hover:before {
+  opacity: 0.5;
+  transform: translateY(-100%);
+}
+.hover:hover:after {
+  opacity: 0.5;
+  transform: translateY(100%);
+}
+.hover span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  font-size: 24px;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+}
+.hover .social-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+.hover .social-link i {
+  text-shadow: 1px 1px rgba(70, 98, 127, 0.7);
+  transform: scale(1);
+}
+.hover .social-link:hover {
+  background-color: rgba(245, 245, 245, 0.1);
+}
+.hover .social-link:hover i {
+  animation: bounce 0.4s linear;
+}
+
+@keyframes bounce {
+  40% {
+    transform: scale(1.4);
+  }
+  60% {
+    transform: scale(0.8);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.right-section{
+  display: flex;
+  justify-content: space-between;
+}
+.logo{
+  display: flex;
+  height: 100px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.logo .title{
+  z-index: 10;
+  color: whitesmoke;
+  font-size: 40px;
+}
+.logo img{
+  z-index: 10;
+  height: 100px;
+  filter: drop-shadow(1px 0px 0px rgb(0 0 0 / 0.4));
+}
+
+#app-cover {
+  width: 100%;
+  max-width: fit-content;
+  height: 100px;
+  margin: 100px auto 20px auto
+}
+
+#bg-artwork {
+  position: fixed;
+  top: -30px;
+  right: -30px;
+  bottom: -30px;
+  left: -30px;
+  background-image: url("https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+  z-index: 1;
+}
+
+#bg-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: 0.51;
+  z-index: 2;
+}
+
+#player {
+  position: relative;
+  height: 120px;
+  z-index: 3;
+}
+
+#player-track {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  left: 15px;
+  padding: 13px 18px 10px 150px;
+  background-color: #fff7f7;
+  border-radius: 15px 15px 0 0;
+  transition: 0.3s ease top;
+  z-index: 1;
+}
+
+#player-track.active {
+  top: -115px;
+  height: 115px;
+}
+
+#album-name {
+  color: #54576f;
+  font-size: 17px;
+}
+
+#track-name {
+  color: #acaebd;
+  font-size: 13px;
+  margin: 5px 0 13px 0;
+  height: 25px;
+}
+#play-previous.disabled {
+  opacity: 0.7;
+  background: none;
+}
+#play-previous.disabled:hover {
+  opacity: 0.7;
+  background: none;
+}
+#play-previous.disabled:hover i {
+  color: grey;
+}
+#track-time {
+  height: 12px;
+  margin-bottom: 3px;
+  overflow: hidden;
+}
+
+#current-time {
+  float: left;
+}
+
+#track-length {
+  float: right;
+}
+
+#current-time,
+#track-length {
+  color: transparent;
+  font-size: 11px;
+  background: linear-gradient(to bottom right, #00bf72, #a8eb12);
+  border-radius: 10px;
+  transition: 0.3s ease all;
+  opacity: 0.5;
+}
+
+#track-time.active #current-time,
+#track-time.active #track-length {
+  background: linear-gradient(to bottom right, #00bf72, #a8eb12);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+}
+
+#s-area,
+#seek-bar {
+  position: relative;
+  height: 4px;
+  border-radius: 4px;
+}
+
+#s-area {
+  background: linear-gradient(to bottom right, #00bf72, #a8eb12);
+}
+.play_album{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.play_album .fa-play{
+  color: whitesmoke;
+  border-radius: 50%;
+  border: 1px solid whitesmoke;
+  font-size: 27px;
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.play_album.checked .fa-play{
+  border-color: rgb(34,193,195);
+  background: linear-gradient(0deg,#008793 0%,#00bf72 100%);
+}
+#ins-time {
+  position: absolute;
+  top: -29px;
+  color: #fff;
+  font-size: 12px;
+  white-space: pre;
+  padding: 5px 6px;
+  border-radius: 4px;
+  display: none;
+}
+
+#s-hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  z-index: 2;
+}
+
+#ins-time,
+#s-hover {
+  background-color: #3b3d50;
+}
+
+#seek-bar {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background: Blue;
+  transition: 0.2s ease width;
+  z-index: 1;
+}
+
+#player-content {
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+#album-art {
+  position: absolute;
+  top: -40px;
+  width: 115px;
+  height: 115px;
+  margin-left: 40px;
+  transform: rotateZ(0);
+  transition: 0.3s ease all;
+  box-shadow: 0 0 0 10px #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#album-art.active {
+  top: -60px;
+  box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+}
+
+#album-art:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  margin: -10px auto 0 auto;
+  background-color: grey;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #fff;
+  z-index: 2;
+}
+.info-text{
+  position: absolute;
+  top: 36px;
+  left: 10px;
+  font-size: 14px;
+  color: green;
+  transition: 0.1s linear all;
+  display: none;
+}
+#album-art img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1;
+}
+
+#album-art img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+#album-art.active img.active {
+  z-index: 1;
+  animation: rotateAlbumArt 3s linear 0s infinite forwards;
+}
+
+@keyframes rotateAlbumArt {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+#buffer-box {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 13px;
+  color: #1f1f1f;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1;
+  padding: 6px;
+  margin: -12px auto 0 auto;
+  background-color: rgba(255, 255, 255, 0.19);
+  opacity: 0;
+  z-index: 2;
+}
+
+#album-art img,
+#buffer-box {
+  transition: 0.1s linear all;
+}
+
+#album-art.buffering img {
+  opacity: 0.25;
+}
+
+#album-art.buffering img.active {
+  opacity: 0.8;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+#album-art.buffering #buffer-box {
+  opacity: 1;
+}
+
+#player-controls {
+  width: 60%;
+  height: 100%;
+  margin: 0 5px 0 141px;
+  float: right;
+  overflow: hidden;
+}
+
+.control {
+  width: 33.333%;
+  float: left;
+  padding: 12px 0;
+}
+
+.button_player {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+
+}
+
+.button_player i {
+  display: block;
+  color: grey;
+  font-size: 26px;
+  text-align: center;
+  line-height: 1;
+  background: linear-gradient(to right top,#051937,#004d7a,#008793,#00bf72,#a8eb12);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.repeat_icon.checked .fa-check{
+  display: block;
+  position: absolute;
+  font-size: 10px;
+}
+.repeat_icon.checked {
+  top: 34%;
+  right: 34%;
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+}
+.repeat_icon .fa-check{
+  display: none;
+}
+.repeat_icon{
+  position: absolute;
+  z-index: 20;
+  top: 38%;
+  right: 37%;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(to right top,#051937,#004d7a,#008793,#00bf72,#a8eb12);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  font-size: 20px;
+  cursor: pointer;
+}
+.button_player,
+.button_player i {
+  transition: 0.2s ease all;
+}
+
+.button_player:hover {
+  background-color: #d6d6de;
+}
+
+.button_player:hover i {
+  color: #fff;
+}
+
+.carousel-section{
+    z-index:10;
+    width:50%; 
+    margin:50px; 
+    align-self: center;
+}
+.carousel-title{
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+    color: whitesmoke;
+}
+
+
+
+
+ .credit {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: inherit;
+}
+ .options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: 100%;
+  height: 400px;
+}
+@media screen and (max-width: 718px) {
+   .options {
+    min-width: 520px;
+  }
+
+}
+@media screen and (max-width: 638px) {
+   .options {
+    min-width: 440px;
+  }
+}
+@media screen and (max-width: 558px) {
+   .options {
+    min-width: 360px;
+  }
+}
+@media screen and (max-width: 478px) {
+   .options {
+    min-width: 280px;
+  }
+}
+ .options .option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+ .options .option:nth-child(1) {
+  --defaultBackground:#ED5565;
+}
+ .options .option:nth-child(2) {
+  --defaultBackground:#FC6E51;
+}
+ .options .option:nth-child(3) {
+  --defaultBackground:#FFCE54;
+}
+ .options .option:nth-child(4) {
+  --defaultBackground:#2ECC71;
+}
+ .options .option:nth-child(5) {
+  --defaultBackground:#5D9CEC;
+}
+ .options .option:nth-child(6) {
+  --defaultBackground:#AC92EC;
+}
+ .options .option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 600px;
+  margin: 0px;
+  border-radius: 40px;
+  background-size: cover;
+
+}
+ .options .option.active .shadow {
+  box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+}
+ .options .option.active .label {
+  bottom: 20px;
+  left: 20px;
+}
+ .options .option.active .label .info > div {
+  left: 0px;
+  opacity: 1;
+  white-space: break-spaces;
+}
+ .options .option:not(.active) {
+  flex-grow: 1;
+  border-radius: 30px;
+}
+ .options .option:not(.active) .shadow {
+  bottom: -40px;
+  box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+}
+ .options .option:not(.active) .label {
+  bottom: 10px;
+  left: 10px;
+}
+ .options .option:not(.active) .label .info > div {
+  left: 20px;
+  opacity: 0;
+}
+ .options .option .shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.options .info-icon{
+  display: none;
+}
+.options .info-icon a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+.options .active .info-icon{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background: rgb(34,193,195);
+  background: linear-gradient(to right top,#051937,#004d7a,#008793,#00bf72,#a8eb12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+ .options .option .label {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+ .options .option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: whitesmoke;
+  color: var(--defaultBackground);
+}
+ .options .option .label .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  white-space: pre;
+}
+ .options .option .label .info > div {
+  position: relative;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+ .options .option .label .info .main {
+  font-size: 16px;
+
+}
+ .options .option .label .info .sub {
+  transition-delay: 0.1s;
+  font-size: 14px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .card,
+  .carousel-section{
+    margin: 20px;
+    width: 100%;
+    max-width: fit-content;
+  }
+  .right-section{
+    flex-direction: column;
+  }
+  #album-art{
+    margin-left: 15px;
+  }
+.options{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.options .option{
+  height: 60px;
+}
+.options .option.active{
+  height: 400px;
+}
+.sec-center{
+  top: 85px;
+}
+
+.logo .title{
+  font-size: 23px;
+}
+.logo img{
+  height: 70px;
+  padding-left: 80px;
+}
+.carousel-title {
+font-size: 24px;
+}
+}

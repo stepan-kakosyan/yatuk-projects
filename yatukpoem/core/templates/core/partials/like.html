@@ -1,0 +1,23 @@
+{% load i18n %}
+<div class="like-section light-card">
+        <div class="like-item" 
+            hx-get="{% url 'like' id=poem.id %}"
+            hx-swap="outerHTML"
+            hx-trigger="click"
+            hx-target=".like-section"
+            >{% if poem.liked %}<i class="fa fa-thumbs-up icon-colored"></i>{% else %}<i class="fa fa-thumbs-o-up"></i>{% endif %} <span>
+                {% if poem.like_count > 0 %}{{poem.like_count}}{% endif %}
+                {% if poem.like_count > 1 %} {% translate "Likes" %}{% else %}{% translate "Like" %}{% endif %}</span></div>
+        <div class="like-item"
+        hx-get="{% url 'favorite' id=poem.id %}"
+        hx-swap="outerHTML"
+        hx-trigger="click"
+        hx-target=".like-section"
+        >{% if poem.favorite %}<i class="fa fa-bookmark icon-colored"></i>{% else %}<i class="fa fa-bookmark-o"></i>{% endif %} <span>{% translate "Save" %}</span></div>
+        <div class="like-item"
+            hx-get="{% url 'want_to_read' id=poem.id %}"
+            hx-swap="outerHTML"
+            hx-trigger="click"
+            hx-target=".like-section"
+            >{% if poem.want_to_read %}<i class="fa fa-book icon-colored"></i>{% else %}<i class="fa fa-book"></i>{% endif %} <span>{% translate "Want to read" %}</span></div>
+    </div>

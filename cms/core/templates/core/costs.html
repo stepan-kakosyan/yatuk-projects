@@ -1,0 +1,64 @@
+{% extends "base/base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% translate "Costs" %}{% endblock %}
+-
+{% block additional_metas %}{% endblock %}
+{% block content %}
+
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body" id="main_section_table">
+      <div class="page-header">
+        <h3 class="page-title">{% translate "Costs" %}</h3>
+        <button type="button" class="btn btn-outline-success btn-fw" hx-get={% url 'add_cost' %} hx-swap="outerHTML"
+          hx-target="#main_section_table">{% translate "New Cost" %}</button>
+      </div>
+      <p>
+        <button type="button" class="btn btn-outline-info btn-icon-text" data-toggle="collapse"
+          data-target="#collapseExample" aria-expanded="false"
+          aria-controls="collapseExample">{% translate "Filters" %}<i class="mdi mdi-filter"></i>
+        </button>
+
+      </p>
+      <div class="collapse {% if category != "all" or cost_type != "all"  or search != "" %}show{% endif %}"
+        id="collapseExample">
+        <div class="d-flex flex-wrap">
+          <div class="form-group m-2 col-12 col-lg-3 col-md-6">
+            <label for="exampleFormControlSelect2">{% translate "Product Type" %}</label>
+            <select class="form-control" id="selectCategory" hx-get="{% url 'costs' %}" hx-swap="innerHTML"
+              hx-target="#cost-table" hx-trigger="change" push-url="true" hx-push-url="true" hx-indicator="#spinner"
+              hx-vals="js:{cost_type: document.getElementById('selectType').value, category: document.getElementById('selectCategory').value, search: document.getElementById('search').value}">
+              <option value="all" {% if category == "all" %}selected{% endif %}>{% translate "All" %}</option>
+              {% for category_ in categories %}
+              <option value="{{category_.id}}" {% if category == category_.id %}selected{% endif %}>
+                {{category_.title}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group m-2 col-12 col-lg-3 col-md-6">
+            <label for="exampleFormControlSelect2">{% translate "Type" %}</label>
+            <select class="form-control" id="selectType" hx-get="{% url 'costs' %}" hx-swap="innerHTML"
+              hx-target="#cost-table" hx-trigger="change" hx-push-url="true" hx-indicator="#spinner"
+              hx-vals="js:{cost_type: document.getElementById('selectType').value, category: document.getElementById('selectCategory').value, search: document.getElementById('search').value}">
+              <option value="all" {% if cost_type == "all" %}selected{% endif %}>{% translate "All" %}</option>
+              {% for ct in cost_types %}
+              <option value="{{ct.value}}" {% if cost_type == ct.value %}selected{% endif %}>{{ct.name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group m-2 col-12 col-lg-3 col-md-6">
+            <label for="search">{% translate "Search" %}</label>
+            <input type="text" value="{{search}}" class="form-control" id="search" hx-get="{% url 'costs' %}"
+              hx-swap="innerHTML" hx-target="#cost-table" hx-trigger="keyup" hx-push-url="true" hx-indicator="#spinner"
+              hx-vals="js:{cost_type: document.getElementById('selectType').value, category: document.getElementById('selectCategory').value, search: document.getElementById('search').value}">
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive" id="cost-table">
+        {% include "core/partials/cost-table.html" %}>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load static %}
+{% load i18n %}
+<div class="music-card">
+  <div class="iphone neu light-card">
+    <div class="title">
+      <div>{% translate "Yatuk Poem" %}</div>
+    </div>
+    <a class="album-cover" href="https://poem.yatuk.am/hy/author/{{poem_author.slug}}/all/" target="_blank">
+      <div class="music-album-image">
+      <img src="https://cms.yatuk.am{{ poem_author.middle_optimized.url }}" alt="{{poem_author.name_hy}}">
+      </div>
+      <h3 class="song-title">
+        {{poem_author.name}}
+      </h3>
+    </a>
+  </div>
+</div>

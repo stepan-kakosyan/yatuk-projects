@@ -1,0 +1,48 @@
+{% load customtags %}
+{% load i18n %}
+{% if collabarators %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{% translate "Name" %}</th>
+      <th>{% translate "Circulation" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for collabarator in collabarators %}
+    <tr>
+      <td class="py-1">
+        {{ collabarator.title}}
+      </td>
+      <td>{% if collabarator.sum %}{{ collabarator.sum|beauty_price }} {%else%} - {% endif %}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+{% translate "No Collaborators yet" %}
+{% endif %}
+<div class="text-center m-4">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      {% if collabarators.has_previous %}
+      <a type="button" class="btn btn-outline-info"
+        hx-get="{% url "collabarators" %}?page={{ collabarators.previous_page_number }}"
+        hx-trigger="click" hx-indicator="#spinner" hx-target="#coll-table" hx-swap="innerHTML show:.nav-pills:top"
+        hx-push-url="true">
+        < </a> {% endif %} {% for num in collabarators.paginator.page_range %} <a type="button"
+          class="btn  {% if page == num %} btn-info active {% else %}btn-outline-info{% endif %}"
+          hx-get="{% url "collabarators" %}?page={{ num }}" hx-trigger="click"
+          hx-indicator="#spinner" hx-target="#coll-table" hx-swap="innerHTML show:.nav-pills:top" hx-push-url="true">
+          {{ num }}
+      </a>
+      {% endfor %}
+  
+      {% if collabarators.has_next %}
+      <a type="button" class="btn btn-outline-info"
+        hx-get="{% url "collabarators" %}?page={{ collabarators.next_page_number }}"
+        hx-trigger="click" hx-indicator="#spinner" hx-target="#coll-table" hx-swap="innerHTML show:.nav-pills:top"
+        hx-push-url="true">></a>
+      {% endif %}
+  
+    </div>
+  </div>

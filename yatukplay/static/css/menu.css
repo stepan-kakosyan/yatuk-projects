@@ -1,0 +1,177 @@
+
+  
+  .menu {
+    filter: url("#shadowed-goo");
+    z-index: 11;
+  }
+  .menu svg{
+    max-height: 105px;
+  }
+  .menu-item, .menu-open-button {
+    background: rgb(34,193,195);
+    background: linear-gradient(to right top,#051937,#004d7a,#008793,#00bf72,#a8eb12);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    transform: translate3d(0, 0, 0);
+    transition: transform ease-out 200ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .menu-open {
+    display: none;
+  }
+  
+  .hamburger {
+    width: 20px;
+    height: 3px;
+    background: white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -10.5px;
+    margin-top: -1.5px;
+    transition: transform 200ms;
+  }
+  
+  .hamburger-1 {
+    transform: translate3d(0, -8px, 0);
+  }
+  
+  .hamburger-2 {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .hamburger-3 {
+    transform: translate3d(0, 8px, 0);
+  }
+  
+  .menu-open:checked + .menu-open-button .hamburger-1 {
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  .menu-open:checked + .menu-open-button .hamburger-2 {
+    transform: translate3d(0, 0, 0) scale(0.1, 1);
+  }
+  .menu-open:checked + .menu-open-button .hamburger-3 {
+    transform: translate3d(0, 0, 0) rotate(-45deg);
+  }
+  
+  .menu {
+    position: absolute;
+    padding-top: 20px;
+    padding-left: 80px;
+    max-width: 650px;
+    height: 150px;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: left;
+  }
+.menu a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+  .menu-item:nth-child(3) {
+    transition-duration: 180ms;
+  }
+  .menu-item:nth-child(4) {
+    transition-duration: 180ms;
+  }
+  .menu-item:nth-child(5) {
+    transition-duration: 180ms;
+  }
+  .menu-item:nth-child(6) {
+    transition-duration: 180ms;
+  }
+  
+  .menu-open-button {
+    z-index: 2;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 400ms;
+    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    cursor: pointer;
+  }
+  
+  .menu-open-button:hover {
+    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+  }
+  
+  .menu-open:checked + .menu-open-button {
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+    transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+  }
+  
+  .menu-open:checked ~ .menu-item {
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  }
+  .menu-open:checked ~ .menu-item:nth-child(3) {
+    transition-duration: 170ms;
+    transform: translate3d(45px, 0, 0);
+  }
+  .menu-open:checked ~ .menu-item:nth-child(4) {
+    transition-duration: 250ms;
+    transform: translate3d(45px, 50px, 0);
+  }
+  .menu-open:checked ~ .menu-item:nth-child(5) {
+    transition-duration: 330ms;
+    transform: translate3d(45px, 100px, 0);
+}
+  .menu-open:checked ~ .menu-item:nth-child(6) {
+    transition-duration: 410ms;
+    transform: translate3d(45px, 150px, 0);
+  }
+  
+
+  .search__container {
+    width: 100%;
+    margin-top: -11px;
+    margin-left: -1px;
+}
+
+.search__title {
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    color: #ff8b88;
+}
+input.search__input::placeholder{
+  color: whitesmoke;
+  opacity: 0.7;
+}
+.search__input {
+  width: 101%;
+  padding: 12px 24px;
+  background-color: transparent;
+  transition: transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+  color: whitesmoke;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid whitesmoke;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.search_input_icon{
+  position: absolute;
+  top: 2px;
+  right: 15px;
+  color: whitesmoke;
+  opacity: 0.7;
+}
+.search__input::placeholder {
+        color: rgba(87, 87, 86, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }

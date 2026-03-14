@@ -1,0 +1,32 @@
+{% load i18n %}
+<div class="shopping-cart-content">
+    {% if request.user.cart_items %}
+    <div class="cart-header"><span>{% translate "Total" %}</span><span>{{ request.user.shopping_cart.total }}֏</span></div>
+    <div class="cart-items yatuk-form">
+        {% for cart_item in request.user.cart_items|slice:3 %}
+            <div class="cart-item">
+                <span class="cart-image">
+                    <img  loading="lazy" src="https://cms.yatuk.am/{{cart_item.product.main_image.thumbnail.url}}"
+                    alt="{{cart_item.product.title}}"></span>
+                <div class="d-flex flex-column w-100 p-2">
+                    <a class="itemtitle" href="{% url 'product_detail' slug=cart_item.product.slug_en %}">{{cart_item.product.title}}</a>
+                    <div class="d-flex align-center justify-content-between align-items-center">
+                        <span>{{cart_item.count}} * {{ cart_item.product.price }}֏</span>
+                        <span class="itemcount yatuk-form product-card m-0">
+                            <button class="icon-button m-0 delete-icon small-icon-button"
+                            hx-get="{% url 'remove_from_cart' id=cart_item.id %}"><i class="fa fa-close"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if request.user.cart_items|length > 3 %}<div class="more-items-text">{% blocktranslate with count=request.user.cart_items|length|add:"-3" %}And {{count}} other products {% endblocktranslate %}</div>{% endif %}
+    <div class="product-card d-flex flex-column">
+    <button class="mt-0"><a href="{% url 'cart' %}">{% translate "View Cart" %}</a></button>
+    <button><a href="{% url 'checkout' %}">{% translate "Checkout" %}</a></button>
+    </div>
+    {% else %}
+        <div class="more-items-text">{% translate "Choose your favorite product and add it to the cart. I don't like to be empty" %}</div>
+    {% endif %}
+</div>

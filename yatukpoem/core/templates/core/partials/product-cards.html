@@ -1,0 +1,26 @@
+{% load i18n %}
+{% load custom_tags %}
+<div class="main-text text-center  mt-3">
+    <h4>{% translate "Support us! Buy our art based products from online shop" %}</h4>
+</div>
+<div class="w-100 game-carousel"> 
+    <div class="swiper">
+      <div class="swiper-wrapper">
+          {% for product in products %}
+            <a href="https://yatuk.am/hy/product/{{product.slug_en}}/"
+            class="photo-card position-relative photo-game-card swiper-slide product-card" 
+            style="background-image: url('https://cms.yatuk.am/{{product.main_image.image.url}}'); background-position: center top;">
+              <div class="photo-name d-flex">
+                  <div class="w-100 d-flex flex-column text-left p-1 align-items-center">
+                      <span>{{product.category}}</span>
+                      <b>{{product.title}}</b>
+                      <span class="buy-now-btn mt-2">{% translate "BUY NOW" %}</span>
+                  </div>
+                  
+              </div>
+            </a>  
+          {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+  </div> 
+</div> 

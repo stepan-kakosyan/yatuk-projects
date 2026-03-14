@@ -1,0 +1,40 @@
+{% load static %}
+{% load i18n %}
+{%block extra_meta %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+{% endblock %}
+
+<div class="main-text text-center">
+    <h1>{% translate "Contact Us" %}</h1>
+    <span>{% translate "Feel Free to contact us any time. We will get back to you as soon as we can!." %}</span>
+</div>
+<section class="contact_us">
+    <div class="contact_inner container-glass light-card p-0">
+        <div class="contact-us-block">
+            <div class="contact-main">
+                <div class="contact_info_sec ">
+                    <div class="bg-card"></div>
+                    <div class="contact-card-content">
+                        <h2>{% translate "Contact Info" %} </h2>
+                        <div class="d-flex info_single align-items-center">
+                            <i class="fa fa-phone"></i>
+                            <span>+374 95 011 553</span>
+                        </div>
+                        <div class="d-flex info_single align-items-center">
+                            <i class="fa fa-envelope"></i>
+                            <span>contact@yatuk.am</span>
+                        </div>
+                        <div class="d-flex info_single align-items-center">
+                            <i class="fa fa-map-marker"></i>
+                            <span>{% translate "Armenia, Shirak, Akhuryan, Petros Mkhoyan 1 line 7 bld, 2206" %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                {% include 'core/partials/contact-form.html' %}
+            </div>
+        </div>
+    </div>
+
+</section>

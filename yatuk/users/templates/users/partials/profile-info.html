@@ -1,0 +1,37 @@
+{% load i18n %}
+<div>
+    <div class="yatuk-form d-flex flex-wrap product-card">
+        <input type="hidden" name="csrfmiddlewaretoken" value="lXOn7GjQX6BFaRQZS1N0NpffjsPY72AivI4wjpZXmvcyShMv0cRYfgNmvSB9nrLc">
+        
+        <div class="form-group col-lg-6 col-sm-12">
+          <label for="id_first_name">{% translate "First Name:" %}</label>
+          <div class="pre-text">{{request.user.first_name}}</div>
+        </div>
+      
+        <div class="form-group col-lg-6 col-sm-12">
+          <label for="id_last_name">{% translate "Last Name:" %}</label>
+          <div class="pre-text">{{request.user.last_name}}</div>
+        </div>
+      
+        <div class="form-group col-lg-6 col-sm-12">
+          <label for="id_email">{% translate "Email:" %}</label>
+          <div class="pre-text">{{request.user.email}}</div>
+        </div>
+      
+        <div class="form-group col-lg-6 col-sm-12">
+          <label for="id_phone_number">{% translate "Phone Number:" %}</label>
+          <div class="pre-text">{{request.user.phone_number}}</div>        </div>
+      
+        <div class="form-group col-lg-6 col-sm-12">
+          <label for="id_username">{% translate "Username:" %}</label>
+          <div class="pre-text">{{request.user.username}}</div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="w-50" 
+          hx-get="{% url 'user_edit' %}"
+          hx-target="#profile-info"
+          hx-trigger="click"
+          hx-swap="innerHTML">{% translate "Edit" %}</button>
+        </div>
+    </div>
+</div>

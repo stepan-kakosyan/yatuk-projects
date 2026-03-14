@@ -1,0 +1,58 @@
+{% load i18n %}
+<div class="w-100">
+  </div>
+  <div class="poem-card">
+{% for game in games %}
+<a href="{% url 'game' author=game.author.slug slug=game.slug id=game.id %}" class="photo-card position-relative photo-game-card" 
+  style="background-image: url('https://cms.yatuk.am{{game.optimized.url}}'); background-position: {{game.background_position}};">
+    <div class="photo-name d-flex">
+        <div class="game-author">
+            <img  loading="lazy" src="https://cms.yatuk.am{{game.author.image_.url}}" alt="{{author.name}}"/>
+        </div>
+        <div class="d-flex flex-column text-left p-1 justify-content-end">
+            <span>{{game.name}}</span>
+            <b>{{game.author.name}}</b>
+        </div>
+    </div>
+</a>  
+
+{% endfor %}
+  </div>
+  {% if games.paginator.count <= games.paginator.per_page %}
+  {% else %}
+<nav>
+    <ul class="pagination pagination-template d-flex justify-content-center mt-5">
+        {% if games.has_previous %}
+        <li class="page-item"><a class="page-link" href="{% url 'author' slug=author.slug %}?page={{games.previous_page_number}}"  >
+            <i class="fa fa-angle-left"></i></a></li>
+            {% if games.number > 3 %}
+                    <li class="page-item"><a class="page-link" href="{% url 'author' slug=author.slug  %}?page=1"  >1</a>
+                    </li>
+                {% if games.number > 4 %} 
+                    <li class="page-item disabled"><a class="page-link">...</a></li>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+  
+        {% for num in games.paginator.page_range %}
+            {% if games.number == num %}
+                <li class="page-item active"><a class="page-link"  href="{% url 'author' slug=author.slug  %}?page={{ num }}">{{ num }}</a>
+                </li>
+            {% elif num > games.number|add:'-3' and num < games.number|add:'3' %}
+                <li class="page-item"><a  class="page-link"  href="{% url 'author' slug=author.slug  %}?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+  
+        {% if games.has_next %}
+            {% if games.number < games.paginator.num_pages|add:'-3' %}
+            <li class="page-item disabled"><a class="page-link">...</a></li>
+            <li class="page-item"><a  class="page-link" href="{% url 'author' slug=author.slug  %}?page={{ games.paginator.num_pages }}">{{ games.paginator.num_pages }}</a></li>
+            {% elif games.number < games.paginator.num_pages|add:'-2' %}
+            <li class="page-item"><a class="page-link" href="{% url 'author' slug=author.slug  %}?page={{ news.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+            {% endif %} 
+            <li class="page-item"><a  class="page-link" href="{% url 'author' slug=author.slug  %}?page={{ games.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+        {% endif %}
+    </ul>
+  </nav> 
+  {% endif %}

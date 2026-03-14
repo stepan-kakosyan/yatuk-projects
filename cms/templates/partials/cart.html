@@ -1,0 +1,17 @@
+<div class="languages">
+    <div class="cart-dropdown dropdown {{myid}}-dropdown">
+        <div class="dropdown-toggle cart-dropdown-toggle {{myid}}-dropdown-toggle p-1" role="button" id="{{myid}}dropdownMenuButton" 
+        data-toggle="dropdown">
+        <div><img src="/static/images/cart-5.svg"  width="100%" height="100%" alt="yatuk-shopping-cart"/>
+            <span class="item-count"  hx-get="{% url "get_cart_count" %}"
+            hx-trigger="cart-changed from:body" 
+            hx-swap="innerHTML">
+            {% include 'partials/cart-number.html' %}</span></div>
+        </div> 
+        <div class="dropdown-menu cart-dropdown-menu {{myid}}-dropdown-menu">
+            <div  hx-get="{% url "get_cart_content" %}"
+            hx-trigger="cart-changed from:body" 
+            hx-swap="innerHTML">{% include 'partials/cart-content.html' %}</div>
+        </div>
+    </div>
+</div>

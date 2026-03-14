@@ -1,0 +1,45 @@
+{% load customtags %}
+{% load i18n %}
+{% if contact_us_list %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{% translate "Name" %}</th>
+      <th>{% translate "Contact Info" %}</th>
+      <th>{% translate "Text" %}</th>
+      <th>{% translate "Is Seen" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact_us in contact_us_list %}
+      {% include 'core/partials/contact-us-row.html' %}
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+{% translate "No Contact Messages yet" %}
+{% endif %}
+<div class="text-center m-4">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      {% if contact_us_list.has_previous %}
+      <a type="button" class="btn btn-outline-info"
+        hx-get="{% url "contact_us_list" %}?page={{ contact_us_list.previous_page_number }}"
+        hx-trigger="click" hx-indicator="#spinner" hx-target="#coll-table" hx-swap="innerHTML show:.nav-pills:top"
+        hx-push-url="true">
+        < </a> {% endif %} {% for num in contact_us_list.paginator.page_range %} <a type="button"
+          class="btn  {% if page == num %} btn-info active {% else %}btn-outline-info{% endif %}"
+          hx-get="{% url "contact_us_list" %}?page={{ num }}" hx-trigger="click"
+          hx-indicator="#spinner" hx-target="#coll-table" hx-swap="innerHTML show:.nav-pills:top" hx-push-url="true">
+          {{ num }}
+      </a>
+      {% endfor %}
+  
+      {% if contact_us_list.has_next %}
+      <a type="button" class="btn btn-outline-info"
+        hx-get="{% url "contact_us_list" %}?page={{ contact_us_list.next_page_number }}"
+        hx-trigger="click" hx-indicator="#spinner" hx-target="#coll-table" hx-swap="innerHTML show:.nav-pills:top"
+        hx-push-url="true">></a>
+      {% endif %}
+  
+    </div>
+  </div>

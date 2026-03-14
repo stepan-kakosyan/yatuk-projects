@@ -1,0 +1,88 @@
+{% load i18n %}
+<div class="contact_form_inner" id="checkoutForm">
+    <div class="contact_field contact-us-form product-card yatuk-form ">
+        {% if form %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="d-flex checkout-form-content"><div class="pr-lg-3">
+                <div class="cart-title-underlined">{% translate "Address" %}</div>
+                {% if show_address %}
+                <div class="form-group">
+                    <label for="{{form.old_address.id_for_label}}">{% translate "Choose from your addresses" %}</label>
+                    {{form.old_address}}
+                    {% if form.old_address.errors %}
+                        <div class="error-message">{{ form.old_address.errors }}</div>
+                    {% endif %}
+                </div>{% endif %}
+                <div id="addressFormSection">
+                {% include 'core/partials/address-form.html' %}
+                </div>
+                <div class="form-group">
+                    <label for="{{form.phone_number.id_for_label}}">{{form.phone_number.label}}</label>
+                    {{form.phone_number}}
+                    {% if form.phone_number.errors %}
+                        <div class="error-message">{{ form.phone_number.errors }}</div>
+                    {% endif %}
+                </div>
+                <div class="cart-title-underlined">{% translate "Shipping method" %}</div>
+                <div id="shippingMethodSection"
+                    hx-get="{% url "change_shipping_method" %}"
+                    hx-trigger="state-changed from:body" 
+                    hx-vals='js:{"state": document.getElementById("id_state").value}'
+                    hx-swap="innerHTML">
+                    {% include 'core/partials/shipping-method-radio.html' %}
+                </div>
+                <div class="form-group">
+                    <label for="{{form.comment.id_for_label}}">{{form.comment.label}}</label>
+                    {{form.comment}}
+                    {% if form.comment.errors %}
+                        <div class="error-message">{{ form.comment.errors }}</div>
+                    {% endif %}
+                </div>
+
+                </div>
+                <div class="cart-checkout">
+                    {% include 'core/partials/cart-checkout.html' %}
+                    <div id="total_sum"
+                    hx-trigger="shipping-method-changed from:body"
+                    hx-get="{% url 'get_total_sum' %}"
+                    hx-vals='js:{"shipping_method": document.getElementById("id_shipping_method").value}'
+                    hx-swap="innerHTML">
+                {% include 'core/partials/total-sum.html' %}
+                </div>
+                <div class="terms-checkbox">
+                    <div class="form-group ">
+                        <div class="d-flex align-items-center">
+                        {{form.read_checkbox}} 
+                        <label for="{{form.read_checkbox.id_for_label}}" style="font-size: 18px">
+                            <span>{% translate "I have read and agree to the website" %} </span>
+                            <a target="_blank" style="font-size: 110%" class="colored" href="{% url 'terms_and_conditions' %}">{% translate "terms and conditions" %}
+                            </a><span style="color:red;">*</span>
+                        </label>
+                    </div>
+                        {% if form.read_checkbox.errors %}
+                            <div class="error-message">{{ form.read_checkbox.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                </div>
+                    <button type="submit"
+                        hx-post="{% url 'checkout' %}"
+                        hx-target="#checkoutForm"
+                        hx-swap="innerHTML">{% translate "Make Payment" %}</button>
+                </div>
+            </div>
+
+            </form>
+            
+        {% endif %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    </div>
+</div>

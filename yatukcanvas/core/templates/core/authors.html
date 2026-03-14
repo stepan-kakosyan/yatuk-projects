@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div>
+    <nav>
+        <ol class="breadcrumb breadcrumb-yatuk light-card">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+          <li class="breadcrumb-item active">{% translate "Authors" %}</li>
+        </ol>
+      </nav>
+  <div class="main-text text-center  mt-3">
+    <h3>{% translate "Great Authors" %}</h3>
+    <h5>{% translate "Multi-genre paintings by Armenian classical and contemporary artists" %}</h5>
+</div>
+<div class="authors-slider">
+	<div class="author-page-cards">
+            {% for author in authors %}
+                {% include 'core/partials/author-card.html' %}
+            {% endfor %}
+	</div>
+
+</div>
+</div>
+{% endblock content %}

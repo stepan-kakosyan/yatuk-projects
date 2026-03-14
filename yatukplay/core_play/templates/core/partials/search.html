@@ -1,0 +1,33 @@
+{% load static %}
+{% load i18n %}
+<div class="card-main">
+  <div class="search-card-header">
+      <div class="card-cover"></div>
+      <div class="search__container">
+          <input class="search__input" type="text" placeholder="{% translate "Search" %}"
+          hx-get="{% url 'search' %}"
+          hx-trigger="input[target.value.length > 1 || target.value.length == 0]"
+          hx-target="#long_list"
+          value=""
+          name='search'
+          hx-indicator="#loading"
+          hx-swap="afterEnd">
+          <i class="fa fa-search search_input_icon"></i>
+      </div>
+      <div id="loading" class="htmx-indicator">
+        <div class="circle"></div>
+        <div class="container">
+          <div class="dot dot1"></div>
+          <div class="dot dot2"></div>
+          <div class="dot dot3"></div>
+        </div>
+      </div>
+      <div class="card-section is-active">
+        <main class="leaderboard__profiles" id="long_list">
+        </main>
+      </div>
+  </div>
+</div>
+<script>
+  $( "#menu-open" ).trigger( "click" );
+</script>

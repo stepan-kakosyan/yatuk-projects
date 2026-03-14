@@ -1,0 +1,2753 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-08 19:31+0400\n"
+"PO-Revision-Date: 2022-12-03 14:50+0258\n"
+"Last-Translator: Ստեփան Կակոսյան <anonymous@user.tld>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: core/models.py:13
+msgid "Not Paid"
+msgstr ""
+
+#: core/models.py:14
+msgid "Accepted"
+msgstr ""
+
+#: core/models.py:15 core/templates/core/partials/order-raw.html:34
+msgid "In Process"
+msgstr ""
+
+#: core/models.py:16 core/templates/core/partials/order-raw.html:38
+msgid "Shipping"
+msgstr ""
+
+#: core/models.py:17 core/templates/core/partials/order-raw.html:42
+#: core/templates/core/partials/todo-table.html:25
+msgid "Done"
+msgstr "Сделанный"
+
+#: core/models.py:18
+msgid "Cancelled"
+msgstr ""
+
+#: core/models.py:41 core/models.py:103 game/models.py:9 product/models.py:44
+#: product/models.py:67 product/models.py:225
+msgid "Title English"
+msgstr "Название английский"
+
+#: core/models.py:42 core/models.py:104 game/models.py:10 product/models.py:45
+#: product/models.py:68 product/models.py:226
+msgid "Title Russian"
+msgstr "Название Русский"
+
+#: core/models.py:43 core/models.py:105 game/models.py:11 product/models.py:46
+#: product/models.py:69 product/models.py:227
+msgid "Title Armenian"
+msgstr "Название Армянский"
+
+#: core/models.py:44 core/models.py:106 game/models.py:12 product/models.py:47
+#: product/models.py:73 product/models.py:228
+msgid "Description English"
+msgstr "Описание Английский"
+
+#: core/models.py:45 core/models.py:107 game/models.py:13 product/models.py:48
+#: product/models.py:74 product/models.py:229
+msgid "Description Russian"
+msgstr "Описание Русский"
+
+#: core/models.py:46 core/models.py:108 game/models.py:14 product/models.py:49
+#: product/models.py:75 product/models.py:230
+msgid "Description Armenian"
+msgstr "Описание Армянский"
+
+#: core/models.py:48 core/models.py:109
+#, fuzzy
+#| msgid "Image"
+msgid "Main Image"
+msgstr "Изображение"
+
+#: core/models.py:49
+#, fuzzy
+#| msgid "Image"
+msgid "Blur Image"
+msgstr "Изображение"
+
+#: core/models.py:110 core/models.py:142
+#: core/templates/core/partials/cost-table.html:9
+#: core/templates/core/partials/transaction-table.html:10
+#: core/templates/core/partials/transfer-table.html:10
+#: core/templates/core/products.html:23 product/models.py:76
+msgid "Price"
+msgstr "Цена"
+
+#: core/models.py:120
+msgid "Shipping Price"
+msgstr ""
+
+#: core/models.py:126 core/templates/core/partials/orders-table.html:12
+#: product/models.py:257 product/models.py:271 product/models.py:285
+msgid "Amount"
+msgstr "Цена"
+
+#: core/models.py:128
+msgid "status"
+msgstr ""
+
+#: core/templates/core/add-cost.html:6
+#: core/templates/core/add-transaction.html:6
+msgid "New Selling"
+msgstr "Новая распродажа"
+
+#: core/templates/core/add-cost.html:11
+#: core/templates/core/add-transaction.html:11
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/plugin_change_form.html:128
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/new_folder_form.html:43
+#: env/lib/python3.10/site-packages/suit/templates/admin/page_submit_line.html:3
+#: env/lib/python3.10/site-packages/suit/templates/admin/pagination.html:4
+#: env/lib/python3.10/site-packages/suit/templates/admin/submit_line.html:3
+msgid "Save"
+msgstr "Сохранять"
+
+#: core/templates/core/add-transfer.html:6
+#: core/templates/core/transfers.html:14
+msgid "New Transfer"
+msgstr "Новый перевод"
+
+#: core/templates/core/collabarators.html:5
+#: core/templates/core/collabarators.html:14
+#: core/templates/core/product.html:90
+msgid "Collaborators"
+msgstr "Соавторы"
+
+#: core/templates/core/contact-us-list.html:5
+msgid "Contact Us"
+msgstr ""
+
+#: core/templates/core/contact-us-list.html:13
+#: templates/elements/header.html:81
+msgid "Contact Form List"
+msgstr ""
+
+#: core/templates/core/costs.html:4 core/templates/core/costs.html:13
+#: core/templates/core/todos.html:6 templates/elements/header.html:57
+msgid "Costs"
+msgstr "Расходы"
+
+#: core/templates/core/costs.html:15
+msgid "New Cost"
+msgstr "Новая стоимость"
+
+#: core/templates/core/costs.html:20 core/templates/core/orders.html:17
+#: core/templates/core/transactions.html:23
+#: core/templates/core/transfers.html:18
+msgid "Filters"
+msgstr "Фильтры"
+
+#: core/templates/core/costs.html:28
+msgid "Product Type"
+msgstr "Тип продукта"
+
+#: core/templates/core/costs.html:32 core/templates/core/costs.html:44
+#: core/templates/core/orders.html:28 core/templates/core/orders.html:39
+#: core/templates/core/transactions.html:34
+#: core/templates/core/transactions.html:45
+#: core/templates/core/transactions.html:56
+#: core/templates/core/transfers.html:30 core/templates/core/transfers.html:41
+msgid "All"
+msgstr "Все"
+
+#: core/templates/core/costs.html:40
+#: core/templates/core/partials/cost-table.html:10
+#: core/templates/core/partials/transaction-table.html:11
+#: core/templates/core/transactions.html:41 product/models.py:260
+#: product/models.py:272
+msgid "Type"
+msgstr "Тип"
+
+#: core/templates/core/costs.html:51
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:12
+#: env/lib/python3.10/site-packages/suit/templates/admin/search_form.html:26
+msgid "Search"
+msgstr "Поиск"
+
+#: core/templates/core/image-generator.html:7
+#: core/templates/core/transfers.html:4 core/templates/core/transfers.html:12
+#: templates/elements/header.html:65
+msgid "Transfers"
+msgstr "Трансферы"
+
+#: core/templates/core/image-generator.html:19
+msgid "Generate"
+msgstr ""
+
+#: core/templates/core/index.html:4 templates/elements/header.html:16
+msgid "Main"
+msgstr "Главный"
+
+#: core/templates/core/index.html:26
+msgid "Total Sales"
+msgstr "Тотальная распродажа"
+
+#: core/templates/core/index.html:53
+msgid "Last 30 day's Sales"
+msgstr "Продажи за последние 30 дней"
+
+#: core/templates/core/index.html:73
+msgid "Total Costs"
+msgstr "Суммарные затраты"
+
+#: core/templates/core/index.html:100
+msgid "Last 30 day's costs"
+msgstr "Расходы за последние 30 дней"
+
+#: core/templates/core/index.html:117
+msgid "Sales by routes"
+msgstr "Продажи по маршрутам"
+
+#: core/templates/core/index.html:134
+msgid "Costs by Types"
+msgstr "Расходы по типам"
+
+#: core/templates/core/index.html:151
+msgid "Last 1 year's Sales"
+msgstr "Продажи за последний 1 год"
+
+#: core/templates/core/index.html:168
+msgid "Last 1 year's costs"
+msgstr "Расходы за последний 1 год"
+
+#: core/templates/core/orders.html:5 core/templates/core/orders.html:13
+#: templates/elements/header.html:32
+msgid "Orders"
+msgstr ""
+
+#: core/templates/core/orders.html:24
+#: core/templates/core/partials/orders-table.html:13
+msgid "Status"
+msgstr ""
+
+#: core/templates/core/orders.html:35
+#: core/templates/core/partials/cost-table.html:8
+#: core/templates/core/partials/transaction-table.html:8
+#: core/templates/core/partials/transfer-table.html:8
+#: core/templates/core/product.html:5 core/templates/core/transactions.html:30
+#: core/templates/core/transfers.html:26 product/models.py:167
+#: product/models.py:256 product/models.py:284
+msgid "Product"
+msgstr "Товар"
+
+#: core/templates/core/partials/coll-table.html:7
+#: core/templates/core/partials/contact-us-table.html:7
+#: core/templates/core/product.html:97 core/templates/core/products.html:20
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:13
+msgid "Name"
+msgstr "Имя"
+
+#: core/templates/core/partials/coll-table.html:8
+msgid "Circulation"
+msgstr "Тираж"
+
+#: core/templates/core/partials/coll-table.html:23
+#: core/templates/core/product.html:118
+msgid "No Collaborators yet"
+msgstr "Пока нет соавторов"
+
+#: core/templates/core/partials/contact-us-row.html:21
+msgid "Checked"
+msgstr ""
+
+#: core/templates/core/partials/contact-us-table.html:8
+msgid "Contact Info"
+msgstr ""
+
+#: core/templates/core/partials/contact-us-table.html:9
+#: core/templates/core/partials/todo-table.html:26
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2115
+msgid "Text"
+msgstr "Текст"
+
+#: core/templates/core/partials/contact-us-table.html:10
+msgid "Is Seen"
+msgstr ""
+
+#: core/templates/core/partials/contact-us-table.html:20
+#, fuzzy
+#| msgid "No Costs yet"
+msgid "No Contact Messages yet"
+msgstr "Еще нет затрат"
+
+#: core/templates/core/partials/cost-table.html:11
+#: core/templates/core/partials/transfer-table.html:12 product/models.py:274
+#: product/models.py:288
+msgid "Note"
+msgstr "Примечание"
+
+#: core/templates/core/partials/cost-table.html:12
+#: core/templates/core/partials/orders-table.html:14
+#: core/templates/core/partials/todo-table.html:27
+#: core/templates/core/partials/transaction-table.html:12
+#: core/templates/core/partials/transfer-table.html:13 product/models.py:261
+#: product/models.py:273 product/models.py:287
+msgid "Date"
+msgstr "Дата"
+
+#: core/templates/core/partials/cost-table.html:57
+msgid "No Costs yet"
+msgstr "Еще нет затрат"
+
+#: core/templates/core/partials/orders-table.html:9
+#: env/lib/python3.10/site-packages/suit/templates/admin/object_history.html:28
+#: env/lib/python3.10/site-packages/suit/templates/reversion/object_history.html:16
+msgid "User"
+msgstr ""
+
+#: core/templates/core/partials/orders-table.html:10
+#: core/templates/core/products.html:6 core/templates/core/products.html:14
+#: templates/elements/header.html:40
+msgid "Products"
+msgstr "Товары"
+
+#: core/templates/core/partials/orders-table.html:11
+msgid "Shipping Method"
+msgstr ""
+
+#: core/templates/core/partials/orders-table.html:48
+#, fuzzy
+#| msgid "No ransfers yet"
+msgid "No Orders yet"
+msgstr "Переводов пока нет"
+
+#: core/templates/core/partials/todo-small.html:6
+#: core/templates/core/partials/todo-table.html:4
+#: templates/elements/header.html:24
+msgid "To Do List"
+msgstr "Список дел"
+
+#: core/templates/core/partials/todo-small.html:17
+#: core/templates/core/partials/todo-table.html:17
+msgid "Add New"
+msgstr "Добавить новое"
+
+#: core/templates/core/partials/todo-small.html:48
+#: core/templates/core/partials/todo-table.html:67
+msgid "To Do List is empty"
+msgstr "Список дел пуст"
+
+#: core/templates/core/partials/todo-small.html:55
+msgid "Show All"
+msgstr "Показать все"
+
+#: core/templates/core/partials/transaction-table.html:7
+#: core/templates/core/product.html:96 core/templates/core/products.html:19
+#: core_game/models.py:53 core_game/models.py:54 core_game/models.py:142
+#: core_game/models.py:143
+#: env/lib/python3.10/site-packages/django/db/models/fields/files.py:375
+#: game/models.py:18 product/models.py:161 product/models.py:162
+#: product/models.py:163
+msgid "Image"
+msgstr "Изображение"
+
+#: core/templates/core/partials/transaction-table.html:9
+#: core/templates/core/partials/transfer-table.html:9 product/models.py:254
+#: product/models.py:282
+msgid "Count"
+msgstr "Считать"
+
+#: core/templates/core/partials/transaction-table.html:61
+msgid "No Sellings yet"
+msgstr "Продаж пока нет"
+
+#: core/templates/core/partials/transfer-table.html:11
+#: core/templates/core/transactions.html:52
+#: core/templates/core/transfers.html:37 product/models.py:15
+#: product/models.py:259
+msgid "Collaborator"
+msgstr "Соавтор"
+
+#: core/templates/core/partials/transfer-table.html:59
+msgid "No ransfers yet"
+msgstr "Переводов пока нет"
+
+#: core/templates/core/product.html:29 core/templates/core/transactions.html:5
+#: core/templates/core/transactions.html:14
+msgid "Sellings"
+msgstr "Продажи"
+
+#: core/templates/core/product.html:38
+msgid "Images"
+msgstr "Картинки"
+
+#: core/templates/core/product.html:49 product/models.py:79
+msgid "Total Count"
+msgstr "Общее количество"
+
+#: core/templates/core/product.html:57
+msgid "Sent"
+msgstr "Отправил"
+
+#: core/templates/core/product.html:65
+msgid "Sell Count"
+msgstr "Продать количество"
+
+#: core/templates/core/product.html:73
+msgid "On me"
+msgstr "На меня"
+
+#: core/templates/core/product.html:98
+msgid "Sent At"
+msgstr "Отправлено"
+
+#: core/templates/core/product.html:99
+msgid "Sell At"
+msgstr "Продано в"
+
+#: core/templates/core/products.html:21
+msgid "Description"
+msgstr "Описание"
+
+#: core/templates/core/products.html:22
+msgid "Progress"
+msgstr "Прогресс"
+
+#: core/templates/core/products.html:24
+msgid "Added At"
+msgstr "Добавлено в"
+
+#: core/templates/core/transactions.html:19
+msgid "New Sell"
+msgstr "Новая продажа"
+
+#: core_game/models.py:55 core_game/models.py:144 product/models.py:164
+msgid "Thumbnail"
+msgstr "Миниатюра"
+
+#: env/lib/python3.10/site-packages/django/contrib/messages/apps.py:7
+msgid "Messages"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: env/lib/python3.10/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/paginator.py:51
+msgid "That page number is not an integer"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/paginator.py:53
+msgid "That page number is less than 1"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/paginator.py:58
+msgid "That page contains no results"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:93
+#: env/lib/python3.10/site-packages/django/forms/fields.py:675
+msgid "Enter a valid URL."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:150
+msgid "Enter a valid integer."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:161
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: env/lib/python3.10/site-packages/django/core/validators.py:262
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:269
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:278
+#: env/lib/python3.10/site-packages/django/core/validators.py:288
+#: env/lib/python3.10/site-packages/django/core/validators.py:311
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:296
+#: env/lib/python3.10/site-packages/django/core/validators.py:312
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:306
+#: env/lib/python3.10/site-packages/django/core/validators.py:310
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:340
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:346
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:379
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:388
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:398
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:413
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:432
+#: env/lib/python3.10/site-packages/django/forms/fields.py:292
+#: env/lib/python3.10/site-packages/django/forms/fields.py:327
+msgid "Enter a number."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:439
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:444
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:506
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/core/validators.py:559
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/base.py:1210
+#: env/lib/python3.10/site-packages/django/forms/models.py:768
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:19
+msgid "and"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/base.py:1212
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:100
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:101
+msgid "This field cannot be null."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:102
+msgid "This field cannot be blank."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:103
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:107
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:126
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:958
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:959
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:961
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1002
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1096
+msgid "Comma-separated integers"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1145
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1147
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1290
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1150
+msgid "Date (without time)"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1288
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1292
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1296
+msgid "Date (with time)"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1444
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1446
+msgid "Decimal number"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1585
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1588
+msgid "Duration"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1638
+msgid "Email address"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1661
+msgid "File path"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1727
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1729
+msgid "Floating point number"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1767
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1769
+msgid "Integer"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1852
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1867
+msgid "Small integer"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1875
+msgid "IPv4 address"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1906
+msgid "IP address"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1986
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1987
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1989
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2043
+msgid "Positive big integer"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2056
+msgid "Positive integer"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2069
+msgid "Positive small integer"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2083
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2181
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2183
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2186
+msgid "Time"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2312
+msgid "URL"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2334
+msgid "Raw binary data"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2399
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2401
+msgid "Universally unique identifier"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/files.py:226
+msgid "File"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/json.py:18
+msgid "A JSON object"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/json.py:20
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:790
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:792
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1045
+msgid "One-to-one relationship"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1099
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1100
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1142
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: env/lib/python3.10/site-packages/django/forms/boundfield.py:150
+msgid ":?.!"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:54
+msgid "This field is required."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:247
+msgid "Enter a whole number."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:402
+#: env/lib/python3.10/site-packages/django/forms/fields.py:1143
+msgid "Enter a valid date."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:426
+#: env/lib/python3.10/site-packages/django/forms/fields.py:1144
+msgid "Enter a valid time."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:454
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:488
+msgid "Enter a valid duration."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:489
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:549
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:550
+msgid "No file was submitted."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:551
+msgid "The submitted file is empty."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:553
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:556
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:617
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:779
+#: env/lib/python3.10/site-packages/django/forms/fields.py:869
+#: env/lib/python3.10/site-packages/django/forms/models.py:1309
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:870
+#: env/lib/python3.10/site-packages/django/forms/fields.py:985
+#: env/lib/python3.10/site-packages/django/forms/models.py:1308
+msgid "Enter a list of values."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:986
+msgid "Enter a complete value."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:1202
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/fields.py:1232
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: env/lib/python3.10/site-packages/django/forms/forms.py:76
+msgid ":"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/forms.py:203
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/formsets.py:370
+#, python-format
+msgid "Please submit at most %d form."
+msgid_plural "Please submit at most %d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/forms/formsets.py:377
+#, python-format
+msgid "Please submit at least %d form."
+msgid_plural "Please submit at least %d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/forms/formsets.py:405
+#: env/lib/python3.10/site-packages/django/forms/formsets.py:412
+msgid "Order"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/formsets.py:417
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_confirmation.html:18
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_confirmation.html:49
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:42
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:69
+#: env/lib/python3.10/site-packages/suit/templates/admin/page_submit_line.html:8
+#: env/lib/python3.10/site-packages/suit/templates/admin/submit_line.html:8
+msgid "Delete"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/models.py:763
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/models.py:767
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/models.py:773
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/models.py:782
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/models.py:1109
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/models.py:1193
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/models.py:1311
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/utils.py:172
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/widgets.py:403
+msgid "Clear"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/widgets.py:404
+msgid "Currently"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/widgets.py:405
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:24
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:86
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:27
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:43
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:26
+msgid "Change"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/widgets.py:714
+msgid "Unknown"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/widgets.py:715
+msgid "Yes"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/forms/widgets.py:716
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:817
+msgid "yes,no,maybe"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:846
+#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:863
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:865
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:867
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:869
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:871
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:873
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dateformat.py:66
+msgid "p.m."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dateformat.py:67
+msgid "a.m."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dateformat.py:72
+msgid "PM"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dateformat.py:73
+msgid "AM"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dateformat.py:146
+msgid "midnight"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dateformat.py:148
+msgid "noon"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:6
+msgid "Monday"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:6
+msgid "Tuesday"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:6
+msgid "Wednesday"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:6
+msgid "Thursday"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:6
+msgid "Friday"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:7
+msgid "Saturday"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:7
+msgid "Sunday"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:10
+msgid "Tue"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:11
+msgid "Sat"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:11
+msgid "Sun"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:14
+#: utils/customtags.py:6
+msgid "January"
+msgstr "Январь"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:14
+#: utils/customtags.py:7
+msgid "February"
+msgstr "Февраль"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:14
+#: utils/customtags.py:8
+msgid "March"
+msgstr "Март"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:14
+#: utils/customtags.py:9
+msgid "April"
+msgstr "Aпрель"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:14
+#: utils/customtags.py:10
+msgid "May"
+msgstr "Май"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:14
+#: utils/customtags.py:11
+msgid "June"
+msgstr "Июнь"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:15
+#: utils/customtags.py:12
+msgid "July"
+msgstr "Июль"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:15
+#: utils/customtags.py:13
+msgid "August"
+msgstr "Август"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:15
+#: utils/customtags.py:14
+msgid "September"
+msgstr "Сентябрь"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:15
+#: utils/customtags.py:15
+msgid "October"
+msgstr "Октябрь"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:15
+#: utils/customtags.py:16
+msgid "November"
+msgstr "Ноябрь"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:16
+#: utils/customtags.py:17
+msgid "December"
+msgstr "Декабрь"
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:19
+msgid "jan"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:19
+msgid "feb"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:19
+msgid "mar"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:19
+msgid "apr"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:19
+msgid "may"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:19
+msgid "jun"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:20
+msgid "jul"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:20
+msgid "aug"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:20
+msgid "sep"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:20
+msgid "oct"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:20
+msgid "nov"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:20
+msgid "dec"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:23
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:24
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:25
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:26
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:27
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:28
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:29
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:30
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:31
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:32
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:33
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:34
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:37
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:38
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:39
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:40
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:41
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:42
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:43
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:44
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:45
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:46
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:47
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/dates.py:48
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/text.py:71
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/text.py:240
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: env/lib/python3.10/site-packages/django/utils/text.py:259
+#: env/lib/python3.10/site-packages/django/utils/timesince.py:94
+msgid ", "
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/utils/timesince.py:14
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/django/views/csrf.py:110
+msgid "Forbidden"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/csrf.py:111
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/csrf.py:115
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/csrf.py:120
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/csrf.py:124
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/csrf.py:132
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/csrf.py:137
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/csrf.py:142
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:41
+msgid "No year specified"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:61
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:111
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:208
+msgid "Date out of range"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:90
+msgid "No month specified"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:142
+msgid "No day specified"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:188
+msgid "No week specified"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:338
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:367
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:594
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/dates.py:628
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/detail.py:54
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/list.py:67
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/list.py:72
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/generic/list.py:154
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/static.py:40
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/static.py:42
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/static.py:80
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/403.html:4
+msgid "forbidden"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/403.html:6
+#: env/lib/python3.10/site-packages/suit/templates/404.html:6
+#: env/lib/python3.10/site-packages/suit/templates/500.html:6
+#: env/lib/python3.10/site-packages/suit/templates/suit/error_base.html:76
+msgid "error"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/403.html:9
+msgid "We're sorry, but the requested action is forbidden"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/404.html:4
+msgid "Page not found"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/404.html:9
+msgid "We're sorry, but the requested page could not be found."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/500.html:4
+msgid "Server Error"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/500.html:9
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/actions.html:14
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/actions.html:5
+msgid "Run the selected action"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/actions.html:14
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/actions.html:5
+msgid "Go"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/actions.html:22
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/actions.html:14
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/actions.html:23
+#, python-format
+msgid ""
+"Select all %(total_count)s\n"
+"                    %(module_name)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/actions.html:26
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/actions.html:16
+msgid "Clear selection"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/app_index.html:8
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/change_password.html:19
+#: env/lib/python3.10/site-packages/suit/templates/admin/base.html:98
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:61
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list.html:42
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:46
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:8
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/plugin_change_form.html:82
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_confirmation.html:7
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_selected_confirmation.html:7
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/breadcrumbs.html:5
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:8
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/base.html:10
+#: env/lib/python3.10/site-packages/suit/templates/admin/object_history.html:7
+#: env/lib/python3.10/site-packages/suit/templates/registration/logged_out.html:6
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:26
+#: env/lib/python3.10/site-packages/suit/templates/reversion/recover_form.html:8
+#: env/lib/python3.10/site-packages/suit/templates/reversion/recover_list.html:8
+#: env/lib/python3.10/site-packages/suit/templates/reversion/revision_form.html:8
+#: env/lib/python3.10/site-packages/suit/templates/suit/menu.html:10
+msgid "Home"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/app_index.html:11
+#, python-format
+msgid "%(name)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/add_form.html:6
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/add_form.html:8
+msgid "Enter a username and password."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/change_password.html:32
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/change_password.html:75
+#: env/lib/python3.10/site-packages/suit/templates/admin/base.html:76
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:19
+msgid "Change password"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/change_password.html:45
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:141
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list.html:86
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:137
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/plugin_change_form.html:99
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/new_folder_form.html:10
+#: env/lib/python3.10/site-packages/suit/templates/admin/login.html:27
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:44
+msgid "Please correct the error below."
+msgid_plural " Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/change_password.html:48
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/change_password.html:54
+#: env/lib/python3.10/site-packages/suit/templates/admin/login.html:48
+#: templates/registration/login.html:30
+msgid "Password"
+msgstr "Пароль"
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/change_password.html:64
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:77
+msgid "Password (again)"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/auth/user/change_password.html:68
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/base.html:65
+msgid "Welcome,"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/base.html:73
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:15
+msgid "Documentation"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/base.html:78
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:21
+msgid "Log out"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:21
+msgid "You have unsaved changes"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:50
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:76
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:53
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/plugin_change_form.html:85
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:34
+msgid "Add"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:98
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/image/change_form.html:7
+msgid "tools"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:102
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:105
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:33
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/image/change_form.html:10
+#: env/lib/python3.10/site-packages/suit/templates/admin/object_history.html:15
+#: env/lib/python3.10/site-packages/suit/templates/reversion/revision_form.html:16
+msgid "History"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:107
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:104
+#: env/lib/python3.10/site-packages/suit/templates/admin/edit_inline/stacked.html:9
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:37
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/image/change_form.html:15
+msgid "View on site"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_form.html:113
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list.html:68
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list.html:116
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:108
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:113
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:141
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list.html:110
+msgid "Nothing found"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list.html:112
+msgid "Reset search and filters"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list.html:114
+#, python-format
+msgid "%(name_plural)s are not created yet"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list_results.html:19
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list_results.html:20
+msgid "Toggle sorting"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/change_list_results.html:22
+msgid "Remove from sorting"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:4
+msgid "Change a page"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:64
+msgid "Confirm delete"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:65
+msgid "Remove delete request"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:68
+msgid "Confirm page deletion"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:93
+msgid "actions"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:97
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:78
+msgid "Publish"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:97
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:98
+msgid "draft"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:98
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:51
+msgid "Preview"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:100
+msgid "Revert to public"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:157
+msgid "All permissions"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:158
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:169
+msgid "Loading..."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_form.html:168
+msgid "Page states"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:3
+msgid "List of pages"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:69
+msgid "Successfully moved"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:87
+msgid "An error occured. Please reload the page"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:110
+#: env/lib/python3.10/site-packages/suit/templates/reversion/change_list.html:8
+#: env/lib/python3.10/site-packages/suit/templates/reversion/recover_form.html:14
+#: env/lib/python3.10/site-packages/suit/templates/reversion/recover_list.html:14
+#, python-format
+msgid "Recover deleted %(name)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/change_list.html:125
+msgid "Pages on:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/cms/page/plugin_change_form.html:129
+msgid "Cancel"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_confirmation.html:26
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/delete_confirmation.html:12
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_confirmation.html:36
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/delete_confirmation.html:21
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_confirmation.html:51
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/delete_confirmation.html:31
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_confirmation.html:57
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_selected_confirmation.html:61
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/delete_confirmation.html:36
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/delete_selected_files_confirmation.html:47
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_selected_confirmation.html:15
+msgid "Delete multiple objects"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_selected_confirmation.html:23
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_selected_confirmation.html:33
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_selected_confirmation.html:51
+msgid "Confirm deletion"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/delete_selected_confirmation.html:54
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/edit_inline/stacked.html:67
+#: env/lib/python3.10/site-packages/suit/templates/admin/edit_inline/tabular.html:120
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/edit_inline/stacked.html:70
+#: env/lib/python3.10/site-packages/suit/templates/admin/edit_inline/tabular.html:123
+msgid "Remove"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/edit_inline/tabular.html:17
+msgid "Delete?"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/actions.html:14
+#, python-format
+msgid "Select all %(total_count)s files and/or folders"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/breadcrumbs.html:5
+msgid "Go back to admin homepage"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/breadcrumbs.html:8
+msgid "Go back to Filer app"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/breadcrumbs.html:8
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:12
+msgid "Filer"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/breadcrumbs.html:12
+msgid "Go back to root folder"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/breadcrumbs.html:12
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:15
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:80
+msgid "root"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/breadcrumbs.html:17
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/breadcrumbs.html:23
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:19
+#, python-format
+msgid "Go back to '%(folder_name)s' folder"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/change_form.html:30
+msgid "duplicates"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/delete_selected_files_confirmation.html:11
+msgid ""
+"Deleting the selected files and/or folders would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/delete_selected_files_confirmation.html:20
+msgid ""
+"Deleting the selected files and/or folders would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/delete_selected_files_confirmation.html:30
+msgid ""
+"<p>Are you sure you want to delete the selected files and/or folders? All of "
+"the following objects and their related items will be deleted:</p>"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:8
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:12
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:15
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:80
+msgid "Go back to"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:8
+msgid "admin homepage"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:15
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:80
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/new_folder_form.html:4
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/clipboard/clipboard.html:15
+msgid "folder"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/change_form.html:50
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:81
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:91
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:23
+msgid "Folder Icon"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_copy_destination.html:12
+msgid ""
+"Your account doesn't have permissions to copy all of the selected files and/"
+"or folders."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_copy_destination.html:15
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_move_destination.html:15
+msgid "There are no destination folders available."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_copy_destination.html:18
+msgid "There are no files and/or folders available to copy."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_copy_destination.html:21
+msgid ""
+"The following files and/or folders will be copied to a destination folder "
+"(retaining their tree structure):"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_copy_destination.html:31
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_move_destination.html:32
+msgid "Destination folder:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_copy_destination.html:38
+msgid "Copy"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_images_resize_options.html:12
+msgid ""
+"Your account doesn't have permissions to resize all of the selected images."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_images_resize_options.html:15
+msgid "There are no images available to resize."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_images_resize_options.html:18
+msgid "The following images will be resized:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_images_resize_options.html:29
+msgid "Choose an existing thumbnail option or enter resize parameters:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_images_resize_options.html:32
+msgid "Choose resize parameters:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_images_resize_options.html:35
+msgid ""
+"Warning: Images will be resized in-place and originals will be lost. Maybe "
+"first make a copy of them to retain the originals."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_images_resize_options.html:36
+msgid "Resize"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_move_destination.html:12
+msgid ""
+"Your account doesn't have permissions to move all of the selected files and/"
+"or folders."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_move_destination.html:18
+msgid "There are no files and/or folders available to move."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_move_destination.html:21
+msgid ""
+"The following files and/or folders will be moved to a destination folder "
+"(retaining their tree structure):"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_move_destination.html:38
+msgid "Move"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_rename_format.html:12
+msgid ""
+"Your account doesn't have permissions to rename all of the selected files."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_rename_format.html:15
+msgid "There are no files available to rename."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_rename_format.html:18
+msgid ""
+"The following files will be renamed (they will stay in their folders and "
+"keep original filename, only displayed filename will be changed):"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/choose_rename_format.html:31
+msgid "Rename"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:71
+msgid "Adds a new Folder"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:71
+msgid "New Folder"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:72
+msgid "upload files"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:72
+msgid "Upload"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:80
+msgid "Go back to the parent folder"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:82
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:30
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:19
+#, python-format
+msgid "1 folder"
+msgid_plural "%(counter)s folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:82
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:30
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:20
+#, python-format
+msgid "1 file"
+msgid_plural "%(counter)s files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_listing.html:86
+msgid "Change current folder details"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:23
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:27
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:29
+#, python-format
+msgid "Change '%(item_label)s' folder details"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:30
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:45
+msgid "Owner"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:37
+msgid "Select this file"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:39
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:43
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:44
+#, python-format
+msgid "Change '%(item_label)s' details"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:42
+#, python-format
+msgid "Delete '%(item_label)s'"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:45
+msgid "Permissions"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:45
+msgid "disabled"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:45
+msgid "enabled"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:49
+msgid "Move to clipboard"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:57
+msgid "there are no files or subfolders"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:64
+msgid "previous"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:68
+#, python-format
+msgid ""
+"\n"
+"            Page %(number)s of %(num_pages)s\n"
+"            "
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/directory_table.html:74
+msgid "next"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/folder/new_folder_form.html:4
+msgid "Add new"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/image/change_form.html:31
+msgid "Full size preview"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/clipboard/clipboard.html:4
+msgid "Clipboard"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/clipboard/clipboard.html:15
+msgid "discard"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/clipboard/clipboard.html:15
+msgid "Move all clipboard files to"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/clipboard/clipboard.html:15
+msgid "unfiled files"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/clipboard/clipboard.html:24
+msgid "Paste all items here"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/clipboard/clipboard.html:63
+msgid "the clipboard is empty"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/clipboard/clipboard_item_rows.html:10
+msgid "upload failed"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:11
+msgid "Enter your search phrase here"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:12
+msgid "Click here to"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:12
+msgid "run search for entered phrase"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:15
+msgid "Check it to"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:15
+msgid "limit the search to current folder"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:19
+msgid "found"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/filer/tools/search_form.html:20
+msgid "cancel search"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/change_list_export.html:5
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/change_list_import_export.html:6
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/export.html:5
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/export.html:12
+msgid "Export"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/change_list_import.html:5
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/change_list_import_export.html:5
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:6
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:25
+msgid "Import"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:17
+msgid "This importer will import the following fields: "
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:34
+msgid "Errors"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:42
+msgid "Line number"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:65
+msgid "New"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:67
+msgid "Skipped"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:71
+msgid "Update"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/import_export/import.html:90
+msgid "Confirm import"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:19
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:45
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:54
+msgid "My Actions"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:59
+msgid "None available"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:68
+msgid "added"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:69
+msgid "changed"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:70
+msgid "deleted"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/index.html:76
+msgid "Unknown content"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/login.html:56
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/login.html:60
+msgid "Log in"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/object_history.html:27
+#: env/lib/python3.10/site-packages/suit/templates/reversion/object_history.html:15
+#: env/lib/python3.10/site-packages/suit/templates/reversion/recover_list.html:27
+msgid "Date/time"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/object_history.html:29
+msgid "Action"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/object_history.html:43
+#: env/lib/python3.10/site-packages/suit/templates/reversion/object_history.html:36
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/page_submit_line.html:4
+#: env/lib/python3.10/site-packages/suit/templates/admin/submit_line.html:4
+msgid "Save and continue editing"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/page_submit_line.html:5
+#: env/lib/python3.10/site-packages/suit/templates/admin/submit_line.html:5
+msgid "Save as new"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/page_submit_line.html:6
+#: env/lib/python3.10/site-packages/suit/templates/admin/submit_line.html:6
+msgid "Save and add another"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/page_submit_line.html:14
+#, python-format
+msgid "Delete %(language)s translation"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/pagination.html:26
+msgid "Show all"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/search_form.html:8
+msgid "keyword"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/search_form.html:29
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: env/lib/python3.10/site-packages/suit/templates/admin/search_form.html:31
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/registration/logged_out.html:9
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/registration/logged_out.html:12
+msgid "Log in again"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:28
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:32
+msgid "Password change"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:40
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:55
+msgid "Old password"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:66
+msgid "New password"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/registration/password_change_form.html:88
+msgid "Change my password"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/reversion/object_history.html:8
+msgid ""
+"Choose a date from the list below to revert to a previous version of this "
+"object."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/reversion/object_history.html:17
+msgid "Comment"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/reversion/recover_form.html:22
+msgid "Press the save button below to recover this version of the object."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/reversion/recover_list.html:21
+msgid ""
+"Choose a date from the list below to recover a deleted version of an object."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/reversion/recover_list.html:41
+msgid "There are no deleted objects to recover."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/reversion/revision_form.html:18
+#, python-format
+msgid "Revert %(verbose_name)s"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/templates/reversion/revision_form.html:31
+msgid "Press the save button below to revert to this version of the object."
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/widgets.py:104
+msgid "Date:"
+msgstr ""
+
+#: env/lib/python3.10/site-packages/suit/widgets.py:118
+msgid "Time:"
+msgstr ""
+
+#: game/models.py:15
+#, fuzzy
+#| msgid "Slug English"
+msgid "Author English"
+msgstr "Слизняк английский"
+
+#: game/models.py:16
+#, fuzzy
+#| msgid "Slug Russian"
+msgid "Author Russian"
+msgstr "Слизняк русский"
+
+#: game/models.py:17
+#, fuzzy
+#| msgid "Slug Armenian"
+msgid "Author Armenian"
+msgstr "Слизень Армянский"
+
+#: game/models.py:46 product/models.py:81 product/models.py:275
+#: product/models.py:289
+msgid "Created At"
+msgstr "Создано на"
+
+#: product/models.py:13
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: product/models.py:14
+msgid "Facebook"
+msgstr "Фейсбук"
+
+#: product/models.py:16
+msgid "Gift"
+msgstr "Подарок"
+
+#: product/models.py:17
+msgid "Other"
+msgstr "Другой"
+
+#: product/models.py:38
+msgid "Direct"
+msgstr "Прямой"
+
+#: product/models.py:39
+msgid "Indirect"
+msgstr "Косвенный"
+
+#: product/models.py:50
+msgid "Icon"
+msgstr "Значок"
+
+#: product/models.py:70
+msgid "Slug English"
+msgstr "Слизняк английский"
+
+#: product/models.py:71
+msgid "Slug Russian"
+msgstr "Слизняк русский"
+
+#: product/models.py:72
+msgid "Slug Armenian"
+msgstr "Слизень Армянский"
+
+#: product/models.py:78
+msgid "Category"
+msgstr "Категория"
+
+#: product/models.py:165
+msgid "Is Main"
+msgstr "Является основным"
+
+#: product/models.py:231
+msgid "Address English"
+msgstr "Адрес Английский"
+
+#: product/models.py:232
+msgid "Address Russian"
+msgstr "Адрес Русский"
+
+#: product/models.py:233
+msgid "Address Armenian"
+msgstr "Адрес Армянский"
+
+#: product/models.py:234
+msgid "Longitude"
+msgstr "Долгота"
+
+#: product/models.py:235
+msgid "Latitude"
+msgstr "Широта"
+
+#: product/models.py:262
+msgid "Crated At"
+msgstr "Создано на"
+
+#: product/models.py:270
+msgid "Product Category"
+msgstr "Категория товара"
+
+#: product/models.py:286
+msgid "Collaboratir"
+msgstr "Соавтор"
+
+#: templates/base/base.html:26 templates/registration/login.html:9
+msgid "Yatuk"
+msgstr "Ятук"
+
+#: templates/elements/header.html:49
+msgid "Sales"
+msgstr "Продажи"
+
+#: templates/elements/header.html:73
+msgid "Collaaborators"
+msgstr "Соавторы"
+
+#: templates/elements/header.html:142
+msgid "Logout"
+msgstr "Выйти"
+
+#: templates/registration/login.html:22
+msgid "Login to Yatuk CMS system"
+msgstr "Вход в систему Yatuk CMS"
+
+#: templates/registration/login.html:26
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: templates/registration/login.html:35
+msgid "Login"
+msgstr "Авторизоваться"
+
+#: users/managers.py:19
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: users/managers.py:21
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: shared_apps/blog/templates/blog/post_list.html:10
+msgid "Blog"
+msgstr "Блог"
+
+#: shared_apps/blog/templates/blog/post_list.html:44
+msgid "Search in all languages"
+msgstr "Поиск на всех языках"
+
+#: shared_apps/blog/templates/blog/post_list.html:58
+msgid "All Categories"
+msgstr "Все категории"
+
+#: shared_apps/blog/templates/blog/post_list.html:69
+msgid "Tags"
+msgstr "Теги"
+
+#: shared_apps/blog/templates/blog/post_list_partial.html:27
+msgid "No posts found."
+msgstr "Посты не найдены."
+
+#, fuzzy
+#~| msgid "Website"
+#~ msgid "Go to Website"
+#~ msgstr "Веб-сайт"

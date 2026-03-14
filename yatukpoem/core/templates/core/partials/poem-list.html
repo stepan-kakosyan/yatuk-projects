@@ -1,0 +1,77 @@
+{% load i18n %}
+<div class="w-100">
+    {% if not hide_filters %}
+  <div class="radio-tile-group flex-wrap">
+    <div class="input-container">
+        <input id="list" class="radio-button" type="radio" {% if selected_genre == "all" %}checked{% endif %}
+          hx-get="{% url 'author' slug=author.slug genre='all' %}"
+          hx-target="#poem-list"
+          hx-swap="innerHTML"
+          hx-push-url="true"
+          value=""
+        />
+        <div class="radio-tile">
+          <label for="list" class="radio-tile-label">{% translate "All" %}</label>
+        </div>
+    </div>
+    {% for genre in genres %}
+      <div class="input-container">
+        <input id="genre.slug" class="radio-button" type="radio"
+          {% if selected_genre == genre.slug %}checked{% endif %}
+          hx-get="{% url 'author' slug=author.slug genre=genre.slug %}"
+          hx-target="#poem-list"
+          hx-swap="innerHTML"
+          hx-push-url="true"
+          value="{{genre.slug}}"
+        />
+        <div class="radio-tile">
+          <label for="genre.slug" class="radio-tile-label">{{genre.name}}</label>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  </div>
+  <div class="poem-card">
+{% for poem in poems %}
+  {% include 'core/partials/poem-card.html' %}
+{% endfor %}
+  </div>
+  {% if poems.paginator.count <= poems.paginator.per_page %}
+  {% else %}
+<nav>
+    <ul class="pagination pagination-template d-flex justify-content-center mt-5">
+        {% if poems.has_previous %}
+        <li class="page-item"><a class="page-link" href="{% url 'author' slug=author.slug genre=selected_genre %}?page={{poems.previous_page_number}}"  >
+            <i class="fa fa-angle-left"></i></a></li>
+            {% if poems.number > 3 %}
+                    <li class="page-item"><a class="page-link" href="{% url 'author' slug=author.slug  genre=selected_genre %}?page=1"  >1</a>
+                    </li>
+                {% if poems.number > 4 %} 
+                    <li class="page-item disabled"><a class="page-link">...</a></li>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+  
+        {% for num in poems.paginator.page_range %}
+            {% if poems.number == num %}
+                <li class="page-item active"><a class="page-link"  href="{% url 'author' slug=author.slug  genre=selected_genre %}?page={{ num }}">{{ num }}</a>
+                </li>
+            {% elif num > poems.number|add:'-3' and num < poems.number|add:'3' %}
+                <li class="page-item"><a  class="page-link"  href="{% url 'author' slug=author.slug  genre=selected_genre %}?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+  
+        {% if poems.has_next %}
+            {% if poems.number < poems.paginator.num_pages|add:'-3' %}
+            <li class="page-item disabled"><a class="page-link">...</a></li>
+            <li class="page-item"><a  class="page-link" href="{% url 'author' slug=author.slug  genre=selected_genre %}?page={{ poems.paginator.num_pages }}">{{ poems.paginator.num_pages }}</a></li>
+            {% elif poems.number < poems.paginator.num_pages|add:'-2' %}
+            <li class="page-item"><a class="page-link" href="{% url 'author' slug=author.slug  genre=selected_genre %}?page={{ news.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+            {% endif %} 
+            <li class="page-item"><a  class="page-link" href="{% url 'author' slug=author.slug  genre=selected_genre %}?page={{ poems.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+        {% endif %}
+    </ul>
+  </nav> 
+  {% endif %}

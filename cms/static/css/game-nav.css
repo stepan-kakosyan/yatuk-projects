@@ -1,0 +1,35 @@
+.wrapper {
+
+  overflow: hidden;
+}
+
+.tabs li {
+  list-style: none;
+  float: left;
+  width: 25%;
+}
+
+.tabs a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  text-transform: uppercase;
+  color: #fff;
+  height: 70px;
+  line-height: 90px;
+  font-size: 16px;
+  background: linear-gradient(173deg, transparent 29%, #CD104D 30%);
+}
+
+.tabs a:hover,
+.tabs a.active {
+  background: linear-gradient(173deg, transparent 29%, #9C2C77 30%);
+  color: white;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

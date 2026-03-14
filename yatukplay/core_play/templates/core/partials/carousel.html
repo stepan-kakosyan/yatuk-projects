@@ -1,0 +1,30 @@
+{% load i18n %}
+
+<div class="carousel-section">
+    <h1 class="carousel-title">{% translate "Famous art products from Yatuk" %}</h1>
+<div class="options">
+   {% for product in products %}
+    <div class="option{% if forloop.counter == 1 %} active{%endif%}" 
+    style="--optionBackground:url('https://cms.yatuk.am/{{product.main_image.optimized.url}}');">
+    <div class="info-icon">
+      <a href="https://yatuk.am/product/{{product.slug_en}}/" target="blank"><i class="fa fa-info"></i></a>
+    </div>
+    <div class="shadow"></div>
+    <div class="label">
+       <div class="icon">
+          <i class="fa fa-{{ product.category.icon_display}}"></i>
+       </div>
+       <div class="info">
+          <div class="main">{{product.category.title}} - {{product.title}}</div>
+       </div>
+    </div>
+    </div>
+    {% endfor %}
+ </div>
+ <div class="hover">
+   <span>{% translate "Find us" %}</span>
+   <a class="social-link" href="https://yatuk.am" target="_blank"><i class="fa fa-shopping-cart"></i></a>
+   <a class="social-link" href="https://www.facebook.com/yatukpuzzle/" target="_blank"><i class="fa fa-facebook"></i></a>
+   <a class="social-link" href="https://www.instagram.com/yatukpuzzle/" target="_blank"><i class="fa fa-instagram"></i></a>
+</div>
+</div>

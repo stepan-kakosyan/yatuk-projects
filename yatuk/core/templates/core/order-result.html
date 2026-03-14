@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<div class="homepage">
+    <div class="shiiping-cards">
+        <div class="container-glass light-card">
+            {% if status == "succeed" %}
+                <img class="img" src="{% static 'images/online-payment.svg' %}" alt="payment-succeed">
+                <div class="shiiping-card-title">{% translate "Payment Succeed" %}</div>
+                <p class="text">
+                    {% blocktranslate %}
+                    The payment was made successfully. If you think there is a need 
+                    for any changes to the order, please contact the Yatuk administrators before shipping the order.
+                    {% endblocktranslate %}
+                </p>
+                <span class="see-more-button">
+                    <a class="colored" href="{% url 'profile' %}?active=orders">{% translate "See orders" %}</a></span>
+            {% else %}
+                <img class="img" src="{% static 'images/payment-error.svg' %}" alt="payment-failed">
+                <div class="shiiping-card-title">{% translate "Payment Failed" %}</div>
+                <p class="text">
+                    {% translate "Something went wrong. If you dont know exact case please contact with Yatuk administrators or with your bank." %}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

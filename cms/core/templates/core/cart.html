@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<div class="homepage">
+    <div class="main-text text-center">
+        <h1>{% translate "Shopping Cart" %}</h1>
+        <span>{% translate "You have made a wonderful choice. Please make sure the quantity of products is exactly what you need." %}</span>
+    </div>
+<div class="shiiping-cards">
+    <div class="container-glass shopping-cart-glass">
+    {% include 'core/partials/shopping-cart-page.html' %}
+    </div>
+</div>
+</div>
+{% endblock content %}

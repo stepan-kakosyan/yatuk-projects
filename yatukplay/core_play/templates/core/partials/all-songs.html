@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="card-main">
+  <div class="card-section is-active">
+    <main class="leaderboard__profiles" id="long_list">
+        {% for song in songs %}
+            <article class="leaderboard__profile"  data-id="{{song.id}}">
+                <img src="https://cms.yatuk.am{{song.thumbnail.url}}" 
+                alt="{{song.name}}" class="leaderboard__picture" >
+                <div class="leaderboard__name">
+                  <div>{{song.title}}</div>
+                  <div>{{song.author.name}}</div>
+                </div>
+                <div class="song-buttons">
+                  <span class="leaderboard__value {% if current_song == song.id  %} disabled{%else%}enabled{%endif%}"
+                  data-id="{{song.id}}"><i class="fa fa-play"></i></span>
+                  <div>
+            </article>
+        {% endfor %}
+    </main>
+  </div>
+</div>
+<script>
+  $( "#menu-open" ).trigger( "click" );
+</script>

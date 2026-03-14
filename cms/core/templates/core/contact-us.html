@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% block og_properties %}
+    <meta name="description" content="Կոնտակտային տվյալներ մեր թիմի հետ կապնվելու համար">
+    <title>{% translate "Yatuk" %} - {% translate "Contact Us" %}</title>
+{% endblock %}
+{% block content %}
+<div class="homepage">
+{% include 'core/partials/contact-us.html' %}
+</div>
+{% endblock content %}

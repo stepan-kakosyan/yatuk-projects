@@ -1,0 +1,8 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{%block extra_meta %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock %}
+{% block content %}
+{% include 'users/partials/registration-card.html' %}
+{% endblock content %}

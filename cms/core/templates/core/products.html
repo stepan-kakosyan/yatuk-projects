@@ -1,0 +1,58 @@
+
+{% extends "base/base.html" %}
+{% load i18n %}
+{% load static %}
+{% load customtags %}
+{% block title %}{% translate "Products" %}{% endblock %}
+
+{% block additional_metas %}{% endblock %}
+{% block content %}
+
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body" id="product_body">
+        <h4 class="card-title">{% translate "Products" %}</h4>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>{% translate "Image" %}</th>
+                <th>{% translate "Name" %}</th>
+                <th>{% translate "Progress" %}</th>
+                <th>{% translate "Price" %}</th>
+                <th>{% translate "Added At" %}</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for product in products %}
+              <tr>
+                <td class="py-1">
+                  {{ product.image_tag}}
+                </td>
+                <td class="py-1">
+                  {{ product.title}}
+                </td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" 
+                    style="width: {{product.sell_percent}}%" aria-valuenow="{{product.sell_count}}" aria-valuemin="0" 
+                    aria-valuemax="{{product.total_count}}"></div>
+                  </div>
+                </td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.created_at|beauty_date}}</td>
+                <td><a href="{% url 'product' pk=product.id %}">
+                  <button type="button" class="btn btn-outline-secondary btn-rounded btn-icon">
+                    <i class="mdi mdi-trending-up text-success"></i>
+                  </button>
+                </a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

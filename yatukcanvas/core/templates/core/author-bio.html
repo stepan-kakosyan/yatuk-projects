@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+<link rel="canonical" href="{% url "author_bio" slug=author.slug %}" />
+<meta name="description" content="{{author.bio|striptags}}">
+<title>{{author.name}} | {% translate "Biography" %} | {% translate "Yatuk Canvas" %}</title>
+<meta name="keywords" content="բանաստեղծ, բանաստեղծություն, խաղ, պատմվածք, վեպ, վիպակ, հեղինակ, հայ գրող, հայ բանաստեղծ, հայ վիպասան, {{author.name_hy}}, {{author.name_ru}}, {{author.name_en}}">
+<meta property="og:title" content="Յատուկ Կտավ | {{author.name_hy}}" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{author.bio|striptags}}" />
+<meta property="og:image" content="https://cms.yatuk.am{{author.signature.url}}" />
+
+{% endblock og_properties %}
+{% block content %}
+<nav>
+  <ol class="breadcrumb breadcrumb-yatuk light-card">
+    <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'authors' %}">{% translate "Authors" %}</a></li>
+    <li class="breadcrumb-item">{{author.name}}</li>
+    <li class="breadcrumb-item active">{% translate "Biography" %}</li>
+  </ol>
+</nav>
+{% include 'core/partials/author-header.html' %}
+<div  id="poem-list">
+  <div class="author-page-content">
+    <div class="author-page-card light-card">
+        {{bio.content|safe}}
+    </div>
+</div>
+</div>
+
+{% endblock content %}

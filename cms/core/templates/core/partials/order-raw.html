@@ -1,0 +1,46 @@
+{% load static %}
+{% load customtags %}
+{% load i18n %}
+<tr id="order_raw_{{order.id}}">
+    <td class="py-1">#{{order.id}}</td>
+<td class="py-1">
+    <div class="d-flex align-items-center">
+    <img class="img-xs rounded-circle" 
+    src="{% if order.user.profile_image%}https://yatuk.am{{ order.user.profile_image.url }}{% else %}{%static 'images/user.png' %}{%endif%}">
+    <span>{{order.user}}</span>
+    </div>
+  </td>
+  <td class="py-1">
+    <dic class="products-order-in-table">
+      {% for order_item in order.items.all %}
+        <span class="p-1">{{ order_item.product.title}} X {{order_item.quantity}} = {{order_item.price}}֏</span></br>
+      {% endfor %}
+    </div>
+  </td>
+  <td>
+    <div>
+        <div class="p-1">{{ order.shipping_method}} ({{order.shipping_method.price}}֏)</div>
+        <div class="p-1"><i class="mdi mdi mdi-pin color-red"></i>{{ order.address}}</div>
+        <div class="p-1"><i class="mdi mdi-phone color-green"></i>{% if order.phone_number %}{{ order.phone_number}}{% endif %} </div>
+    </div>
+    </td>
+    <td>{{ order.comment}}</td>
+  <td>{{ order.amount}}֏</td>
+  <td><span class="status-text {{order.status}}">{{ order.status_display}}</span></td>
+  <td>{{ order.created_at|beauty_date}}</td>
+  <td>
+    {% if order.status == "accepted" %}
+        <button type="button" class="btn btn-outline-success btn-fw status-button-in-process status-button"
+            hx-get="{% url 'status_order' %}?order_id={{order.id}}&status=in_process" 
+            hx-swap="outerHTML" hx-target="#order_raw_{{order.id}}">{% translate "In Process" %}</button>
+    {% elif order.status == "in_process" %}
+        <button type="button" class="btn btn-outline-success btn-fw status-button-shipping status-button"
+            hx-get="{% url 'status_order' %}?order_id={{order.id}}&status=shipping" 
+            hx-swap="outerHTML" hx-target="#order_raw_{{order.id}}">{% translate "Shipping" %}</button>
+    {% elif order.status == "shipping" %}
+        <button type="button" class="btn btn-outline-success btn-fw status-button-done status-button"
+            hx-get="{% url 'status_order' %}?order_id={{order.id}}&status=done" 
+            hx-swap="outerHTML" hx-target="#order_raw_{{order.id}}">{% translate "Done" %}</button>
+    {% endif %}
+  </td>
+</tr>

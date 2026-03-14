@@ -1,0 +1,147 @@
+
+{% extends "base/base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% translate "Product" %}{% endblock %}
+
+{% block additional_metas %}
+<link rel="stylesheet" href="{% static 'vendors/owl-carousel-2/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel-2/owl.theme.default.min.css' %}">
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body" id="product_body">
+        <h4 class="card-title">{{ product.title }}</h4>
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class=""></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class=""></div>
+                    </div>
+                </div>
+                <h4 class="card-title">{% translate "Sellings" %}</h4>
+                <canvas id="sellChart" class="transaction-chart chartjs-render-monitor" 
+                style="display: block; width: 290px; height: 145px;" width="290" height="145"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{% translate "Images" %}</h4>
+          <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
+            {% for image in product.product_images %}
+              <div class="item">
+                <img src="{{image.image.url}}" alt="">
+              </div>
+            {% endfor %}
+          </div>
+          <div>
+              <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                  <div class="text-md-center text-xl-left">
+                  <h6 class="mb-1">{% translate "Total Count" %}</h6>
+                  </div>
+                  <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                  <h6 class="font-weight-bold mb-0">{{product.total_count}}</h6>
+                  </div>
+              </div>
+              <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                  <div class="text-md-center text-xl-left">
+                  <h6 class="mb-1">{% translate "Sent" %}</h6>
+                  </div>
+                  <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                  <h6 class="font-weight-bold mb-0"> {{ product.sent_count}}/{{product.sent_sell_count}}</h6>
+                  </div>
+              </div>
+              <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                  <div class="text-md-center text-xl-left">
+                  <h6 class="mb-1">{% translate "Sell Count" %}</h6>
+                  </div>
+                  <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                  <h6 class="font-weight-bold mb-0">{{ product.sell_count}}</h6>
+                  </div>
+              </div>
+              <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                  <div class="text-md-center text-xl-left">
+                  <h6 class="mb-1">{% translate "On me" %}</h6>
+                  </div>
+                  <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                  <h6 class="font-weight-bold mb-0">{{ product.i_have }}</h6>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+        </div>
+</div>
+
+      </br>
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{% translate "Collaborators" %}</h5>
+        <div class="table-responsive">
+          {% if collabarators %}
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>{% translate "Image" %}</th>
+                <th>{% translate "Name" %}</th>
+                <th>{% translate "Sent At" %}</th>
+                <th>{% translate "Sell At" %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for collabarator in collabarators %}
+              <tr>
+                <td class="py-1">
+                  {{ collabarator.image_tag}}
+                </td>
+                <td class="py-1">
+                  {{ collabarator.title}}
+                </td>
+                <td>{{ collabarator.sent_count}}</td>
+                <td>{% firstof collabarator.sell_count "-" %}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          {% translate "No Collaborators yet" %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+  </div>
+
+{% endblock %}
+{% block additional_scripts %}
+<script src="{% static 'js/chart.js' %}"></script>
+<script>
+  var doughnutPieOptions = {
+    responsive: true,
+    animation: {
+      animateScale: true,
+      animateRotate: true
+    }
+  };
+  if ($("#sellChart").length) {
+    var sellChartCanvas = $("#sellChart").get(0).getContext("2d");
+    var sellChart = new Chart(sellChartCanvas, {
+      type: 'pie',
+      data: {{sell_chart|safe}},
+      options: doughnutPieOptions
+    });
+  }
+</script>
+{% endblock %}

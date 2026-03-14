@@ -1,0 +1,79 @@
+{% load i18n %}
+<div class="w-100">
+    <div class="search-filter d-flex justify-content-center flex-wrap">
+      <div class="search-input yatuk-input">
+        <label>{% translate "Search by" %}</label>
+      <input id="search" class=" w-100"
+        value="{{search}}" name="search"
+        hx-get="{% url 'photos' %}"
+        hx-target="#photo-list"
+        hx-swap="innerHTML"
+        hx-trigger="keyup delay:1s"
+        hx-vals="js:{author: document.getElementById('authors').value}"
+        hx-push-url="true"
+      >
+      </div>
+
+    <div class="yatuk-input">
+      <label>{% translate "Authors" %}</label>
+      <select name="author" id="authors"
+        hx-get="{% url 'photos' %}"
+        hx-target="#photo-list"
+        hx-swap="innerHTML"
+        hx-vals="js:{search: document.getElementById('search').value}"
+        hx-push-url="true">
+        <option value="all" {% if selected_author == 'all' %}selected{% endif %}>{% translate "All" %}</option>
+        {% for author in authors %}
+          <option value="{{author.slug}}" {% if selected_author == author.slug %}selected{% endif %}>{{author}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    </div>
+  </div>
+<div class="d-flex flex-wrap justify-content-center">
+  {% if photos %}
+{% for photo in photos %}
+  {% include 'core/partials/photo-card.html' %}
+{% endfor %}
+{% else %}
+<div class="text-align-center">{% translate "No result found" %}</div>
+{% endif %}
+  </div>
+  {% if photos.paginator.count <= photos.paginator.per_page %}
+  {% else %}
+<nav>
+    <ul class="pagination pagination-template d-flex justify-content-center mt-5">
+        {% if photos.has_previous %}
+        <li class="page-item"><a class="page-link" href="{% url 'photos' %}?page={{photos.previous_page_number}}&author={{selected_author}}&search={{search}}"  >
+            <i class="fa fa-angle-left"></i></a></li>
+            {% if photos.number > 3 %}
+                    <li class="page-item"><a class="page-link" href="{% url 'photos' %}?page=1&author={{selected_author}}&search={{search}}"  >1</a>
+                    </li>
+                {% if photos.number > 4 %} 
+                    <li class="page-item disabled"><a class="page-link">...</a></li>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+  
+        {% for num in photos.paginator.page_range %}
+            {% if photos.number == num %}
+                <li class="page-item active"><a class="page-link"  href="{% url 'photos' %}?page={{ num }}&author={{selected_author}}&search={{search}}">{{ num }}</a>
+                </li>
+            {% elif num > photos.number|add:'-3' and num < photos.number|add:'3' %}
+                <li class="page-item"><a  class="page-link"  href="{% url 'photos' %}?page={{ num }}&author={{selected_author}}&search={{search}}">{{ num }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+  
+        {% if photos.has_next %}
+            {% if photos.number < photos.paginator.num_pages|add:'-3' %}
+            <li class="page-item disabled"><a class="page-link">...</a></li>
+            <li class="page-item"><a  class="page-link" href="{% url 'photos' %}?page={{ photos.paginator.num_pages }}&author={{selected_author}}&search={{search}}">{{ photos.paginator.num_pages }}</a></li>
+            {% elif photos.number < photos.paginator.num_pages|add:'-2' %}
+            <li class="page-item"><a class="page-link" href="{% url 'photos' %}?page={{ news.paginator.num_pages }}&author={{selected_author}}&search={{search}}">{{ page_obj.paginator.num_pages }}</a></li>
+            {% endif %} 
+            <li class="page-item"><a  class="page-link" href="{% url 'photos' %}?page={{ photos.next_page_number }}&author={{selected_author}}&search={{search}}"><i class="fa fa-angle-right"></i></a></li>
+        {% endif %}
+    </ul>
+  </nav> 
+  {% endif %}

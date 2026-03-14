@@ -1,0 +1,25 @@
+{% load i18n %}
+<tr id="contact_us__{{contact_us.id}}">
+    <td class="py-1">
+      {{ contact_us.name}}
+    </td>
+    <td>
+      {{ contact_us.email_or_phone}}
+    </td>
+    <td>
+      {{ contact_us.text}}
+    </td>
+    <td>
+        {% if contact_us.is_seen %}
+            <i class="mdi mdi-check color-green h3"></i>
+        {% else %}
+            <button type="button" class="btn btn-outline-info btn-icon-text" 
+            hx-target="#contact_us__{{contact_us.id}}"
+            hx-get="{% url 'check_contact_us' %}?id={{contact_us.id}}"
+            hx-swap="outerHTML"
+            hx-trigger="click"
+            >{% translate "Checked" %}
+            </button>
+        {% endif %}
+    </td>
+</tr>

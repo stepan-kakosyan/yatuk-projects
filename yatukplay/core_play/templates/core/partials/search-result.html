@@ -1,0 +1,41 @@
+{% load i18n %}
+{% if not authors and not songs and show_message %}
+{% translate "Sorry, nothing was found" %}
+{% endif %}
+{% if authors %}
+    {% translate "Composers" %}
+    {% for author in authors %}
+        <article class="leaderboard__profile">
+            <img src="https://cms.yatuk.am{{author.thumbnail.url}}" alt="{{author.name}}" class="leaderboard__picture">
+            <div class="leaderboard__name">
+            <div>{{author.name}}</div>
+            <div><i class="fa fa-music"></i>{{author.musics_count}}</div>
+            </div>
+            <div class="song-buttons">
+            <span class="leaderboard__value" 
+            hx-get="{% url 'get_author_songs' author.id %}"
+            hx-swap="innerHTML"
+            hx-trigger="click"
+            hx-target="#author_part"
+            hx-vals="js:{current_song: document.getElementById('bg-artwork').getAttribute('data-id')}"
+            ><i class="fa fa-bars"></i></span>
+            <div>
+        </article>
+    {% endfor %}
+{% endif %}
+{% if songs %}
+    {% translate "Musics" %}
+    {% for song in songs %}
+        <article class="leaderboard__profile {% if current_song == song.id  %} active{%endif%}" data-id="{{song.id}}">
+            <img src="https://cms.yatuk.am{{song.thumbnail.url}}" alt="{{song.title}}" class="leaderboard__picture">
+            <div class="leaderboard__name">
+                <div>{{song.title}}</div>
+                <div>{{song.author.name}}</div>
+            </div>
+            <div class="song-buttons">
+            <span class="leaderboard__value {% if current_song == song.id  %} disabled{%else%}enabled{%endif%}"
+            data-id="{{song.id}}"><i class="fa fa-play"></i></span>
+            <div>
+        </article>
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,24 @@
+{% load i18n %}
+<div class="author-page-content">
+    <div class="author-page-card light-card">
+      <div class="firstinfo">
+        <div class="img-content"><img  loading="lazy" src="https://cms.yatuk.am{{author.middle_optimized.url}}" alt="{{author.name}}"/></div>
+        <div class="profileinfo">
+          <h1><a href="{% url 'author' slug=author.slug genre='all' %}">{{author.name}}</h1>
+          <h3>{{author.dates}}</h3>          
+        </div>
+      </div>
+      <div class="author-tabs">
+        {% if author.has_photo or author.has_bio or author.has_quote %}
+        <div class="tab-item {% if active == 'poems' %}active{% endif %}">
+          <a href="{% url 'author' slug=author.slug genre='all' %}">{% translate "Works" %}</a></div>{% endif %}
+          {% if author.has_bio %}<div class="tab-item {% if active == 'biography' %}active{% endif %}">
+        <a href="{% url 'author_bio' slug=author.slug %}">{% translate "Biography" %}</a></div>{% endif %}
+        {% if author.has_quote %}<div class="tab-item {% if active == 'quotes' %}active{% endif %}">
+          <a href="{% url 'author_quotes' slug=author.slug %}">{% translate "Quotes" %}</a></div>{% endif %}
+        {% if author.has_photo %}<div class="tab-item {% if active == 'photoarchive' %}active{% endif %}">
+          <a href="{% url 'author_photoarchive' slug=author.slug %}">{% translate "Photo archive" %}</a>
+        </div>{% endif %}
+      </div>
+    </div>
+</div>

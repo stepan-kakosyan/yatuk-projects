@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<div  class="search-content">
+  <nav>
+    <ol class="breadcrumb breadcrumb-yatuk light-card">
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+      <li class="breadcrumb-item active">{% translate "Search" %}</li>
+    </ol>
+  </nav>
+<div  id="poem-list">
+  {% include 'core/partials/search-list.html' %}
+</div>
+</div>
+{% endblock content %}

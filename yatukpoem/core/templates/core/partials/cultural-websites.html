@@ -1,0 +1,29 @@
+{% load static %}
+{% load i18n %}
+<div class="shiiping-cards">
+<div class="container-glass light-card">
+    <img class="img" loading="lazy" src="{% static 'images/minas-avetisyan.png' %}" alt="minas-avetisyan">
+    <div class="shiiping-card-title">{% translate "Yatuk Canvas" %}</div>
+    <p class="text">
+        {% blocktranslate %}The best paintings of the most popular Armenian classic and modern artists made online puzzles.{% endblocktranslate %}
+    </p>
+    <span class="see-more-button"><a  class="colored" target="_blank" href="https://canvas.yatuk.am/hy/">{% translate "Visit Website" %}</a></span>
+</div>
+<div class="container-glass light-card">
+    <img class="img" loading="lazy" src="{% static 'images/aram-khachatryan.png' %}" alt="aram-khachatryan">
+    <div class="shiiping-card-title">{% translate "Yatuk Music" %}</div>
+    <p class="text">
+        {% blocktranslate %}The best of the most popular Armenian classic and modern composers
+        playlist with instrumental performances.{% endblocktranslate %}
+    </p>
+    <span class="see-more-button"><a  class="colored" target="_blank" href="https://play.yatuk.am/hy/">{% translate "Visit Website" %}</a></span>
+</div>
+<div class="container-glass light-card">
+    <img class="img" loading="lazy" src="{% static 'images/armenian-miniatures.png' %}" alt="yatuk website shòp armenian miniature">
+    <div class="shiiping-card-title">{% translate "Yatuk Art Shop" %}</div>
+    <p class="text">
+        {% blocktranslate %}Popular art products like jigsaw puzzles, postcard and magnetic bookmark sets.{% endblocktranslate %}
+    </p>
+    <span class="see-more-button"><a  class="colored" target="_blank" href="https://yatuk.am/hy/">{% translate "Visit Website" %}</a></span>
+</div>
+</div>

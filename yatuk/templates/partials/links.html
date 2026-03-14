@@ -1,0 +1,14 @@
+{% load static %}
+{% load i18n %}
+<div class="important-links">
+    <div class="container-glass light-card">
+        <div class="links-bottom"><a href="{% url 'privacy_policy' %}">{% translate "Privacy Policy" %}</a></div>
+        <div class="links-bottom"><a href="{% url 'terms_and_conditions' %}">{% translate "Terms & Conditions" %}</a></div>
+        <div class="links-bottom"><a href="{% url 'shipping' %}">{% translate "Shipping Methods" %}</a></div>
+        <div class="navbar-social-media">
+            <a href="https://www.facebook.com/yatukpuzzle/" target="_blank"><img src="{% static 'images/facebook.svg' %}" alt="facebook" width="100%" height="100%"></a>
+            <a href="https://www.instagram.com/yatukpuzzle/" target="_blank"><img src="{% static 'images/instagram.svg' %}" alt="instagram" width="100%" height="100%"></a>
+            <a href="https://www.youtube.com/@yatuk1255" target="_blank"><img src="{% static 'images/youtube.svg' %}" alt="youtube" width="100%" height="100%"></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{% load i18n %}
+<div class="product-card yatuk-form">
+    <div class="d-flex flex-column">
+      <div>
+        {% for address in addresses %}
+          <div class="card-contact">
+            <div class="address-row">
+              <div class="pr-3">
+                <i class="fa fa-map-marker"></i>
+                <span >{{address.state}}, {{address.city}}, {{address.address}}, {{address.postal_code}}</span>
+              </div>
+              <div class="d-flex address-icons">
+                <button class="icon-button"
+                hx-get="{% url 'edit_address' id=address.id %}" hx-swap="innerHTML"
+                hx-target="#address-info" hx-trigget="click"><i class="fa fa-edit"></i></button>
+                <button class="icon-button delete-icon"
+                hx-get="{% url 'remove_address' id=address.id %}" hx-swap="innerHTML"
+                hx-target="#address-info" hx-trigget="click"><i class="fa fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+    <button class="col-sm-12 col-lg-6" hx-get="{% url 'add_address' %}" 
+    hx-swap="innerHTML"
+    hx-target='#address-info'
+    hx-trigger="click">{% translate "Add new address" %}</button>
+  </div>

@@ -1,0 +1,96 @@
+{% extends 'base/base.html' %}
+{% load i18n static %}
+
+{% block extra_meta %}
+<link rel="stylesheet" href="https://cms.yatuk.am/static/blog/css/blog.css">
+<script src="https://unpkg.com/htmx.org"></script>
+{% endblock extra_meta %}
+
+{% block og_properties %}
+<title>{% trans "Blog" %}</title>
+<meta name="description" content="{% trans 'Blog' %}">
+{% endblock og_properties %}
+
+{% block content %}
+<div class="container">
+<div class="homepage-left">
+    <nav>
+        <ol class="breadcrumb breadcrumb-yatuk light-card">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">{% translate "Home" %}</a>
+          </li>
+          <li class="breadcrumb-item active">{% translate "Blog" %}</li>
+        </ol>
+    </nav>
+
+    <!-- Filter Section -->
+    <div class="card light-card mb-4">
+      <div class="card-body">
+        <form
+          id="blog-filter-form"
+          class="w-100 row"
+          hx-get="{% url 'blog:list' %}"
+          hx-target="#blog-posts-container"
+          hx-push-url="true"
+          hx-trigger="change from:#category-select, change from:.tag-checkbox, keyup changed delay:400ms from:#keyword-search, search from:#keyword-search"
+        >
+          <div class="search-filter d-flex flex-column col-md-6 col-lg-5 col-sm-12">
+            <label for="keyword-search" class="form-label">
+              {% trans "Search" %}
+            </label>
+            <input
+              id="keyword-search"
+              type="search"
+              name="q"
+              value="{{ current_search }}"
+              class="form-control"
+            >
+          </div>
+          
+          <!-- Category Filter -->
+           <div class="category-filter d-flex flex-column  col-md-6 col-lg-3 col-sm-12">
+            <label for="category-select" class="form-label">
+              {% trans "Category" %}
+            </label>
+            <select id="category-select" name="category" 
+                    class="form-select">
+              <option value="">{% trans "All Categories" %}</option>
+              {% for category in categories %}
+                <option value="{{ category.slug }}"
+                  {% if category.slug == current_category %}selected{% endif %}>
+                  {{ category.title }}
+                </option>
+              {% endfor %}
+            </select>
+            </div>
+          <!-- Tags Filter -->
+          <div class="tag-filter  col-md-12 col-lg-4 col-sm-12">
+            <label class="form-label">{% trans "Tags" %}</label>
+            <div class="tag-filters">
+              {% for tag in tags %}
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input tag-checkbox" 
+                         type="checkbox" 
+                         id="tag-{{ tag.slug }}" 
+                         name="tags" 
+                         value="{{ tag.slug }}"
+                         {% if tag.slug in current_tags %}checked{% endif %}>
+                  <label class="form-check-label" for="tag-{{ tag.slug }}">
+                    {{ tag.title }}
+                  </label>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- Posts Container -->
+    <div class="product-homepage product-list" id="blog-posts-container">
+      {% include 'blog/post_list_partial.html' %}
+    </div>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="z-10">
+  <nav>
+      <ol class="breadcrumb breadcrumb-yatuk light-card">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'profile' %}">{{request.user.display_name}}</a></li>
+        <li class="breadcrumb-item active">{% translate "Want to Read" %}</li>
+      </ol>
+    </nav>
+<div class="main-text text-center  mt-3">
+  <h3>{% translate "Want to Read list" %}</h3>
+</div>
+</div>
+
+<div  id="poem-list" class="min-height-half">
+  {% include 'core/partials/want-read-poem-list.html' %}
+</div>
+
+{% endblock content %}

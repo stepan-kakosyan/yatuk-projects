@@ -1,0 +1,25 @@
+{% load static %}
+{% load i18n %}
+<div class="yatuk-carousel">
+	<div class="yatuk-container">
+		<div class="yatuk-slider">
+		{% for game in carousel_items %}
+		
+				<div class="yatuk-slide {% if forloop.counter == 1 %}yatuk-slide--current{% endif %}">
+					<div class="yatuk-control">
+						<span class="yatuk-control--prev"><i class="fa fa-angle-left"></i></span>
+					</div>
+					<div class="d-flex flex-column">
+						<a class="frame d-flex flex-column" href="{% url "game" author=game.author.slug slug=game.slug id=game.id %}">
+							<img src="https://cms.yatuk.am{{game.image.url}}" alt="{{game.name}}" />
+							<span>{{game.name}}</span>
+						</a>
+					</div>
+					<div class="yatuk-control">
+						<span class="yatuk-control--next"><i class="fa fa-angle-right"></i></span>
+					</div>
+				</div>
+				
+		{% endfor %}</div>
+	</div>  
+</div>

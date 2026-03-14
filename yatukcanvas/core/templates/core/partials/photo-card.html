@@ -1,0 +1,6 @@
+{% load i18n %}
+{% load custom_tags %}
+<a href="{% url 'photo' slug=photo.slug id=photo.id %}" class="photo-card position-relative" 
+  style="background-image: url('https://cms.yatuk.am{{photo.middle_optimized.url}}'); background-position: {{photo.background_position}};">
+  <div class="photo-name">{{photo.name|truncatechars:55}}</div>
+</a>  

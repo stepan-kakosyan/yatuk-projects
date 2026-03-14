@@ -1,0 +1,69 @@
+{% load customtags %}
+{% load i18n %}
+<div class="page-header">
+    <h3 class="page-title">{% translate "To Do List" %}</h3>
+
+  </div>
+  <form method="post">
+    <div class="add-items d-flex">
+      {% csrf_token %}
+      {{ todo_form.text|addclass:"form-control todo-list-input" }}
+      <button class="add btn btn-primary todo-list-add-btn"
+        hx-post="{% url 'add_todo' %}"
+        hx-swap="innerHTML"
+        hx-target="#main_section_table"
+        hx-trigger="click"
+        hx-indicator="#spinner"
+      >{% translate "Add New" %}</button>
+    </div>
+  </form>
+  <div class="table-responsive">
+    {% if todos %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>{% translate "Done" %}</th>
+          <th>{% translate "Text" %}</th>
+          <th>{% translate "Date" %}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in todos %}
+<tr>
+  <td>
+      <div class="form-check form-check-success">
+          <div class="form-check">
+              <label class="form-check-label">
+                  <input class="checkbox" type="checkbox" {% if todo.done %}checked{% endif%}
+                      hx-get="{% url 'done_undone_todo' pk=todo.id %}"
+                      hx-swap="innerHTML"
+                      hx-target="#main_section_table"
+                      hx-indicator="#spinner"
+                      hx-trigger="click">  
+                  <i class="input-helper"></i>
+              </label>
+          </div>
+      </div>
+  </td>
+  <td>{{ todo.text }}</td>
+  <td>{{ todo.created_at|beauty_date }}</td>
+  <td>
+      <button type="button" class="btn btn-danger btn-icon-text" 
+          hx-get="{% url 'remove_todo' pk=todo.id %}"
+          hx-swap="innerHTML"
+          hx-indicator="#spinner"
+          hx-target="#main_section_table"
+          hx-trigger="click">
+          <i class="mdi mdi-archive btn-icon-prepend"></i>
+      </button>
+  </td>
+</tr>
+{% endfor %}
+        
+      </tbody>
+    </table>
+    {% else %}
+    {% translate "To Do List is empty" %}
+    {% endif %}
+  </div>

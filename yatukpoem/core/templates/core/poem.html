@@ -1,0 +1,117 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+<link rel="canonical" href="{% url "poem" author=poem.author.slug slug=poem.slug id=poem.id %}" />
+<meta name="description" content="{{poem.content|striptags}}">
+<title>{{poem.name_hy}} | {{poem.author.name}} | {% translate "Yatuk Poem" %}</title>
+<meta name="keywords" content="բանաստեղծ, բանաստեղծություն, պոեմ, պատմվածք, վեպ, վիպակ, հեղինակ, հայ գրող, հայ բանաստեղծ, հայ վիպասան, {{author.name_hy}}, {{author.name_ru}}, {{author.name_en}},  {{poem.name_hy}}, {{poem.name_ru}}, {{poem.name_en}}">
+<meta property="og:title" content="{{poem.author.name}} | {{poem.name_hy}} | Յատուկ Պոէմ " />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{poem.author.name}}ի {{poem.name_hy}} ստեղծագործության ամբողջական տարբերակը կարդացեք Յատուկ Պոէմ կայքում" />
+<meta property="og:image" content="https://cms.yatuk.am{{poem.game.image.url}}" />
+{% endblock og_properties %}
+{% block content %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as CURR_LANG %}
+<div class="w-100">
+  <nav>
+    <ol class="breadcrumb breadcrumb-yatuk light-card">
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'authors' %}">{% translate "Authors" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'author' slug=poem.author.slug genre='all'  %}">{{poem.author.name}}</a></li>
+      <li class="breadcrumb-item active">{{poem.name}}</li>
+    </ol>
+  </nav>
+  <div class="d-flex justify-content-between mobile-flex-column">
+  <div class="poem-card card-full">
+  <div class="card light-card">
+
+    <div class="card-text">
+      <div class="portada" style="background-image: url('https://cms.yatuk.am{{poem.game.image.url}}'); background-position: {{poem.game.background_position}}">
+        <div class="img-avatar">
+          <img loading="lazy" src="https://cms.yatuk.am{{poem.author.middle_optimized.url}}" alt="{{author.name}}"/>
+      </div>
+        <div class="game-card-content game-card-content-mobile">
+
+          <h5><a href="{% url 'author' slug=poem.author.slug genre='all' %}">{{poem.author.name}}</a></h5>
+          
+        </div>
+      </div>
+      <div class="title-total">   
+        <h5 class="author-name"><a href="{% url 'author' slug=poem.author.slug genre='all' %}">{{poem.author.name}}</a></h5>
+        <h1 class="poem-name">{{poem.name}}</h1>
+        {% if active_section %}<h6>{{active_section.name}}</h6>{% endif %}
+    <div class="desc">{% if active_section %}{{active_section.content|safe}}{% else %}{{poem.content|safe}}{% endif %}</div>
+    <div class="actions">
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-list"></i>
+        </a>
+      
+        <div class="dropdown-menu light-card" aria-labelledby="dropdownMenuLink">
+          <div class="dropdown-item">
+            <a href="{% url "reading_poem" id=poem.id %}"><i class="fa fa-eye"></i>{% translate "Reading mode" %}</a></div>
+          <div  onclick="copy({{poem.id}})" class="copy-icon-{{poem.id}} copy-icon dropdown-item"
+            data-url="https://poem.yatuk.am{{poem.main_url}}">
+            <i class="fa fa-copy"></i>{% translate "Copy URL" %}</div>
+            <div class="dropdown-item"><a href="{% url 'html2pdf' id=poem.id %}?section={{active_section.id}}"><i class="fa fa-download"></i>{% translate "Download PDF" %}</a></div>
+            <div class="dropdown-item"><a href="{% url 'html2pdf' id=poem.id %}?for_print=True&section={{active_section.id}}"><i class="fa fa-print"></i>{% translate "Print" %}</a></div>
+        </div>
+      </div> 
+    </div>
+
+  </div>
+
+   
+    </div>
+    
+  </div>
+  
+  <div class="w-100">
+    {% include 'core/partials/like.html' %}
+  </div>
+  {% if sections %}
+  <div class="main-text text-center  mt-3">
+    <h3>{% blocktranslate with name=poem.name %}Other parts of "{{name}}"{% endblocktranslate %}</h3>
+  </div>
+  <div class="poem-sections light-card">
+    <a href="{{poem.main_url}}" class="section-item {% if not active_section %}active{% endif %}">{{poem.name}} - {% translate "Begin" %}</a>
+    {% for section in sections %}
+      <a href="{{poem.main_url}}?section={{section.order}}" class="section-item {% if section.id == active_section.id %}active{% endif %}">{{section.name}}</a>
+    {% endfor %}
+  </div>
+{% endif %}
+  <div class="w-100">
+    {% include 'core/partials/comment.html' %}
+  </div>
+
+</div>
+<div>
+{% include 'core/partials/music-card.html' %}
+<div class="product-card game-card">
+  <div class="outer">
+    <div class="inner">
+      <div class="innerinner">
+        <img style="object-position: bottom" loading="lazy" 
+        src="https://cms.yatuk.am{{poem.game.image.url}}" alt="{{poem.game.name}}">
+      </div>
+      <div class="game-card-content">
+        <div class="product-card-title game-card-title">{{poem.game.name}}</div>
+        <a href="https://canvas.yatuk.am/{{CURR_LANG.code}}/game/{{poem.game.author.slug}}/{{poem.game.slug}}-{{poem.game.id}}/" target="_blank">
+          {% translate "Play Online" %}<i class="fa fa-puzzle-piece p-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+{% include "core/partials/product-cards.html" %}
+
+</div>
+{% endblock content %}
+{% block extra_scripts %}
+<script src="{% static 'js/slider.js' %}"></script>
+{% endblock extra_scripts %}

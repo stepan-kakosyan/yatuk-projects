@@ -1,0 +1,21 @@
+{% load i18n %}
+<div class="author-page-content">
+    <div class="author-page-card light-card">
+      <div class="firstinfo">
+        <div class="img-content">
+          <img  loading="lazy" src="https://cms.yatuk.am{{author.image_.url}}" alt="{{author.name}}"/></div>
+        <div class="profileinfo">
+          <h1><a href="{% url 'author' slug=author.slug  %}">{{author.name}}</a></h1>
+          <h3>{{author.dates}}</h3>          
+        </div>
+      </div>
+      <div class="author-tabs">
+        {% if author.has_photo or author.has_bio or author.has_quote %}
+        <div class="tab-item {% if active == 'paintings' %}active{% endif %}">
+          <a href="{% url 'author' slug=author.slug  %}">{% translate "Paintings" %}</a></div>{% endif %}
+        {% if author.has_photo %}<div class="tab-item {% if active == 'photoarchive' %}active{% endif %}">
+          <a href="{% url 'author_photoarchive' slug=author.slug %}">{% translate "Photo archive" %}</a>
+        </div>{% endif %}
+      </div>
+    </div>
+</div>

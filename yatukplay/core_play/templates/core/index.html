@@ -1,0 +1,88 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="google-site-verification" content="UoJBKNJHkJRmEH5vNoyp7XpmoPpoM9brhfwtgN6ir64" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap&subset=latin-ext"/>
+      {% if slug and first_song %}
+      <meta name="description" content="Գործիքային կատարմամբ {{first_song.author.name_hy}}ի {{first_song.name_hy}} երաժշտությունը">
+      <meta property="og:title" content="Յատուկ Երաժշտություն  | {{first_song.author.name_hy}} | {{first_song.name_hy}}" />
+      <meta property="og:type" content="article" />
+      <title>{% translate "Yatuk Music | " %}{{first_song.author.name_hy}} | {{first_song.name_hy}}</title>
+      <meta property="og:description" content="Գործիքային կատարմամբ {{first_song.author.name_hy}}ի {{first_song.name_hy}} երաժշտությունը" />
+      <meta property="og:image" content="https://cms.yatuk.am{{first_song.author.optimized.url}}" />
+      <meta name="keywords" content="Music, Classic Music, Armenian Music, Armenian Classic Music, orchestra, Komitas, Aram Khachatryan,
+      Երաժշտություն, դասական երաժշտություն, հայկական երաժշտություն, հայկական դասական երաժշտություն, նվագակցություն, գործիքային կատարում, 
+      Կոմիտաս, Արամ Խաչատրյան, յատուկ, հորևոր երաժշտություն, {{first_song.author.name_hy}}, {{first_song.author.name_en}},
+      {{first_song.author.name_ru}}, {{first_song.name_hy}}, {{first_song.name_en}}, {{first_song.name_ru}}">
+      {% else %}
+      <meta name="description" content="Most famous Armenian Modern and Classic Composers' Playlist.">
+      <meta property="og:title" content="Յատուկ Երաժշտություն - Yatuk Music | Armenian Classic Instrumental Playlist" />
+      <meta property="og:type" content="website" />
+      <title>{% translate "Yatuk Music | Armenian Classic Instrumental Playlist" %}</title>
+      <meta property="og:description" content="Most famous Armenian Modern and Classic Composers' Playlist." />
+      <meta property="og:image" content="https://play.yatuk.am/static/images/yatuk-play.png" />
+      <meta name="keywords" content="Music, Classic Music, Armenian Music, Armenian Classic Music, orchestra, Komitas, Aram Khachatryan,
+      Երաժշտություն, դասական երաժշտություն, հայկական երաժշտություն, հայկական դասական երաժշտություն, նվագակցություն, գործիքային կատարում, 
+      Կոմիտաս, Արամ Խաչատրյան, յատուկ, հորևոր երաժշտություն">
+      {% endif %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+      href="https://meyerweb.com/eric/tools/css/reset/reset.css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="{% static 'css/author.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/songs.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
+    <script src="https://unpkg.com/htmx.org@1.6.0"></script>
+  </head>
+  <body>
+    <div id="bg-layer"></div>
+    {% include 'core/partials/menu.html' %}
+      <a href="{% url 'index' %}" class="logo">
+        <img src="{% static '/images/yatuk.png' %}">
+        <div class="title">{% translate "Yatuk Music" %}</div>
+      </a>
+      {% get_available_languages as LANGUAGES %}
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_language_info_list for LANGUAGES as languages %}
+      {% get_language_info for LANGUAGE_CODE as CURR_LANG %}
+  	<div class="sec-center"> 	
+	  	<input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+	  	<label class="for-dropdown" for="dropdown">{{CURR_LANG.name_local|title}}</label>
+  		<div class="section-dropdown"> 
+        {% for lang in languages %}
+          {% if lang.code != CURR_LANG.code %}
+  			<a href="{% url 'set_language' %}?language={{lang.code}}">{{ lang.name_local|title }}</a>
+        {% endif %}
+          {% endfor %}
+      </div>
+  	</div>
+
+    <div class="right-section">
+
+      <div class="card" data-state="#about">
+        <div>
+        <div id="author_part">
+        {% include 'core/partials/author.html' %}
+        </div>
+        <div>
+          {% include 'core/partials/player.html' %}
+        </div>
+      </div>
+  </div>
+    {% include 'core/partials/carousel.html' %}
+    </div>
+    {% include 'core/partials/applications.html' %}
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

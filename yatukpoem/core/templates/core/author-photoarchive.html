@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block og_properties %}
+<link rel="canonical" href="{% url "author_photoarchive" slug=author.slug %}" />
+<meta name="description" content="{{photos|length}} լուսանկարներ {{author.name}} հեղինակից Յատուկ Պոէմ կայքում">
+<title>{{author.name}} | {% translate "Photo archive" %} | {% translate "Yatuk Poem" %}</title>
+<meta name="keywords" content="բանաստեղծ, բանաստեղծություն, պոեմ, պատմվածք, վեպ, վիպակ, հեղինակ, հայ գրող, հայ բանաստեղծ, հայ վիպասան, {{author.name_hy}}, {{author.name_ru}}, {{author.name_en}}">
+<meta property="og:title" content="{{author.name_hy}} | {% translate "Photo archive" %} | | Յատուկ Պոէմ" />
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="{{photos|length}} լուսանկարներ {{author.name}} հեղինակից Յատուկ Պոէմ կայքում" />
+<meta property="og:image" content="https://cms.yatuk.am{{author.signature.url}}" />
+{% endblock og_properties %}
+{% block content %}
+  <nav>
+    <ol class="breadcrumb breadcrumb-yatuk light-card">
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'authors' %}">{% translate "Authors" %}</a></li>
+      <li class="breadcrumb-item">{{author.name}}</li>
+      <li class="breadcrumb-item active">{% translate "Photo archive" %}</li>
+    </ol>
+  </nav>
+{% include 'core/partials/author-header.html' %}
+<div  id="poem-list">
+  <div class="author-page-content">
+    <div class="author-page-card light-card">
+      <div class="d-flex flex-wrap justify-content-center">
+        {% if photos %}
+      {% for photo in photos %}
+        {% include 'core/partials/photo-card.html' %}
+      {% endfor %}
+      {% else %}
+      <div class="text-align-center">{% translate "No photos found" %}</div>
+      {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% load i18n %}
+<div class="homepage-left">
+    <nav>
+        <ol class="breadcrumb breadcrumb-yatuk light-card">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+          <li class="breadcrumb-item active">{% translate "Store" %}</li>
+        </ol>
+      </nav>
+    <div class="product-homepage product-list" id="product-list">
+        {% include 'core/partials/product-list.html' %}
+    </div>
+</div>

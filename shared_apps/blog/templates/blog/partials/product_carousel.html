@@ -1,0 +1,39 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% if products %}
+<div class="blog-product-section mt-5">
+  <div class="main-text text-center mt-3">
+    <h4>{% trans "Support us! Buy our art based products from online shop" %}</h4>
+  </div>
+
+  <div class="swiper blog-product-swiper">
+    <div class="swiper-wrapper">
+      {% for product in products %}
+      <a
+        href="https://yatuk.am/{{ LANGUAGE_CODE|slice:':2' }}/product/{{ product.slug_en }}/"
+        class="blog-product-card light-card swiper-slide"
+        rel="noopener noreferrer"
+      >
+        <div class="blog-product-image-wrap">
+          {% if product.main_image and product.main_image.image %}
+          <img
+            src="https://cms.yatuk.am/{{ product.main_image.image.url }}"
+            alt="{{ product.title }}"
+            class="blog-product-image"
+            loading="lazy"
+          >
+          {% endif %}
+        </div>
+        <div class="blog-product-content">
+          <span class="blog-product-category">{{ product.category }}</span>
+          <b class="blog-product-title">{{ product.title }}</b>
+          <span class="buy-now-btn mt-2">{% trans "BUY NOW" %}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,17 @@
+
+{% extends "base/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% translate "Costs" %}{% endblock %}
+{% block additional_metas %}{% endblock %}
+{% block content %}
+
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body" id="main_section_table">
+        {% include 'core/partials/todo-table.html' %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
