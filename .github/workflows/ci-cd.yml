@@ -82,7 +82,7 @@ jobs:
             echo "Logging in to Docker Hub"
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | "${DOCKER_CMD[@]}" login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-            export DOCKER_IMAGE="${{ secrets.DOCKERHUB_USERNAME }}/yatuk-app:latest"
+            export DOCKER_IMAGE="${{ secrets.DOCKERHUB_USERNAME }}/yatuk-apps:latest"
             echo "Deploying image: ${DOCKER_IMAGE}"
             "${DOCKER_CMD[@]}" pull "${DOCKER_IMAGE}"
             "${DOCKER_CMD[@]}" compose -f docker-compose.yml up -d
