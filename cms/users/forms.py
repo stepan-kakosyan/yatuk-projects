@@ -53,7 +53,6 @@ class SignUpForm(forms.ModelForm):
             Submit('submit', 'SIgn Up')
         )
 
-
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username', 'password', 'repeat_password')
@@ -88,7 +87,8 @@ class SignUpForm(forms.ModelForm):
 
 class SignInForm(forms.Form):
     user_name = forms.CharField(required=True, label="Username", widget=forms.TextInput(attrs={'id': "sign_in_username"}))
-    s_password = forms.CharField(required=True, label="Password", widget=forms.PasswordInput(attrs={'id': "sign_in_password"}))
+    s_password = forms.CharField(required=True, label="Password",
+                                 widget=forms.PasswordInput(attrs={'id': "sign_in_password"}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

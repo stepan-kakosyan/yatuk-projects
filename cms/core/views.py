@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from product.models import BORDER_COLORS, COLORS, COST_TYPES, TRANSACTION_TYPES, CostTransaction, ProductTransaction, Product
+from product.models import (
+    BORDER_COLORS, COLORS, COST_TYPES, TRANSACTION_TYPES,
+    CostTransaction, ProductTransaction, Product
+)
 from django.db.models import Sum, Q
 from datetime import datetime, timedelta
 import json
@@ -19,6 +22,7 @@ class Month(Func):
     template = '%(function)s(MONTH from %(expressions)s)'
     output_field = models.IntegerField()
 
+
 def set_language(request):
     from django.utils.translation import activate
     lang_code = request.GET.get('language', settings.LANGUAGE_CODE)
@@ -36,20 +40,31 @@ def set_language(request):
         activate(lang_code)
     return response
 
+
 @login_required
 def index(request):
     transactions = ProductTransaction.objects.all()
     sum = transactions.aggregate(sum=Sum("amount"))['sum']
-    lm_sum = transactions.filter(date__gte=datetime.today()-timedelta(30)).aggregate(sum=Sum("amount"))['sum']
-    lm_pre_sum = transactions.filter(date__range=[datetime.today()-timedelta(60), datetime.today()-timedelta(30)]).aggregate(sum=Sum("amount"))['sum']
+    lm_sum = transactions.filter(date__gte=datetime.today()-timedelta(30)).aggregate(
+        sum=Sum("amount"))['sum']
+    lm_pre_sum = transactions.filter(
+        date__range=[
+            datetime.today() - timedelta(60),
+            datetime.today() - timedelta(30)
+        ]
+    ).aggregate(sum=Sum("amount"))['sum']
     costs = CostTransaction.objects.all().order_by("-date")
     cost_sum = costs.aggregate(sum=Sum("amount"))['sum']
-    lm_cost_sum = costs.filter(date__gte=datetime.today()-timedelta(30)).aggregate(sum=Sum("amount"))['sum']
-    lm_cost_pre_sum = costs.filter(date__range=[datetime.today()-timedelta(60), datetime.today()-timedelta(30)]
-                                   ).aggregate(sum=Sum("amount"))['sum']
-    sell_percent=0
+    lm_cost_sum = costs.filter(
+        date__gte=datetime.today()-timedelta(30)).aggregate(
+            sum=Sum("amount"))['sum']
+    lm_cost_pre_sum = costs.filter(
+        date__range=[datetime.today()-timedelta(60),
+                     datetime.today()-timedelta(30)]
+        ).aggregate(sum=Sum("amount"))['sum']
+    sell_percent = 0
     sell_prepercent = 0
-    cost_percent=0
+    cost_percent = 0
     cost_prepercent = 0
     if lm_sum and lm_pre_sum and sum:
         sell_percent = round(lm_sum*100/sum, 1)
@@ -76,7 +91,7 @@ def index(request):
         date__gte=datetime.today()+timedelta(-365)).annotate(
         monthly_sell=Sum('amount')
     ).order_by("date")
-        
+
     for i in monthly_sell:
         date = f"{i.m}-{i.date.year}"
         if date in ms:
@@ -85,17 +100,23 @@ def index(request):
             ms[date] = i.monthly_sell
     doughnutPieData1 = {
         "datasets": [{
-          "data":  [transactions.filter(type=i[0]).aggregate(sum = Sum("count"))['sum'] for i in TRANSACTION_TYPES],
-          "backgroundColor": COLORS,
-          "borderColor": BORDER_COLORS,
+            "data": [
+                transactions.filter(type=i[0]).aggregate(sum=Sum("count"))['sum']
+                for i in TRANSACTION_TYPES
+            ],
+            "backgroundColor": COLORS,
+            "borderColor": BORDER_COLORS,
         }],
         "labels": [i[0] for i in TRANSACTION_TYPES]
       }
     doughnutPieData2 = {
         "datasets": [{
-          "data":  [costs.filter(type=i[0]).aggregate(sum = Sum("amount"))['sum'] for i in COST_TYPES],
-          "backgroundColor": COLORS,
-          "borderColor": BORDER_COLORS,
+            "data": [
+                costs.filter(type=i[0]).aggregate(sum=Sum("amount"))['sum']
+                for i in COST_TYPES
+            ],
+            "backgroundColor": COLORS,
+            "borderColor": BORDER_COLORS,
         }],
         "labels": [i[0] for i in COST_TYPES]
       }
@@ -105,7 +126,8 @@ def index(request):
             "label": '#dddd',
             "data": [i for i in mc.values()],
             "borderColor": [
-        '#fc424a'],
+                '#fc424a'
+            ],
             "fill": False
             }]
         }
@@ -115,17 +137,18 @@ def index(request):
             "label": '#dddd',
             "data": [i for i in ms.values()],
             "borderColor": [
-        '#00d25b'],
+                '#00d25b'
+            ],
             "fill": False
             }]
         }
     ctx = {
         "total_sell": sum if sum else 0,
-        "sell_percent":sell_percent,
+        "sell_percent": sell_percent,
         "lm_total_sell": lm_sum if lm_sum else 0,
         "sell_prepercent": round(sell_percent - sell_prepercent, 1),
-        "total_costs": cost_sum if cost_sum else 0,
-        "cost_percent":cost_percent,
+        # ...existing code...
+        "cost_percent": cost_percent,
         "lm_total_costs": lm_cost_sum if lm_cost_sum else 0,
         "cost_prepercent": round(cost_percent - cost_prepercent, 1),
         "todos": todo_list(limit=5, owner=request.user),
@@ -171,9 +194,8 @@ def remove_todo(request, pk):
         template = "core/partials/todo-table.html"
         limit = 1000
     if todo.owner == request.user:
-        todo.removed=True
+        todo.removed = True
         todo.save()
-    
     return render(request, template, context={
         "todo_form": ToDoForm(),
         "todos": todo_list(limit=limit, owner=request.user)
@@ -201,7 +223,7 @@ def done_undone_todo(request, pk):
 
 @login_required
 def todos(request):
-    ctx= {
+    ctx = {
         "todo_form": ToDoForm(),
         "todos": todo_list(owner=request.user)
     }
@@ -211,7 +233,9 @@ def todos(request):
 
 
 def todo_list(owner, limit=1000):
-    return ToDo.objects.filter(owner=owner, removed=False).order_by("done","-created_at")[:limit]
+    return ToDo.objects.filter(owner=owner, removed=False).order_by(
+        "done", "-created_at"
+    )[:limit]
 
 
 @login_required
@@ -224,7 +248,7 @@ def orders(request):
     if prod and prod != "all":
         orders = orders.filter(items__product_id=prod).distinct()
         prod = int(prod)
-    page = request.GET.get('page', 1)    
+    page = request.GET.get('page', 1)
     paginator = Paginator(orders, 12)
     try:
         result = paginator.page(page)
@@ -238,16 +262,18 @@ def orders(request):
             "status": status,
             "prod": prod,
             "products": Product.objects.filter(ordered_products__isnull=False).distinct(),
-            "statuses": [{"value":i[0], "name": i[1]} for i in ORDER_STATUS],
+            "statuses": [{"value": i[0], "name": i[1]} for i in ORDER_STATUS],
             "page": int(page)
         })
 
+
 @login_required
 def status_order(request):
-    order = Order.objects.get(id = request.GET.get("order_id"))
+    order = Order.objects.get(id=request.GET.get("order_id"))
     order.status = request.GET.get("status")
     order.save()
     return render(request, "core/partials/order-raw.html", context={"order": order})
+
 
 @login_required
 def contact_us_list(request):
@@ -266,6 +292,7 @@ def contact_us_list(request):
         "page": int(page)
         })
 
+
 @login_required
 def check_contact_us(request):
     contact_us = ContactUs.objects.get(id=int(request.GET.get("id")))
@@ -273,4 +300,4 @@ def check_contact_us(request):
     contact_us.save()
     return render(request, "core/partials/contact-us-row.html", context={
         "contact_us": contact_us
-        })
+    })

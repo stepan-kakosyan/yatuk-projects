@@ -1,0 +1,76 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# All services share the same image (built once from the root Dockerfile).
+# The first service definition triggers the build and tags the image.
+# Remaining services reference the same tag without rebuilding.
+#
+# Ports:
+#   yatuk       → host:8030  →  container:8000
+#   cms         → host:8031  →  container:8000
+#   yatukplay   → host:8032  →  container:8000
+#   yatukpoem   → host:8033  →  container:8000
+#   yatukcanvas → host:8034  →  container:8000
+#
+# Usage:
+#   docker compose build          # build image once
+#   docker compose up -d          # start all
+#   docker compose down           # stop all
+# ─────────────────────────────────────────────────────────────────────────────
+
+x-gunicorn-defaults: &gunicorn-defaults
+  image: yatuk-apps:latest
+  env_file:
+    - .env
+  restart: unless-stopped
+
+services:
+
+  # ── yatuk (main) — builds the shared image ─────────────────────────────────
+  yatuk:
+    <<: *gunicorn-defaults
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yatuk-apps:latest   # tag produced by this build; reused below
+    working_dir: /app/yatuk
+    environment:
+      - WSGI_APP=yatuk.wsgi:application
+    ports:
+      - "8030:8000"
+
+  # ── cms ────────────────────────────────────────────────────────────────────
+  cms:
+    <<: *gunicorn-defaults
+    working_dir: /app/cms
+    environment:
+      - WSGI_APP=yatuk.wsgi:application
+    ports:
+      - "8031:8000"
+
+  # ── yatukplay ──────────────────────────────────────────────────────────────
+  yatukplay:
+    <<: *gunicorn-defaults
+    working_dir: /app/yatukplay
+    environment:
+      - WSGI_APP=yatukplay.wsgi:application
+    ports:
+      - "8032:8000"
+
+  # ── yatukpoem ──────────────────────────────────────────────────────────────
+  yatukpoem:
+    <<: *gunicorn-defaults
+    working_dir: /app/yatukpoem
+    environment:
+      - WSGI_APP=yatukpoem.wsgi:application
+    ports:
+      - "8033:8000"
+
+  # ── yatukcanvas ────────────────────────────────────────────────────────────
+  yatukcanvas:
+    <<: *gunicorn-defaults
+    working_dir: /app/yatukcanvas
+    environment:
+      - WSGI_APP=yatukcanvas.wsgi:application
+    ports:
+      - "8034:8000"

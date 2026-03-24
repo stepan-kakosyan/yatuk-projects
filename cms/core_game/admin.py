@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django import forms
-from .models import *
+from .models import Author, Game, CanvasBlog, BlogItem
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -19,16 +18,18 @@ class GameAdmin(admin.ModelAdmin):
             'author': Author.objects.all().order_by('-id').first(),
             }
 
-admin.site.register(Game, GameAdmin)
-admin.site.register(Author, AuthorAdmin)
 
 class BlogItemInline(admin.TabularInline):
-      model = BlogItem
-      extra = 0
+    model = BlogItem
+    extra = 0
+
 
 class CanvasBlogAdmin(admin.ModelAdmin):
     list_per_page = 12
     list_display = ('image_tag', 'name', 'seen_count')
     inlines = (BlogItemInline,)
 
+
 admin.site.register(CanvasBlog, CanvasBlogAdmin)
+admin.site.register(Game, GameAdmin)
+admin.site.register(Author, AuthorAdmin)

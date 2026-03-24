@@ -1,6 +1,5 @@
-from django.conf.urls import include, url
+from django.conf.urls import include
 from core import views
-from product.views import products
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
@@ -20,4 +19,3 @@ urlpatterns = [
     path('contact-us-list', views.contact_us_list, name="contact_us_list"),
     path('check-contact-us', views.check_contact_us, name="check_contact_us"),
 ]
-

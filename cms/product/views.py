@@ -2,18 +2,22 @@ import json
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from product.forms import TransactionForm, CostForm, TransferForm
-from .models import BORDER_COLORS, COLORS, TRANSACTION_TYPES, COST_TYPES, Collaborator, \
-    CostTransaction, Product, ProductTransaction, Transfer, ProductCategory
+from .models import (BORDER_COLORS, COLORS, TRANSACTION_TYPES, COST_TYPES, Collaborator,
+                     CostTransaction, Product, ProductTransaction, Transfer, ProductCategory)
 from core_play.models import Audio, Author
-from django.db.models import Sum, Q, Sum
+from django.db.models import Sum, Q
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.files.base import ContentFile
+from django.http import HttpResponse
+
 
 @login_required
 def products(request):
     return render(request, "core/products.html", context={
-        "products":Product.objects.all()
+        "products": Product.objects.all()
         })
+
 
 @login_required
 def transactions(request):
@@ -31,7 +35,7 @@ def transactions(request):
     if coll and coll != "all":
         transactions = transactions.filter(collaborator_id=coll)
         coll = int(coll)
-    page = request.GET.get('page', 1)    
+    page = request.GET.get('page', 1)
     paginator = Paginator(transactions, 12)
     try:
         result = paginator.page(page)
@@ -44,12 +48,13 @@ def transactions(request):
         "transactions": result,
         "products": products,
         "collabarators": collabarators,
-        "types": [{"value":i[0], "name": i[1]} for i in TRANSACTION_TYPES],
+        "types": [{"value": i[0], "name": i[1]} for i in TRANSACTION_TYPES],
         "prod": prod,
         "type": type,
         "coll": coll,
         "page": int(page)
         })
+
 
 @login_required
 def add_transaction(request):
@@ -59,19 +64,17 @@ def add_transaction(request):
             form.save()
             return redirect(reverse_lazy("transactions"))
         else:
-                return render(request, "core/add-transaction.html", 
-                  context={
-                      "form": form
-                      }
-                  )
+            return render(request, "core/add-transaction.html",
+                          context={"form": form})
     else:
         form = TransactionForm()
 
-    return render(request, "core/add-transaction.html", 
+    return render(request, "core/add-transaction.html",
                   context={
                       "form": form
                       }
                   )
+
 
 @login_required
 def costs(request):
@@ -88,7 +91,7 @@ def costs(request):
         costs = costs.filter(type=cost_type)
     if search:
         costs = costs.filter(note__icontains=search)
-    page = request.GET.get('page', 1)    
+    page = request.GET.get('page', 1)
     paginator = Paginator(costs, 12)
     try:
         result = paginator.page(page)
@@ -100,12 +103,13 @@ def costs(request):
     return render(request, template, context={
         "costs": result,
         "categories": categories,
-        "cost_types": [{"value":i[0], "name": i[1]} for i in COST_TYPES],
+        "cost_types": [{"value": i[0], "name": i[1]} for i in COST_TYPES],
         "category": category,
         "cost_type": cost_type,
         "search": search if search else "",
         "page": int(page)
         })
+
 
 @login_required
 def add_cost(request):
@@ -115,19 +119,17 @@ def add_cost(request):
             form.save()
             return redirect(reverse_lazy("costs"))
         else:
-                return render(request, "core/add-cost.html", 
-                  context={
-                      "form": form
-                      }
-                  )
+            return render(request, "core/add-cost.html",
+                          context={"form": form})
     else:
         form = CostForm()
 
-    return render(request, "core/add-cost.html", 
+    return render(request, "core/add-cost.html",
                   context={
                       "form": form
                       }
                   )
+
 
 @login_required
 def transfers(request):
@@ -142,7 +144,7 @@ def transfers(request):
     if coll and coll != "all":
         transfers = transfers.filter(collaborator_id=coll)
         coll = int(coll)
-    page = request.GET.get('page', 1)    
+    page = request.GET.get('page', 1)
     paginator = Paginator(transfers, 12)
     try:
         result = paginator.page(page)
@@ -160,6 +162,7 @@ def transfers(request):
         "page": int(page)
         })
 
+
 @login_required
 def add_transfer(request):
     if request.method == 'POST':
@@ -168,24 +171,23 @@ def add_transfer(request):
             form.save()
             return redirect(reverse_lazy("transfers"))
         else:
-                return render(request, "core/add-transfer.html", 
-                  context={
-                      "form": form
-                      }
-                  )
+            return render(request, "core/add-transfer.html",
+                          context={"form": form})
     else:
         form = TransferForm()
 
-    return render(request, "core/add-transfer.html", 
+    return render(request, "core/add-transfer.html",
                   context={
                       "form": form
                       }
                   )
 
+
 @login_required
 def collabarators(request):
-    collabarators = Collaborator.objects.all().annotate(sum = Sum("transactions__amount")).order_by("-sum")
-    page = request.GET.get('page', 1)    
+    collabarators = Collaborator.objects.all().annotate(
+        sum=Sum("transactions__amount")).order_by("-sum")
+    page = request.GET.get('page', 1)
     paginator = Paginator(collabarators, 12)
     try:
         result = paginator.page(page)
@@ -199,17 +201,19 @@ def collabarators(request):
         "page": int(page)
         })
 
+
 @login_required
 def product(request, pk):
     _collaborators = Collaborator.objects.filter(transfers__product_id=pk).annotate(
-                sent_count = Sum("transfers__count", filter=Q(transfers__product_id=pk)))
+        sent_count=Sum("transfers__count", filter=Q(transfers__product_id=pk)))
     for i in _collaborators:
         i.sell_count = i.transactions.filter(product_id=pk).aggregate(sum=Sum("count"))['sum']
     transactions = ProductTransaction.objects.filter(product_id=pk)
     data = {
         "labels": [i[0] for i in TRANSACTION_TYPES],
         "datasets": [{
-            "data": [transactions.filter(type=i[0]).aggregate(sum = Sum("count"))['sum'] for i in TRANSACTION_TYPES],
+            "data": [transactions.filter(type=i[0]).aggregate(
+                sum=Sum("count"))['sum'] for i in TRANSACTION_TYPES],
             "backgroundColor": COLORS,
             "borderColor": BORDER_COLORS
           }
@@ -222,21 +226,18 @@ def product(request, pk):
         "total_sell": transactions.aggregate(sum=Sum("amount"))['sum']
         })
 
-from django.core.files.base import ContentFile
-from django.http import HttpResponse
-# import cv2
 
 def change_filenames(request):
     for image in Audio.objects.all():
         try:
             img = image.image.read()
             image.image.save(image.image.name, ContentFile(img))
-        except:
+        except Exception:
             pass
     for image in Author.objects.all():
         try:
             img = image.image.read()
             image.image.save(image.image.name, ContentFile(img))
-        except:
+        except Exception:
             pass
     return HttpResponse("Done")

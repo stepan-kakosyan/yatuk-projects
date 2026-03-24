@@ -13,6 +13,7 @@ class StaticViewSitemap(Sitemap):
     def location(self, item):
         return reverse(item)
 
+
 class ProductSitemap(Sitemap):
     name = 'product'
     changefreq = 'hourly'
@@ -22,8 +23,9 @@ class ProductSitemap(Sitemap):
     def items(self):
         return Product.objects.order_by('id')
 
-    def location(self,obj):
+    def location(self, obj):
         return f'/product/{obj.slug_en}/'
+
 
 class AuthorSitemap(Sitemap):
     name = 'author'
@@ -34,5 +36,5 @@ class AuthorSitemap(Sitemap):
     def items(self):
         return Author.objects.filter(authors__isnull=False).distinct().order_by('id')
 
-    def location(self,obj):
+    def location(self, obj):
         return f'/author/{obj.slug}/'

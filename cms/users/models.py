@@ -36,7 +36,7 @@ class User(AbstractBaseUser, PermissionsMixin):
             return f"{self.first_name} {self.last_name}"
         else:
             return self.username
-    
+
     @property
     def name(self):
         if self.first_name or self.last_name:
@@ -45,9 +45,11 @@ class User(AbstractBaseUser, PermissionsMixin):
             return self.username
 
     def image_tag(self):
-        return mark_safe(f"<img style='max-width:50px;max-height:75px;object-fit:contain' src='https://{self.domain}/media/{self.profile_image}' />")
+        str = "<img style='max-width:50px;max-height:75px;object-fit:"
+        str += f"contain' src='https://{self.domain}/media/{self.profile_image}' />"
+        return mark_safe(str)
 
-        
+
 class State(models.Model):
     name_en = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255)
@@ -59,9 +61,6 @@ class State(models.Model):
 
     @classmethod
     def import_armenian_states(cls):
-        # Function to populate Armenian states in the State model
-        # with English, Armenian, and Russian names
-
         armenian_states = [
             {'name_en': 'Aragatsotn', 'name_ru': 'Арагацотн', 'name_hy': 'Արագածոտն', 'code': 'AG'},
             {'name_en': 'Ararat', 'name_ru': 'Арарат', 'name_hy': 'Արարատ', 'code': 'AR'},
@@ -87,6 +86,7 @@ class State(models.Model):
                 print(f"State '{state['name_en']}' created successfully")
             else:
                 print(f"State '{state['name_en']}' already exists.")
+
 
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="addresses")

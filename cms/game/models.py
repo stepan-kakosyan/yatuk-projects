@@ -1,11 +1,10 @@
-from email.policy import default
 from django.db import models
-from users.models import User
 from django.utils.safestring import mark_safe
 from django.utils.translation import get_language
 from django.utils.translation import gettext_lazy as _
 
-class GameImage(models.Model): 
+
+class GameImage(models.Model):
     title_en = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title English"))
     title_ru = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title Russian"))
     title_hy = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title Armenian"))
@@ -33,7 +32,8 @@ class GameImage(models.Model):
         return getattr(self, f"description_{get_language()}")
 
     def image_tag(self):
-        return mark_safe('<img style="max-width:50px;max-height:75px;object-fit:contain" src="'+"/media/"+str(self.image)+'" />')
+        return mark_safe('<img style="max-width:50px;max-height:75px;object-fit:contain" src="' +
+                         "/media/"+str(self.image)+'" />')
 
     @property
     def all_games(self):
@@ -41,10 +41,11 @@ class GameImage(models.Model):
 
 
 class Game(models.Model):
-    image = models.ForeignKey(GameImage, related_name="games", on_delete=models.CASCADE, null=False, blank=False)
+    image = models.ForeignKey(GameImage, related_name="games",
+                              on_delete=models.CASCADE, null=False, blank=False)
     iframe = models.TextField()
     piece_count = models.PositiveIntegerField(default=35)
-    created_at = models.DateTimeField(auto_now_add = True, verbose_name=_("Created At"))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Created At"))
 
     def __str__(self):
         return str(self.piece_count)

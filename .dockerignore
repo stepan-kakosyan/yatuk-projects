@@ -1,0 +1,27 @@
+# Python bytecode
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Django collected statics & user uploads (generated at runtime)
+**/staticfiles/
+**/media/
+
+# Editor & OS artefacts
+.git/
+.gitignore
+**/.DS_Store
+**/Thumbs.db
+**/*.swp
+
+# Logs
+**/*.log
+
+# Local env files (root .env is copied explicitly by docker-compose env_file)
+**/.env
