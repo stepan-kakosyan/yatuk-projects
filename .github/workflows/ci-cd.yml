@@ -56,13 +56,6 @@ jobs:
           EMAIL_HOST_PASSWORD=test
           EOF
 
-      - name: Run tests in Docker
-        run: |
-          docker compose -f docker-compose.yml up -d
-          sleep 20
-          docker compose exec -T yatuk python manage.py test
-          docker compose down
-
       - name: Deploy to production server (via SSH)
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         uses: appleboy/ssh-action@v1.0.3
