@@ -19,7 +19,7 @@ version: "3.9"
 # ─────────────────────────────────────────────────────────────────────────────
 
 x-gunicorn-defaults: &gunicorn-defaults
-  image: yatuk-apps:latest
+  image: ${DOCKERHUB_USERNAME}/yatuk-apps:latest
   env_file:
     - .env
   restart: unless-stopped
@@ -32,7 +32,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: yatuk-apps:latest   # tag produced by this build; reused below
+    image: ${DOCKERHUB_USERNAME}/yatuk-apps:latest   # tag produced by this build; reused below
     working_dir: /app/yatuk
     environment:
       - WSGI_APP=yatuk.wsgi:application
@@ -42,6 +42,7 @@ services:
   # ── cms ────────────────────────────────────────────────────────────────────
   cms:
     <<: *gunicorn-defaults
+    image: ${DOCKERHUB_USERNAME}/yatuk-apps:latest
     working_dir: /app/cms
     environment:
       - WSGI_APP=yatuk.wsgi:application
@@ -51,6 +52,7 @@ services:
   # ── yatukplay ──────────────────────────────────────────────────────────────
   yatukplay:
     <<: *gunicorn-defaults
+    image: ${DOCKERHUB_USERNAME}/yatuk-apps:latest
     working_dir: /app/yatukplay
     environment:
       - WSGI_APP=yatukplay.wsgi:application
@@ -60,6 +62,7 @@ services:
   # ── yatukpoem ──────────────────────────────────────────────────────────────
   yatukpoem:
     <<: *gunicorn-defaults
+    image: ${DOCKERHUB_USERNAME}/yatuk-apps:latest
     working_dir: /app/yatukpoem
     environment:
       - WSGI_APP=yatukpoem.wsgi:application
@@ -69,6 +72,7 @@ services:
   # ── yatukcanvas ────────────────────────────────────────────────────────────
   yatukcanvas:
     <<: *gunicorn-defaults
+    image: ${DOCKERHUB_USERNAME}/yatuk-apps:latest
     working_dir: /app/yatukcanvas
     environment:
       - WSGI_APP=yatukcanvas.wsgi:application
