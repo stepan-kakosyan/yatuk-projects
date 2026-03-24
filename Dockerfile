@@ -38,6 +38,7 @@ COPY yatukpoem/ ./yatukpoem/
 COPY yatukcanvas/ ./yatukcanvas/
 COPY cms/       ./cms/
 
+
 # Entrypoint script (runs collectstatic then gunicorn bound to 0.0.0.0)
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
