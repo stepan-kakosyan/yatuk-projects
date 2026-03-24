@@ -37,6 +37,25 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/yatuk-apps:latest
 
+      - name: Create .env for CI
+        run: |
+          cat <<EOF > .env
+          DATABASE_NAME=test_db
+          DATABASE_USER=test_user
+          DATABASE_PASSWORD=test_pass
+          DATABASE_HOST=127.0.0.1
+          DATABASE_PORT=3306
+          SECRET_KEY=django-insecure-test
+          BANK_URL=https://dummy-bank-url
+          BANK_USERNAME=dummy
+          BANK_PASSWORD=dummy
+          BANK_CLIENT_ID=dummy
+          EMAIL_HOST=smtp.example.com
+          EMAIL_PORT=587
+          EMAIL_HOST_USER=test@example.com
+          EMAIL_HOST_PASSWORD=test
+          EOF
+
       - name: Run tests in Docker
         run: |
           docker compose -f docker-compose.yml up -d
