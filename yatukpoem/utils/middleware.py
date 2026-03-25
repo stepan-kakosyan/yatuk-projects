@@ -15,4 +15,3 @@ class ServerErrorExceptionHandler():
                 "error": True,
 
                 "message": str(exception)}, status=500)
-

@@ -71,7 +71,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'libraries':{
+            'libraries': {
                 'custom_tags': 'utils.custom_tags'
             }
         },
@@ -85,10 +85,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': env("DATABASE_NAME"),
-        'USER':env("DATABASE_USER"),
-        'PASSWORD':env("DATABASE_PASSWORD"),
-        'HOST':env("DATABASE_HOST"),
-        'PORT':env("DATABASE_PORT"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
         'OPTIONS': {}
     }
 }

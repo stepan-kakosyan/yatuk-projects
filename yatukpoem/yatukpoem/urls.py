@@ -5,6 +5,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.views.generic.base import TemplateView
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import StaticViewSitemap, AuthorSitemap, PhotoSitemap, PoemSitemap
+from django.urls import path
 
 sitemaps = {
     "static": StaticViewSitemap,
@@ -12,6 +13,7 @@ sitemaps = {
     "photo": PhotoSitemap,
     'poem': PoemSitemap
 }
+
 urlpatterns = i18n_patterns(
     path('', include('core.urls')),
     path('', include('users.urls')),

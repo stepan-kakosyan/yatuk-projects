@@ -6,7 +6,6 @@ from users.models import State
 from django.utils.translation import get_language
 
 
-
 class ContactUsForm(forms.ModelForm):
     class Meta:
         model = ContactUs
@@ -58,10 +57,11 @@ class AddressForm(forms.ModelForm):
         queryset=State.objects.all().order_by(f"name_{get_language()}"),
         widget=forms.Select(attrs={'class': 'form-control',
                                    "hx-trigger": "change",
-                                    "hx-target": "#shippingMethodSection",
-                                    "hx-swap": "innerHTML",
-                                    "hx-get": reverse_lazy("change_shipping_method")})
+                                   "hx-target": "#shippingMethodSection",
+                                   "hx-swap": "innerHTML",
+                                   "hx-get": reverse_lazy("change_shipping_method")})
     )
+
     class Meta:
         model = Address
         fields = ('state', 'city', 'address', 'postal_code')
