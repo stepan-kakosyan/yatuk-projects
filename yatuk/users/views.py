@@ -1,15 +1,15 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login
 from .forms import LoginForm
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from users.models import User, Address
-from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
 from .forms import UserEditForm, AddressForm
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from core.views import my_login_required
 from core.models import Order
+
 
 @my_login_required
 def profile(request):
@@ -22,6 +22,7 @@ def profile(request):
         "active": active
         }
     return render(request, 'users/profile.html', context=context)
+
 
 def login_page(request):
     if request.user.is_authenticated:
@@ -45,6 +46,7 @@ def login_page(request):
         return render(request, 'users/partials/login-card.html', context={'form': form, 'message': message})
     return render(request, 'users/login.html', context={'form': form, 'message': message})
 
+
 def register_user(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -57,6 +59,7 @@ def register_user(request):
     if request.htmx:
         return render(request, 'users/partials/registration-card.html', {'form': form})
     return render(request, 'users/registration.html', {'form': form})
+
 
 @my_login_required
 def user_edit(request):
@@ -73,11 +76,13 @@ def user_edit(request):
         form = UserEditForm(instance=user)
     return render(request, 'users/partials/profile-form.html', {'form': form})
 
+
 @my_login_required
 def remove_address(request, id):
     Address.objects.get(id=id).delete()
     return render(request, 'users/partials/address-list.html',
-                          context={"addresses": Address.objects.filter(user=request.user)})
+                  context={"addresses": Address.objects.filter(user=request.user)})
+
 
 @my_login_required
 def edit_address(request, id=None):
@@ -103,10 +108,12 @@ def edit_address(request, id=None):
     context = {'form': form, 'address_id': id}
     return render(request, 'users/partials/address-form.html', context)
 
+
 @my_login_required
 def address_list(request):
     return render(request, 'users/partials/address-list.html',
-                          context={"addresses": Address.objects.filter(user=request.user)})
+                  context={"addresses": Address.objects.filter(user=request.user)})
+
 
 @my_login_required
 def upload_profile_image(request):

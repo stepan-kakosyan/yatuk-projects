@@ -10,6 +10,7 @@ class LoginForm(forms.Form):
     username = forms.CharField(max_length=63, label=_("Username"))
     password = forms.CharField(max_length=63, widget=forms.PasswordInput, label=_("Password"))
 
+
 class UserRegistrationForm(forms.Form):
     first_name = forms.CharField(max_length=30, label=_("First Name"))
     last_name = forms.CharField(max_length=30, label=_("Last Name"))
@@ -42,6 +43,7 @@ class UserRegistrationForm(forms.Form):
         if commit:
             user.save()
         return user
+
 
 class UserEditForm(forms.ModelForm):
     first_name = forms.CharField(
@@ -85,12 +87,14 @@ class UserEditForm(forms.ModelForm):
             raise forms.ValidationError(_('This username is already taken.'))
         return username
 
+
 class AddressForm(forms.ModelForm):
     state = forms.ModelChoiceField(
         label=_("State"),
         queryset=State.objects.all().order_by(f"name_{get_language()}"),
         widget=forms.Select(attrs={'class': 'form-control'})
     )
+
     class Meta:
         model = Address
         fields = ('state', 'city', 'address', 'postal_code')

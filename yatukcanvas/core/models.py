@@ -17,7 +17,7 @@ class ProductCategory(models.Model):
     description_ru = models.TextField(verbose_name=_("Description Russian"))
     description_hy = models.TextField(verbose_name=_("Description Armenian"))
     icon = models.ImageField(upload_to="media/icon", null=True, blank=True, verbose_name=_("Icon"))
-    
+
     def __str__(self):
         return self.title
 
@@ -60,11 +60,11 @@ class Product(models.Model):
     description_ru = models.TextField(verbose_name=_("Description Russian"))
     description_hy = models.TextField(verbose_name=_("Description Armenian"))
     price = models.IntegerField(null=False, blank=False, verbose_name=_("Price"))
-    category = models.ForeignKey(ProductCategory, on_delete = models.PROTECT, null=False, 
+    category = models.ForeignKey(ProductCategory, on_delete=models.PROTECT, null=False,
                                  verbose_name=_("Category"), related_name="products")
     total_count = models.IntegerField(default=50, verbose_name=_("Total Count"))
     shop_url = models.CharField(null=True, blank=True, max_length=255)
-    created_at = models.DateTimeField(auto_now_add = True, verbose_name=_("Created At"))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Created At"))
 
     def __str__(self):
         return self.title
@@ -74,7 +74,7 @@ class Product(models.Model):
         return self.images.filter(is_main=True).first()
 
     def for_share_image(self):
-        return self.images.filter(for_share = True).first()
+        return self.images.filter(for_share=True).first()
 
     @property
     def title(self):
@@ -91,20 +91,22 @@ class Product(models.Model):
     @property
     def author(self):
         return self.product_authors.all().first().author.name_hy
-        
+
     class Meta:
         db_table = 'product_product'
         managed = False
 
 
 class ProductImage(models.Model):
-    image = models.ImageField(upload_to = "media/product", verbose_name=_("Image"))
-    optimized = models.ImageField(upload_to = "media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/product/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/product/thumb/', verbose_name=_("Thumbnail"))
+    image = models.ImageField(upload_to="media/product", verbose_name=_("Image"))
+    optimized = models.ImageField(upload_to="media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/product/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True,
+                                  upload_to='media/product/thumb/', verbose_name=_("Thumbnail"))
     is_main = models.BooleanField(default=True, verbose_name=_("Is Main"))
     for_share = models.BooleanField(default=False, verbose_name=_("For Share"))
-    product = models.ForeignKey(Product, on_delete = models.CASCADE, null=False, blank=False,
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=False, blank=False,
                                 related_name="images", verbose_name=_("Product"))
 
     class Meta:
@@ -124,8 +126,8 @@ class ContactUs(models.Model):
 
 class ProductTransaction(models.Model):
     count = models.PositiveIntegerField(null=False, blank=False, default=1, verbose_name=_("Count"))
-    product = models.ForeignKey(Product, on_delete = models.PROTECT, null=False, blank=False, 
-                                related_name = "transactions", verbose_name=_("Product"))
+    product = models.ForeignKey(Product, on_delete=models.PROTECT, null=False, blank=False,
+                                related_name="transactions", verbose_name=_("Product"))
     amount = models.IntegerField(null=False, blank=False, verbose_name=_("Amount"))
     type = models.CharField(blank=False, null=False, max_length=255, verbose_name=_("Type"))
     date = models.DateField(verbose_name=_("Date"))
@@ -137,18 +139,19 @@ class ProductTransaction(models.Model):
 
 class GameAuthor(models.Model):
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     bio_hy = models.TextField(null=True, blank=True)
-    bio_en = models.TextField(null=True, blank=True)    
+    bio_en = models.TextField(null=True, blank=True)
     bio_ru = models.TextField(null=True, blank=True)
     dates = models.CharField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='authors/')
     main_image = models.ImageField(upload_to='authors/')
     slug = models.SlugField(unique=True, null=True, blank=True)
-    optimized = models.ImageField(upload_to = "media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/product/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/product/thumb/', verbose_name=_("Thumbnail"))
+    optimized = models.ImageField(upload_to="media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/product/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True, upload_to='media/product/thumb/', verbose_name=_("Thumbnail"))
     signature = models.ImageField(upload_to='authors/', null=True, blank=True)
 
     class Meta:
@@ -183,17 +186,20 @@ class GameAuthor(models.Model):
 class Game(models.Model):
     author = models.ForeignKey(GameAuthor, on_delete=models.CASCADE, null=False, blank=False, related_name="games")
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     image = models.ImageField(upload_to='game/')
     main_color = models.CharField(max_length=255, null=True, blank=True)
     pid = models.CharField(max_length=255, null=False, blank=False)
     played_count = models.PositiveIntegerField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=False, blank=True)
-    background_position = models.CharField( max_length=255, default="center", blank=False)
-    optimized = models.ImageField(upload_to = "media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/product/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/product/thumb/', verbose_name=_("Thumbnail"))
+    background_position = models.CharField(max_length=255, default="center", blank=False)
+    optimized = models.ImageField(upload_to="media/product/optimized", verbose_name=_("Image"),
+                                  null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/product/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True,
+                                  upload_to='media/product/thumb/', verbose_name=_("Thumbnail"))
 
     class Meta:
         db_table = 'core_game_game'
@@ -223,7 +229,7 @@ class ProductGame(models.Model):
 
 class Genre(models.Model):
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     slug = models.SlugField(unique=True, null=True, blank=True)
 
@@ -241,16 +247,18 @@ class Genre(models.Model):
 
 class PoemAuthor(models.Model):
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     dates = models.CharField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='authors/')
     signature = models.ImageField(upload_to='authors/', null=True, blank=True)
     slug = models.SlugField(unique=True, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    optimized = models.ImageField(upload_to = "media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/product/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/product/thumb/', verbose_name=_("Thumbnail"))
+    optimized = models.ImageField(upload_to="media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/product/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True,
+                                  upload_to='media/product/thumb/', verbose_name=_("Thumbnail"))
 
     class Meta:
         db_table = 'poem_author'
@@ -267,7 +275,6 @@ class PoemAuthor(models.Model):
     def poem_count(self):
         return self.poems.count()
 
-
     @property
     def url(self):
         return f"https://poem.yatuk.am/hy/author/{self.slug}/all/"
@@ -278,11 +285,11 @@ class Poem(models.Model):
     author = models.ForeignKey(PoemAuthor, on_delete=models.CASCADE, null=False, blank=False, related_name="poems")
     game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True, blank=True, related_name="poems")
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=True, blank=True)    
+    name_en = models.CharField(max_length=255, null=True, blank=True)
     name_ru = models.CharField(max_length=255, null=True, blank=True)
-    content_hy = models.TextField( null=False, blank=False)
-    content_en = models.TextField( null=True, blank=True) 
-    content_ru = models.TextField( null=True, blank=True)
+    content_hy = models.TextField(null=False, blank=False)
+    content_en = models.TextField(null=True, blank=True)
+    content_ru = models.TextField(null=True, blank=True)
     view_count = models.PositiveIntegerField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -290,7 +297,6 @@ class Poem(models.Model):
     class Meta:
         db_table = 'poem_poem'
         managed = False
-
 
     @property
     def name(self):
@@ -309,15 +315,15 @@ class Poem(models.Model):
         return self.likes.count()
 
     def __str__(self):
-        return self.author.name_hy +" - " + self.name_hy
+        return self.author.name_hy + " - " + self.name_hy
 
 
 class Label(models.Model):
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     slug = models.SlugField(unique=True, null=True, blank=True)
- 
+
     class Meta:
         db_table = 'poem_label'
         managed = False
@@ -339,7 +345,7 @@ class PoemSection(models.Model):
     poem = models.ForeignKey(Poem, on_delete=models.CASCADE, null=False, blank=False, related_name="sections")
     order = models.IntegerField(default=2, null=False, blank=False)
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=True, blank=True)    
+    name_en = models.CharField(max_length=255, null=True, blank=True)
     name_ru = models.CharField(max_length=255, null=True, blank=True)
     content_hy = models.TextField(null=True, blank=True)
     content_en = models.TextField(null=True, blank=True)
@@ -363,15 +369,17 @@ class PoemSection(models.Model):
 
 class AudioAuthor(models.Model):
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     quote_hy = models.CharField(max_length=500, null=True, blank=True)
-    quote_en = models.CharField(max_length=500, null=True, blank=True)    
+    quote_en = models.CharField(max_length=500, null=True, blank=True)
     quote_ru = models.CharField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='authors/')
-    optimized = models.ImageField(upload_to = "media/authors/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/authors/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/authors/thumb/', verbose_name=_("Thumbnail"))
+    optimized = models.ImageField(upload_to="media/authors/optimized", verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/authors/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True,
+                                  upload_to='media/authors/thumb/', verbose_name=_("Thumbnail"))
     slug = models.SlugField(unique=True, null=False, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -399,12 +407,14 @@ class AudioAuthor(models.Model):
 class Audio(models.Model):
     author = models.ForeignKey(AudioAuthor, on_delete=models.CASCADE, null=False, blank=False, related_name="musics")
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     image = models.ImageField(upload_to='authors/')
-    optimized = models.ImageField(upload_to = "media/authors/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/authors/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/authors/thumb/', verbose_name=_("Thumbnail"))
+    optimized = models.ImageField(upload_to="media/authors/optimized", verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/authors/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True,
+                                  upload_to='media/authors/thumb/', verbose_name=_("Thumbnail"))
     audio = models.FileField(upload_to='audios/')
     played_count = models.PositiveIntegerField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=False, blank=True)
@@ -418,15 +428,16 @@ class Audio(models.Model):
     def next_id(self):
         try:
             return Audio.objects.filter(id__gt=self.id).exclude(author=self.author).order_by('id').first().id
-        except:
+        except Exception:
             return Audio.objects.exclude(id=self.id).first().id
 
     @property
     def prev_id(self):
         try:
             return Audio.objects.filter(id__lt=self.id).exclude(author=self.author).order_by('-id').first().id
-        except:
+        except Exception:
             return Audio.objects.exclude(id=self.id).first().id
+
     @property
     def title(self):
         return getattr(self, f"name_{get_language()}")
@@ -491,10 +502,12 @@ class Photo(models.Model):
     slug = models.SlugField(unique=False, null=False, blank=True)
     image = models.ImageField(upload_to='photo/')
     created_at = models.DateTimeField(auto_now_add=True)
-    optimized = models.ImageField(upload_to = "media/photo/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/photo/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/photo/thumb/', verbose_name=_("Thumbnail"))
-    background_position = models.CharField( max_length=255, default="center", blank=False)
+    optimized = models.ImageField(upload_to="media/photo/optimized", verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/photo/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True,
+                                  upload_to='media/photo/thumb/', verbose_name=_("Thumbnail"))
+    background_position = models.CharField(max_length=255, default="center", blank=False)
 
     def __str__(self):
         return self.name

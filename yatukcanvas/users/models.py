@@ -5,12 +5,13 @@ from django.utils import timezone
 from .managers import CustomUserManager
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db.models import Count, Sum, F
-from django.utils.translation import gettext_lazy as _
+
 
 USER_ROLES = [
         ('admin', 'Admin'),
         ('client', 'Client')
     ]
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=255, null=True, blank=True)
@@ -51,7 +52,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         if shopping_cart_.exists():
             return {
                 "count": shopping_cart_.aggregate(count_=Count("count"))['count_'],
-                "total": shopping_cart_.aggregate(sum = Sum(F('count') *  F('product__price')))['sum']
+                "total": shopping_cart_.aggregate(sum=Sum(F('count') * F('product__price')))['sum']
             }
         else:
             return {

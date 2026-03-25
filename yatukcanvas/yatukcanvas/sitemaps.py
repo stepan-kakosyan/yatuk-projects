@@ -23,8 +23,9 @@ class AuthorSitemap(Sitemap):
     def items(self):
         return GameAuthor.objects.filter(games__isnull=False).distinct().order_by('id')
 
-    def location(self,obj):
+    def location(self, obj):
         return reverse('author', args=[obj.slug])
+
 
 class PhotoSitemap(Sitemap):
     name = 'photo'
@@ -35,7 +36,7 @@ class PhotoSitemap(Sitemap):
     def items(self):
         return Photo.objects.all()
 
-    def location(self,obj):
+    def location(self, obj):
         return reverse('photo', args=[obj.slug, obj.id])
 
 
@@ -48,5 +49,5 @@ class GameSitemap(Sitemap):
     def items(self):
         return Game.objects.all()
 
-    def location(self,obj):
+    def location(self, obj):
         return reverse('game', args=[obj.author.slug, obj.slug, obj.id])

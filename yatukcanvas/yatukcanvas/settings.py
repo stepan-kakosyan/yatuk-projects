@@ -2,7 +2,7 @@ import environ
 import os
 import sys
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
+
 
 env = environ.Env()
 environ.Env.read_env()
@@ -72,7 +72,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'libraries':{
+            'libraries': {
                 'custom_tags': 'utils.custom_tags'
             }
         },
@@ -86,10 +86,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': env("DATABASE_NAME"),
-        'USER':env("DATABASE_USER"),
-        'PASSWORD':env("DATABASE_PASSWORD"),
-        'HOST':env("DATABASE_HOST"),
-        'PORT':env("DATABASE_PORT"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
         'OPTIONS': {}
     }
 }
@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    } ,
+    },
 ]
 # translation doc https://testdriven.io/blog/multiple-languages-in-django/
 LANGUAGE_CODE = "en"

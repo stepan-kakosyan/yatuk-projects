@@ -13,6 +13,7 @@ USER_ROLES = [
         ('client', 'Client')
     ]
 
+
 class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=255, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
@@ -52,13 +53,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         if shopping_cart_.exists():
             return {
                 "count": shopping_cart_.aggregate(count_=Count("count"))['count_'],
-                "total": shopping_cart_.aggregate(sum = Sum(F('count') *  F('product__price')))['sum']
+                "total": shopping_cart_.aggregate(sum=Sum(F('count') * F('product__price')))['sum']
             }
         else:
             return {
                 "count": 0,
                 "total": 0
             }
+
 
 class State(models.Model):
     name_en = models.CharField(max_length=255)
@@ -96,6 +98,7 @@ class State(models.Model):
                 print(f"State '{state['name_en']}' created successfully")
             else:
                 print(f"State '{state['name_en']}' already exists.")
+
 
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="addresses", verbose_name=_("User"))

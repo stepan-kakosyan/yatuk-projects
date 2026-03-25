@@ -2,20 +2,19 @@ from django.shortcuts import render
 from django.conf import settings
 from django.utils.translation import check_for_language
 from django.http import HttpResponseRedirect
-from .models import GameAuthor, Poem, PoemSection, Audio, Like, Favorite,\
-    WantToRead,  PoemComment, Photo, PoemAuthor, AudioAuthor, Game
+from .models import (GameAuthor, Poem, Audio, Like, Favorite,
+                     PoemComment, Photo, PoemAuthor, AudioAuthor, Game)
 from .forms import ContactUsForm, GameCommentForm
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.decorators import login_required 
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from utils.functions import send_yatuk_email
 from django.utils.translation import activate
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from utils.functions import check_user_login, no_tag
-from django.db.models import Exists, OuterRef, Q
-from django.template.loader import get_template
+from django.db.models import Q
 from django.utils.translation import get_language
 
 
@@ -27,7 +26,7 @@ def set_language(request):
         nurl = nurl[4:]
         next_url += nurl
     response = HttpResponseRedirect(next_url)
-    
+
     if lang_code and check_for_language(lang_code):
         if hasattr(request, 'session'):
             request.session['language'] = lang_code
@@ -36,8 +35,9 @@ def set_language(request):
         activate(lang_code)
     return response
 
+
 def index(request):
-    ctx={
+    ctx = {
         "active": "index",
         'most_populars': Game.objects.all().order_by('-played_count')[:15],
         "form": ContactUsForm(),
@@ -47,12 +47,14 @@ def index(request):
 
     return render(request, 'core/index.html', context=ctx)
 
+
 def authors(request):
-    ctx={
+    ctx = {
         "active": "authors",
         "authors": GameAuthor.objects.filter(games__isnull=False).order_by(f"name_{get_language()}").distinct()
     }
     return render(request, 'core/authors.html', context=ctx)
+
 
 def contact_us(request):
     if request.method == 'POST':
@@ -62,21 +64,22 @@ def contact_us(request):
             form.save()
             html_content = render_to_string('emails/contact-us.html', {'contact_details': cd})
             send_yatuk_email(subject=f"Կապ մեզ հետ՝ {cd['name']}",
-                            message=f"Կապ մեզ հետ՝ {cd['name']}",
-                            to_=["contact@yatuk.am", "stepankakosyan22@gmail.com"],
-                            from_="info@yatuk.am",
-                            html=html_content)
+                             message=f"Կապ մեզ հետ՝ {cd['name']}",
+                             to_=["contact@yatuk.am", "stepankakosyan22@gmail.com"],
+                             from_="info@yatuk.am",
+                             html=html_content)
             messages.success(request, _('Your message was successfully sent.'))
             return render(request, 'core/partials/contact-form.html', {"form": ContactUsForm})
     else:
         form = ContactUsForm()
-    ctx={
+    ctx = {
         "active": "contact_us",
         'form': form
     }
     if request.htmx:
         return render(request, 'core/partials/contact-form.html', ctx)
     return render(request, 'core/contact-us.html', ctx)
+
 
 def author(request, slug):
     author = GameAuthor.objects.get(slug=slug)
@@ -89,7 +92,7 @@ def author(request, slug):
         games = paginator.page(1)
     except EmptyPage:
         games = paginator.page(paginator.num_pages)
-    ctx={
+    ctx = {
         "author": author,
         "games": games,
         'active': 'poems'
@@ -102,10 +105,10 @@ def author(request, slug):
 def author_photoarchive(request, slug):
     author = GameAuthor.objects.get(slug=slug)
     photos = Photo.objects.filter(photos__painter_id=author.id).distinct()
-    ctx={
+    ctx = {
         "author": author,
         'photos': photos,
-        'active': 'photoarchive'     
+        'active': 'photoarchive'
     }
     if request.htmx:
         return render(request, 'core/partials/photoarchive.html', context=ctx)
@@ -121,7 +124,7 @@ def game(request, author, slug, id):
     if request.user.is_authenticated:
         game.liked = game.likes.filter(user=request.user).exists()
         game.favorite = game.favorites.filter(user=request.user).exists()
-    ctx={
+    ctx = {
         "author": author,
         "game": game,
         "games": Game.objects.filter(author=game.author).exclude(id=game.id).order_by("?")[:10],
@@ -137,7 +140,7 @@ def game(request, author, slug, id):
 def music(request):
     id = request.GET.get("id")
     song = Audio.objects.get(id=id)
-    return render(request, 'core/partials/music-card.html', context={'song':song})
+    return render(request, 'core/partials/music-card.html', context={'song': song})
 
 
 def set_theme(request):
@@ -162,14 +165,14 @@ def terms_and_conditions(request):
 def like(request, id):
     game = Game.objects.get(id=id)
     check_user = check_user_login(request=request, next=game.main_url)
-    if check_user != True:
+    if not check_user:
         return check_user
-    like = Like.objects.filter(user = request.user, game_id=id)
+    like = Like.objects.filter(user=request.user, game_id=id)
     if like:
         like.delete()
         game.liked = False
     else:
-        like  = Like(user = request.user, game_id=id)
+        like = Like(user=request.user, game_id=id)
         like.save()
         game.liked = True
     game.favorite = game.favorites.filter(user=request.user).exists()
@@ -179,14 +182,14 @@ def like(request, id):
 def favorite(request, id):
     game = Game.objects.get(id=id)
     check_user = check_user_login(request=request, next=game.main_url)
-    if check_user != True:
+    if not check_user:
         return check_user
-    favorite = Favorite.objects.filter(user = request.user, game_id=id)
+    favorite = Favorite.objects.filter(user=request.user, game_id=id)
     if favorite:
         favorite.delete()
         game.favorite = False
     else:
-        favorite  = Favorite(user = request.user, game_id=id)
+        favorite = Favorite(user=request.user, game_id=id)
         favorite.save()
         game.favorite = True
     game.liked = game.likes.filter(user=request.user).exists()
@@ -205,7 +208,7 @@ def saved(request):
         games = paginator.page(1)
     except EmptyPage:
         games = paginator.page(paginator.num_pages)
-    ctx={
+    ctx = {
         "games": games,
     }
     if request.htmx:
@@ -217,7 +220,7 @@ def comment(request, id):
     if request.method == 'POST':
         game = Game.objects.get(id=id)
         check_user = check_user_login(request=request, next=game.main_url)
-        if check_user != True:
+        if not check_user:
             return check_user
         form = GameCommentForm(request.POST)
         if form.is_valid():
@@ -225,13 +228,13 @@ def comment(request, id):
                                   user=request.user,
                                   game=game)
             comment.save()
-            ctx={
+            ctx = {
                 'form': GameCommentForm(),
                 'game': game,
                 'comments': PoemComment.objects.filter(game=game).order_by('-id')
             }
             return render(request, 'core/partials/comment-form.html', ctx)
-        ctx={
+        ctx = {
             'form': GameCommentForm(request.POST),
             'game': game,
             'comments': PoemComment.objects.filter(game=game).order_by('-id')
@@ -261,7 +264,7 @@ def search(request):
         games = paginator.page(1)
     except EmptyPage:
         games = paginator.page(paginator.num_pages)
-    ctx={
+    ctx = {
         "games": games,
         "selected_author": author,
         "search": search,
@@ -290,7 +293,7 @@ def photos(request):
         photos = paginator.page(1)
     except EmptyPage:
         photos = paginator.page(paginator.num_pages)
-    ctx={
+    ctx = {
         "photos": photos,
         "selected_author": author,
         "search": search,
@@ -307,7 +310,7 @@ def photo(request, slug, id):
     writers = PoemAuthor.objects.filter(photos__photo_id=id)
     painters = GameAuthor.objects.filter(photos__photo_id=id)
     composers = AudioAuthor.objects.filter(photos__photo_id=id)
-    ctx={
+    ctx = {
         "writers": writers,
         "painters": painters,
         "composers": composers,
@@ -336,11 +339,13 @@ def get_game(request, id):
     size = int(request.GET.get('size', 25))
     # game.played_count = game.played_count+1 if game.played_count else 1
     # game.save()
+    src = f"https://www.jigsawplanet.com/?rc=play&pid={game.pid}&view="
+    src += f"iframe&bgcolor=0x{game.main_color}&savegame=0&pieces={size}"
     ctx = {
         'game': game,
-        'shapes': range(0,8),
+        'shapes': range(0, 8),
         'sizes': [25, 50, 75, 100, 125, 150, 175, 200],
         'size': size,
-        'src': f"https://www.jigsawplanet.com/?rc=play&pid={game.pid}&view=iframe&bgcolor=0x{game.main_color}&savegame=0&pieces={size}"
+        'src': src
     }
     return render(request, 'core/partials/game-iframe.html', context=ctx)

@@ -7,7 +7,6 @@ from django.shortcuts import resolve_url
 from django.http import HttpResponse
 from yatukcanvas import settings
 from django.shortcuts import redirect
-from django.http import HttpResponseRedirect
 from django.utils.translation import get_language
 
 
@@ -27,6 +26,7 @@ def unique_slug_generator(instance, new_slug=None):
         return unique_slug_generator(instance, new_slug=new_slug)
     return slug
 
+
 def compute_average_image_color(self):
     img = Image.open(self.image)
     width, height = img.size
@@ -36,25 +36,26 @@ def compute_average_image_color(self):
     count = 0
     for x in range(0, width):
         for y in range(0, height):
-            r, g, b = img.getpixel((x,y))
+            r, g, b = img.getpixel((x, y))
             r_total += r
             g_total += g
             b_total += b
             count += 1
     return '%02x%02x%02x' % (int(r_total/count), int(g_total/count), int(b_total/count))
 
+
 def send_yatuk_email(subject, from_, to_, message, html):
     msg = send_mail(subject=subject,
-                  message=message,
-                  html_message = html,
-                  from_email=from_,
-                  recipient_list=to_)
+                    message=message,
+                    html_message=html,
+                    from_email=from_,
+                    recipient_list=to_)
     return msg
 
 
 def check_user_login(request, next):
     if not request.user.is_authenticated:
-        rurl = resolve_url(settings.LOGIN_URL) 
+        rurl = resolve_url(settings.LOGIN_URL)
         resolved_login_url = f"/{get_language()}{rurl}?next={next}"
         if request.htmx:
             response = HttpResponse(status=204, headers={'HX-Redirect': resolved_login_url})
@@ -63,6 +64,7 @@ def check_user_login(request, next):
             return redirect(resolved_login_url)
     else:
         return True
+
 
 def no_tag(text):
     text = text.strip().replace("&nbsp;", " ").replace('&mdash;', ' ')

@@ -4,6 +4,7 @@ import random
 from PIL import Image
 from django.core.mail import send_mail
 
+
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
@@ -20,6 +21,7 @@ def unique_slug_generator(instance, new_slug=None):
         return unique_slug_generator(instance, new_slug=new_slug)
     return slug
 
+
 def compute_average_image_color(self):
     img = Image.open(self.image)
     width, height = img.size
@@ -29,17 +31,18 @@ def compute_average_image_color(self):
     count = 0
     for x in range(0, width):
         for y in range(0, height):
-            r, g, b = img.getpixel((x,y))
+            r, g, b = img.getpixel((x, y))
             r_total += r
             g_total += g
             b_total += b
             count += 1
     return '%02x%02x%02x' % (int(r_total/count), int(g_total/count), int(b_total/count))
 
+
 def send_yatuk_email(subject, from_, to_, message, html):
     msg = send_mail(subject=subject,
-                  message=message,
-                  html_message = html,
-                  from_email=from_,
-                  recipient_list=to_)
+                    message=message,
+                    html_message=html,
+                    from_email=from_,
+                    recipient_list=to_)
     return msg
