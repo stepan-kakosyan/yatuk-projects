@@ -52,7 +52,7 @@ class PhotoAdmin(admin.ModelAdmin):
     list_display = ('name', )
     inlines = (PhotoPersonInline,)
 
-    
+
 class PoemCommentAdmin(admin.ModelAdmin):
     list_display = ('user', 'text', 'poem', 'game', 'audio', )
 

@@ -37,9 +37,11 @@ class Migration(migrations.Migration):
                 ('pid', models.CharField(max_length=255)),
                 ('played_count', models.PositiveIntegerField(blank=True, null=True)),
                 ('slug', models.SlugField(blank=True, unique=True)),
-                ('background_position', models.CharField(choices=[('top', 'Top'), ('center', 'Center'), ('bottom', 'Bottom')], default='center', max_length=255)),
+                ('background_position', models.CharField(choices=[('top', 'Top'), ('center', 'Center'),
+                                                                  ('bottom', 'Bottom')], default='center', max_length=255)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='games', to='core_game.author')),
+                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                             related_name='games', to='core_game.author')),
             ],
         ),
     ]
