@@ -17,4 +17,5 @@ def unique_slug_generator(instance, new_slug=None):
     if qs_exists:
         new_slug = f"{slug}-{random_string_generator(size = 2)}"
         return unique_slug_generator(instance, new_slug=new_slug)
+
     return slug
