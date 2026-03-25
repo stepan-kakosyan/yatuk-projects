@@ -29,6 +29,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Run flake8
+        run: |
+          flake8 cms yatuk yatukcanvas yatukplay yatukpoem shared_apps
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
