@@ -15,11 +15,15 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='order',
             name='status',
-            field=models.CharField(choices=[('not_paid', 'Not Paid'), ('accepted', 'Accepted'), ('in_process', 'In Process'), ('shipping', 'Shipping'), ('done', 'Done'), ('cancelled', 'Cancelled')], max_length=255, verbose_name='status'),
+            field=models.CharField(choices=[('not_paid', 'Not Paid'), ('accepted', 'Accepted'),
+                                            ('in_process', 'In Process'), ('shipping', 'Shipping'),
+                                            ('done', 'Done'), ('cancelled', 'Cancelled')],
+                                   max_length=255, verbose_name='status'),
         ),
         migrations.AlterField(
             model_name='orderitem',
             name='product',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='ordered_products', to='product.product'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                    related_name='ordered_products', to='product.product'),
         ),
     ]

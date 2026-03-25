@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='order',
             name='address',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='orders', to='users.address'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                    related_name='orders', to='users.address'),
         ),
         migrations.AddField(
             model_name='order',
@@ -26,6 +27,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='order',
             name='status',
-            field=models.CharField(choices=[('not_paid', 'Not Paid'), ('accepted', 'Accepted'), ('in_process', 'In Process'), ('shipping', 'Shipping'), ('done', 'Done'), ('cancelled', 'Cancelled'), ('refunded', 'Refunded')], max_length=255, verbose_name='status'),
+            field=models.CharField(choices=[('not_paid', 'Not Paid'), ('accepted', 'Accepted'),
+                                            ('in_process', 'In Process'), ('shipping', 'Shipping'),
+                                            ('done', 'Done'), ('cancelled', 'Cancelled'),
+                                            ('refunded', 'Refunded')], max_length=255, verbose_name='status'),
         ),
     ]
