@@ -250,11 +250,11 @@ def search(request):
         qs = qs.filter(author__slug=author)
     if search and search.strip() != "":
         qs = qs.filter(Q(name_hy__icontains=search) |
-                    Q(name_ru__icontains=search) |
-                    Q(name_en__icontains=search) |
-                    Q(author__name_hy__icontains=search) |
-                    Q(author__name_ru__icontains=search) |
-                    Q(author__name_en__icontains=search)).distinct()
+                       Q(name_ru__icontains=search) |
+                       Q(name_en__icontains=search) |
+                       Q(author__name_hy__icontains=search) |
+                       Q(author__name_ru__icontains=search) |
+                       Q(author__name_en__icontains=search)).distinct()
     qs = qs.order_by('name_hy')
     paginator = Paginator(qs, per_page=12)
     page = request.GET.get('page', 1)

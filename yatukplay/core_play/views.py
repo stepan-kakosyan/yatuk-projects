@@ -45,7 +45,7 @@ def index(request, author=None, slug=None):
         'audios': result,
         "slug": slug,
         "first_song": first_song_,
-        'audios_json': json.dumps(AudioSerializer(result,many=True).data),
+        'audios_json': json.dumps(AudioSerializer(result, many=True).data),
         'products': Product.objects.all().order_by("?")[:5]
     }
     return render(request, 'core/index.html', context=ctx)
@@ -79,7 +79,6 @@ def get_author_info(request, id):
         'author': Author.objects.get(id=id),
     }
     return render(request, 'core/partials/author.html', context=ctx)
-
 
 
 @csrf_exempt

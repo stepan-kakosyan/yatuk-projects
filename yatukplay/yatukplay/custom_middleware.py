@@ -1,5 +1,6 @@
 from django.shortcuts import redirect
 
+
 class CustomMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response

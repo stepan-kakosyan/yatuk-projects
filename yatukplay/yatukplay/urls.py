@@ -3,7 +3,6 @@ from django.urls import path
 from django.conf.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
-from django.utils.translation import gettext_lazy as _
 from django.conf.urls.i18n import i18n_patterns
 from django.views.generic.base import TemplateView
 from .sitemaps import AudioSitemap
@@ -17,7 +16,7 @@ urlpatterns = i18n_patterns(
     path('', include('core_play.urls')),
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
-        path('sitemap.xml', views.sitemap, {'sitemaps': sitemaps},
+    path('sitemap.xml', views.sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
 )
 

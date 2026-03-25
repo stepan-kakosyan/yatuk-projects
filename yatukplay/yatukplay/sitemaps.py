@@ -13,5 +13,5 @@ class AudioSitemap(Sitemap):
     def items(self):
         return Audio.objects.order_by('id')
 
-    def location(self,obj):
-        return reverse('index_song', kwargs={'author': obj.author.slug,'slug': obj.slug})
+    def location(self, obj):
+        return reverse('index_song', kwargs={'author': obj.author.slug, 'slug': obj.slug})

@@ -2,7 +2,9 @@ import environ
 import os
 import sys
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 
 env = environ.Env()
 environ.Env.read_env()
@@ -83,10 +85,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': env("DATABASE_NAME"),
-        'USER':env("DATABASE_USER"),
-        'PASSWORD':env("DATABASE_PASSWORD"),
-        'HOST':env("DATABASE_HOST"),
-        'PORT':env("DATABASE_PORT"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
         'OPTIONS': {}
     }
 }
@@ -107,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    } ,
+    },
 ]
 # translation doc https://testdriven.io/blog/multiple-languages-in-django/
 LANGUAGE_CODE = "hy"
@@ -140,9 +142,6 @@ BLOG_MEDIA_HOST = "https://cms.yatuk.am"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
-
 sentry_sdk.init(
     dsn="https://e491a72bcc1649318b6d8eb9e191b5c8@o4504785028186112.ingest.sentry.io/4504785519902720",
     integrations=[
@@ -158,6 +157,7 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
+
 BATON = {
     'SITE_HEADER': 'Yatuk Music',
     'SITE_TITLE': 'Yatuk Music',
@@ -174,8 +174,8 @@ BATON = {
     'MESSAGES_TOASTS': False,
     'LOGIN_SPLASH': '/static/images/login-splash.jpg',
     'MENU': (
-        { 'type': 'title', 'label': 'main', 'apps': ('core_play', ) },
-        { 'type': 'model', 'label': 'Composers', 'name': 'author', 'app': 'core_play', 'icon': 'fa fa-users' },
-        { 'type': 'model', 'label': 'Musics', 'name': 'audio', 'app': 'core_play', 'icon': 'fa fa-music' },
+        {'type': 'title', 'label': 'main', 'apps': ('core_play', )},
+        {'type': 'model', 'label': 'Composers', 'name': 'author', 'app': 'core_play', 'icon': 'fa fa-users'},
+        {'type': 'model', 'label': 'Musics', 'name': 'audio', 'app': 'core_play', 'icon': 'fa fa-music'},
     ),
 }
