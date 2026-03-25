@@ -3,11 +3,11 @@ from .forms import LoginForm
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from users.models import User
-from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
 from .forms import UserEditForm
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
+
 
 def profile(request):
     active = request.GET.get("active", "personal_info")
@@ -17,6 +17,7 @@ def profile(request):
         "active": active
         }
     return render(request, 'users/profile.html', context=context)
+
 
 def login_page(request):
     if request.user.is_authenticated:
@@ -43,6 +44,7 @@ def login_page(request):
         return render(request, 'users/partials/login-card.html', context={'form': form, 'message': message})
     return render(request, 'users/login.html', context={'form': form, 'message': message})
 
+
 def register_user(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -55,6 +57,7 @@ def register_user(request):
     if request.htmx:
         return render(request, 'users/partials/registration-card.html', {'form': form})
     return render(request, 'users/registration.html', {'form': form})
+
 
 def user_edit(request):
     user = request.user
@@ -69,6 +72,7 @@ def user_edit(request):
     else:
         form = UserEditForm(instance=user)
     return render(request, 'users/partials/profile-form.html', {'form': form})
+
 
 def upload_profile_image(request):
     request.user.profile_image = request.FILES['prof-img']

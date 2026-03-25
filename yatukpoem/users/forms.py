@@ -3,12 +3,12 @@ from django import forms
 from users.models import User
 from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import get_language
 
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=63, label=_("Username"))
     password = forms.CharField(max_length=63, widget=forms.PasswordInput, label=_("Password"))
+
 
 class UserRegistrationForm(forms.Form):
     first_name = forms.CharField(max_length=30, label=_("First Name"))
@@ -42,6 +42,7 @@ class UserRegistrationForm(forms.Form):
         if commit:
             user.save()
         return user
+
 
 class UserEditForm(forms.ModelForm):
     first_name = forms.CharField(
