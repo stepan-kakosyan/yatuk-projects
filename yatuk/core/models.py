@@ -3,6 +3,7 @@ from django.utils.translation import get_language
 from django.utils.translation import gettext_lazy as _
 from users.models import User, State, Address
 
+
 ORDER_STATUS = [
     ("not_paid", _("Not Paid")),
     ("accepted", _("Accepted")),
@@ -11,6 +12,7 @@ ORDER_STATUS = [
     ("done", _("Done")),
     ("cancelled", _("Cancelled"))
 ]
+
 
 class ProductCategory(models.Model):
     title_en = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Title English"))
@@ -23,7 +25,7 @@ class ProductCategory(models.Model):
     description_ru = models.TextField(verbose_name=_("Description Russian"))
     description_hy = models.TextField(verbose_name=_("Description Armenian"))
     icon = models.ImageField(upload_to="media/icon", null=True, blank=True, verbose_name=_("Icon"))
-    
+
     def __str__(self):
         return self.title
 
@@ -60,6 +62,7 @@ class ProductCategory(models.Model):
         else:
             return "list"
 
+
 class Product(models.Model):
     title_en = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title English"))
     title_ru = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title Russian"))
@@ -71,12 +74,12 @@ class Product(models.Model):
     description_ru = models.TextField(verbose_name=_("Description Russian"))
     description_hy = models.TextField(verbose_name=_("Description Armenian"))
     price = models.IntegerField(null=False, blank=False, verbose_name=_("Price"))
-    category = models.ForeignKey(ProductCategory, on_delete = models.PROTECT, null=False, 
+    category = models.ForeignKey(ProductCategory, on_delete=models.PROTECT, null=False,
                                  verbose_name=_("Category"), related_name="products")
     total_count = models.IntegerField(default=50, verbose_name=_("Total Count"))
     shop_url = models.CharField(null=True, blank=True, max_length=255)
     is_finished = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add = True, verbose_name=_("Created At"))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Created At"))
 
     def __str__(self):
         return self.title
@@ -86,7 +89,7 @@ class Product(models.Model):
         return self.images.filter(is_main=True).first()
 
     def for_share_image(self):
-        return self.images.filter(for_share = True).first()
+        return self.images.filter(for_share=True).first()
 
     @property
     def title(self):
@@ -103,24 +106,29 @@ class Product(models.Model):
     @property
     def author(self):
         return self.product_authors.all().first().author.name_hy
-        
+
     class Meta:
         db_table = 'product_product'
         managed = False
 
+
 class ProductImage(models.Model):
-    image = models.ImageField(upload_to = "media/product", verbose_name=_("Image"))
-    optimized = models.ImageField(upload_to = "media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/product/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/product/thumb/', verbose_name=_("Thumbnail"))
+    image = models.ImageField(upload_to="media/product", verbose_name=_("Image"))
+    optimized = models.ImageField(upload_to="media/product/optimized",
+                                  verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/product/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True, upload_to='media/product/thumb/',
+                                  verbose_name=_("Thumbnail"))
     is_main = models.BooleanField(default=True, verbose_name=_("Is Main"))
     for_share = models.BooleanField(default=False, verbose_name=_("For Share"))
-    product = models.ForeignKey(Product, on_delete = models.CASCADE, null=False, blank=False,
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=False, blank=False,
                                 related_name="images", verbose_name=_("Product"))
 
     class Meta:
         db_table = 'product_productimage'
         managed = False
+
 
 class ContactUs(models.Model):
     name = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Name"))
@@ -131,6 +139,7 @@ class ContactUs(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
 class Slider(models.Model):
     title_en = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title English"))
     title_ru = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title Russian"))
@@ -139,10 +148,10 @@ class Slider(models.Model):
     description_ru = models.TextField(verbose_name=_("Description Russian"))
     description_hy = models.TextField(verbose_name=_("Description Armenian"))
     ordering = models.PositiveSmallIntegerField(default=1)
-    main_image = models.ImageField(upload_to = "media/slider", verbose_name=_("Main Image"))
-    blur_image = models.ImageField(upload_to = "media/slider", verbose_name=_("Blur Image"))
+    main_image = models.ImageField(upload_to="media/slider", verbose_name=_("Main Image"))
+    blur_image = models.ImageField(upload_to="media/slider", verbose_name=_("Blur Image"))
     link = models.CharField(max_length=255, null=True, blank=True)
-    
+
     @property
     def title(self):
         return getattr(self, f"title_{get_language()}")
@@ -155,6 +164,7 @@ class Slider(models.Model):
         db_table = 'core_slider'
         managed = False
 
+
 class ShoppingCart(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="products", null=False, blank=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="cart_products", null=False, blank=False)
@@ -165,6 +175,7 @@ class ShoppingCart(models.Model):
         db_table = 'core_shoppingcart'
         managed = False
 
+
 class ShippingMethod(models.Model):
     title_en = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title English"))
     title_ru = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Title Russian"))
@@ -172,7 +183,7 @@ class ShippingMethod(models.Model):
     description_en = models.TextField(verbose_name=_("Description English"))
     description_ru = models.TextField(verbose_name=_("Description Russian"))
     description_hy = models.TextField(verbose_name=_("Description Armenian"))
-    image = models.ImageField(upload_to = "media/slider", verbose_name=_("Main Image"))
+    image = models.ImageField(upload_to="media/slider", verbose_name=_("Main Image"))
     price = models.IntegerField(null=False, blank=False, verbose_name=_("Price"))
     states_available = models.ManyToManyField(State, related_name="states")
 
@@ -191,13 +202,14 @@ class ShippingMethod(models.Model):
     def title(self):
         return getattr(self, f"title_{get_language()}")
 
+
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     shipping_method = models.ForeignKey(ShippingMethod, on_delete=models.PROTECT, related_name='orders',
                                         null=False, blank=False, verbose_name=_("Shipping Method"))
     shipping_price = models.IntegerField(null=False, blank=False, verbose_name=_("Shipping Price"))
     address = models.ForeignKey(Address, on_delete=models.PROTECT, related_name='orders',
-                                        null=False, blank=False)
+                                null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     payment_id = models.CharField(max_length=100, blank=True)
@@ -219,6 +231,7 @@ class Order(models.Model):
         db_table = 'core_order'
         managed = False
 
+
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -232,34 +245,38 @@ class OrderItem(models.Model):
         db_table = 'core_orderitem'
         managed = False
 
+
 class ProductTransaction(models.Model):
     count = models.PositiveIntegerField(null=False, blank=False, default=1, verbose_name=_("Count"))
-    product = models.ForeignKey(Product, on_delete = models.PROTECT, null=False, blank=False, 
-                                related_name = "transactions", verbose_name=_("Product"))
+    product = models.ForeignKey(Product, on_delete=models.PROTECT, null=False, blank=False,
+                                related_name="transactions", verbose_name=_("Product"))
     amount = models.IntegerField(null=False, blank=False, verbose_name=_("Amount"))
     type = models.CharField(blank=False, null=False, max_length=255, verbose_name=_("Type"))
     date = models.DateField(verbose_name=_("Date"))
     order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add = True, verbose_name=_("Crated At"))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Crated At"))
 
     class Meta:
         db_table = 'product_producttransaction'
         managed = False
 
+
 class Author(models.Model):
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     bio_hy = models.TextField(null=True, blank=True)
-    bio_en = models.TextField(null=True, blank=True)    
+    bio_en = models.TextField(null=True, blank=True)
     bio_ru = models.TextField(null=True, blank=True)
     dates = models.CharField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='authors/')
     main_image = models.ImageField(upload_to='authors/')
     slug = models.SlugField(unique=True, null=True, blank=True)
-    optimized = models.ImageField(upload_to = "media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/product/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/product/thumb/', verbose_name=_("Thumbnail"))
+    optimized = models.ImageField(upload_to="media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/product/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True,
+                                  upload_to='media/product/thumb/', verbose_name=_("Thumbnail"))
 
     class Meta:
         db_table = 'core_game_author'
@@ -277,17 +294,19 @@ class Author(models.Model):
 class Game(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=False, blank=False, related_name="games")
     name_hy = models.CharField(max_length=255, null=False, blank=False)
-    name_en = models.CharField(max_length=255, null=False, blank=False)    
+    name_en = models.CharField(max_length=255, null=False, blank=False)
     name_ru = models.CharField(max_length=255, null=False, blank=False)
     image = models.ImageField(upload_to='game/')
     main_color = models.CharField(max_length=255, null=True, blank=True)
     pid = models.CharField(max_length=255, null=False, blank=False)
     played_count = models.PositiveIntegerField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=False, blank=True)
-    background_position = models.CharField( max_length=255, default="center", blank=False)
-    optimized = models.ImageField(upload_to = "media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
-    middle_optimized = models.ImageField(upload_to = "media/product/middle_optimized", verbose_name=_("Image"), null=True, blank=True)
-    thumbnail = models.ImageField(blank=True, null=True,upload_to ='media/product/thumb/', verbose_name=_("Thumbnail"))
+    background_position = models.CharField(max_length=255, default="center", blank=False)
+    optimized = models.ImageField(upload_to="media/product/optimized", verbose_name=_("Image"), null=True, blank=True)
+    middle_optimized = models.ImageField(upload_to="media/product/middle_optimized",
+                                         verbose_name=_("Image"), null=True, blank=True)
+    thumbnail = models.ImageField(blank=True, null=True,
+                                  upload_to='media/product/thumb/', verbose_name=_("Thumbnail"))
 
     class Meta:
         db_table = 'core_game_game'
