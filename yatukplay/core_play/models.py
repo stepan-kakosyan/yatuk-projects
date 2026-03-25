@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import get_language
 from django.utils.translation import gettext_lazy as _
-from yatukplay.yatukplay.utils.slugs import unique_slug_generator
+from utils.slugs import unique_slug_generator
 
 
 class Author(models.Model):
