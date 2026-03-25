@@ -2,7 +2,6 @@ import environ
 import os
 import sys
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
 
 env = environ.Env()
 environ.Env.read_env()
@@ -94,12 +93,14 @@ DATABASES = {
     }
 }
 
-BANK_URL=env("BANK_URL")
-BANK_USERNAME=env("BANK_USERNAME")
-BANK_PASSWORD=env("BANK_PASSWORD")
-BANK_CLIENT_ID=env("BANK_CLIENT_ID")
+
+BANK_URL = env("BANK_URL")
+BANK_USERNAME = env("BANK_USERNAME")
+BANK_PASSWORD = env("BANK_PASSWORD")
+BANK_CLIENT_ID = env("BANK_CLIENT_ID")
+
 AUTHENTICATION_BACKENDS = (
-     'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -114,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    } ,
+    },
 ]
 # translation doc https://testdriven.io/blog/multiple-languages-in-django/
 LANGUAGE_CODE = "hy"
@@ -146,6 +147,7 @@ if SHARED_BLOG_STATIC_DIR.exists():
     STATICFILES_DIRS.append(str(SHARED_BLOG_STATIC_DIR))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 BLOG_MEDIA_HOST = "https://cms.yatuk.am"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

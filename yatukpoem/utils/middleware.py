@@ -13,5 +13,6 @@ class ServerErrorExceptionHandler():
         if exception:
             return JsonResponse({
                 "error": True,
+
                 "message": str(exception)}, status=500)
 
